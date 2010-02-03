@@ -76,14 +76,16 @@ endf
 fun s:ProcessSnippet(snip)
 	let snippet = a:snip
 	" Evaluate eval (`...`) expressions.
+	" Backquotes prefixed with a backslash "\" are ignored.
 	" Using a loop here instead of a regex fixes a bug with nested "\=".
 	if stridx(snippet, '`') != -1
-		while match(snippet, '`.\{-}`') != -1
-			let snippet = substitute(snippet, '`.\{-}`',
-						\ substitute(eval(matchstr(snippet, '`\zs.\{-}\ze`')),
-						\ "\n\\%$", '', ''), '')
+		while match(snippet, '\(^\|[^\\]\)`.\{-}[^\\]`') != -1
+			let snippet = substitute(snippet, '\(^\|[^\\]\)\zs`.\{-}[^\\]`\ze',
+		                \ substitute(eval(matchstr(snippet, '\(^\|[^\\]\)`\zs.\{-}[^\\]\ze`')),
+		                \ "\n\\%$", '', ''), '')
 		endw
 		let snippet = substitute(snippet, "\r", "\n", 'g')
+		let snippet = substitute(snippet, '\\`', '`', 'g')
 	endif
 
 	" Place all text after a colon in a tab stop after the tab stop
@@ -430,4 +432,14 @@ fun s:UpdateVars()
 	let s:oldWord = newWord
 	let g:snipPos[s:curPos][2] = newWordLen
 endf
+
+fun! GetSnipsInCurrentScope() 
+	let snips = {} 
+	for scope in [bufnr('%')] + split(&ft, '\.') + ['_'] 
+		call extend(snips, get(s:snippets, scope, {}), 'keep') 
+		call extend(snips, get(s:multi_snips, scope, {}), 'keep') 
+	endfor 
+	return snips 
+endf 
+
 " vim:noet:sw=4:ts=4:ft=vim

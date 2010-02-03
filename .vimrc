@@ -148,8 +148,6 @@ set sol
 "endif
 
 set lsp=1
-
-
 filet plugin indent on
 
 "au BufRead,BufNewFile *.dic setl ft=php
@@ -422,3 +420,5 @@ au BufRead,BufNewFile *.frm setl ft=forth
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let b:dochelpdelay=100
+let g:acp_behaviorSnipmateLength=1
+
