@@ -28,7 +28,7 @@ endif
 
 " Default Colors
 hi Normal guifg=#babdb6 guibg=#000000
-if !has("win32")
+if has("mac")
 	set transp=20
 endif
 "if &background == "dark"
