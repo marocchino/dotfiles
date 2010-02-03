@@ -178,15 +178,16 @@ set bg=dark
 
 
 com -nargs=0 Html :so $VIMRUNTIME/syntax/2html.vim
-
+"let NERDComInsertMap=',.'
 nmap <silent> <Leader>o :NERDTreeToggle<CR>
 nmap <silent> <Leader>O :NERDTree<CR>
 nmap <silent> <Leader>i :BufExplorer<CR>
 nmap <silent> <Leader>a :FufFile app/**/*<CR>
+nmap <silent> <Leader>] :FufTagWithCursorWord<CR>
 "iab xdate <C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
 "iab xtime <C-R>=strftime("%H:%M:%S")<CR>
 "nnoremap <silent> <F6> :BufExplorer<CR>
-" map <c-r> :w<CR>:w<cr>:!g++ -Wall % -o %<<CR>:<CR>:!%<<CR>
+" map <c-r> :w<CRNe>:w<cr>:!g++ -Wall % -o %<<CR>:<CR>:!%<<CR>
 ":browse e
 ":! ruby r
 
