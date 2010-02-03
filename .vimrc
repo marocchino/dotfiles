@@ -179,7 +179,9 @@ set bg=dark
 
 com -nargs=0 Html :so $VIMRUNTIME/syntax/2html.vim
 
-
+nmap <silent> <Leader>o :NERDTree<CR>
+nmap <silent> <Leader>O :NERDTreeToggle<CR>
+nmap <silent> <Leader>i :MiniBufExplorer<CR>
 "iab xdate <C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
 "iab xtime <C-R>=strftime("%H:%M:%S")<CR>
 "nnoremap <silent> <F6> :BufExplorer<CR>
