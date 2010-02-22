@@ -20,13 +20,13 @@ set hi=100
 " 백스페이스 사용
 set bs=indent,eol,start
 fixdel
+imap <DEL> <BS>
 " 인코딩 설정
 " 문서를 읽을 때 BOM 을 자동으로 제거하려면, fencs 맨 앞에 ucs-bom 를 추가하세요.
 "let &tenc=&enc
 "set enc=utf-8
 set fenc=utf-8
 set fencs=utf-8,cp949,cp932,euc-jp,shift-jis,big5,ucs-2le,latin1
-
 
 source $VIMRUNTIME/mswin.vim
 
