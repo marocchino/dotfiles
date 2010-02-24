@@ -21,6 +21,10 @@ set hi=100
 set bs=indent,eol,start
 fixdel
 imap <DEL> <BS>
+nnoremap <silent> <C-H> :wincmd h<CR>
+nnoremap <silent> <C-J> :wincmd j<CR>
+nnoremap <silent> <C-K> :wincmd k<CR>
+nnoremap <silent> <C-L> :wincmd l<CR>
 " 인코딩 설정
 " 문서를 읽을 때 BOM 을 자동으로 제거하려면, fencs 맨 앞에 ucs-bom 를 추가하세요.
 "let &tenc=&enc
