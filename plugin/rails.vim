@@ -321,3 +321,4 @@ augroup END
 
 " }}}1
 " vim:set sw=2 sts=2:
+vim:set noet:

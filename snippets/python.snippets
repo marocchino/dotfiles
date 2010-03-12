@@ -26,9 +26,10 @@ snippet cl
 			${6}
 # New Function
 snippet def
-	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
+	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):#{{{
 		"""${3:docstring for $1}"""
 		${4:pass}
+		#}}}
 snippet deff
 	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
 		${3}

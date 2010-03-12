@@ -26,10 +26,22 @@ snippet case
 snippet when
 	when ${1:condition}
 		${2}
+snippet defd
+	#
+	#=== ${2:method_descreption}
+	#
+	# ${3:Todo}
+	#
+
 snippet def
-	def ${1:method_name}
-		${2}
-	end
+	#
+	#=== ${2:method_descreption}
+	#
+	# ${3:Todo}
+	#
+	def ${1:method_name}# {{{
+		${4}
+	end# }}}
 snippet deft
 	def test_${1:case_name}
 		${2}
@@ -59,7 +71,22 @@ snippet until
 	until ${1:condition}
 		${2}
 	end
+snippet clad doc
+	#
+	#= ${1:`substitute(Filename(), '^.', '\u&', '')`}
+	#
+	#Authors::   Tw Shim <twshim@gameon.co.jp>
+	#Version::   0.1 `strftime("%Y-%m-%d")` twshim
+	#Copyright:: Copyright © 2010 Gameon. All Rights Reserved.
+	#
 snippet cla class .. end
+	#
+	#= ${1:`substitute(Filename(), '^.', '\u&', '')`}
+	#
+	#Authors::   Tw Shim <twshim@gameon.co.jp>
+	#Version::   0.1 
+	#Copyright:: Copyright © 2010 Gameon. All Rights Reserved.
+	#
 	class ${1:`substitute(Filename(), '^.', '\u&', '')`}
 		${2}
 	end

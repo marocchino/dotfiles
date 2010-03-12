@@ -19,8 +19,8 @@ snippet log
 # Class
 snippet objc
 	@interface ${1:`Filename('', 'someClass')`} : ${2:NSObject}
-	{
-	}
+	{/*{{{*/
+	}/*}}}*/
 	@end
 
 	@implementation $1
@@ -29,8 +29,9 @@ snippet objc
 # Class Interface
 snippet int
 	@interface ${1:`Filename('', 'someClass')`} : ${2:NSObject}
-	{${3}
-	}
+	{/*{{{*/
+		${3}
+	}/*}}}*/
 	${4}
 	@end
 # Class Implementation
@@ -45,12 +46,12 @@ snippet pro
 	@end
 snippet init
 	- (id)init
-	{
+	{/*{{{*/
 		if (self = [super init]) {
 			${1}
 		}
 		return self;
-	}
+	}/*}}}*/
 snippet su
 	[super ${1:init}]${2}
 snippet ibo
@@ -71,9 +72,9 @@ snippet cath
 # Method
 snippet m
 	- (${1:id})${2:method}
-	{
+	{/*{{{*/
 		${3}
-	}
+	}/*}}}*/
 # Method declaration
 snippet md
 	- (${1:id})${2:method};${3}
@@ -83,42 +84,42 @@ snippet ibad
 # IBAction method
 snippet iba
 	- (IBAction)${1:method}:(${2:id})sender
-	{
+	{/*{{{*/
 		${3}
-	}
+	}/*}}}*/
 # awakeFromNib method
 snippet wake
 	- (void)awakeFromNib
-	{
+	{/*{{{*/
 		${1}
-	}
+	}/*}}}*/
 # Class Method
 snippet M
 	+ (${1:id})${2:method}
-	{
+	{/*{{{*/
 		${3:return nil;}
-	}
+	}/*}}}*/
 # Sub-method (Call super)
 snippet sm
 	- (${1:id})${2:method}
-	{
+	{/*{{{*/
 		[super $2];${3}
 		return self;
-	}
+	}/*}}}*/
 # Accessor Methods For:
 # Object
 snippet objacc
 	- (${1:id})${2:thing}
-	{
+	{/*{{{*/
 		return $2;
-	}
+	}/*}}}*/
 
 	- (void)set$2:($1)${3:new$2}
-	{
+	{/*{{{*/
 		[$3 retain];
 		[$2 release];
 		$2 = $3;
-	}${4}
+	}/*}}}*/${4}
 # for (object in array)
 snippet forin
 	for (${1:Class} *${2:some$1} in ${3:array}) {
