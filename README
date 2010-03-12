@@ -3,7 +3,7 @@
 alias ^?='stty errase ^?'
 alias screen='~/.vim/screen.sh'
 alias ll='ls -al'
-alias ss='ruby script/server -p 3605 --debugger'
+alias ss='~/.vim/scriptserver.sh'
 alias vi='vim'
 alias fr='find . -type f|grep rb$|xargs grep'
 alias fa='find . -type f|grep asp$|xargs grep'
