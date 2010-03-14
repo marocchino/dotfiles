@@ -228,7 +228,7 @@ nmap <silent> <Leader>] :FufTagWithCursorWord<CR>
 
 
 "nnoremap <silent> <C-F9> :copen<CR>
-nnoremap <silent> <C-R> :w!<CR>:mak<CR>:Run<CR>
+nnoremap <silent> <C-R> :w!<CR>:Run<CR>
 "nnoremap <silent> <F10> :Run<CR>
 "nnoremap <silent> <C-F10> :!insight %<.exe<CR>
 "nnoremap <silent> <C-F1> :cs add D:\Utility\MinGW\include\cscope.out<CR>
