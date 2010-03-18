@@ -19,18 +19,23 @@ set hi=100
 
 " 백스페이스 사용
 set bs=indent,eol,start
-fixdel
+" set backspace=indent,eol,start
+" note that the following rval is made by hitting ctrl-v and then backspace...
+" this remaps backspace to actualy BACKSPACE - not delete
+set t_kb=ctrl-v<DEL>
 imap <DEL> <BS>
 nnoremap <silent> <C-H> :wincmd h<CR>
 nnoremap <silent> <C-J> :wincmd j<CR>
 nnoremap <silent> <C-K> :wincmd k<CR>
 nnoremap <silent> <C-L> :wincmd l<CR>
+fixdel
 " 인코딩 설정
 " 문서를 읽을 때 BOM 을 자동으로 제거하려면, fencs 맨 앞에 ucs-bom 를 추가하세요.
 "let &tenc=&enc
 "set enc=utf-8
 set fenc=utf-8
 set fencs=utf-8,cp949,cp932,euc-jp,shift-jis,big5,ucs-2le,latin1
+
 
 source $VIMRUNTIME/mswin.vim
 
@@ -227,44 +232,53 @@ nmap <silent> <Leader>] :FufTagWithCursorWord<CR>
 "nnoremap <silent> <F7> :TlistSync<CR>
 
 
-nnoremap <silent> <C-F9> :copen<CR>
-nnoremap <silent> <C-R> :w<CR>:Run<CR>
-imap <Nul> <C-n>
+"nnoremap <silent> <C-F9> :copen<CR>
+nnoremap <silent> <C-R> :w!<CR>:Run<CR><CR>
 "nnoremap <silent> <F10> :Run<CR>
 "nnoremap <silent> <C-F10> :!insight %<.exe<CR>
 "nnoremap <silent> <C-F1> :cs add D:\Utility\MinGW\include\cscope.out<CR>
 
 " nnoremap <silent> <C-SPACE> i<C-p>
-"autocmd BufWritePost .vimrc source %
+
+
 au BufRead,BufNewFile *.c,*.cpp
 \ if !filereadable("Makefile") |
 \ set makeprg=g++\ %\ -g\ -o\ %< |
 \ endif |
-\ com! -nargs=* -complete=file Run !%< <args>
+\ com! -nargs=* -complete=file Run !screen  -p 3 -X stuff "%<"
 
 au BufRead,BufNewFile *.lua
 \ if !filereadable("Makefile") |
 \ set makeprg=luac\ -o\ %<.lub\ %\ |
 \ endif |
-\ com! -nargs=* -complete=file Run !lua %<.lub
+\ com! -nargs=* -complete=file Run !screen  -p 3 -X stuff "lua %<"
 
 au BufRead,BufNewFile *.scala
 \ if !filereadable("Makefile") |
 \ set makeprg=scalac\ %<.scala |
 \ endif |
-\ com! -nargs=* -complete=file Run !scala %<
+\ com! -nargs=* -complete=file Run !screen  -p 3 -X stuff "scala %<"
 
 au BufRead,BufNewFile *.rb
 \ set makeprg= |
-\ com! -nargs=* -complete=file Run !ruby %<.rb
+\ com! -nargs=* -complete=file Run !screen  -p 3 -X stuff "ruby %"
+"au BufRead,BufNewFile *.rake
+"\ set makeprg= |
+"\ com! -nargs=* -complete=file Run !rake <cfile>
+
+au BufRead,BufNewFile *.erb
+\ set makeprg= |
+\ com! -nargs=* -complete=file Run !erb %
+\ com! -nargs=* -complete=file Run !screen  -p 3 -X stuff "scala %<"
 
 au BufRead,BufNewFile *.py
 \ set makeprg= |
-\ com! -nargs=* -complete=file Run !python %<.py
+\ com! -nargs=* -complete=file Run !screen  -p 3 -X stuff "python %"
 
 au BufRead,BufNewFile *.scm
 \ set makeprg= |
-\ com! -nargs=* -complete=file Run !mzscheme -f %<.scm
+\ com! -nargs=* -complete=file Run !mzscheme -f %
+\ com! -nargs=* -complete=file Run !screen  -p 3 -X stuff "mzschme %"
 
 " ============================================================================= 
 " stops the console window from flashing up on the screen 
@@ -421,12 +435,11 @@ let g:miniBufExplModSelTarget = 1
 
 au BufRead,BufNewFile *.f setl ft=forth
 au BufRead,BufNewFile *.frm setl ft=forth
-\
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " End of File
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let b:dochelpdelay=100
-let g:acp_behaviorSnipmateLength=0
+"let g:acp_behaviorSnipmateLength=1
 
