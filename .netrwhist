@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/home/marocchino/Desktop'
 let g:netrw_dirhist_2='/home/marocchino/vimrc'
 let g:netrw_dirhist_3='/home/marocchino'
@@ -7,3 +7,4 @@ let g:netrw_dirhist_4='/home/marocchino/Documents/project/1.8.7/rails/spec-sampl
 let g:netrw_dirhist_5='/home/marocchino/Documents/project/1.8.7/rails/repo'
 let g:netrw_dirhist_6='/home/marocchino/Documents/project/1.8.7/rails/spec-sample'
 let g:netrw_dirhist_7='/home/marocchino/Documents/project/1.8.7/rails/repo/code'
+let g:netrw_dirhist_8='/home/marocchino/vimrc/autoload'
