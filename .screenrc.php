@@ -22,7 +22,7 @@ pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
 
 # make the shell in every window a login shell
 #shell -$SHELL
-shell bash
+shell zsh
 # autoaka testing
 # shellaka '> |tcsh'
 # shellaka '$ |sh'

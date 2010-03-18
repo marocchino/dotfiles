@@ -20,6 +20,26 @@ source $ZSH/oh-my-zsh.sh
 export GAEJ_HOME=~/Library/appengine-java-sdk-1.3.0
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH:/usr/local/MzScheme\ v4.2.2/bin:~/Library/flex_sdk_3.4/bin:~/Library/android-sdk-mac/tools:$GAEJ_HOME/bin:/opt/local/share/java/jruby/lib/ruby/gems/1.8/bin
 
-if [[ -s /Users/marocchino/.rvm/scripts/rvm ]] ; then source /Users/marocchino/.rvm/scripts/rvm ; fi
+if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
+chpwd_check_rvm() {
+    current_version=$(rvm info | grep " version:" | grep "1\." | cut -d '"' -f2 | cut -d 'p' -f1)
+    dir=$(pwd)
+    while [ "${dir}" != "" ]; do
+        cfg="${dir}/.rvminfo"
+
+        if [ -f ${cfg} ]; then
+            want_version=$(cat ${cfg})
+            if [ "${want_version}" != "${current_version}" ]; then
+                 rvm use ${want_version}
+            fi
+            break
+        else
+
+            dir=${dir%/*}
+        fi
+    done
+}
+chpwd_functions=( chpwd_check_rvm chpwd )
+
 
 #export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:/usr/local/MzScheme v4.2.2/bin:/Users/marocchino/Library/flex_sdk_3.4/bin:/Users/marocchino/Library/android-sdk-mac/tools:/Users/marocchino/Library/appengine-java-sdk-1.3.0/bin:/opt/local/share/java/jruby/lib/ruby/gems/1.8/bin
