@@ -1,2 +1,76 @@
-snippet req
-	require "${1}"${2}
+snippet ko
+	# language: ko
+
+snippet ja
+	# language: ja
+
+snippet fo
+	@focus
+
+snippet sce
+	Scenario: ${1}
+		Given ${2}
+		When ${3}
+		Then ${4}
+
+snippet シナ
+	シナリオ: ${1}
+		前提 ${2}
+		もし ${3}
+		ならば ${4}
+
+snippet 시나
+	시나리오: ${1}
+		먼저 ${2}
+		만일 ${3}
+		그러면 ${4}
+
+snippet sceo
+	Scenario Outline: ${1}
+		Given ${2}
+		When ${3}
+		Then ${4}
+		
+		Examples:${5}
+			| name |
+			| ${6} |
+
+snippet 개요
+	시나리오 개요: ${1}
+		먼저 ${2}
+		만일 ${3}
+		그러면 ${4}
+		
+		예:${5}
+			| 이름 |
+			| ${6} |
+
+snippet シナア
+	シナリオアウトライン: ${1}
+		前提 ${2}
+		もし ${3}
+		ならば ${4}
+		
+		例:${5}
+			| name |
+			| ${6} |
+
+
+snippet fea
+	Feature: ${1}
+		In order ${2}
+		As a ${3}
+		I want ${4}
+
+snippet フィ
+	フィーチャ:
+		ために
+		として
+		できること
+
+snippet 기능
+	기능:
+		을 위해서
+		로써
+		할것
+
