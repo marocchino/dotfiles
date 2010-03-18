@@ -227,15 +227,15 @@ nmap <silent> <Leader>] :FufTagWithCursorWord<CR>
 "nnoremap <silent> <F7> :TlistSync<CR>
 
 
-"nnoremap <silent> <C-F9> :copen<CR>
-nnoremap <silent> <C-R> :w!<CR>:Run<CR>
+nnoremap <silent> <C-F9> :copen<CR>
+nnoremap <silent> <C-R> :w<CR>:Run<CR>
+imap <Nul> <C-n>
 "nnoremap <silent> <F10> :Run<CR>
 "nnoremap <silent> <C-F10> :!insight %<.exe<CR>
 "nnoremap <silent> <C-F1> :cs add D:\Utility\MinGW\include\cscope.out<CR>
 
 " nnoremap <silent> <C-SPACE> i<C-p>
-
-
+"autocmd BufWritePost .vimrc source %
 au BufRead,BufNewFile *.c,*.cpp
 \ if !filereadable("Makefile") |
 \ set makeprg=g++\ %\ -g\ -o\ %< |
