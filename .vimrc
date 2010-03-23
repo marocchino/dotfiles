@@ -354,11 +354,15 @@ endf
 fu! ToggleSpell()
     let &l:spell = 1 - &l:spell
 endf
+
+
 map \n :call ToggleNu()<CR>
 map \l :call ToggleList()<CR>
 map \p :call TogglePaste()<CR>
 map \s :call ToggleSpell()<CR>
-
+" camelize methods
+map <silent>\c mmviw:s/\(\l\)\(\u\)/\L\1_\2\E/g<CR>`mviw:s/\(\h\)\(\h\+\)/\L\1\E\2/g<CR>
+map <silent>\C mmviw:s/_\(\l\)/\U\1/g<CR>`mviw:s/\(\h\)\(\h\+\)/\U\1\E\2/g<CR>
 
 
 ab fucntion function

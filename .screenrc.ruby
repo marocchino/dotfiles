@@ -22,7 +22,7 @@ pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
 
 # make the shell in every window a login shell
 #shell -$SHELL
-shell bash
+shell zsh
 # autoaka testing
 # shellaka '> |tcsh'
 # shellaka '$ |sh'
@@ -43,8 +43,8 @@ defscrollback 5000
 #xterm understands both im/ic and doesn't have a status line.
 #Note: Do not specify im and ic in the real termcap/info file as
 #some programs (e.g. vi) will not work anymore.
-termcap  xterm hs@:cs=\E[%i%d;%dr:im=\E[4h:ei=\E[4l
-terminfo xterm hs@:cs=\E[%i%p1%d;%p2%dr:im=\E[4h:ei=\E[4l
+#termcap  xterm hs@:cs=\E[%i%d;%dr:im=\E[4h:ei=\E[4l
+#terminfo xterm hs@:cs=\E[%i%p1%d;%p2%dr:im=\E[4h:ei=\E[4l
 
 #80/132 column switching must be enabled for ^AW to work
 #change init sequence to not switch width
