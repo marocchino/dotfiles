@@ -37,11 +37,6 @@ snippet tt
 	<tt>${1}</tt>
 
 snippet def
-	#
-	#=== ${2:method_descreption}
-	#
-	# ${3:Todo}
-	#
 	def ${1:method_name}# {{{
 		${4}
 	end# }}}
@@ -196,8 +191,8 @@ snippet defmm
 	def method_missing(meth, *args, &blk)
 		${1}
 	end
-snippet defd
-	def_delegator :${1:@del_obj}, :${2:del_meth}, :${3:new_name}
+# snippet defd
+#  def_delegator :${1:@del_obj}, :${2:del_meth}, :${3:new_name}
 snippet defds
 	def_delegators :${1:@del_obj}, :${2:del_methods}
 snippet am
