@@ -139,8 +139,6 @@ ab erturn return
 
 set loadplugins
 
-set fileformats=mac,unix,dos
-
 set tags=./tags
 
 set scrolloff=8
