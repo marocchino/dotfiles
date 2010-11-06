@@ -51,7 +51,9 @@ colorscheme rdark
 nmap <silent> <Leader>o :NERDTreeToggle<CR>
 nmap <silent> <Leader>i :BufExplorer<CR>
 nmap <silent> <Leader>] :FufTagWithCursorWord<CR>
-
+" Edit routes
+command! Rroutes :Redit config/routes.rb
+command! RTroutes :RTedit config/routes.rb"
 nnoremap <silent> <C-R> :w!<CR>:Run<CR><CR>
 
 autocmd BufRead,BufNewFile *.c,*.cpp
@@ -144,5 +146,8 @@ set tags=./tags
 set scrolloff=8
 
 
-
-
+" default grep option
+let Grep_Default_Filelist = '*.rb *.erb *.js'
+let Grep_Default_Options = '-i' 
+let Grep_Skip_Dirs = 'tmp log .svn'
+let Grep_Skip_Files = '*.bak *~ *.tmp' 
