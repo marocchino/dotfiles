@@ -51,7 +51,9 @@ colorscheme rdark
 nmap <silent> <Leader>o :NERDTreeToggle<CR>
 nmap <silent> <Leader>i :BufExplorer<CR>
 nmap <silent> <Leader>] :FufTagWithCursorWord<CR>
-
+" Edit routes
+command! Rroutes :Redit config/routes.rb
+command! RTroutes :RTedit config/routes.rb"
 nnoremap <silent> <C-R> :w!<CR>:Run<CR><CR>
 
 autocmd BufRead,BufNewFile *.c,*.cpp
