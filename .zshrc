@@ -16,7 +16,7 @@ export ZSH_THEME="wezm"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby rails)
+plugins=(git github osx ruby rails brew gem)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -44,6 +44,6 @@ chpwd_check_rvm() {
     done
 }
 chpwd_functions=( chpwd_check_rvm chpwd )
-
+rvm 1.9.2
 
 #export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:/usr/local/MzScheme v4.2.2/bin:/Users/marocchino/Library/flex_sdk_3.4/bin:/Users/marocchino/Library/android-sdk-mac/tools:/Users/marocchino/Library/appengine-java-sdk-1.3.0/bin:/opt/local/share/java/jruby/lib/ruby/gems/1.8/bin
