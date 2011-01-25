@@ -46,7 +46,7 @@ autocmd BufRead,BufNewFile *_spec.rb setlocal filetype=rspec
 autocmd BufRead,BufNewFile *.jsp setlocal cindent
 syntax enable
 
-colorscheme pyte
+colorscheme newspaper
 
 nmap <silent> <Leader>o :NERDTreeToggle<CR>
 nmap <silent> <Leader>i :BufExplorer<CR>
