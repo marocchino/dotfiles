@@ -5,6 +5,11 @@ set nocompatible
 " for history
 set history=10000
 
+
+" for terminal
+set term=cons25
+
+
 "
 set bs=indent,eol,start
 
@@ -29,7 +34,8 @@ set tabstop=2
 set shiftwidth=2
 
 " not use number of space to insert a Tab
-set noexpandtab
+set expandtab
+retab
 
 set wrap
 " for regexp like movement
@@ -46,7 +52,7 @@ autocmd BufRead,BufNewFile *_spec.rb setlocal filetype=rspec
 autocmd BufRead,BufNewFile *.jsp setlocal cindent
 syntax enable
 
-colorscheme newspaper
+"colorscheme pyte
 
 nmap <silent> <Leader>o :NERDTreeToggle<CR>
 nmap <silent> <Leader>i :BufExplorer<CR>
