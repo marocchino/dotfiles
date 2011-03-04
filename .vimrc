@@ -28,6 +28,7 @@ set number
 " Set encoding
 set fenc=utf-8
 set fencs=utf-8,cp949,cp932,euc-jp,shift-jis,big5,ucs-2le,latin1
+set shell=zsh
 
 " tab select
 set tabstop=2
@@ -157,3 +158,4 @@ let Grep_Default_Filelist = '*.rb *.erb *.js'
 let Grep_Default_Options = '-i' 
 let Grep_Skip_Dirs = 'tmp log .svn'
 let Grep_Skip_Files = '*.bak *~ *.tmp' 
+let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp,.svn,.git*,*.gif,*.jpg,*.png"
