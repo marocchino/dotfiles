@@ -23,6 +23,9 @@ nnoremap <silent> <C-L> :wincmd l<CR>
 " Show (partial) command in the last line of the screen.
 set showcmd
 
+" allow buffer change in unsaved file
+set hidden
+
 " Show line number
 set number
 
@@ -32,33 +35,61 @@ set fencs=utf-8,cp949,cp932,euc-jp,shift-jis,big5,ucs-2le,latin1
 set shell=zsh
 
 " tab select
-set tabstop=2
-set shiftwidth=2
+set tabstop=2 sts=2 shiftwidth=2 expandtab
 
 " not use number of space to insert a Tab
-set expandtab
 retab
 
 set wrap
 " for regexp like movement
 set magic
 
-" vimrc on fly
 if has("autocmd")
+  " vimrc on fly
   autocmd bufwritepost .vimrc source $MYVIMRC
+
+  " last modify location save
+  autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "norm g`\"" |
+  \ endif
+
+  autocmd BufRead,BufNewFile *.c,*.cpp
+  \ if !filereadable("Makefile") |
+  \ set makeprg=g++\ %\ -g\ -o\ %< |
+  \ endif |
+  \ command! -nargs=* -complete=file Run !screen  -p 3 -X stuff "%<"
+
+  autocmd BufRead,BufNewFile *.lua
+  \ if !filereadable("Makefile") |
+  \ set makeprg=luac\ -o\ %<.lub\ %\ |
+  \ endif |
+  \ command! -nargs=* -complete=file Run !screen  -p 3 -X stuff "lua %<"
+
+  autocmd BufRead,BufNewFile *.scala
+  \ if !filereadable("Makefile") |
+  \ set makeprg=scalac\ %<.scala |
+  \ endif |
+  \ command! -nargs=* -complete=file Run !screen  -p 3 -X stuff "scala %<"
+
+  autocmd BufRead,BufNewFile *.rb
+  \ command! -nargs=* -complete=file Run !screen  -p 3 -X stuff "ruby %"
+
+  autocmd BufRead,BufNewFile *.py
+  \ set makeprg= |
+  \ command! -nargs=* -complete=file Run !screen  -p 3 -X stuff "python %"
+
+  autocmd BufRead,BufNewFile *.scm
+  \ set makeprg= |
+  \ command! -nargs=* -complete=file Run !screen  -p 3 -X stuff "mzschme %"
+
+  nnoremap <silent> <D-R> :w!<CR>:Run<CR><CR>
 endif
 
-" last modify location save
-au BufReadPost *
-\ if line("'\"") > 0 && line("'\"") <= line("$") |
-\   exe "norm g`\"" |
-\ endif
-
 filetype plugin indent on
-autocmd BufRead,BufNewFile *_spec.rb setlocal filetype=rspec
+filetype plugin on
 syntax enable
 
-"colorscheme pyte
 
 nmap <silent> <Leader>o :NERDTreeToggle<CR>
 nmap <silent> <Leader>i :BufExplorer<CR>
@@ -66,39 +97,12 @@ nmap <silent> <Leader>] :FufTagWithCursorWord<CR>
 " Edit routes
 command! Rroutes :Redit config/routes.rb
 command! RTroutes :RTedit config/routes.rb"
-nnoremap <silent> <C-R> :w!<CR>:Run<CR><CR>
 
-autocmd BufRead,BufNewFile *.c,*.cpp
-\ if !filereadable("Makefile") |
-\ set makeprg=g++\ %\ -g\ -o\ %< |
-\ endif |
-\ command! -nargs=* -complete=file Run !screen  -p 3 -X stuff "%<"
-
-autocmd BufRead,BufNewFile *.lua
-\ if !filereadable("Makefile") |
-\ set makeprg=luac\ -o\ %<.lub\ %\ |
-\ endif |
-\ command! -nargs=* -complete=file Run !screen  -p 3 -X stuff "lua %<"
-
-autocmd BufRead,BufNewFile *.scala
-\ if !filereadable("Makefile") |
-\ set makeprg=scalac\ %<.scala |
-\ endif |
-\ command! -nargs=* -complete=file Run !screen  -p 3 -X stuff "scala %<"
-
-autocmd BufRead,BufNewFile *.rb
-\ command! -nargs=* -complete=file Run !screen  -p 3 -X stuff "ruby %"
-
-autocmd BufRead,BufNewFile *.py
-\ set makeprg= |
-\ command! -nargs=* -complete=file Run !screen  -p 3 -X stuff "python %"
-
-autocmd BufRead,BufNewFile *.scm
-\ set makeprg= |
-\ command! -nargs=* -complete=file Run !screen  -p 3 -X stuff "mzschme %"
 
 if has("gui_running")
   set mouse=a
+  colorscheme pyte
+  map <D-/> \ci
 endif
 
 set wildmenu
@@ -116,7 +120,8 @@ map \l :call ToggleList()<CR>
 map \s :call ToggleSpell()<CR>
 map <silent>\c mmviw:s/\(\l\)\(\u\)/\L\1_\2\E/g<CR>`mviw:s/\(\h\)\(\h\+\)/\L\1\E\2/g<CR>
 map <silent>\C mmviw:s/_\(\l\)/\U\1/g<CR>`mviw:s/\(\h\)\(\h\+\)/\U\1\E\2/g<CR>
-
+map ,. \cc
+map ., \cu
 
 ab fucntion function
 ab calss class
