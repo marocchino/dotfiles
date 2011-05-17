@@ -42,6 +42,12 @@ retab
 set wrap
 " for regexp like movement
 set magic
+
+" vimrc on fly
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+
 " last modify location save
 au BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -92,7 +98,7 @@ autocmd BufRead,BufNewFile *.scm
 \ command! -nargs=* -complete=file Run !screen  -p 3 -X stuff "mzschme %"
 
 if has("gui_running")
-	set mouse=a
+  set mouse=a
 endif
 
 set wildmenu
