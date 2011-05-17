@@ -1,4 +1,5 @@
 call pathogen#runtime_append_all_bundles()
+
 "　交換性を無くす。
 set nocompatible
 
@@ -48,9 +49,7 @@ au BufReadPost *
 \ endif
 
 filetype plugin indent on
-autocmd BufRead,BufNewFile *.scala setlocal filetype=scala
 autocmd BufRead,BufNewFile *_spec.rb setlocal filetype=rspec
-autocmd BufRead,BufNewFile *.jsp setlocal cindent
 syntax enable
 
 "colorscheme pyte
