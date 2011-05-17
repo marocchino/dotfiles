@@ -7,7 +7,7 @@ set history=10000
 
 
 " for terminal
-set term=cons25
+"set term=cons25
 
 
 "
