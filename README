@@ -1,10 +1,10 @@
-#배쉬프로파일에 넣어두세요.
+rails.vim
 
-alias ^?='stty errase ^?'
-alias screen='~/.vim/screen.sh'
-alias ll='ls -al'
-alias ss='~/.vim/scriptserver.sh'
-alias vi='vim'
-alias fr='find . -type f|grep rb$|xargs grep'
-alias fa='find . -type f|grep asp$|xargs grep'
+To install, simply copy autoload/rails.vim, plugin/rails.vim, and
+doc/rails.txt to the appropriate directories in ~/.vim.  Alternatively,
+`rake install` may be used.
 
+See doc/rails.txt for documentation.
+
+Copyright Tim Pope. This plugin is licensed under the same terms as Vim
+itself.  No warranties, expressed or implied.
