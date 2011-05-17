@@ -6,11 +6,41 @@ set nocompatible
 " for history
 set history=10000
 
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%#ErrorMsg#%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%=%-16(\ %l,%c-%v\ %)%P
 
-" for terminal
-"set term=cons25
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
 
 
+set ttimeoutlen=50  " Make Esc work faster
+
+
+if has("mac")
+  silent! set nomacatsui
+else
+  if has("win32")
+  else
+    " for terminal
+    set term=cons25
+  endif
+  set lazyredraw
+endif
+
+if has("eval")
+  let &highlight = substitute(&highlight,'NonText','SpecialKey','g')
+endif
+
+set incsearch hlsearch
 "
 set bs=indent,eol,start
 
@@ -88,8 +118,6 @@ endif
 
 filetype plugin indent on
 filetype plugin on
-syntax enable
-
 
 nmap <silent> <Leader>o :NERDTreeToggle<CR>
 nmap <silent> <Leader>i :BufExplorer<CR>
@@ -101,10 +129,51 @@ command! RTroutes :RTedit config/routes.rb"
 
 if has("gui_running")
   set mouse=a
-  colorscheme pyte
-  map <D-/> \ci
-else
-  colorscheme rdark
+endif
+
+if (&t_Co > 2 || has("gui_running")) && has("syntax")
+  function! s:initialize_font()
+    if exists("&guifont")
+      if has("mac")
+        set guifont=Monaco:h12
+      elseif has("unix")
+        if &guifont == ""
+          set guifont=bitstream\ vera\ sans\ mono\ 11
+        endif
+      elseif has("win32")
+        set guifont=Consolas:h11,Courier\ New:h10
+      endif
+    endif
+  endfunction
+  command! -bar -nargs=0 Bigger  :let &guifont = substitute(&guifont,'\d\+$','\=submatch(0)+1','')
+  command! -bar -nargs=0 Smaller :let &guifont = substitute(&guifont,'\d\+$','\=submatch(0)-1','')
+  noremap <M-,>        :Smaller<CR>
+  noremap <M-.>        :Bigger<CR>
+
+  if exists("syntax_on") || exists("syntax_manual")
+  else
+    syntax on
+  endif
+  if !exists('g:colors_name')
+    if filereadable(expand("~/.vim/colors/pyte.vim"))
+      colorscheme pyte
+    elseif filereadable(expand("~/.vim/colors/rdark.vim"))
+      colorscheme rdark
+    endif
+  endif
+
+  augroup RCVisual
+    autocmd!
+
+    autocmd VimEnter *  if !has("gui_running") | set background=dark notitle noicon | endif
+    autocmd GUIEnter *  set background=light title icon cmdheight=2 lines=25 columns=80 guioptions-=T
+    autocmd GUIEnter *  if has("diff") && &diff | set columns=165 | endif
+    autocmd GUIEnter *  colorscheme pyte
+    autocmd GUIEnter *  call s:initialize_font()
+    autocmd GUIEnter *  let $GIT_EDITOR = 'false'
+    autocmd Syntax css  syn sync minlines=50
+    autocmd Syntax csh  hi link cshBckQuote Special | hi link cshExtVar PreProc | hi link cshSubst PreProc | hi link cshSetVariables Identifier
+  augroup END
 endif
 
 set wildmenu
@@ -163,3 +232,19 @@ set loadplugins
 set tags=./tags
 
 set scrolloff=8
+
+let g:ruby_minlines = 500
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_rails = 1
+let g:NERDCreateDefaultMappings = 0
+let g:NERDSpaceDelims = 1
+let g:NERDShutUp = 1
+let g:NERDTreeHijackNetrw = 0
+let g:ragtag_global_maps = 1
+let g:surround_{char2nr('-')} = "<% \r %>"
+let g:surround_{char2nr('=')} = "<%= \r %>"
+let g:surround_{char2nr('8')} = "/* \r */"
+let g:surround_{char2nr('s')} = " \r"
+let g:surround_{char2nr('^')} = "/^\r$/"
+let g:surround_indent = 1
+
