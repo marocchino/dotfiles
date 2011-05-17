@@ -103,6 +103,8 @@ if has("gui_running")
   set mouse=a
   colorscheme pyte
   map <D-/> \ci
+else
+  colorscheme rdark
 endif
 
 set wildmenu
