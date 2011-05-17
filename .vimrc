@@ -1,4 +1,4 @@
-
+call pathogen#runtime_append_all_bundles()
 "　交換性を無くす。
 set nocompatible
 
@@ -40,7 +40,7 @@ retab
 
 set wrap
 " for regexp like movement
-set magic 
+set magic
 " last modify location save
 au BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -155,7 +155,7 @@ set scrolloff=8
 
 " default grep option
 let Grep_Default_Filelist = '*.rb *.erb *.js'
-let Grep_Default_Options = '-i' 
+let Grep_Default_Options = '-i'
 let Grep_Skip_Dirs = 'tmp log .svn'
-let Grep_Skip_Files = '*.bak *~ *.tmp' 
+let Grep_Skip_Files = '*.bak *~ *.tmp'
 let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp,.svn,.git*,*.gif,*.jpg,*.png"
