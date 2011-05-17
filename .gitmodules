@@ -40,3 +40,9 @@
 [submodule "bundle/ctags.vim"]
 	path = bundle/ctags.vim
 	url = git://github.com/vim-scripts/ctags.vim.git
+[submodule "bundle/ruby-matchit"]
+	path = bundle/ruby-matchit
+	url = https://github.com/vim-scripts/ruby-matchit.git
+[submodule "bundle/vim-autoclose"]
+	path = bundle/vim-autoclose
+	url = https://github.com/Townk/vim-autoclose.git
