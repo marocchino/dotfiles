@@ -151,11 +151,3 @@ set loadplugins
 set tags=./tags
 
 set scrolloff=8
-
-
-" default grep option
-let Grep_Default_Filelist = '*.rb *.erb *.js'
-let Grep_Default_Options = '-i'
-let Grep_Skip_Dirs = 'tmp log .svn'
-let Grep_Skip_Files = '*.bak *~ *.tmp'
-let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp,.svn,.git*,*.gif,*.jpg,*.png"
