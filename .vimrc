@@ -25,19 +25,12 @@ endfunction
 set ttimeoutlen=50  " Make Esc work faster
 
 
-if has("mac")
-  silent! set nomacatsui
-else
-  if has("win32")
-  else
+if !has("mac")
+  if !has("win32")
     " for terminal
     set term=cons25
   endif
   set lazyredraw
-endif
-
-if has("eval")
-  let &highlight = substitute(&highlight,'NonText','SpecialKey','g')
 endif
 
 set incsearch hlsearch
@@ -170,7 +163,6 @@ if (&t_Co > 2 || has("gui_running")) && has("syntax")
     autocmd GUIEnter *  if has("diff") && &diff | set columns=165 | endif
     autocmd GUIEnter *  colorscheme pyte
     autocmd GUIEnter *  call s:initialize_font()
-    autocmd GUIEnter *  let $GIT_EDITOR = 'false'
     autocmd Syntax css  syn sync minlines=50
     autocmd Syntax csh  hi link cshBckQuote Special | hi link cshExtVar PreProc | hi link cshSubst PreProc | hi link cshSetVariables Identifier
   augroup END
@@ -189,11 +181,11 @@ endf
 map \n :call ToggleNu()<CR>
 map \l :call ToggleList()<CR>
 map \s :call ToggleSpell()<CR>
-map <silent>\c mmviw:s/\(\l\)\(\u\)/\L\1_\2\E/g<CR>`mviw:s/\(\h\)\(\h\+\)/\L\1\E\2/g<CR>
-map <silent>\C mmviw:s/_\(\l\)/\U\1/g<CR>`mviw:s/\(\h\)\(\h\+\)/\U\1\E\2/g<CR>
 map ,. \cc
 map ., \cu
-
+if has("mac")
+  map <D-/> <leader>c<space>
+endif
 ab fucntion function
 ab calss class
 ab functio function
@@ -213,15 +205,12 @@ ab quewrty query
 ab ovject object
 ab objectr object
 ab evho echo
-ab printr print_r
 ab prit print
 ab fales false
 ab flase false
 ab treu true
 ab teur true
 ab ture true
-ab nulll null
-ab nuii null
 ab retrun return
 ab retunr return
 ab htis this
@@ -236,10 +225,6 @@ set scrolloff=8
 let g:ruby_minlines = 500
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_rails = 1
-let g:NERDCreateDefaultMappings = 0
-let g:NERDSpaceDelims = 1
-let g:NERDShutUp = 1
-let g:NERDTreeHijackNetrw = 0
 let g:ragtag_global_maps = 1
 let g:surround_{char2nr('-')} = "<% \r %>"
 let g:surround_{char2nr('=')} = "<%= \r %>"
