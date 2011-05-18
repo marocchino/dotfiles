@@ -43,8 +43,6 @@ nnoremap <silent> <C-J> :wincmd j<CR>
 nnoremap <silent> <C-K> :wincmd k<CR>
 nnoremap <silent> <C-L> :wincmd l<CR>
 
-" Show (partial) command in the last line of the screen.
-set showcmd
 
 " allow buffer change in unsaved file
 set hidden
@@ -60,8 +58,6 @@ set shell=zsh
 " tab select
 set tabstop=2 sts=2 shiftwidth=2 expandtab
 
-" not use number of space to insert a Tab
-retab
 
 set wrap
 " for regexp like movement
@@ -124,7 +120,9 @@ if has("gui_running")
   set mouse=a
 endif
 
-if (&t_Co > 2 || has("gui_running")) && has("syntax")
+if has("gui_running") && has("syntax")
+  " Show (partial) command in the last line of the screen.
+  set showcmd
   function! s:initialize_font()
     if exists("&guifont")
       if has("mac")
@@ -166,17 +164,21 @@ if (&t_Co > 2 || has("gui_running")) && has("syntax")
     autocmd Syntax css  syn sync minlines=50
     autocmd Syntax csh  hi link cshBckQuote Special | hi link cshExtVar PreProc | hi link cshSubst PreProc | hi link cshSetVariables Identifier
   augroup END
+else
+  syntax on
+  autocmd VimEnter *  if !has("gui_running") | set background=dark notitle noicon | endif
+  colorscheme pyte
 endif
 
 set wildmenu
 function! ToggleNu()
-    let &nu = 1 - &nu
+  let &nu = 1 - &nu
 endf
 function! ToggleList()
-    let &list = 1 - &list
+  let &list = 1 - &list
 endf
 function! ToggleSpell()
-    let &l:spell = 1 - &l:spell
+  let &l:spell = 1 - &l:spell
 endf
 map \n :call ToggleNu()<CR>
 map \l :call ToggleList()<CR>
