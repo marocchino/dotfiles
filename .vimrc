@@ -24,14 +24,8 @@ endfunction
 
 set ttimeoutlen=50  " Make Esc work faster
 
-
-if !has("mac")
-  if !has("win32")
-    " for terminal
-    set term=cons25
-  endif
-  set lazyredraw
-endif
+" for putty
+"set term=cons25
 
 set incsearch hlsearch
 "
