@@ -1,4 +1,5 @@
 call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 
 "　交換性を無くす。
 set nocompatible
