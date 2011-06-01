@@ -61,3 +61,6 @@
 [submodule "bundle/vim-coffee-script"]
 	path = bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/apidock.vim"]
+	path = bundle/apidock.vim
+	url = git@github.com:marocchino/apidock.vim.git

@@ -16,14 +16,13 @@ export ZSH_THEME="wezm"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github osx ruby rails3 brew gem)
+plugins=(git github osx ruby rails3 brew gem node npm)
 
 source $ZSH/oh-my-zsh.sh
 export TERM=linux
 
 # Customize to your needs...
-export GAEJ_HOME=~/Library/appengine-java-sdk-1.3.0
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH:/usr/local/MzScheme\ v4.2.2/bin:~/Library/flex_sdk_3.4/bin:~/Library/android-sdk-mac/tools:$GAEJ_HOME/bin:/opt/local/share/java/jruby/lib/ruby/gems/1.8/bin
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 chpwd_check_rvm() {
@@ -45,6 +44,6 @@ chpwd_check_rvm() {
     done
 }
 chpwd_functions=( chpwd_check_rvm chpwd )
-rvm 1.9.2
-
-#export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:/usr/local/MzScheme v4.2.2/bin:/Users/marocchino/Library/flex_sdk_3.4/bin:/Users/marocchino/Library/android-sdk-mac/tools:/Users/marocchino/Library/appengine-java-sdk-1.3.0/bin:/opt/local/share/java/jruby/lib/ruby/gems/1.8/bin
+export GREP_OPTIONS=
+alias gup="ssh dev-2 \"cd dev-2/iadmin;git up\";rsync  -avlz -e ssh dev-2:dev-2/iadmin/ ~/dev-2/iadmin"
+alias gdc="ssh dev-2 \"cd dev-2/iadmin;git svn dcommit\";rsync  -avlz -e ssh dev-2:dev-2/iadmin/ ~/dev-2/iadmin"
