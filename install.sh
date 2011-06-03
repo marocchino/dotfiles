@@ -14,4 +14,5 @@ brew install node
 curl http://npmjs.org/install.sh | sh
 
 # install etc
-brew install mvim zsh
+brew install macvim zsh
+npm install -g coffee-script

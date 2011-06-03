@@ -53,6 +53,8 @@ set shell=zsh
 " tab select
 set tabstop=2 sts=2 shiftwidth=2 expandtab
 
+autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :retab
 
 set wrap
 " for regexp like movement
