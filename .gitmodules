@@ -61,3 +61,6 @@
 [submodule "bundle/apidock.vim"]
   path = bundle/apidock.vim
   url = git@github.com:marocchino/apidock.vim.git
+[submodule "snippets"]
+	path = snippets
+	url = https://github.com/akitaonrails/snipmate-snippets.git
