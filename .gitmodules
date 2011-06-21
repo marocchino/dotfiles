@@ -23,44 +23,41 @@
   path = bundle/vim-surround
   url  = https://github.com/tpope/vim-surround.git
 [submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
+  path = bundle/nerdtree
+  url = https://github.com/scrooloose/nerdtree.git
 [submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
+  path = bundle/nerdcommenter
+  url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "bundle/bufexplorer.zip"]
-	path = bundle/bufexplorer.zip
-	url = https://github.com/vim-scripts/bufexplorer.zip.git
+  path = bundle/bufexplorer.zip
+  url = https://github.com/vim-scripts/bufexplorer.zip.git
 [submodule "bundle/gist.vim"]
-	path = bundle/gist.vim
-	url = https://github.com/vim-scripts/Gist.vim.git
+  path = bundle/gist.vim
+  url = https://github.com/vim-scripts/Gist.vim.git
 [submodule "bundle/tailtab.vim"]
-	path = bundle/tailtab.vim
-	url = git://github.com/vim-scripts/tailtab.vim.git
+  path = bundle/tailtab.vim
+  url = git://github.com/vim-scripts/tailtab.vim.git
 [submodule "bundle/ctags.vim"]
-	path = bundle/ctags.vim
-	url = git://github.com/vim-scripts/ctags.vim.git
+  path = bundle/ctags.vim
+  url = git://github.com/vim-scripts/ctags.vim.git
 [submodule "bundle/ruby-matchit"]
-	path = bundle/ruby-matchit
-	url = https://github.com/vim-scripts/ruby-matchit.git
+  path = bundle/ruby-matchit
+  url = https://github.com/vim-scripts/ruby-matchit.git
 [submodule "bundle/vim-autoclose"]
-	path = bundle/vim-autoclose
-	url = https://github.com/Townk/vim-autoclose.git
+  path = bundle/vim-autoclose
+  url = https://github.com/Townk/vim-autoclose.git
 [submodule "bundle/vim-ragtag"]
-	path = bundle/vim-ragtag
-	url = https://github.com/tpope/vim-ragtag.git
-[submodule "bundle/snipmate-snippets/snippets"]
-	path = bundle/snipmate-snippets/snippets
-	url = https://github.com/scrooloose/snipmate-snippets.git
+  path = bundle/vim-ragtag
+  url = https://github.com/tpope/vim-ragtag.git
 [submodule "bundle/vim-unimpaired"]
-	path = bundle/vim-unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
+  path = bundle/vim-unimpaired
+  url = https://github.com/tpope/vim-unimpaired.git
 [submodule "bundle/coffeeScript-VIM-Snippets/snippets"]
-	path = bundle/coffeeScript-VIM-Snippets/snippets
-	url = https://github.com/carlosvillu/coffeScript-VIM-Snippets.git
+  path = bundle/coffeeScript-VIM-Snippets/snippets
+  url = https://github.com/carlosvillu/coffeScript-VIM-Snippets.git
 [submodule "bundle/vim-coffee-script"]
-	path = bundle/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
+  path = bundle/vim-coffee-script
+  url = https://github.com/kchmck/vim-coffee-script.git
 [submodule "bundle/apidock.vim"]
-	path = bundle/apidock.vim
-	url = git@github.com:marocchino/apidock.vim.git
+  path = bundle/apidock.vim
+  url = git@github.com:marocchino/apidock.vim.git
