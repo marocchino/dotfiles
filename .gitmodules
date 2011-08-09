@@ -64,3 +64,6 @@
 [submodule "bundle/snipmate.vim"]
 	path = bundle/snipmate.vim
 	url = git@github.com:marocchino/snipmate.vim.git
+[submodule "bundle/vim-taglist"]
+	path = bundle/vim-taglist
+	url = https://github.com/chrismetcalf/vim-taglist.git
