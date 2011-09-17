@@ -67,3 +67,6 @@
 [submodule "vim/bundle/vim-taglist"]
   path = vim/bundle/vim-taglist
   url = https://github.com/chrismetcalf/vim-taglist.git
+[submodule "zsh/git-prompt"]
+	path = zsh/git-prompt
+	url = https://github.com/olivierverdier/zsh-git-prompt.git
