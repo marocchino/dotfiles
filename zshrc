@@ -2,7 +2,14 @@
 source ~/.zsh/plugin/incr*.zsh
 
 source ~/.zsh/git-prompt/zshrc.sh
-PROMPT='%B%m%~%b$(git_super_status) %# '
+case $TERM in
+  xterm*)
+    PROMPT='%B%~%b$(git_super_status) %# '
+    ;;
+  *)
+    PROMPT='%m%B%~%b$(git_super_status) %# '
+    ;;
+esac
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # why would you type 'cd dir' if you could just type 'dir'?
 setopt AUTO_CD
