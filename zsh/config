@@ -1,0 +1,58 @@
+
+if [[ -n $SSH_CONNECTION ]]; then
+  export PS1='%m:%3~$(git_super_status)%# '
+else
+  export PS1='%3~$(git_super_status)%# '
+fi
+
+export EDITOR="vi"
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+fpath=(~/.zsh/functions $fpath)
+autoload -U ~/.zsh/functions/*(:t)
+
+source ~/.zsh/git-prompt/zshrc.sh
+
+
+HISTFILE=~/.history # Where it gets saved
+SAVEHIST=10000
+HISTSIZE=10000
+REPORTTIME=10 # print elapsed time when more than 10 seconds
+
+
+#setopt APPEND_HISTORY # Don't overwrite, append!
+#setopt INC_APPEND_HISTORY # Write after each command
+setopt HIST_IGNORE_DUPS # If I type cd and then cd again, only save the last one
+setopt HIST_IGNORE_ALL_DUPS # Even if there are commands inbetween commands that are the same, still only save the last one
+setopt HIST_REDUCE_BLANKS # Pretty    Obvious.  Right?
+setopt HIST_IGNORE_SPACE # If a line starts with a space, don't save it.
+#setopt HIST_NO_STORE
+setopt HIST_VERIFY # When using a hist thing, make a newline show the change before executing it.
+setopt SHARE_HISTORY # Killer: share history between multiple shells
+setopt EXTENDED_HISTORY # Save the time and how long a command ran
+setopt HIST_SAVE_NO_DUPS
+#setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
+setopt AUTO_CD # why would you type 'cd dir' if you could just type 'dir'?
+setopt MULTIOS # Now we can pipe to multiple outputs!
+setopt VI
+setopt NO_BEEP # beeps are annoying
+setopt NO_BG_NICE # don't nice background tasks
+setopt NO_HUP
+setopt NO_LIST_BEEP
+setopt LOCAL_OPTIONS # allow functions to have local options
+setopt LOCAL_TRAPS # allow functions to have local traps
+setopt PROMPT_SUBST
+#setopt CORRECT
+setopt COMPLETE_IN_WORD
+setopt IGNORE_EOF
+
+zle -N newtab
+
+bindkey '^[^[[D' backward-word
+bindkey '^[^[[C' forward-word
+bindkey '^[[5D' beginning-of-line
+bindkey '^[[5C' end-of-line
+bindkey '^[[3~' delete-char
+bindkey '^[^N' newtab
+bindkey '^?' backward-delete-char

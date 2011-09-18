@@ -1,0 +1,6 @@
+alias ls='ls -hGF'
+alias l='ls -al'
+alias d='dirs'
+
+#plastee
+alias pt='cd ~/Dropbox/plastee/Dev/webserver/'
