@@ -1,3 +1,4 @@
+[[ -s "/Users/marocchino/.rvm/scripts/rvm" ]] && source "/Users/marocchino/.rvm/scripts/rvm"
 
 if [[ -n $SSH_CONNECTION ]]; then
   export PS1='%m:%3~$(git_super_status)%# '
