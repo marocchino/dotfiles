@@ -13,6 +13,8 @@ fpath=(~/.zsh/functions $fpath)
 autoload -U ~/.zsh/functions/*(:t)
 
 source ~/.zsh/git-prompt/zshrc.sh
+
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 HISTFILE=~/.history # Where it gets saved
