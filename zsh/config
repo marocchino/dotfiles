@@ -9,6 +9,10 @@ fi
 export EDITOR="vi"
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
+DIRSTACKSIZE=10
+setopt autopushd pushdminus pushdsilent pushdtohome
+
+
 fpath=(~/.zsh/functions $fpath)
 autoload -U ~/.zsh/functions/*(:t)
 
