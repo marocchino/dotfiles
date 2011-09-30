@@ -1,4 +1,4 @@
-# xcode check 
+# xcode check
 # install homebrew
 ruby -e "$(curl -fsSLk https://gist.github.com/raw/323731/install_homebrew.rb)"
 
@@ -16,3 +16,10 @@ curl http://npmjs.org/install.sh | sh
 # install etc
 brew install macvim zsh
 npm install -g coffee-script
+
+
+ln -s vim ~/.vim
+ln -s vimrc ~/.vimrc
+ln -s zsh ~/.zsh
+ln -s zshrc ~/.zshrc
+ln -s irbrc ~/.irbrc
