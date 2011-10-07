@@ -18,7 +18,10 @@ autoload -U ~/.zsh/functions/*(:t)
 
 source ~/.zsh/git-prompt/zshrc.sh
 
-[[ -n $SSH_CONNECTION ]] && source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ -n $SSH_CONNECTION ]]; then
+else
+  source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 HISTFILE=~/.history # Where it gets saved
