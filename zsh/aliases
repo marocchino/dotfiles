@@ -15,6 +15,6 @@ alias 9='cd -9'
 alias c="if [ -f script/console ]; then script/console; else script/rails console; fi"
 alias s="if [ -f script/server  ]; then script/server; else script/rails server; fi"
 
-
+alias go='git checkout '
 #plastee
 alias pt='cd ~/Dropbox/plastee/Dev/webserver/'
