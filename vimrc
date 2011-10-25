@@ -47,7 +47,7 @@ set number
 
 " Set encoding
 set fenc=utf-8
-set fencs=utf-8,cp949,cp932,euc-jp,shift-jis,big5,ucs-2le,latin1
+set fencs=utf-8,cp949,cp932,euc-jp,shift-jis,euc-kr,big5,ucs-2le,latin1
 set shell=zsh
 
 " tab select
@@ -55,6 +55,8 @@ set tabstop=2 sts=2 shiftwidth=2 expandtab
 
 autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufWritePre * :retab
+autocmd InsertEnter * hi StatusLine guibg=Yellow ctermfg=Yellow
+autocmd InsertLeave * hi StatusLine guibg=LightBlue   ctermfg=White
 
 set wrap
 " for regexp like movement
