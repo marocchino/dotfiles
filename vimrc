@@ -55,8 +55,8 @@ set tabstop=2 sts=2 shiftwidth=2 expandtab
 
 autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufWritePre * :retab
-autocmd InsertEnter * hi StatusLine guibg=Yellow ctermfg=Yellow
-autocmd InsertLeave * hi StatusLine guibg=LightBlue   ctermfg=White
+autocmd InsertEnter * hi StatusLine guibg=#a0a080 ctermfg=Yellow
+autocmd InsertLeave * hi StatusLine guibg=#8090a0 ctermfg=White
 
 set wrap
 " for regexp like movement
