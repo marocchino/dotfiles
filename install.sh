@@ -22,3 +22,5 @@ ln -s vimrc ~/.vimrc
 ln -s zsh ~/.zsh
 ln -s zshrc ~/.zshrc
 ln -s irbrc ~/.irbrc
+git submodule init
+git submodule update
