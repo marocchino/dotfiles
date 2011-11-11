@@ -29,6 +29,7 @@ _1st_arguments=(
   'log:git commit log for a formula'
   'create:create a new formula'
   'edit:edit a formula'
+  'outdated:check outdated file'
 )
 
 local expl

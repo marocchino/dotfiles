@@ -108,6 +108,7 @@ filetype plugin indent on
 filetype plugin on
 
 nmap <silent> <Leader>o :NERDTreeToggle<CR>
+nmap <silent> <Leader>u :GundoToggle<CR>
 nmap <silent> <Leader>i :BufExplorer<CR>
 nmap <silent> <Leader>] :FufTagWithCursorWord<CR>
 " Edit routes
