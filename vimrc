@@ -37,6 +37,7 @@ nnoremap <silent> <C-H> :wincmd h<CR>
 nnoremap <silent> <C-J> :wincmd j<CR>
 nnoremap <silent> <C-K> :wincmd k<CR>
 nnoremap <silent> <C-L> :wincmd l<CR>
+nnoremap <esc><esc> :nohlsearch<CR>
 
 
 " allow buffer change in unsaved file
