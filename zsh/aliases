@@ -1,5 +1,5 @@
-alias ls='ls -hGF --color=auto'
-alias l='ls -al --color=auto'
+alias ls='ls -hGF'
+alias l='ls -al '
 alias d='dirs -v'
 alias 0='cd -0'
 alias 1='cd -1'
