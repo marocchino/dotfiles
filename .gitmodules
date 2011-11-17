@@ -88,3 +88,6 @@
 [submodule "vim/bundle/vim-abolish"]
 	path = vim/bundle/vim-abolish
 	url = https://github.com/tpope/vim-abolish.git
+[submodule "vim/bundle/vim-pyte"]
+	path = vim/bundle/vim-pyte
+	url = git://github.com/therubymug/vim-pyte.git
