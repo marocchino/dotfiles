@@ -1,5 +1,7 @@
-call pathogen#runtime_append_all_bundles()
+source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
+
 call pathogen#infect()
+call pathogen#helptags()
 
 "　交換性を無くす。
 set nocompatible
@@ -21,7 +23,6 @@ function! s:align()
     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
   endif
 endfunction
-
 
 set ttimeoutlen=50  " Make Esc work faster
 
