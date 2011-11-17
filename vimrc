@@ -148,11 +148,7 @@ if has("gui_running") && has("syntax")
     syntax on
   endif
   if !exists('g:colors_name')
-    if filereadable(expand("~/.vim/colors/pyte.vim"))
-      colorscheme pyte
-    elseif filereadable(expand("~/.vim/colors/rdark.vim"))
-      colorscheme rdark
-    endif
+    colorscheme pyte
   endif
 
   augroup RCVisual
