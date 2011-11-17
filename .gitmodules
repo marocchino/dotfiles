@@ -91,3 +91,6 @@
 [submodule "vim/bundle/vim-pyte"]
 	path = vim/bundle/vim-pyte
 	url = git://github.com/therubymug/vim-pyte.git
+[submodule "vim/bundle/newspaper.vim"]
+	path = vim/bundle/newspaper.vim
+	url = https://github.com/vim-scripts/newspaper.vim.git
