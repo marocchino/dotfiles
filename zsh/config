@@ -23,6 +23,9 @@ else
 fi
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
+# colorize ls
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
 HISTFILE=~/.history # Where it gets saved
 SAVEHIST=10000
 HISTSIZE=10000
