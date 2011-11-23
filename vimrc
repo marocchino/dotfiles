@@ -167,8 +167,8 @@ else
   autocmd VimEnter *  if !has("gui_running") | set background=dark notitle noicon | endif
   colorscheme pyte
 endif
-autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
-autocmd BufRead,BufNewFile *.coffee CoffeeCompile watch vert | cwindow
+"autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
+"autocmd BufRead,BufNewFile *.coffee CoffeeCompile watch vert | cwindow
 set wildmenu
 function! ToggleNu()
   let &nu = 1 - &nu
