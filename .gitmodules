@@ -79,8 +79,8 @@
   url = https://github.com/marocchino/apidock.vim.git
   ignore = untracked
 [submodule "vim/snippets"]
-  path = vim/snippets
-  url = https://github.com/akitaonrails/snipmate-snippets.git
+	path = vim/snippets
+	url = https://github.com/marocchino/snipmate-snippets.git
   ignore = untracked
 [submodule "vim/bundle/snipmate.vim"]
   path = vim/bundle/snipmate.vim
