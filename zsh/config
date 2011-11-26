@@ -5,7 +5,8 @@ else
   export PS1='%3~$(git_super_status)%# '
 fi
 
-export EDITOR="vi"
+export EDITOR="vim"
+export PAGER="vimpager"
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 DIRSTACKSIZE=10
