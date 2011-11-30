@@ -6,7 +6,9 @@ else
 fi
 
 export EDITOR="vim"
-export PAGER="vimpager"
+if [[ -f /usr/local/bin/vimpager ]]; then
+  export PAGER="vimpager"
+fi
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 DIRSTACKSIZE=10
