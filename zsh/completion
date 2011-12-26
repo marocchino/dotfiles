@@ -26,6 +26,7 @@ compdef -d java
 compdef -d svn
 compdef -d cvs
 
+compdef _g g
 # TODO:
 #     cp dir/
 
