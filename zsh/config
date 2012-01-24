@@ -1,19 +1,32 @@
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 if [[ -n $SSH_CONNECTION ]]; then
-  export PS1='%m:%3~$(git_super_status)%# '
+  export PS1='%m:%3~$(git_super_status)# '
 else
-  export PS1='%3~$(git_super_status)%# '
+  export PS1='%3~$(git_super_status)# '
 fi
 
 export EDITOR="vim"
-if [[ -f /usr/local/bin/vimpager ]]; then
-  export PAGER="vimpager"
-fi
+
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 DIRSTACKSIZE=10
 setopt autopushd pushdminus pushdsilent pushdtohome
+zle-keymap-select() {
+  local showcmd="%{$fg_bold[red]%}CMD%{$reset_color%}"
 
+  if [[ $KEYMAP = vicmd ]]; then
+    if [[ $PS1 != "$showcmd"* ]]; then
+      PS1="$showcmd$PS1"
+      zle reset-prompt
+    fi
+  else
+    if [[ $PS1 = "$showcmd"* ]]; then
+      PS1=${PS1##$showcmd}
+      zle reset-prompt
+    fi
+  fi
+}
+zle -N zle-keymap-select
 
 function tab() {
   local command="cd \\\"$PWD\\\""
@@ -83,6 +96,7 @@ setopt IGNORE_EOF
 
 zle -N newtab
 
+bindkey -v
 bindkey '^[^[[D' backward-word
 bindkey '^[^[[C' forward-word
 bindkey '^[[5D' beginning-of-line
