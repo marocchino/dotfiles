@@ -74,14 +74,6 @@
   path = vim/bundle/apidock.vim
   url = https://github.com/marocchino/apidock.vim.git
   ignore = untracked
-[submodule "vim/snippets"]
-  path = vim/snippets
-  url = https://github.com/marocchino/snipmate-snippets.git
-  ignore = untracked
-[submodule "vim/bundle/snipmate.vim"]
-  path = vim/bundle/snipmate.vim
-  url = https://github.com/marocchino/snipmate.vim.git
-  ignore = untracked
 [submodule "vim/bundle/vim-taglist"]
   path = vim/bundle/vim-taglist
   url = https://github.com/chrismetcalf/vim-taglist.git
@@ -123,8 +115,8 @@
   url = https://github.com/vim-scripts/newspaper.vim.git
   ignore = untracked
 [submodule "vim/bundle/Conque-Shell"]
-	path = vim/bundle/Conque-Shell
-	url = https://github.com/lrvick/Conque-Shell.git
+  path = vim/bundle/Conque-Shell
+  url = https://github.com/lrvick/Conque-Shell.git
 [submodule "vim/bundle/zencoding-vim"]
-	path = vim/bundle/zencoding-vim
-	url = http://github.com/mattn/zencoding-vim.git
+  path = vim/bundle/zencoding-vim
+  url = http://github.com/mattn/zencoding-vim.git
