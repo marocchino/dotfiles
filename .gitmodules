@@ -138,3 +138,6 @@
   path = vim/bundle/snipmate-snippets
   url = https://github.com/honza/snipmate-snippets.git
   ignore = untracked
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = https://github.com/tpope/vim-markdown.git
