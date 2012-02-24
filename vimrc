@@ -78,32 +78,33 @@ if has("autocmd")
   \ if !filereadable("Makefile") |
   \ set makeprg=g++\ %\ -g\ -o\ %< |
   \ endif |
-  \ command! -nargs=* -complete=file Run !screen  -p 3 -X stuff "%<"
+  \ command! -nargs=* -complete=file Run !%<
 
   autocmd BufRead,BufNewFile *.lua
   \ if !filereadable("Makefile") |
   \ set makeprg=luac\ -o\ %<.lub\ %\ |
   \ endif |
-  \ command! -nargs=* -complete=file Run !screen  -p 3 -X stuff "lua %<"
+  \ command! -nargs=* -complete=file Run !lua %<
 
   autocmd BufRead,BufNewFile *.scala
   \ if !filereadable("Makefile") |
   \ set makeprg=scalac\ %<.scala |
   \ endif |
-  \ command! -nargs=* -complete=file Run !screen  -p 3 -X stuff "scala %<"
+  \ command! -nargs=* -complete=file Run !scala %<
 
   autocmd BufRead,BufNewFile *.rb
-  \ command! -nargs=* -complete=file Run !screen  -p 3 -X stuff "ruby %"
+  \ command! -nargs=* -complete=file Run !ruby %
 
   autocmd BufRead,BufNewFile *.py
   \ set makeprg= |
-  \ command! -nargs=* -complete=file Run !screen  -p 3 -X stuff "python %"
+  \ command! -nargs=* -complete=file Run !python %
 
   autocmd BufRead,BufNewFile *.scm
   \ set makeprg= |
-  \ command! -nargs=* -complete=file Run !screen  -p 3 -X stuff "mzschme %"
-
-  nnoremap <silent> <D-R> :w!<CR>:Run<CR><CR>
+  \ command! -nargs=* -complete=file Run !mzschme %
+  if has("gui_macvim")
+    nnoremap <silent> <D-r> :w!<CR>:Run<CR>
+  endif
 endif
 
 filetype plugin indent on
