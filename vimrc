@@ -92,6 +92,9 @@ if has("autocmd")
   \ endif |
   \ command! -nargs=* -complete=file Run !scala %<
 
+  autocmd BufRead,BufNewFile *.coffee
+  \ command! -nargs=* -complete=file Run !coffee %
+
   autocmd BufRead,BufNewFile *.rb
   \ command! -nargs=* -complete=file Run !ruby %
 
