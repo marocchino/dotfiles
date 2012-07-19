@@ -3,4 +3,4 @@
 . ~/.zsh/aliases
 . ~/.zsh/completion
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=/usr/local/bin:/usr/local/share/python:$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
