@@ -74,10 +74,6 @@
   path = vim/bundle/apidock.vim
   url = https://github.com/marocchino/apidock.vim.git
   ignore = untracked
-[submodule "vim/bundle/vim-taglist"]
-  path = vim/bundle/vim-taglist
-  url = https://github.com/chrismetcalf/vim-taglist.git
-  ignore = untracked
 [submodule "zsh/git-prompt"]
   path = zsh/git-prompt
   url = https://github.com/olivierverdier/zsh-git-prompt.git
@@ -139,5 +135,10 @@
   url = https://github.com/honza/snipmate-snippets.git
   ignore = untracked
 [submodule "vim/bundle/vim-markdown"]
-	path = vim/bundle/vim-markdown
-	url = https://github.com/tpope/vim-markdown.git
+  path = vim/bundle/vim-markdown
+  url = https://github.com/tpope/vim-markdown.git
+  ignore = untracked
+[submodule "vim/bundle/taglist.vim"]
+  path = vim/bundle/taglist.vim
+  url = git://github.com/vim-scripts/taglist.vim.git
+  ignore = untracked
