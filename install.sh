@@ -17,10 +17,11 @@
 #brew install macvim zsh
 #npm install -g coffee-script
 
-ln -s vim ~/.vim
-ln -s vimrc ~/.vimrc
-ln -s zsh ~/.zsh
-ln -s zshrc ~/.zshrc
-ln -s irbrc ~/.irbrc
+ln -s ~/dotfiles/vim ~/.vim
+ln -s ~/dotfiles/vimrc ~/.vimrc
+ln -s ~/dotfiles/zsh ~/.zsh
+ln -s ~/dotfiles/zshrc ~/.zshrc
+ln -s ~/dotfiles/irbrc ~/.irbrc
+cd ~/dotfiles
 git submodule init
 git submodule update
