@@ -39,6 +39,11 @@ function tab() {
     end tell
 EOF
 }
+function yoursystemismine() {
+  cat ~/.ssh/id_rsa.pub | ssh $1 'cat >> ~/.ssh/authorized_keys'
+}
+hosts=(`sed -e 's/,.*$//' -e 's/ .*$//' ~/.ssh/known_hosts`)
+compctl -k hosts yoursystemismine
 
 function g() {
   cd ~/Projects/$1
