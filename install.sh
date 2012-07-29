@@ -22,6 +22,7 @@ ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/zsh ~/.zsh
 ln -s ~/dotfiles/zshrc ~/.zshrc
 ln -s ~/dotfiles/irbrc ~/.irbrc
+ln -s ~/dotfiles/gitconfig ~/.gitconfig
 cd ~/dotfiles
 git submodule init
 git submodule update
