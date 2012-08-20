@@ -142,3 +142,11 @@
   path = vim/bundle/taglist.vim
   url = git://github.com/vim-scripts/taglist.vim.git
   ignore = untracked
+[submodule "vim/bundle/vim-pomodoro"]
+  path = vim/bundle/vim-pomodoro
+  url = https://github.com/mnick/vim-pomodoro
+  ignore = untracked
+[submodule "vim/bundle/AsyncCommand"]
+  path = vim/bundle/AsyncCommand
+  url = https://github.com/pydave/AsyncCommand
+  ignore = untracked
