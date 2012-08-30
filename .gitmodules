@@ -150,3 +150,15 @@
   path = vim/bundle/AsyncCommand
   url = https://github.com/pydave/AsyncCommand
   ignore = untracked
+[submodule "vim/bundle/vim-ruby"]
+  path = vim/bundle/vim-ruby
+  url = git://github.com/vim-ruby/vim-ruby.git
+  ignore = untracked
+[submodule "vim/bundle/vim-ruby-refactoring"]
+  path = vim/bundle/vim-ruby-refactoring
+  url = https://github.com/ecomba/vim-ruby-refactoring.git
+  ignore = untracked
+[submodule "vim/bundle/vim-matchit"]
+  path = vim/bundle/vim-matchit
+  url = git://github.com/edsono/vim-matchit.git
+  ignore = untracked

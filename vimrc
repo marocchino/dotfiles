@@ -113,9 +113,12 @@ if has("autocmd")
   endif
 endif
 
-filetype plugin indent on
+filetype on
+filetype indent on
 filetype plugin on
 
+"imap <S-CR> <CR><CR>end<Esc>-cc
+imap <S-CR>    <CR><CR>end<Esc>-cc
 nmap <silent> <Leader>o :NERDTreeToggle<CR>
 nmap <silent> <Leader>u :GundoToggle<CR>
 nmap <silent> <Leader>i :BufExplorer<CR>
