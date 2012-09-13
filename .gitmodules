@@ -162,3 +162,7 @@
   path = vim/bundle/vim-matchit
   url = git://github.com/edsono/vim-matchit.git
   ignore = untracked
+[submodule "vim/bundle/switch.vim"]
+  path = vim/bundle/switch.vim
+  url = https://github.com/AndrewRadev/switch.vim.git
+  ignore = untracked
