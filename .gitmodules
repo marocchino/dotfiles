@@ -166,3 +166,7 @@
   path = vim/bundle/switch.vim
   url = https://github.com/AndrewRadev/switch.vim.git
   ignore = untracked
+[submodule "vim/bundle/vim-less"]
+  path = vim/bundle/vim-less
+  url = git://github.com/groenewege/vim-less.git
+  ignore = untracked
