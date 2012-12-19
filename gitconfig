@@ -9,9 +9,14 @@
   tool = vimdiff
 [core]
   editer = vim
+[grep]
+  extendRegexp = true
+  lineNumber = true
 [alias]
   st   = status
   w    = whatchanged
+  g    = grep --break --heading --line-number
+  go   = checkout
   d1   = diff HEAD~
   d2   = diff HEAD~~
   d3   = diff HEAD~~~
