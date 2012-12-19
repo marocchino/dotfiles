@@ -40,3 +40,5 @@
   ca = commit --amend
 [include]
   path = .gitconfig.local
+[push]
+	default = simple
