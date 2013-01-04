@@ -74,18 +74,6 @@
   path = vim/bundle/apidock.vim
   url = https://github.com/marocchino/apidock.vim.git
   ignore = untracked
-[submodule "zsh/git-prompt"]
-  path = zsh/git-prompt
-  url = https://github.com/olivierverdier/zsh-git-prompt.git
-  ignore = untracked
-[submodule "zsh/zsh-history-substring-search"]
-  path = zsh/zsh-history-substring-search
-  url = https://github.com/zsh-users/zsh-history-substring-search.git
-  ignore = untracked
-[submodule "zsh/zsh-syntax-highlighting"]
-  path = zsh/zsh-syntax-highlighting
-  url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-  ignore = untracked
 [submodule "vim/bundle/sudo.vim"]
   path = vim/bundle/sudo.vim
   url = https://github.com/vim-scripts/sudo.vim.git
