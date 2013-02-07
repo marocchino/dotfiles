@@ -6,9 +6,9 @@
   ui     = true
   pager  = true
 [merge]
-  tool = vimdiff
+  tool = mvimdiff
 [core]
-  editer = vim
+  editer = mvim
 [grep]
   extendRegexp = true
   lineNumber = true
