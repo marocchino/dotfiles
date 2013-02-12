@@ -9,7 +9,7 @@ set nocompatible
 " for history
 set history=10000
 
-set statusline=%#ErrorMsg#%{PomodoroStatus()}%#StatusLine#[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%#ErrorMsg#%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%=%-16(\ %l,%c-%v\ %)%P
+set statusline=%#ErrorMsg#%#StatusLine#[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%#ErrorMsg#%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%=%-16(\ %l,%c-%v\ %)%P
 
 " To display the status line always
 set laststatus=2
@@ -245,4 +245,3 @@ let g:surround_{char2nr('^')} = "/^\r$/"
 let g:surround_indent = 1
 
 let g:indent_guides_enable_on_vim_startup = 0
-let g:pomodoro_notification_cmd = 'terminal-notifier -message "Poromodo Finished" -title "Poromodo" -open "http://gsp-manager.gameon.co.jp/my/page"'
