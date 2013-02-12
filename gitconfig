@@ -6,7 +6,7 @@
   ui     = true
   pager  = true
 [merge]
-  tool = mvimdiff
+  tool = vimdiff
 [core]
   editer = mvim
 [grep]
