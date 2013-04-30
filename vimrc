@@ -1,31 +1,73 @@
-source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
-
-call pathogen#infect()
-call pathogen#helptags()
-
 "　交換性を無くす。
 set nocompatible
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+Bundle 'AndrewRadev/switch.vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'Townk/vim-autoclose'
+Bundle 'croaky/vim-colors-github'
+Bundle 'danro/rename.vim'
+Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'edsono/vim-matchit'
+Bundle 'garbas/vim-snipmate'
+Bundle 'godlygeek/tabular'
+Bundle 'groenewege/vim-less'
+Bundle 'honza/vim-snippets'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
+Bundle 'mattn/zencoding-vim'
+Bundle 'nanki/treetop.vim'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'pydave/AsyncCommand'
+Bundle 'therubymug/vim-pyte'
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'timcharper/textile.vim'
+Bundle 'tomtom/tlib_vim'
+Bundle 'tpope/vim-abolish'
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-ragtag'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tsaleh/vim-matchit'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/Gist.vim'
+Bundle 'vim-scripts/bufexplorer.zip'
+Bundle 'vim-scripts/ctags.vim'
+Bundle 'vim-scripts/greplace.vim'
+Bundle 'vim-scripts/ruby-matchit'
+Bundle 'vim-scripts/sudo.vim'
+Bundle 'vim-scripts/tComment'
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'vim-scripts/tailtab.vim'
+Bundle 'xenoterracide/html.vim'
+
 
 " for history
-set history=10000
+set history=50
+set nobackup
+set nowritebackup
+set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set ruler         " show the cursor position all the time
+set showcmd       " display incomplete commands
+set incsearch     " do incremental searching
 
 set statusline=%#ErrorMsg#%#StatusLine#[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%#ErrorMsg#%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%=%-16(\ %l,%c-%v\ %)%P
 
 " To display the status line always
 set laststatus=2
-
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-
-function! s:align()
-  let p = '^\s*|\s.*\s|\s*$'
-  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-    Tabularize/|/l1
-    normal! 0
-    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
-endfunction
 
 set ttimeoutlen=50  " Make Esc work faster
 
@@ -49,7 +91,7 @@ set hidden
 
 " Show line number
 set number
-
+set numberwidth=5
 " Set encoding
 set fenc=utf-8
 set fencs=utf-8,cp949,cp932,euc-jp,shift-jis,euc-kr,big5,ucs-2le,latin1
@@ -62,121 +104,56 @@ autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufWritePre * :retab
 autocmd InsertEnter * hi StatusLine guibg=#a0a080 ctermfg=Yellow
 autocmd InsertLeave * hi StatusLine guibg=#8090a0 ctermfg=White
+autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
 set wrap
 " for regexp like movement
 set magic
 
-if has("autocmd")
-  " vimrc on fly
-  autocmd bufwritepost .vimrc source $MYVIMRC
-
-  " last modify location save
-  autocmd BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "norm g`\"" |
-  \ endif
-
-  autocmd BufRead,BufNewFile *.c,*.cpp
-  \ if !filereadable("Makefile") |
-  \ set makeprg=g++\ %\ -g\ -o\ %< |
-  \ endif |
-  \ command! -nargs=* -complete=file Run !%<
-
-  autocmd BufRead,BufNewFile *.lua
-  \ if !filereadable("Makefile") |
-  \ set makeprg=luac\ -o\ %<.lub\ %\ |
-  \ endif |
-  \ command! -nargs=* -complete=file Run !lua %<
-
-  autocmd BufRead,BufNewFile *.scala
-  \ if !filereadable("Makefile") |
-  \ set makeprg=scalac\ %<.scala |
-  \ endif |
-  \ command! -nargs=* -complete=file Run !scala %<
-
-  autocmd BufRead,BufNewFile *.coffee
-  \ command! -nargs=* -complete=file Run !coffee %
-
-  autocmd BufRead,BufNewFile *.rb
-  \ command! -nargs=* -complete=file Run !ruby %
-
-  autocmd BufRead,BufNewFile *.py
-  \ set makeprg= |
-  \ command! -nargs=* -complete=file Run !python %
-
-  autocmd BufRead,BufNewFile *.scm
-  \ set makeprg= |
-  \ command! -nargs=* -complete=file Run !mzschme %
-  if has("gui_macvim")
-    nnoremap <silent> <D-r> :w!<CR>:Run<CR>
-  endif
-endif
 
 filetype on
 filetype indent on
 filetype plugin on
 
-"imap <S-CR> <CR><CR>end<Esc>-cc
-imap <S-CR>    <CR><CR>end<Esc>-cc
-nmap <silent> <Leader>o :NERDTreeToggle<CR>
-nmap <silent> <Leader>u :GundoToggle<CR>
+nmap <silent> <Leader>p :e .<CR>
 nmap <silent> <Leader>i :BufExplorer<CR>
 nmap <silent> <Leader>] :FufTagWithCursorWord<CR>
-" Edit routes
-command! Rroutes :Redit config/routes.rb
-command! RTroutes :RTedit config/routes.rb"
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
 
+" vim-rspec mappings
+nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
+nnoremap <Leader>s :call RunNearestSpec()<CR>
+nnoremap <Leader>l :call RunLastSpec()<CR>
+
+
+" Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
+let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
+
+" Index ctags from any project, including those outside Rails
+map <Leader>ct :!ctags -R .<CR>
+
+" Cucumber navigation commands
+autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
+autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
+
+set list listchars=tab:»·,trail:·
+
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+  syntax on
+endif
 
 if has("gui_running")
   set mouse=a
 endif
 
-if has("gui_running") && has("syntax")
-  " Show (partial) command in the last line of the screen.
-  set showcmd
-  function! s:initialize_font()
-    if exists("&guifont")
-      if has("mac")
-        set guifont=Monaco:h12
-      elseif has("unix")
-        if &guifont == ""
-          set guifont=bitstream\ vera\ sans\ mono\ 11
-        endif
-      elseif has("win32")
-        set guifont=Consolas:h11,Courier\ New:h10
-      endif
-    endif
-  endfunction
-  command! -bar -nargs=0 Bigger  :let &guifont = substitute(&guifont,'\d\+$','\=submatch(0)+1','')
-  command! -bar -nargs=0 Smaller :let &guifont = substitute(&guifont,'\d\+$','\=submatch(0)-1','')
-  noremap <M-,>        :Smaller<CR>
-  noremap <M-.>        :Bigger<CR>
-
-  if exists("syntax_on") || exists("syntax_manual")
-  else
-    syntax on
-  endif
-  if !exists('g:colors_name')
-    colorscheme pyte
-  endif
-
-  augroup RCVisual
-    autocmd!
-
-    autocmd VimEnter *  if !has("gui_running") | set background=dark notitle noicon | endif
-    autocmd GUIEnter *  set background=light title icon cmdheight=2 lines=25 columns=80 guioptions-=T
-    autocmd GUIEnter *  if has("diff") && &diff | set columns=165 | endif
-    autocmd GUIEnter *  colorscheme pyte
-    autocmd GUIEnter *  call s:initialize_font()
-    autocmd Syntax css  syn sync minlines=50
-    autocmd Syntax csh  hi link cshBckQuote Special | hi link cshExtVar PreProc | hi link cshSubst PreProc | hi link cshSetVariables Identifier
-  augroup END
-else
-  syntax on
-  autocmd VimEnter *  if !has("gui_running") | set background=dark notitle noicon | endif
-  colorscheme pyte
-endif
+" Color scheme
+colorscheme github
+highlight NonText guibg=#060606
+highlight Folded  guibg=#0A0A0A guifg=#9090D0
 "autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
 "autocmd BufRead,BufNewFile *.coffee CoffeeCompile watch vert | cwindow
 set wildmenu
@@ -192,46 +169,24 @@ endf
 map \n :call ToggleNu()<CR>
 map \l :call ToggleList()<CR>
 map \s :call ToggleSpell()<CR>
-map ,. \cc
-map ., \cu
-if has("mac")
-  map <D-/> <leader>c<space>
-endif
-ab fucntion function
-ab calss class
-ab functio function
-ab dunction function
-ab functuin function
-ab dunction function
-ab functuin function
-ab functopn function
-ab fumction function
-ab vlass class
-ab xlass class
-ab classs class
-ab forarch foreach
-ab inser insert
-ab insertt insert
-ab quewrty query
-ab ovject object
-ab objectr object
-ab evho echo
-ab prit print
-ab fales false
-ab flase false
-ab treu true
-ab teur true
-ab ture true
-ab retrun return
-ab retunr return
-ab htis this
-ab erturn return
 
 set loadplugins
 
 set tags=./tags
 
 set scrolloff=8
+
+" Treat <li> and <p> tags like the block tags they are
+let g:html_indent_tags = 'li\|p'
+
+" Set syntax highlighting for specific file types
+au BufRead,BufNewFile *.md set filetype=markdown
+
+" Enable spellchecking for Markdown
+au BufRead,BufNewFile *.md setlocal spell
+
+" Automatically wrap at 80 characters for Markdown
+au BufRead,BufNewFile *.md setlocal textwidth=80
 
 let g:ruby_minlines = 500
 let g:rubycomplete_buffer_loading = 1
@@ -245,3 +200,11 @@ let g:surround_{char2nr('^')} = "/^\r$/"
 let g:surround_indent = 1
 
 let g:indent_guides_enable_on_vim_startup = 0
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+" Local config
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
+endif
