@@ -1,4 +1,4 @@
-"　交換性を無くす。
+" 　交換性を無くす。
 set nocompatible
 filetype off                   " required!
 
@@ -169,6 +169,9 @@ endf
 map \n :call ToggleNu()<CR>
 map \l :call ToggleList()<CR>
 map \s :call ToggleSpell()<CR>
+map ,. :TComment<CR>
+map ., :TComment<CR>
+map <D-/> :TComment<CR>
 
 set loadplugins
 
