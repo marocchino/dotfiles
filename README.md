@@ -3,11 +3,6 @@
 
 ## Installation
 
-```bash
-  git clone git://github.com/marocchino/dotfiles ~/dotfiles
-  cd ~/dotfiles
-  ./install.sh
-```
 If you using git, need to set `.gitconfig.local` file
 
 ```
