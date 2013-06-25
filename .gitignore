@@ -2,8 +2,7 @@
 tags
 .netrwhist
 fish/fish_history
-fish/fishd.*.local
-fish/fishd.*.*.nate.com
+fish/fishd.*
 fish/generated_completions
 vim/bundle
 gitconfig.local
