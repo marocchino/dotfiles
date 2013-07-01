@@ -36,7 +36,7 @@ function! RunNearestTest()
 endfunction
 
 " Run this file
-map <leader>m :call RunTestFile()<cr><cr>
+map <D-r> :call RunTestFile()<cr><cr>
 " Run only the example under the cursor
 map <leader>. :call RunNearestTest()<cr>
 " Run all test files
