@@ -8,9 +8,9 @@ endfunction
 " TODO make scope function
 function! GetRelatedFile(file)
   if match(a:file, '_spec\.rb$') != -1
-    return substitute(substitute(substitute(a:file, "_spec.rb$", ".rb", ""), '^spec/lib/', 'lib/', ''), '^spec/', 'app/', '')
+    return substitute(substitute(substitute(a:file, "_spec.rb$", ".rb", ""), '\(^\|/\)spec/lib/', '\1lib/', ''), '\(^\|/\)spec/', '\1app/', '')
   else
-    return substitute(substitute(substitute(a:file, ".rb$", "_spec.rb", ""), '^lib/', 'spec/lib/', ''), '^app/', 'spec/', '')
+    return substitute(substitute(substitute(a:file, ".rb$", "_spec.rb", ""), '\(^\|/\)lib/', '\1spec/lib/', ''), '\(^\|/\)app/', '\1spec/', '')
   endif
 endfunction
 

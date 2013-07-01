@@ -6,6 +6,11 @@ describe 'GetRelatedFile'
     Expect GetRelatedFile('spec/models/user_spec.rb') == 'app/models/user.rb'
   end
 
+  it 'change model (fullpath)'
+    Expect GetRelatedFile('/app/models/user.rb') == '/spec/models/user_spec.rb'
+    Expect GetRelatedFile('/spec/models/user_spec.rb') == '/app/models/user.rb'
+  end
+
   it 'change nested model'
     Expect GetRelatedFile('app/models/login/user.rb') == 'spec/models/login/user_spec.rb'
     Expect GetRelatedFile('spec/models/login/user_spec.rb') == 'app/models/login/user.rb'
@@ -39,5 +44,10 @@ describe 'GetRelatedFile'
   it 'change nested lib'
     Expect GetRelatedFile('lib/yahoo/yahoo.rb') == 'spec/lib/yahoo/yahoo_spec.rb'
     Expect GetRelatedFile('spec/lib/yahoo/yahoo_spec.rb') == 'lib/yahoo/yahoo.rb'
+  end
+
+  it 'change nested lib (fullpath)'
+    Expect GetRelatedFile('/lib/yahoo/yahoo.rb') == '/spec/lib/yahoo/yahoo_spec.rb'
+    Expect GetRelatedFile('/spec/lib/yahoo/yahoo_spec.rb') == '/lib/yahoo/yahoo.rb'
   end
 end
