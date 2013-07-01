@@ -5,4 +5,6 @@ fish/fish_history
 fish/fishd.*
 fish/generated_completions
 vim/bundle
+vim/.vim-flavor/
+vim/VimFlavor.lock
 gitconfig.local
