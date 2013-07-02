@@ -5,7 +5,12 @@ function! RunTests(filename)
     " Write the file and run tests for the given filename
     :w
     :silent !echo;echo;echo;echo;echo
-    exec ":!ssh dev-2 'source ~/.zshrc;tmux send-keys -t 0 \"spec " . a:filename . "\" C-m' "
+    exec TestCommand(a:filename)
+endfunction
+
+function! TestCommand(filename)
+    let cmd = ":!ssh dev-2 'source ~/.zshrc;tmux send-keys -t 0 \"spec " . substitute(a:filename, '/\(\w\+/\)\{4\}', '', '') . "\" C-m'"
+    return cmd
 endfunction
 
 function! SetTestFile()
@@ -38,6 +43,6 @@ endfunction
 " Run this file
 map <D-r> :call RunTestFile()<cr><cr>
 " Run only the example under the cursor
-map <leader>. :call RunNearestTest()<cr>
+" map <leader>. :call RunNearestTest()<cr>
 " Run all test files
-map <leader>a :call RunTests('spec')<cr>
+" map <leader>a :call RunTests('spec')<cr>
