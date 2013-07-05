@@ -139,8 +139,32 @@ map <Leader>ct :!ctags -R .<CR>
 autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
 autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
 
-set list listchars=tab:»·,trail:·
+set list listchars=tab:»·,trail:·,extends:»,precedes:«,nbsp:%
 
+" https://sites.google.com/site/fudist/Home/vim-nihongo-ban/vim-color#color-zenkaku
+""""""""""""""""""""""""""""""
+"全角スペースを表示
+""""""""""""""""""""""""""""""
+"コメント以外で全角スペースを指定しているので scriptencodingと、
+"このファイルのエンコードが一致するよう注意！
+"全角スペースが強調表示されない場合、ここでscriptencodingを指定すると良い。
+"scriptencoding cp932
+
+"デフォルトのZenkakuSpaceを定義
+function! ZenkakuSpace()
+  highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
+endfunction
+
+if has('syntax')
+  augroup ZenkakuSpace
+    autocmd!
+    " ZenkakuSpaceをカラーファイルで設定するなら次の行は削除
+    autocmd ColorScheme       * call ZenkakuSpace()
+    " 全角スペースのハイライト指定
+    autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
+  augroup END
+  call ZenkakuSpace()
+endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
