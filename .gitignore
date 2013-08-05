@@ -2,6 +2,7 @@
 tags
 .netrwhist
 fish/fish_history
+fish/profile.fish
 fish/fishd.*
 fish/generated_completions
 vim/bundle

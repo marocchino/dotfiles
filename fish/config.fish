@@ -8,3 +8,4 @@ rbenv rehash >/dev/null ^&1
 function go
   git checkout $argv
 end
+. ~/.config/fish/profile.fish
