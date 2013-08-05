@@ -1,0 +1,3 @@
+function gg
+  exit
+end
