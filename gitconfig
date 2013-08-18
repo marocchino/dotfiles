@@ -8,7 +8,7 @@
 [merge]
   tool = vimdiff
 [core]
-  editer = mvim
+  editer = vim
 [grep]
   extendRegexp = true
   lineNumber = true
