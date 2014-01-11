@@ -13,30 +13,8 @@
   extendRegexp = true
   lineNumber = true
 [alias]
-  st   = status
-  w    = whatchanged
-  g    = grep --break --heading --line-number
-  go   = checkout
-  d1   = diff HEAD~
-  d2   = diff HEAD~~
-  d3   = diff HEAD~~~
-  d4   = diff HEAD~~~~
-  d5   = diff HEAD~~~~~
-  d6   = diff HEAD~~~~~~
-  d7   = diff HEAD~~~~~~~
-  d8   = diff HEAD~~~~~~~~
-  d9   = diff HEAD~~~~~~~~~
-  d10  = diff HEAD~~~~~~~~~~
-  dt1  = difftool HEAD~
-  dt2  = difftool HEAD~~
-  dt3  = difftool HEAD~~~
-  dt4  = difftool HEAD~~~~
-  dt5  = difftool HEAD~~~~~
-  dt6  = difftool HEAD~~~~~~
-  dt7  = difftool HEAD~~~~~~~
-  dt8  = difftool HEAD~~~~~~~~
-  dt9  = difftool HEAD~~~~~~~~~
-  dt10 = difftool HEAD~~~~~~~~~~
+  st = status
+  w = whatchanged
   ca = commit --amend
 [include]
   path = .gitconfig.local
