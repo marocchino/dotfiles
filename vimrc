@@ -8,7 +8,6 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required!
 Bundle 'gmarik/vundle'
-Bundle 'wincent/Command-T'
 Bundle 'scrooloose/syntastic'
 Bundle 'AndrewRadev/switch.vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -105,8 +104,8 @@ set shell=zsh
 " tab select
 set tabstop=2 sts=2 shiftwidth=2 expandtab
 
-autocmd BufWritePre * :%s/\s\+$//e
-autocmd BufWritePre * :retab
+" autocmd BufWritePre * :%s/\s\+$//e
+" autocmd BufWritePre * :retab
 autocmd InsertEnter * hi StatusLine guibg=#a0a080 ctermfg=Yellow
 autocmd InsertLeave * hi StatusLine guibg=#8090a0 ctermfg=White
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
