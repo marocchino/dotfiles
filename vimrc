@@ -99,7 +99,9 @@ set numberwidth=5
 " Set encoding
 set fenc=utf-8
 set fencs=utf-8,cp949,cp932,euc-jp,shift-jis,euc-kr,big5,ucs-2le,latin1
-set shell=zsh
+if $SHELL =~ 'bin/fish'
+  set shell=/bin/sh
+endif
 
 " tab select
 set tabstop=2 sts=2 shiftwidth=2 expandtab
