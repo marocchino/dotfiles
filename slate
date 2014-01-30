@@ -31,8 +31,7 @@ bind l:cmd     focus right
 bind h:cmd     focus left
 bind k:cmd     focus up
 bind j:cmd     focus down
-bind k:cmd;alt focus behind
-bind j:cmd;alt focus behind
+bind b:cmd;alt focus behind
 
 # Nudge Bindings
 # bind right:shift;alt nudge +10% +0
