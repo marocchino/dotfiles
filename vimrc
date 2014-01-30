@@ -1,4 +1,4 @@
-" 　交換性を無くす。
+" 交換性を無くす。
 set nocompatible
 filetype off                   " required!
 
@@ -29,21 +29,13 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'nono/vim-handlebars'
 Bundle 'pydave/AsyncCommand'
 Bundle 'scrooloose/nerdtree'
-Bundle 'therubymug/vim-pyte'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'timcharper/textile.vim'
-Bundle 'tomtom/tlib_vim'
 Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-ruby/vim-ruby'
@@ -90,6 +82,8 @@ nnoremap <silent> <C-K> :wincmd k<CR>
 nnoremap <silent> <C-L> :wincmd l<CR>
 nnoremap <esc><esc> :nohlsearch<CR>
 
+
+
 " allow buffer change in unsaved file
 set hidden
 
@@ -121,16 +115,11 @@ filetype on
 filetype indent on
 filetype plugin on
 
-nmap <silent> <Leader>p :e .<CR>
 nmap <silent> <Leader>i :BufExplorer<CR>
-nmap <silent> <Leader>] :FufTagWithCursorWord<CR>
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
-" vim-rspec mappings
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
+nnoremap - :Switch<cr>
 
 
 " Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
