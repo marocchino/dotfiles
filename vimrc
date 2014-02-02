@@ -37,9 +37,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'vim-scripts/ctags.vim'
-Bundle 'vim-scripts/tComment'
-Bundle 'vim-scripts/taglist.vim'
-Bundle 'vim-scripts/tailtab.vim'
+Bundle 'tomtom/tcomment_vim'
 Bundle 'xenoterracide/html.vim'
 
 
