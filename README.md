@@ -1,4 +1,4 @@
-# Tw Shim Dot Files
+# Dotfiles
 
 
 ## Installation
@@ -10,11 +10,3 @@ If you using git, need to set `.gitconfig.local` file
     name = your name
     email = your@email.com
 ```
-
-## Feature
-
-To do
-
-## Uninstall
-
-To do
