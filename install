@@ -1,0 +1,26 @@
+#!/usr/bin/env fish
+if which git
+  ln -sfn $PWD/git_template ~/.git_template
+  ln -sf $PWD/gitconfig ~/.gitconfig
+else
+  echo "Need git"
+end
+
+if which tmux
+  ln -sf $PWD/tmux.conf ~/.tmux.conf
+else
+  echo "Need tmux"
+end
+
+if which vim
+  ln -sfn $PWD/vim ~/.vim
+  ln -sf $PWD/vimrc ~/.vimrc
+else
+  echo "Need vim"
+end
+
+ln -sf $PWD/private.xml ~/Library/Application\ Support/KeyRemap4MacBook/private.xml
+ln -sf $PWD/slate ~/.slate
+ln -sf $PWD/gemrc ~/.gemrc
+ln -sfn $PWD/fish ~/.config/fish
+

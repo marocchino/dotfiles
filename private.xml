@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+      <name>In Vim, Make Escape key also Switch to English IM</name>
+      <identifier>private.vim_esc_also_switches_to_english_inputmode</identifier>
+      <only>VI</only>
+      <autogen>__KeyToKey__ KeyCode::ESCAPE,
+      <!---->               KeyCode::ESCAPE,KeyCode::VK_CHANGE_INPUTMODE_ENGLISH </autogen>
+  </item>
+</root>

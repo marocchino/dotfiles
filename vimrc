@@ -86,6 +86,8 @@ set fencs=utf-8,cp949,cp932,euc-jp,shift-jis,euc-kr,big5,ucs-2le,latin1
 if $SHELL =~ 'bin/fish'
   set shell=/bin/sh
 endif
+set langmap=ㅂq,ㅈw,ㄷe,ㄱr,ㅅt,ㅛy,ㅕu,ㅑi,ㅐo,ㅔp,ㅁa,ㄴs,ㅇd,ㄹf,ㅎg,ㅗh,ㅓj,ㅏk,ㅣl,ㅋz,ㅌx,ㅊc,ㅍv,ㅠb,ㅜn,ㅡm,ㅃQ,ㅉW,ㄸE,ㄲR,ㅆT,ㅒO,ㅖP
+
 
 " tab select
 set tabstop=2 sts=2 shiftwidth=2 expandtab
