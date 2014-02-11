@@ -22,5 +22,6 @@ end
 ln -sf $PWD/private.xml ~/Library/Application\ Support/KeyRemap4MacBook/private.xml
 ln -sf $PWD/slate ~/.slate
 ln -sf $PWD/gemrc ~/.gemrc
+ln -sf $PWD/irbrc ~/.irbrc
 ln -sfn $PWD/fish ~/.config/fish
 
