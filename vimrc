@@ -202,12 +202,6 @@ let g:ruby_minlines = 500
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_rails = 1
 let g:ragtag_global_maps = 1
-let g:surround_{char2nr('-')} = "<% \r %>"
-let g:surround_{char2nr('=')} = "<%= \r %>"
-let g:surround_{char2nr('8')} = "/* \r */"
-let g:surround_{char2nr('s')} = " \r"
-let g:surround_{char2nr('^')} = "/^\r$/"
-let g:surround_indent = 1
 
 let g:indent_guides_enable_on_vim_startup = 0
 
