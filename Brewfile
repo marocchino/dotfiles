@@ -5,7 +5,7 @@ install node
 install wget
 install reattach-to-user-namespace
 install tmux
-install brew-cask
+install cask
 install git
 install fish
 install macvim
