@@ -30,6 +30,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'tomtom/tcomment_vim'
+Bundle 'marocchino/motion-mode'
 
 " color
 Bundle 'croaky/vim-colors-github'
@@ -182,6 +183,7 @@ endf
 map \n :call ToggleNu()<CR>
 map \l :call ToggleList()<CR>
 map \s :call ToggleSpell()<CR>
+map mc :call MotionConverter()<CR>
 map ,. :TComment<CR>
 map ., :TComment<CR>
 map <D-/> :TComment<CR>
