@@ -30,7 +30,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'tomtom/tcomment_vim'
-Bundle 'marocchino/motion-mode'
+Bundle 'marocchino/motion-mode-vim'
 
 " color
 Bundle 'croaky/vim-colors-github'
