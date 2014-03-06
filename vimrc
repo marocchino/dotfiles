@@ -27,8 +27,9 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-ragtag'
 Bundle 'rcyrus/snipmate-snippets-rubymotion'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-scripts/bufexplorer.zip'
-Bundle 'vim-scripts/ctags.vim'
+Bundle 'bufexplorer.zip'
+Bundle 'ctags.vim'
+Bundle 'AnsiEsc.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'marocchino/motion-mode-vim'
 
@@ -184,6 +185,7 @@ map \n :call ToggleNu()<CR>
 map \l :call ToggleList()<CR>
 map \s :call ToggleSpell()<CR>
 map mc :call MotionConverter()<CR>
+map ms :call MotionSpec()<CR>
 map ,. :TComment<CR>
 map ., :TComment<CR>
 map <D-/> :TComment<CR>
