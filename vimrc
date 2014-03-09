@@ -32,9 +32,10 @@ Bundle 'ctags.vim'
 Bundle 'AnsiEsc.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'marocchino/motion-mode-vim'
+Bundle 'mattn/googletranslate-vim'
 
 " color
-Bundle 'croaky/vim-colors-github'
+Bundle 'summerfruit256.vim'
 
 " formatter
 Bundle 'tpope/vim-rails'
@@ -166,7 +167,7 @@ if has("gui_running")
 endif
 
 " Color scheme
-colorscheme github
+colorscheme summerfruit256
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 "autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
