@@ -32,7 +32,6 @@ Bundle 'ctags.vim'
 Bundle 'AnsiEsc.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'marocchino/motion-mode-vim'
-Bundle 'mattn/googletranslate-vim'
 
 " color
 Bundle 'summerfruit256.vim'
