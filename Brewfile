@@ -8,7 +8,8 @@ install tmux
 install git
 install fish
 install macvim
-tab phinze/cask
+tap phinze/cask
 install brew-cask
 cask install keyremap4macbook
+cask install dropbox
 cask install slate
