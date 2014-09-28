@@ -7,7 +7,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Plugin 'gmarik/vundle.vim'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'Townk/vim-autoclose'
@@ -48,6 +48,8 @@ Plugin 'xenoterracide/html.vim'
 Plugin 'groenewege/vim-less'
 Plugin 'digitaltoad/vim-jade'
 
+call vundle#end()            " required
+filetype plugin indent on
 
 " for history
 set history=50
