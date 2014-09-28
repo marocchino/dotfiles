@@ -2,51 +2,51 @@
 set nocompatible
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/vundle.vim/
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/syntastic'
-Bundle 'AndrewRadev/switch.vim'
-Bundle 'Townk/vim-autoclose'
-Bundle 'edsono/vim-matchit'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
-Bundle 'kana/vim-vspec'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-ragtag'
-Bundle 'rcyrus/snipmate-snippets-rubymotion'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'bufexplorer.zip'
-Bundle 'ctags.vim'
-Bundle 'AnsiEsc.vim'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'marocchino/motion-mode-vim'
+Plugin 'gmarik/vundle.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'AndrewRadev/switch.vim'
+Plugin 'Townk/vim-autoclose'
+Plugin 'edsono/vim-matchit'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'kana/vim-vspec'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-ragtag'
+Plugin 'rcyrus/snipmate-snippets-rubymotion'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'bufexplorer.zip'
+Plugin 'ctags.vim'
+Plugin 'AnsiEsc.vim'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'marocchino/motion-mode-vim'
 
 " color
-Bundle 'summerfruit256.vim'
+Plugin 'summerfruit256.vim'
 
 " formatter
-Bundle 'tpope/vim-rails'
-Bundle 'nono/vim-handlebars'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'dsawardekar/ember.vim'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-markdown'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'xenoterracide/html.vim'
-Bundle 'groenewege/vim-less'
-Bundle 'digitaltoad/vim-jade'
+Plugin 'tpope/vim-rails'
+Plugin 'nono/vim-handlebars'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'dsawardekar/ember.vim'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-markdown'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'xenoterracide/html.vim'
+Plugin 'groenewege/vim-less'
+Plugin 'digitaltoad/vim-jade'
 
 
 " for history
