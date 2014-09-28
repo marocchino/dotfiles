@@ -3,8 +3,8 @@
   status = auto
   branch = auto
   interactive = auto
-  ui     = true
-  pager  = true
+  ui = true
+  pager = true
 [merge]
   tool = vimdiff
 [core]
@@ -20,3 +20,6 @@
   path = .gitconfig.local
 [push]
   default = current
+[filter "media"]
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
