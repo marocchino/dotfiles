@@ -31,14 +31,13 @@ Plugin 'bufexplorer.zip'
 Plugin 'ctags.vim'
 Plugin 'AnsiEsc.vim'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'marocchino/motion-mode-vim'
+Plugin 'rizzatti/dash.vim'
 
 " color
 Plugin 'summerfruit256.vim'
 
 " formatter
 Plugin 'tpope/vim-rails'
-Plugin 'nono/vim-handlebars'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'dsawardekar/ember.vim'
 Plugin 'tpope/vim-haml'
@@ -47,6 +46,10 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'xenoterracide/html.vim'
 Plugin 'groenewege/vim-less'
 Plugin 'digitaltoad/vim-jade'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'marocchino/motion-mode-vim'
+Plugin 'slim-template/vim-slim'
+
 
 call vundle#end()            " required
 filetype plugin indent on
