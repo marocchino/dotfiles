@@ -32,6 +32,7 @@ Plugin 'ctags.vim'
 Plugin 'AnsiEsc.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'rizzatti/dash.vim'
+Plugin 'editorconfig/editorconfig-vim'
 
 " color
 Plugin 'summerfruit256.vim'
