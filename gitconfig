@@ -16,6 +16,7 @@
   st = status
   w = whatchanged
   ca = commit --amend
+  cleanup = !git branch --merged | grep -v '*' | xargs git branch -d
 [include]
   path = .gitconfig.local
 [push]
