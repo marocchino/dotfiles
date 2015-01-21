@@ -51,11 +51,12 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'marocchino/motion-mode-vim'
 Plugin 'slim-template/vim-slim'
 
-
 call vundle#end()            " required
-filetype plugin indent on
 
-" for history
+filetype on
+filetype indent on
+filetype plugin on
+
 set history=50
 set nobackup
 set nowritebackup
@@ -75,18 +76,9 @@ set ttimeoutlen=50  " Make Esc work faster
 " for putty
 "set term=cons25
 
-set incsearch hlsearch
+set hlsearch
 "
 set bs=indent,eol,start
-
-" for move windows with hjkl
-nnoremap <silent> <C-H> :wincmd h<CR>
-nnoremap <silent> <C-J> :wincmd j<CR>
-nnoremap <silent> <C-K> :wincmd k<CR>
-nnoremap <silent> <C-L> :wincmd l<CR>
-nnoremap <esc><esc> :nohlsearch<CR>
-
-
 
 " allow buffer change in unsaved file
 set hidden
@@ -100,41 +92,37 @@ set fencs=utf-8,cp949,cp932,euc-jp,shift-jis,euc-kr,big5,ucs-2le,latin1
 if $SHELL =~ 'bin/fish'
   set shell=/bin/sh
 endif
+
 set langmap=ㅂq,ㅈw,ㄷe,ㄱr,ㅅt,ㅛy,ㅕu,ㅑi,ㅐo,ㅔp,ㅁa,ㄴs,ㅇd,ㄹf,ㅎg,ㅗh,ㅓj,ㅏk,ㅣl,ㅋz,ㅌx,ㅊc,ㅍv,ㅠb,ㅜn,ㅡm,ㅃQ,ㅉW,ㄸE,ㄲR,ㅆT,ㅒO,ㅖP
-
-
 " tab select
 set tabstop=2 sts=2 shiftwidth=2 expandtab
+set list listchars=tab:»·,trail:·,extends:»,precedes:«,nbsp:%
+set loadplugins
 
-" autocmd BufWritePre * :%s/\s\+$//e
-" autocmd BufWritePre * :retab
-autocmd InsertEnter * hi StatusLine guibg=#a0a080 ctermfg=Yellow
-autocmd InsertLeave * hi StatusLine guibg=#8090a0 ctermfg=White
-autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+set tags=./tags
+
+set scrolloff=8
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
 
 set wrap
-" for regexp like movement
+" regexp like movement
 set magic
-
-
-filetype on
-filetype indent on
-filetype plugin on
-
-nmap <silent> <Leader>i :BufExplorer<CR>
-" Switch between the last two files
-nnoremap <leader><leader> <c-^>
-
-nnoremap - :Switch<cr>
-
 
 " Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
-" Index ctags from any project, including those outside Rails
-map <Leader>ct :!ctags -R .<CR>
+" Treat <li> and <p> tags like the block tags they are
+let g:html_indent_tags = 'li\|p'
 
-set list listchars=tab:»·,trail:·,extends:»,precedes:«,nbsp:%
+let g:ruby_minlines = 500
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_rails = 1
+let g:ragtag_global_maps = 1
+
+let g:indent_guides_enable_on_vim_startup = 0
+
 
 " https://sites.google.com/site/fudist/Home/vim-nihongo-ban/vim-color#color-zenkaku
 """"""""""""""""""""""""""""""
@@ -175,9 +163,11 @@ endif
 colorscheme summerfruit256
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
+
 "autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
 "autocmd BufRead,BufNewFile *.coffee CoffeeCompile watch vert | cwindow
 set wildmenu
+
 function! ToggleNu()
   let &nu = 1 - &nu
 endf
@@ -187,6 +177,38 @@ endf
 function! ToggleSpell()
   let &l:spell = 1 - &l:spell
 endf
+
+
+" Set syntax highlighting for specific file types
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+" Enable spellchecking for Markdown
+autocmd BufRead,BufNewFile *.md setlocal spell
+
+" Automatically wrap at 80 characters for Markdown
+autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+
+" autocmd BufWritePre * :%s/\s\+$//e
+" autocmd BufWritePre * :retab
+autocmd InsertEnter * hi StatusLine guibg=#a0a080 ctermfg=Yellow
+autocmd InsertLeave * hi StatusLine guibg=#8090a0 ctermfg=White
+
+" move windows with hjkl
+nnoremap <silent> <C-H> :wincmd h<CR>
+nnoremap <silent> <C-J> :wincmd j<CR>
+nnoremap <silent> <C-K> :wincmd k<CR>
+nnoremap <silent> <C-L> :wincmd l<CR>
+nnoremap <esc><esc> :nohlsearch<CR>
+
+nnoremap <silent> <Leader>i :BufExplorer<CR>
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
+
+nnoremap - :Switch<cr>
+
+" Index ctags from any project, including those outside Rails
+map <Leader>ct :!ctags -R .<CR>
+
 map \n :call ToggleNu()<CR>
 map \l :call ToggleList()<CR>
 map \s :call ToggleSpell()<CR>
@@ -196,34 +218,6 @@ map ,. :TComment<CR>
 map ., :TComment<CR>
 map <D-/> :TComment<CR>
 
-set loadplugins
-
-set tags=./tags
-
-set scrolloff=8
-
-" Treat <li> and <p> tags like the block tags they are
-let g:html_indent_tags = 'li\|p'
-
-" Set syntax highlighting for specific file types
-au BufRead,BufNewFile *.md set filetype=markdown
-
-" Enable spellchecking for Markdown
-au BufRead,BufNewFile *.md setlocal spell
-
-" Automatically wrap at 80 characters for Markdown
-au BufRead,BufNewFile *.md setlocal textwidth=80
-
-let g:ruby_minlines = 500
-let g:rubycomplete_buffer_loading = 1
-let g:rubycomplete_rails = 1
-let g:ragtag_global_maps = 1
-
-let g:indent_guides_enable_on_vim_startup = 0
-
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
