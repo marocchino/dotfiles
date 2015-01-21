@@ -188,8 +188,9 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 " Automatically wrap at 80 characters for Markdown
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
-" autocmd BufWritePre * :%s/\s\+$//e
-" autocmd BufWritePre * :retab
+autocmd BufWritePre *.{rb|erb|py|js|coffee|html} :%s/\s\+$//e
+autocmd BufWritePre *.{rb|erb|py|coffee} :retab
+
 autocmd InsertEnter * hi StatusLine guibg=#a0a080 ctermfg=Yellow
 autocmd InsertLeave * hi StatusLine guibg=#8090a0 ctermfg=White
 
