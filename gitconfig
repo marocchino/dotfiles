@@ -16,11 +16,13 @@
   st = status
   w = whatchanged
   ca = commit --amend
+  wip = commit --amend --all --no-edit
   cleanup = !git branch --merged | grep -v '*' | xargs git branch -d
 [include]
   path = .gitconfig.local
 [push]
   default = current
 [filter "media"]
-  clean = git-media-clean %f
-  smudge = git-media-smudge %f
+  required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
