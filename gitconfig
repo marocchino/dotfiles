@@ -17,6 +17,7 @@
   w = whatchanged
   ca = commit --amend
   wip = commit --amend --all --no-edit
+  pf = push -f
   cleanup = !git branch --merged | grep -v '*' | xargs git branch -d
 [include]
   path = .gitconfig.local
