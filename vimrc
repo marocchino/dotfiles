@@ -7,49 +7,50 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'AndrewRadev/switch.vim'
-Plugin 'Townk/vim-autoclose'
-Plugin 'edsono/vim-matchit'
+Plugin 'AnsiEsc.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
+Plugin 'Townk/vim-autoclose'
+Plugin 'bufexplorer.zip'
+Plugin 'ctags.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'edsono/vim-matchit'
 Plugin 'garbas/vim-snipmate'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'kana/vim-vspec'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'rcyrus/snipmate-snippets-rubymotion'
+Plugin 'rizzatti/dash.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-ragtag'
-Plugin 'rcyrus/snipmate-snippets-rubymotion'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'bufexplorer.zip'
-Plugin 'ctags.vim'
-Plugin 'AnsiEsc.vim'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'rizzatti/dash.vim'
-Plugin 'editorconfig/editorconfig-vim'
 
 " color
 Plugin 'summerfruit256.vim'
 
 " formatter
-Plugin 'tpope/vim-rails'
-Plugin 'kchmck/vim-coffee-script'
+Plugin 'dag/vim-fish'
+Plugin 'digitaltoad/vim-jade'
 Plugin 'dsawardekar/ember.vim'
+Plugin 'groenewege/vim-less'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'marocchino/motion-mode-vim'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'slim-template/vim-slim'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'xenoterracide/html.vim'
-Plugin 'groenewege/vim-less'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'marocchino/motion-mode-vim'
-Plugin 'slim-template/vim-slim'
 
 call vundle#end()            " required
 
@@ -188,8 +189,8 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 " Automatically wrap at 80 characters for Markdown
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
-autocmd BufWritePre *.{rb|erb|py|js|coffee|html} :%s/\s\+$//e
-autocmd BufWritePre *.{rb|erb|py|coffee} :retab
+" autocmd BufWritePre *.{rb|erb|py|js|coffee|html} :%s/\s\+$//e
+" autocmd BufWritePre *.{rb|erb|py|coffee} :retab
 
 autocmd InsertEnter * hi StatusLine guibg=#a0a080 ctermfg=Yellow
 autocmd InsertLeave * hi StatusLine guibg=#8090a0 ctermfg=White
