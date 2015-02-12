@@ -165,6 +165,12 @@ colorscheme summerfruit256
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
+" http://mattn.kaoriya.net/software/vim/20150209151638.htm
+if (exists('+colorcolumn'))
+    set colorcolumn=80
+    highlight ColorColumn ctermbg=9
+endif
+
 "autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
 "autocmd BufRead,BufNewFile *.coffee CoffeeCompile watch vert | cwindow
 set wildmenu
