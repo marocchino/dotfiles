@@ -17,7 +17,8 @@
   w = whatchanged
   ca = commit --amend
   wip = commit --amend --all --no-edit
-  pf = push -f
+  pushf = push -f
+  pullf = !git fetch --all && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)
   cleanup = !git branch --merged | grep -v '*' | xargs git branch -d
 [include]
   path = .gitconfig.local
