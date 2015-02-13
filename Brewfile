@@ -10,6 +10,8 @@ install fish
 install macvim
 tap phinze/cask
 install brew-cask
+tap peco/peco
+install peco
 cask install keyremap4macbook
 cask install dropbox
 cask install slate
