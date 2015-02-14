@@ -1,6 +1,4 @@
 require 'irb/completion'
-require 'rubygems'
-require 'wirble'
+require 'pry'
 
-Wirble.init
-Wirble.colorize
+Pry.start || exit rescue LoadError
