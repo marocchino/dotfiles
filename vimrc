@@ -58,58 +58,47 @@ filetype on
 filetype indent on
 filetype plugin on
 
+set backspace=indent,eol,start
+set expandtab
+set fileencoding=utf-8  " Set encoding
+set fileencodings=utf-8,cp949,cp932,euc-jp,shift-jis,euc-kr,big5,ucs-2le,latin1
+set guioptions-=r   " remove right scrollbar (macvim)
+set hidden          " allow buffer change in unsaved file
 set history=50
-set nobackup
-set nowritebackup
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
-set ruler         " show the cursor position all the time
-set showcmd       " display incomplete commands
-set incsearch     " do incremental searching
-set guioptions-=r " remove right scrollbar (macvim)
-
-set statusline=%#ErrorMsg#%#StatusLine#[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%#ErrorMsg#%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%=%-16(\ %l,%c-%v\ %)%P
-
-" To display the status line always
-set laststatus=2
-
-set ttimeoutlen=50  " Make Esc work faster
-
-" for putty
-"set term=cons25
-
 set hlsearch
-"
-set bs=indent,eol,start
-
-" allow buffer change in unsaved file
-set hidden
-
-" Show line number
-set number
+set incsearch       " do incremental searching
+set laststatus=2    " To display the status line always
+set list
+set listchars=tab:»·,trail:·,extends:»,precedes:«,nbsp:%
+set loadplugins
+set magic           " regexp like movement
+set nobackup
+set noswapfile      " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set nowritebackup
+set number          " Show line number
 set numberwidth=5
-" Set encoding
-set fenc=utf-8
-set fencs=utf-8,cp949,cp932,euc-jp,shift-jis,euc-kr,big5,ucs-2le,latin1
+set ruler           " show the cursor position all the time
+set scrolloff=8
+set shiftwidth=2
+set showcmd         " display incomplete commands
+set spelllang=en_us,cjk " remove cjk words from spellcecklist
+set splitbelow      " Open new split panes to right and bottom, which feels more natural
+set splitright
+set statusline=%#ErrorMsg#%#StatusLine#[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%#ErrorMsg#%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%=%-16(\ %l,%c-%v\ %)%P
+set sts=2
+set tabstop=2
+set tags=./tags
+set term=cons25     " for putty
+set ttimeoutlen=50  " Make Esc work faster
+set wildmenu
+set wrap
 if $SHELL =~ 'bin/fish'
   set shell=/bin/sh
 endif
+if has("gui_running")
+  set mouse=a
+endif
 
-set langmap=ㅂq,ㅈw,ㄷe,ㄱr,ㅅt,ㅛy,ㅕu,ㅑi,ㅐo,ㅔp,ㅁa,ㄴs,ㅇd,ㄹf,ㅎg,ㅗh,ㅓj,ㅏk,ㅣl,ㅋz,ㅌx,ㅊc,ㅍv,ㅠb,ㅜn,ㅡm,ㅃQ,ㅉW,ㄸE,ㄲR,ㅆT,ㅒO,ㅖP
-" tab select
-set tabstop=2 sts=2 shiftwidth=2 expandtab
-set list listchars=tab:»·,trail:·,extends:»,precedes:«,nbsp:%
-set loadplugins
-
-set tags=./tags
-
-set scrolloff=8
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
-
-set wrap
-" regexp like movement
-set magic
 
 " Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
@@ -156,9 +145,6 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
-if has("gui_running")
-  set mouse=a
-endif
 
 " Color scheme
 colorscheme summerfruit256
@@ -173,7 +159,6 @@ endif
 
 "autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
 "autocmd BufRead,BufNewFile *.coffee CoffeeCompile watch vert | cwindow
-set wildmenu
 
 function! ToggleNu()
   let &nu = 1 - &nu
