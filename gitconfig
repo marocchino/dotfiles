@@ -17,6 +17,7 @@
   w = whatchanged
   ca = commit --amend
   wip = commit --amend --all --no-edit
+  rma = !git rm $(git ls-files --deleted)
   pushf = push -f
   pullf = !git fetch --all && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)
   cleanup = !git branch --merged | grep -v '*' | xargs git branch -d
