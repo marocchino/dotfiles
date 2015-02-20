@@ -160,17 +160,6 @@ endif
 "autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
 "autocmd BufRead,BufNewFile *.coffee CoffeeCompile watch vert | cwindow
 
-function! ToggleNu()
-  let &nu = 1 - &nu
-endf
-function! ToggleList()
-  let &list = 1 - &list
-endf
-function! ToggleSpell()
-  let &l:spell = 1 - &l:spell
-endf
-
-
 " Set syntax highlighting for specific file types
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
@@ -202,9 +191,6 @@ nnoremap - :Switch<cr>
 " Index ctags from any project, including those outside Rails
 map <Leader>ct :!ctags -R .<CR>
 
-map \n :call ToggleNu()<CR>
-map \l :call ToggleList()<CR>
-map \s :call ToggleSpell()<CR>
 map mc :call MotionConverter()<CR>
 map ms :call MotionSpec()<CR>
 map ,. :TComment<CR>
