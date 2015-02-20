@@ -11,7 +11,6 @@ Plugin 'AndrewRadev/switch.vim'
 Plugin 'AnsiEsc.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'Townk/vim-autoclose'
-Plugin 'bufexplorer.zip'
 Plugin 'ctags.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'edsono/vim-matchit'
@@ -24,7 +23,6 @@ Plugin 'mattn/emmet-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'rcyrus/snipmate-snippets-rubymotion'
 Plugin 'rizzatti/dash.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tomtom/tlib_vim'
@@ -182,14 +180,7 @@ nnoremap <silent> <C-K> :wincmd k<CR>
 nnoremap <silent> <C-L> :wincmd l<CR>
 nnoremap <esc><esc> :nohlsearch<CR>
 
-nnoremap <silent> <Leader>i :BufExplorer<CR>
-" Switch between the last two files
-nnoremap <leader><leader> <c-^>
-
 nnoremap - :Switch<cr>
-
-" Index ctags from any project, including those outside Rails
-map <Leader>ct :!ctags -R .<CR>
 
 map mc :call MotionConverter()<CR>
 map ms :call MotionSpec()<CR>
