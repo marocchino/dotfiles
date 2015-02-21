@@ -11,8 +11,19 @@ set -x DOCKER_TLS_VERIFY 1
 fish_user_key_bindings
 source ~/.config/fish/profile.fish
 
-alias v pmvim
+alias b bundle
+alias be "bundle exec"
+alias g git
+alias gg exit
 alias r rails
+alias s spring
 alias sr "spring rails"
 alias t tmux
-alias b brew
+alias v pmvim
+
+# wow! much doge!
+alias much git
+alias so pmvim
+alias such git
+alias very git
+alias wow "git status"
