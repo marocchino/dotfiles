@@ -10,3 +10,9 @@ set -x DOCKER_CERT_PATH $HOME/.boot2docker/certs/boot2docker-vm
 set -x DOCKER_TLS_VERIFY 1
 fish_user_key_bindings
 source ~/.config/fish/profile.fish
+
+alias v pmvim
+alias r rails
+alias sr "spring rails"
+alias t tmux
+alias b brew
