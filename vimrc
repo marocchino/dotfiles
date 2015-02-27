@@ -21,7 +21,6 @@ Plugin 'kana/vim-vspec'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'rcyrus/snipmate-snippets-rubymotion'
 Plugin 'rizzatti/dash.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tomtom/tcomment_vim'
@@ -41,7 +40,6 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'dsawardekar/ember.vim'
 Plugin 'groenewege/vim-less'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'marocchino/motion-mode-vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'slim-template/vim-slim'
 Plugin 'tpope/vim-haml'
@@ -181,6 +179,8 @@ nnoremap <silent> <C-L> :wincmd l<CR>
 nnoremap <esc><esc> :nohlsearch<CR>
 
 nnoremap - :Switch<cr>
+" Use command d on top of a word to look it up in Dictionary.app
+nnoremap <silent> <D-d> :!open dict://<cword><CR><CR>
 
 map mc :call MotionConverter()<CR>
 map ms :call MotionSpec()<CR>
