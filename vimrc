@@ -21,6 +21,7 @@ Plugin 'kana/vim-vspec'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'ngmy/vim-rubocop'
 Plugin 'rizzatti/dash.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tomtom/tcomment_vim'
@@ -41,6 +42,7 @@ Plugin 'dsawardekar/ember.vim'
 Plugin 'groenewege/vim-less'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'mxw/vim-jsx'
 Plugin 'slim-template/vim-slim'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
@@ -84,7 +86,7 @@ set statusline=%#ErrorMsg#%#StatusLine#[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLoc
 set sts=2
 set tabstop=2
 set tags=./tags
-set term=cons25     " for putty
+" set term=cons25     " for putty
 set ttimeoutlen=50  " Make Esc work faster
 set wildmenu
 set wrap
