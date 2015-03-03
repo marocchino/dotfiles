@@ -20,8 +20,8 @@ config resizePercentOf screenSize
 # bind left:ctrl;cmd   push left  bar-resize:screenSizeX/3
 # bind up:ctrl;cmd     push up    bar-resize:screenSizeY/2
 # bind down:ctrl;cmd   push down  bar-resize:screenSizeY/2
-bind l:shift;alt;cmd  push right bar-resize:screenSizeX/3
-bind h:shift;alt;cmd  push left  bar-resize:screenSizeX/3*2
+bind l:shift;alt;cmd  push right bar-resize:screenSizeX/5*2
+bind h:shift;alt;cmd  push left  bar-resize:screenSizeX/5*3
 bind k:shift;alt;cmd  push up    bar-resize:screenSizeY/4*3
 bind j:shift;alt;cmd  push down  bar-resize:screenSizeY/4-1
 bind f:shift;alt;cmd  push up    bar-resize:screenSizeY
