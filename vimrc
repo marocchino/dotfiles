@@ -183,6 +183,7 @@ nnoremap <esc><esc> :nohlsearch<CR>
 nnoremap - :Switch<cr>
 " Use command d on top of a word to look it up in Dictionary.app
 nnoremap <silent> <D-d> :!open dict://<cword><CR><CR>
+nnoremap <silent> <D-e> :Dash<CR>
 
 map mc :call MotionConverter()<CR>
 map ms :call MotionSpec()<CR>
