@@ -12,20 +12,21 @@ Plugin 'AnsiEsc.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'Townk/vim-autoclose'
 Plugin 'ctags.vim'
+Plugin 'd11wtq/ctrlp_bdelete.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'edsono/vim-matchit'
 Plugin 'garbas/vim-snipmate'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'honza/vim-snippets'
+Plugin 'junegunn/vim-easy-align'
 Plugin 'kana/vim-vspec'
 Plugin 'kien/ctrlp.vim'
-Plugin 'd11wtq/ctrlp_bdelete.vim'
-Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'mattn/emmet-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'rizzatti/dash.vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-abolish'
@@ -183,6 +184,9 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 " Automatically wrap at 80 characters for Markdown
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
+autocmd BufEnter *.rb syn match error contained "\<binding.pry\>"
+autocmd BufEnter *.rb syn match error contained "\<debugger\>"
+
 " autocmd BufWritePre *.{rb|erb|py|js|coffee|html} :%s/\s\+$//e
 " autocmd BufWritePre *.{rb|erb|py|coffee} :retab
 
@@ -200,9 +204,8 @@ nnoremap - :Switch<cr>
 " Use command d on top of a word to look it up in Dictionary.app
 nnoremap <silent> <D-d> :!open dict://<cword><CR><CR>
 nnoremap <silent> <D-e> :Dash<CR>
+vmap <Enter> <Plug>(EasyAlign)
 
-map mc :call MotionConverter()<CR>
-map ms :call MotionSpec()<CR>
 map ,. :TComment<CR>
 map ., :TComment<CR>
 map <D-/> :TComment<CR>
