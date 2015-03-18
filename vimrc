@@ -133,6 +133,14 @@ call ctrlp_bdelete#init()
 let g:ctrlp_extensions = ['funky']
 let g:ctrlp_funky_multi_buffers = 1
 
+" ----- scrooloose/syntastic settings -----
+let g:syntastic_error_symbol = '✘'
+let g:syntastic_warning_symbol = "▲"
+augroup mySyntastic
+  autocmd!
+  autocmd FileType tex let b:syntastic_mode = "passive"
+augroup END
+
 
 " Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
