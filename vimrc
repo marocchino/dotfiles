@@ -208,7 +208,6 @@ vmap <Enter> <Plug>(EasyAlign)
 
 map ,. :TComment<CR>
 map ., :TComment<CR>
-map <D-/> :TComment<CR>
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
