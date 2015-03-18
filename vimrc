@@ -100,6 +100,24 @@ if has("gui_running")
   set mouse=a
 endif
 
+" Disable output and VCS files
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+
+" Ignore images and log files
+set wildignore+=*.gif,*.jpg,*.png,*.log
+
+" Disable archive files
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+
+" Ignore bundler and sass cache
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+
+" Ignore rails temporary asset caches
+set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
+
+" Disable osx index files
+set wildignore+=.DS_Store
+
 hi def link CtrlPMatch CursorLine
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_switch_buffer = 'Et'
@@ -154,12 +172,6 @@ if has('syntax')
   call ZenkakuSpace()
 endif
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-endif
-
 
 " Color scheme
 colorscheme summerfruit256
@@ -186,6 +198,10 @@ autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
 autocmd BufEnter *.rb syn match error contained "\<binding.pry\>"
 autocmd BufEnter *.rb syn match error contained "\<debugger\>"
+autocmd BufEnter *.js syn match error contained "\<console.log\>"
+autocmd BufEnter *.coffee syn match error contained "\<console.log\>"
+autocmd Filetype gitcommit setlocal spell textwidth=72
+autocmd BufLeave,FocusLost * silent! update
 
 " autocmd BufWritePre *.{rb|erb|py|js|coffee|html} :%s/\s\+$//e
 " autocmd BufWritePre *.{rb|erb|py|coffee} :retab
@@ -208,6 +224,9 @@ vmap <Enter> <Plug>(EasyAlign)
 
 map ,. :TComment<CR>
 map ., :TComment<CR>
+
+syntax enable
+syntax sync fromstart
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
