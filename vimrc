@@ -11,6 +11,7 @@ Plugin 'AndrewRadev/switch.vim'
 Plugin 'AnsiEsc.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'Townk/vim-autoclose'
+Plugin 'bling/vim-airline'
 Plugin 'ctags.vim'
 Plugin 'd11wtq/ctrlp_bdelete.vim'
 Plugin 'editorconfig/editorconfig-vim'
@@ -205,9 +206,6 @@ autocmd BufLeave,FocusLost * silent! update
 
 " autocmd BufWritePre *.{rb|erb|py|js|coffee|html} :%s/\s\+$//e
 " autocmd BufWritePre *.{rb|erb|py|coffee} :retab
-
-autocmd InsertEnter * hi StatusLine guibg=#a0a080 ctermfg=Yellow
-autocmd InsertLeave * hi StatusLine guibg=#8090a0 ctermfg=White
 
 " move windows with hjkl
 nnoremap <silent> <C-H> :wincmd h<CR>
