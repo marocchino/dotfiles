@@ -23,6 +23,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'kana/vim-vspec'
 Plugin 'kien/ctrlp.vim'
+Plugin 'marocchino/autocorrect-ko-vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ngmy/vim-rubocop'
@@ -206,10 +207,11 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 " Automatically wrap at 80 characters for Markdown
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
-autocmd BufEnter *.rb syn match error contained "\<binding.pry\>"
-autocmd BufEnter *.rb syn match error contained "\<debugger\>"
-autocmd BufEnter *.js syn match error contained "\<console.log\>"
-autocmd BufEnter *.coffee syn match error contained "\<console.log\>"
+autocmd BufEnter *.rb syn match Error "binding.pry"
+autocmd BufEnter *.rb syn match Error "debugger"
+autocmd BufEnter *.js syn match Error "console.log"
+autocmd BufEnter *.md call AutoCorrectKo()
+autocmd BufEnter *.coffee syn match Error "console.log"
 autocmd Filetype gitcommit setlocal spell textwidth=72
 autocmd BufLeave,FocusLost * silent! update
 
