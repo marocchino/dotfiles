@@ -27,6 +27,7 @@ Plugin 'marocchino/autocorrect-ko-vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ngmy/vim-rubocop'
+Plugin 'osyo-manga/vim-over'
 Plugin 'rizzatti/dash.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tacahiroy/ctrlp-funky'
@@ -172,6 +173,13 @@ function! ZenkakuSpace()
   highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
 endfunction
 
+function! VisualFindAndReplace()
+    :OverCommandLine%s/
+endfunction
+function! VisualFindAndReplaceWithSelection() range
+    :'<,'>OverCommandLine s/
+endfunction
+
 if has('syntax')
   augroup ZenkakuSpace
     autocmd!
@@ -224,6 +232,9 @@ nnoremap <silent> <C-J> :wincmd j<CR>
 nnoremap <silent> <C-K> :wincmd k<CR>
 nnoremap <silent> <C-L> :wincmd l<CR>
 nnoremap <esc><esc> :nohlsearch<CR>
+nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
+xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
+nmap <Leader><Leader> <c-^>
 
 nnoremap - :Switch<cr>
 " Use command d on top of a word to look it up in Dictionary.app
