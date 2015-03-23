@@ -25,6 +25,9 @@
   path = .gitconfig.local
 [push]
   default = current
+[url "git@github.com:"]
+  pushinsteadof = "git://github.com/"
+  pushinsteadof = "https://github.com/"
 [filter "media"]
   required = true
 	clean = git media clean %f
