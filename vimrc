@@ -23,7 +23,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'kana/vim-vspec'
 Plugin 'kien/ctrlp.vim'
-Plugin 'marocchino/autocorrect-ko-vim'
+Plugin 'marocchino/korean-typo-highlighter.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ngmy/vim-rubocop'
@@ -218,7 +218,7 @@ autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 autocmd BufEnter *.rb syn match Error "binding.pry"
 autocmd BufEnter *.rb syn match Error "debugger"
 autocmd BufEnter *.js syn match Error "console.log"
-autocmd BufEnter *.md call AutoCorrectKo()
+autocmd BufEnter *.md call KoreanTypoHighlight()
 autocmd BufEnter *.coffee syn match Error "console.log"
 autocmd Filetype gitcommit setlocal spell textwidth=72
 autocmd BufLeave,FocusLost * silent! update
