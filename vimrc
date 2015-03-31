@@ -65,6 +65,7 @@ filetype plugin on
 
 set backspace=indent,eol,start
 set expandtab
+set encoding=utf-8  " Set encoding
 set fileencoding=utf-8  " Set encoding
 set fileencodings=utf-8,cp949,cp932,euc-jp,shift-jis,euc-kr,big5,ucs-2le,latin1
 set guioptions-=r   " remove right scrollbar (macvim)
@@ -86,15 +87,16 @@ set ruler           " show the cursor position all the time
 set scrolloff=8
 set shiftwidth=2
 set showcmd         " display incomplete commands
-set spelllang=en_us,cjk " remove cjk words from spellcecklist
+set spelllang=en_us,cjk " remove cjk words from spell check list
+set spell
 set splitbelow      " Open new split panes to right and bottom, which feels more natural
 set splitright
 set statusline=%#ErrorMsg#%#StatusLine#[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%#ErrorMsg#%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%=%-16(\ %l,%c-%v\ %)%P
 set sts=2
 set tabstop=2
 set tags=./tags
-" set term=cons25     " for putty
-set ttimeoutlen=50  " Make Esc work faster
+set textwidth=80
+set ttimeoutlen=50  " Make ESC work faster
 set wildmenu
 set wrap
 if $SHELL =~ 'bin/fish'
@@ -119,7 +121,7 @@ set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
 " Ignore rails temporary asset caches
 set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
 
-" Disable osx index files
+" Disable OS X index files
 set wildignore+=.DS_Store
 
 hi def link CtrlPMatch CursorLine
@@ -145,7 +147,7 @@ augroup mySyntastic
 augroup END
 
 
-" Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
+" Exclude JavaScript files in :Rtags via rails.vim due to warnings when parsing
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
 " Treat <li> and <p> tags like the block tags they are
@@ -166,7 +168,7 @@ let g:indent_guides_enable_on_vim_startup = 0
 "コメント以外で全角スペースを指定しているので scriptencodingと、
 "このファイルのエンコードが一致するよう注意！
 "全角スペースが強調表示されない場合、ここでscriptencodingを指定すると良い。
-"scriptencoding cp932
+scriptencoding utf-8
 
 "デフォルトのZenkakuSpaceを定義
 function! ZenkakuSpace()
@@ -199,32 +201,36 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 " http://mattn.kaoriya.net/software/vim/20150209151638.htm
 if (exists('+colorcolumn'))
-    set colorcolumn=80
-    highlight ColorColumn ctermbg=9
+  set colorcolumn=80
+  highlight ColorColumn ctermbg=9
 endif
 
-"autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
-"autocmd BufRead,BufNewFile *.coffee CoffeeCompile watch vert | cwindow
+augroup debugger_highlight
+  autocmd!
+  autocmd BufEnter *.rb syn match Error "binding.pry\|debugger"
+  autocmd BufEnter *.{js,coffee} syn match Error "console.log"
+augroup END
 
-" Set syntax highlighting for specific file types
-autocmd BufRead,BufNewFile *.md set filetype=markdown
+augroup auto_save
+  autocmd!
+  autocmd BufLeave,FocusLost * silent! update
+augroup END
 
-" Enable spellchecking for Markdown
-autocmd BufRead,BufNewFile *.md setlocal spell
+augroup reload_vimrc
+  autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END
 
-" Automatically wrap at 80 characters for Markdown
-autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+augroup commit_width
+  autocmd!
+  autocmd Filetype gitcommit setlocal spell textwidth=72
+augroup END
 
-autocmd BufEnter *.rb syn match Error "binding.pry"
-autocmd BufEnter *.rb syn match Error "debugger"
-autocmd BufEnter *.js syn match Error "console.log"
-autocmd BufEnter *.md call KoreanTypoHighlight()
-autocmd BufEnter *.coffee syn match Error "console.log"
-autocmd Filetype gitcommit setlocal spell textwidth=72
-autocmd BufLeave,FocusLost * silent! update
-
-" autocmd BufWritePre *.{rb|erb|py|js|coffee|html} :%s/\s\+$//e
-" autocmd BufWritePre *.{rb|erb|py|coffee} :retab
+augroup trailing_white_space
+  autocmd!
+  autocmd BufWritePre *.{rb,erb,py,js,coffee,html} :%s/\s\+$//e
+  autocmd BufWritePre *.{rb,erb,py,coffee} :retab
+augroup END
 
 " move windows with hjkl
 nnoremap <silent> <C-H> :wincmd h<CR>
@@ -248,7 +254,7 @@ map ., :TComment<CR>
 syntax enable
 syntax sync fromstart
 
-" Local config
+" Local configure
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
