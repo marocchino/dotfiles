@@ -141,9 +141,11 @@ let g:ctrlp_funky_multi_buffers = 1
 " ----- scrooloose/syntastic settings -----
 let g:syntastic_error_symbol = '✘'
 let g:syntastic_warning_symbol = "▲"
+let g:syntastic_ruby_checkers = ["rubocop","mri"]
+let g:syntastic_javascript_checkers = ["eslint"]
 augroup mySyntastic
   autocmd!
-  autocmd FileType tex let b:syntastic_mode = "passive"
+  autocmd FileType tex let b:syntastic_mode = "active"
 augroup END
 
 
