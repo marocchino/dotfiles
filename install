@@ -24,5 +24,6 @@ ln -sf $PWD/slate ~/.slate
 ln -sf $PWD/gemrc ~/.gemrc
 ln -sf $PWD/irbrc ~/.irbrc
 ln -sf $PWD/editorconfig ~/.editorconfig
+ln -sf $PWD/eslintrc ~/.eslintrc
 ln -sfn $PWD/fish ~/.config/fish
 
