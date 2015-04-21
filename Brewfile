@@ -1,17 +1,17 @@
-install python
-install rbenv
-install ruby-build
-install node
-install wget
-install reattach-to-user-namespace
-install tmux
-install git
-install fish
-install macvim
-tap phinze/cask
-install brew-cask
-tap peco/peco
-install peco
-cask install karabiner
-cask install dropbox
-cask install slate
+brew 'python'
+brew 'rbenv'
+brew 'ruby-build'
+brew 'node'
+brew 'wget'
+brew 'reattach-to-user-namespace'
+brew 'tmux'
+brew 'git'
+brew 'fish'
+brew 'macvim'
+tap 'caskroom/cask'
+brew 'brew-cask'
+tap 'peco/peco'
+brew 'peco'
+cask 'karabiner'
+cask 'dropbox'
+cask 'slate'
