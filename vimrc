@@ -14,7 +14,6 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'ctags.vim'
-Plugin 'd11wtq/ctrlp_bdelete.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'edsono/vim-matchit'
 Plugin 'garbas/vim-snipmate'
@@ -132,8 +131,6 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.jpg$\|\.exe$\|\.so$\|tags$\|\.dll$'
   \ }
 nnoremap <C-b> :CtrlPBuffer<cr>
-" CtrlP Delete
-call ctrlp_bdelete#init()
 " CtrlP Funky
 let g:ctrlp_extensions = ['funky']
 let g:ctrlp_funky_multi_buffers = 1
