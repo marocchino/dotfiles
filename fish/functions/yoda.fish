@@ -1,8 +1,8 @@
 function yoda
-  if not type -P lolcat > /dev/null
+  if not rbenv which lolcat > /dev/null
     gem install lolcat
   end
-  if not type -P yodaism > /dev/null
+  if not rbenv which yodaism > /dev/null
     gem install yodaism
   end
   yodaism ascii | lolcat
