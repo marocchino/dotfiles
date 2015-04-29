@@ -1,18 +1,23 @@
 #!/usr/bin/env fish
-if which git
+if type -P git
   ln -sfn $PWD/git_template ~/.git_template
   ln -sf $PWD/gitconfig ~/.gitconfig
+  ln -sf $PWD/gitignore_global ~/.gitignore_global
 else
   echo "Need git"
 end
 
-if which tmux
+if not test -e ~/.gitconfig.local
+  cp $PWD/gitconfig.local.sample ~/.gitconfig.local
+end
+
+if type -P tmux
   ln -sf $PWD/tmux.conf ~/.tmux.conf
 else
   echo "Need tmux"
 end
 
-if which vim
+if type -P vim
   ln -sfn $PWD/vim ~/.vim
   ln -sf $PWD/vimrc ~/.vimrc
 else
