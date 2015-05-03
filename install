@@ -1,34 +1,26 @@
 #!/usr/bin/env fish
-if type -P git
-  ln -sfn $PWD/git_template ~/.git_template
-  ln -sf $PWD/gitconfig ~/.gitconfig
-  ln -sf $PWD/gitignore_global ~/.gitignore_global
-else
-  echo "Need git"
-end
-
+ln -sfn $PWD/git_template ~/.git_template
+ln -sf $PWD/gitconfig ~/.gitconfig
+ln -sf $PWD/gitignore_global ~/.gitignore_global
 if not test -e ~/.gitconfig.local
   cp $PWD/gitconfig.local.sample ~/.gitconfig.local
 end
 
-if type -P tmux
-  ln -sf $PWD/tmux.conf ~/.tmux.conf
-else
-  echo "Need tmux"
-end
+ln -sf $PWD/tmux.conf ~/.tmux.conf
 
-if type -P vim
-  ln -sfn $PWD/vim ~/.vim
-  ln -sf $PWD/vimrc ~/.vimrc
-else
-  echo "Need vim"
-end
+ln -sfn $PWD/vim ~/.vim
+ln -sf $PWD/vimrc ~/.vimrc
 
 ln -sf $PWD/private.xml ~/Library/Application\ Support/Karabiner/private.xml
-ln -sf $PWD/slate ~/.slate
-ln -sf $PWD/gemrc ~/.gemrc
-ln -sf $PWD/irbrc ~/.irbrc
-ln -sf $PWD/editorconfig ~/.editorconfig
-ln -sf $PWD/eslintrc ~/.eslintrc
-ln -sfn $PWD/fish ~/.config/fish
 
+ln -sf $PWD/slate ~/.slate
+
+ln -sf $PWD/gemrc ~/.gemrc
+
+ln -sf $PWD/irbrc ~/.irbrc
+
+ln -sf $PWD/editorconfig ~/.editorconfig
+
+ln -sf $PWD/eslintrc ~/.eslintrc
+
+ln -sfn $PWD/fish ~/.config/fish
