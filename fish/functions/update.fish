@@ -26,7 +26,7 @@ function update-brew
   if type brew
     echo updating brew
     brew update
-    brew upgrade
+    brew upgrade --all
     brew cleanup
   end
 end
