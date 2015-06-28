@@ -7,6 +7,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
+Bundle 'ntpeters/vim-better-whitespace'
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'AnsiEsc.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -228,12 +229,6 @@ augroup END
 augroup commit_width
   autocmd!
   autocmd Filetype gitcommit setlocal spell textwidth=72
-augroup END
-
-augroup trailing_white_space
-  autocmd!
-  autocmd BufWritePre *.{rb,erb,py,js,coffee,html} :%s/\s\+$//e
-  autocmd BufWritePre *.{rb,erb,py,coffee} :retab
 augroup END
 
 " move windows with hjkl
