@@ -21,6 +21,11 @@ default_command_set = Pry::CommandSet.new do
     output.puts 'ActiveSupport Loaded'
   end
 
+  command 'load_ap', 'Load awesome_print' do
+    require 'awesome_print'
+    AwesomePrint.pry!
+  end
+
   command 'caller_method' do |depth|
     depth = depth.to_i || 1
     if /^(.+?):(\d+)(?::in `(.*)')?/ =~ caller(depth + 1).first
