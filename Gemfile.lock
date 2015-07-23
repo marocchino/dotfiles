@@ -1,0 +1,30 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    awesome_print (1.6.1)
+    coderay (1.1.0)
+    lolcat (42.1.0)
+      paint (~> 0.8.3)
+      trollop (~> 1.16.2)
+    method_source (0.8.2)
+    paint (0.8.7)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    slop (3.6.0)
+    trollop (1.16.2)
+    yodaism (0.0.6)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  awesome_print
+  bundler
+  lolcat
+  pry
+  yodaism
+
+BUNDLED WITH
+   1.10.6
