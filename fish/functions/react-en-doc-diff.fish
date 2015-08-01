@@ -8,5 +8,6 @@ function react-en-doc-diff
     set COMMIT $argv[1]
     set FILES (git diff $COMMIT --name-only -- docs | grep  -v -e 'ko-KR\|ja-JP\|zh-CN')
     git diff $COMMIT -- $FILES > diff
+    echo diff
   end
 end
