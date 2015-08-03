@@ -37,6 +37,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-surround'
 
 " color
 Plugin 'summerfruit256.vim'
