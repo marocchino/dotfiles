@@ -28,7 +28,6 @@ Plugin 'ngmy/vim-rubocop'
 Plugin 'osyo-manga/vim-over'
 Plugin 'rizzatti/dash.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tomtom/tlib_vim'
@@ -124,17 +123,12 @@ set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
 " Disable OS X index files
 set wildignore+=.DS_Store
 
-hi def link CtrlPMatch CursorLine
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_switch_buffer = 'Et'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git\|node_modules\|bin\|\.hg\|\.svn\|build\|log\|resources\|coverage\|doc\|tmp\|public/assets\|vendor\|Android',
   \ 'file': '\.jpg$\|\.exe$\|\.so$\|tags$\|\.dll$'
   \ }
 nnoremap <C-b> :CtrlPBuffer<cr>
-" CtrlP Funky
-let g:ctrlp_extensions = ['funky']
-let g:ctrlp_funky_multi_buffers = 1
 
 " ----- scrooloose/syntastic settings -----
 let g:syntastic_error_symbol = '✘'
