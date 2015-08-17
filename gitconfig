@@ -13,14 +13,16 @@
   extendRegexp = true
   lineNumber = true
 [alias]
+  ca = commit --amend
+  cleanup = !git branch --merged | grep -v '*' | xargs git branch -d
+  last = log --oneline -1
+  pullf = !git fetch --all && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)
+  pushf = push -f
+  ri = rebase -i
+  rma = !git rm $(git ls-files --deleted)
   st = status
   w = whatchanged
-  ca = commit --amend
   wip = commit --amend --all --no-edit
-  rma = !git rm $(git ls-files --deleted)
-  pushf = push -f
-  pullf = !git fetch --all && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)
-  cleanup = !git branch --merged | grep -v '*' | xargs git branch -d
 [include]
   path = .gitconfig.local
 [push]
