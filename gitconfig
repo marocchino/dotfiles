@@ -15,6 +15,7 @@
 [alias]
   ca = commit --amend
   cleanup = !git branch --merged | grep -v '*' | xargs git branch -d
+  fa = fetch --all
   last = log --oneline -1
   pullf = !git fetch --all && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)
   pushf = push -f
