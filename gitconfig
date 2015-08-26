@@ -18,8 +18,9 @@
   fa = fetch --all
   last = log --oneline -1
   pullf = !git fetch --all && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)
-  pushf = push -f
-  ri = rebase -i
+  pushf = push --force
+  rc = rebase --continue
+  ri = rebase --interactive
   rma = !git rm $(git ls-files --deleted)
   st = status
   w = whatchanged
