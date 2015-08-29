@@ -24,7 +24,7 @@
   rma = !git rm $(git ls-files --deleted)
   st = status
   w = whatchanged
-  wip = commit --amend --all --no-edit
+  wip = commit --amend --no-edit
 [include]
   path = .gitconfig.local
 [push]
