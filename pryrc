@@ -14,7 +14,7 @@ default_command_set = Pry::CommandSet.new do
     output.puts ActiveRecord::Base.connection.select_all(query)
   end
 
-  command 'ar', 'Load ActiveSupport' do
+  command 'as', 'Load ActiveSupport' do
     require 'active_support/all'
     output.puts 'ActiveSupport Loaded'
   end
