@@ -160,6 +160,37 @@ let g:ragtag_global_maps = 1
 
 let g:indent_guides_enable_on_vim_startup = 0
 
+let g:rails_projections = {
+\ "app/decorators/*_decorator.rb": {
+\   "command": "decorator",
+\   "test": "spec/decorators/{}_decorator_spec.rb"
+\ },
+\ "app/forms/*_form.rb": {
+\   "command": "form",
+\   "test": "spec/forms/{}_form_spec.rb"
+\ },
+\ "app/jobs/*_job.rb": {
+\   "command": "job",
+\   "test": "spec/jobs/{}_job_spec.rb"
+\ },
+\ "app/services/*.rb": {
+\   "command": "service",
+\   "test": "spec/services/{}_spec.rb"
+\ },
+\ "app/validators/*_validator.rb": {
+\   "command": "service",
+\   "test": "spec/validators/{}_validator_spec.rb"
+\ },
+\ "app/uploaders/*_uploader.rb": {
+\   "command": "uploader",
+\   "template":
+\     ["class {camelcase|capitalize|colons}Uploader < "
+\      . "CarrierWave::Uploader::Base", "end"],
+\   "test": "spec/models/{}_uploader_spec.rb",
+\   "keywords": "process version"
+\ }}
+
+
 
 " https://sites.google.com/site/fudist/Home/vim-nihongo-ban/vim-color#color-zenkaku
 """"""""""""""""""""""""""""""
