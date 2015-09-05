@@ -173,6 +173,10 @@ let g:rails_projections = {
 \   "command": "job",
 \   "test": "spec/jobs/{}_job_spec.rb"
 \ },
+\ "lib/*.rb": {
+\   "command": "lib",
+\   "test": "spec/lib/{}_spec.rb"
+\ },
 \ "app/services/*.rb": {
 \   "command": "service",
 \   "test": "spec/services/{}_spec.rb"
