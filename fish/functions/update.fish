@@ -10,11 +10,14 @@ function update
       update-vim
     case boot2docker
       update-boot2docker
+    case dotfiles
+      update-dotfiles
     case all
       update-brew
       update-apt-get
-      update-motion
+      update-dotfiles
       update-vim
+      update-motion
       update-boot2docker
     case '*'
       echo update what?
@@ -57,6 +60,13 @@ function update-boot2docker
     echo updating boot2docker
     boot2docker upgrade
   end
+end
+
+function update-dotfiles
+  echo updating dotfiles
+  pushd ~/dotfiles
+  git pull
+  popd
 end
 
 complete -c update -x -a "brew vim motion apt-get brew all"
