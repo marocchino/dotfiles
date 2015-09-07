@@ -8,8 +8,8 @@ function update
       update-motion
     case vim mvim
       update-vim
-    case boot2docker
-      update-boot2docker
+    case docker-machine
+      update-docker-machine
     case dotfiles
       update-dotfiles
     case all
@@ -18,10 +18,10 @@ function update
       update-dotfiles
       update-vim
       update-motion
-      update-boot2docker
+      update-docker-machine
     case '*'
       echo update what?
-      echo please select form brew vim motion apt-get brew boot2docker all
+      echo please select form brew vim motion apt-get brew docker-machine all
   end
 end
 
@@ -55,10 +55,10 @@ function update-vim
   end
 end
 
-function update-boot2docker
-  if type boot2docker
-    echo updating boot2docker
-    boot2docker upgrade
+function update-docker-machine
+  if type docker-machine
+    echo updating docker-machine
+    docker-machine upgrade
   end
 end
 
