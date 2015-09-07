@@ -161,6 +161,9 @@ let g:ragtag_global_maps = 1
 let g:indent_guides_enable_on_vim_startup = 0
 
 let g:rails_projections = {
+\ "frontend/src/views/*.jade": {
+\   "command": "design"
+\ },
 \ "app/decorators/*_decorator.rb": {
 \   "command": "decorator",
 \   "test": "spec/decorators/{}_decorator_spec.rb"
