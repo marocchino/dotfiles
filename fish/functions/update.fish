@@ -21,7 +21,7 @@ function update
       update-docker-machine
     case '*'
       echo update what?
-      echo please select form brew vim motion apt-get brew docker-machine all
+      echo please select from dotfiles brew vim motion apt-get brew docker-machine all
   end
 end
 
@@ -69,4 +69,4 @@ function update-dotfiles
   popd
 end
 
-complete -c update -x -a "brew vim motion apt-get brew all"
+complete -c update -x -a "brew vim motion apt-get brew dotfiles all"
