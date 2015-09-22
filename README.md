@@ -8,6 +8,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew tap homebrew/brewdler
 brew brewdle
 ./install
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
 If you using git, need to set `.gitconfig.local` file
