@@ -164,6 +164,10 @@ let g:rails_projections = {
 \ "frontend/src/views/*.jade": {
 \   "command": "design"
 \ },
+\ "frontend/src/scripts/*.coffee": {
+\   "command": "coffee",
+\   "test": "frontend/spec/{}_spec.coffee"
+\ },
 \ "app/decorators/*_decorator.rb": {
 \   "command": "decorator",
 \   "test": "spec/decorators/{}_decorator_spec.rb"
