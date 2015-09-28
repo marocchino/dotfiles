@@ -170,6 +170,9 @@ let g:rails_projections = {
 \ },
 \ "app/decorators/*_decorator.rb": {
 \   "command": "decorator",
+\   "template":
+\     ["class {camelcase|capitalize|colons}Decorator < "
+\      . "Draper::Decorator", "  delegate_all", "end"],
 \   "test": "spec/decorators/{}_decorator_spec.rb"
 \ },
 \ "app/forms/*_form.rb": {
