@@ -177,6 +177,10 @@ let g:rails_projections = {
 \ },
 \ "app/forms/*_form.rb": {
 \   "command": "form",
+\   "template":
+\     ["class {camelcase|capitalize|colons}Form < ",
+\      "  include Virtus.model",
+\      "  include ActiveModel::Model", "end"],
 \   "test": "spec/forms/{}_form_spec.rb"
 \ },
 \ "app/jobs/*_job.rb": {
