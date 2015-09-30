@@ -185,6 +185,9 @@ let g:rails_projections = {
 \ },
 \ "app/jobs/*_job.rb": {
 \   "command": "job",
+\   "template":
+\     ["class {camelcase|capitalize|colons}Job < "
+\      . "ActiveJob::Base", "  def perform", "  end", "end"],
 \   "test": "spec/jobs/{}_job_spec.rb"
 \ },
 \ "lib/*.rb": {
