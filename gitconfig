@@ -21,7 +21,6 @@
   pushf = push --force
   rc = rebase --continue
   ri = rebase --interactive
-  rma = !git rm $(git ls-files --deleted)
   st = status
   w = whatchanged
   wip = commit --amend --no-edit
