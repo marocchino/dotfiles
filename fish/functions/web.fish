@@ -5,8 +5,8 @@ function web
     case site
       web-site
     case '*'
-      echo open what?
-      echo please select from github site
+      echo 'open what?'
+      echo 'please select from [github, site]'
   end
 end
 
@@ -26,4 +26,4 @@ function web-site
   echo http://(docker-machine ip dev):3000/
 end
 
-complete -c web -x -a "github site"
+complete -x -c web -d 'web' -a 'github site'

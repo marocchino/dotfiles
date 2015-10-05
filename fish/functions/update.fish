@@ -20,8 +20,8 @@ function update
       update-motion
       update-docker-machine
     case '*'
-      echo update what?
-      echo please select from dotfiles brew vim motion apt-get brew docker-machine all
+      echo 'update what?'
+      echo please select from [dotfiles, brew, vim, motion, apt-get, brew, docker-machine, all]
   end
 end
 
@@ -69,4 +69,4 @@ function update-dotfiles
   popd
 end
 
-complete -c update -x -a "brew vim motion apt-get brew dotfiles all"
+complete -x -c update -d 'update' -a 'brew vim motion apt-get brew dotfiles all'
