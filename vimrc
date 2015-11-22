@@ -55,6 +55,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'xenoterracide/html.vim'
+Plugin 'isRuslan/vim-es6'
 
 call vundle#end()            " required
 
