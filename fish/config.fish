@@ -24,3 +24,5 @@ alias so pmvim
 alias such git
 alias very git
 alias wow "git status"
+
+fish_vi_key_bindings
