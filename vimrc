@@ -7,7 +7,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'ntpeters/vim-better-whitespace'
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'AnsiEsc.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -20,7 +20,6 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'junegunn/vim-easy-align'
-Plugin 'kana/vim-vspec'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -37,9 +36,12 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-surround'
+Plugin 'jgdavey/vim-blockle'
+Plugin 'ap/vim-css-color'
 
 " color
 Plugin 'summerfruit256.vim'
+Plugin 'Lokaltog/vim-distinguished'
 
 " formatter
 Plugin 'dag/vim-fish'
@@ -136,6 +138,7 @@ let g:syntastic_error_symbol = '✘'
 let g:syntastic_warning_symbol = "▲"
 let g:syntastic_ruby_checkers = ["rubocop"]
 let g:syntastic_javascript_checkers = ["eslint"]
+let g:syntastic_scss_checkers = ['scss_lint']
 augroup mySyntastic
   autocmd!
   autocmd FileType tex let b:syntastic_mode = "active"
