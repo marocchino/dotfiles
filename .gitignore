@@ -9,3 +9,4 @@ vim/bundle
 vim/.vim-flavor/
 vim/VimFlavor.lock
 gitconfig.local
+node_modules/*
