@@ -11,8 +11,6 @@ ln -sf $PWD/tmux.conf ~/.tmux.conf
 ln -sfn $PWD/vim ~/.vim
 ln -sf $PWD/vimrc ~/.vimrc
 
-ln -sf $PWD/private.xml ~/Library/Application\ Support/Karabiner/private.xml
-
 ln -sf $PWD/slate ~/.slate
 
 ln -sf $PWD/gemrc ~/.gemrc
@@ -24,3 +22,4 @@ ln -sf $PWD/powconfig ~/.powconfig
 ln -sf $PWD/eslintrc.json ~/.eslintrc.json
 
 ln -sfn $PWD/fish ~/.config/fish
+ln -sf $PWD/private.xml ~/Library/Application\ Support/Karabiner/private.xml
