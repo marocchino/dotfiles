@@ -5,6 +5,7 @@ filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle.vim/
 call vundle#begin()
 
+Plugin 'VundleVim/Vundle.vim'
 " let Vundle manage Vundle
 " required!
 Plugin 'ntpeters/vim-better-whitespace'
@@ -17,7 +18,6 @@ Plugin 'bling/vim-airline'
 Plugin 'ctags.vim'
 Plugin 'edsono/vim-matchit'
 Plugin 'garbas/vim-snipmate'
-Plugin 'gmarik/Vundle.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'kien/ctrlp.vim'
