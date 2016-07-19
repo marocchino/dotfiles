@@ -55,7 +55,7 @@ module.exports = {
   //   `hypersolar`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyperpower'],
+  plugins: ['hyperpower', 'hyperterm-1password'],
 
   // in development, you can create a directory under
   // `~/.hyperterm_plugins/local/` and include it here
