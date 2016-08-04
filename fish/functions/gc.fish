@@ -1,4 +1,4 @@
-function go
+function gc
   if test (count $argv) = 0
     git branch | peco | xargs git checkout
   else
