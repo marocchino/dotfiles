@@ -1,4 +1,4 @@
-#!/usr/bin/env fish
+#!/usr/bin/env bash
 ln -sfn $PWD/git_template ~/.git_template
 ln -sf $PWD/gitconfig ~/.gitconfig
 ln -sf $PWD/gitignore_global ~/.gitignore_global
@@ -24,4 +24,4 @@ ln -sf $PWD/hyperterm.js  ~/.hyperterm.js
 ln -sf $PWD/eslintrc.json ~/.eslintrc.json
 
 ln -sfn $PWD/fish ~/.config/fish
-ln -sf $PWD/private.xml ~/Library/Application\ Support/Karabiner/private.xml
+ln -sf $PWD/private.xml "~/Library/Application\ Support/Karabiner/private.xml"
