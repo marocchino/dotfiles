@@ -11,10 +11,11 @@ source ~/.config/fish/profile.fish
 alias b bundle
 alias be "bundle exec"
 alias g git
+alias ga "git add"
+alias gs "git status"
 alias gg exit
 alias r rails
 alias s spring
-alias sr "spring rails"
 alias t tmux
 alias v pmvim
 
