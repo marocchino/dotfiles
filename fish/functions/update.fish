@@ -12,16 +12,19 @@ function update
       update-docker-machine
     case dotfiles
       update-dotfiles
+    case npm
+      update-npm
     case all
       update-brew
       update-apt-get
       update-dotfiles
       update-vim
       update-motion
+      update-npm
       update-docker-machine
     case '*'
       echo 'update what?'
-      echo please select from [dotfiles, brew, vim, motion, apt-get, brew, docker-machine, all]
+      echo please select from [dotfiles, brew, vim, motion, apt-get, brew, docker-machine, npm, all]
   end
 end
 
@@ -55,6 +58,13 @@ function update-vim
   end
 end
 
+function update-npm
+  if type npm
+    echo updating npm
+    npm-check -u -g
+  end
+end
+
 function update-docker-machine
   if type docker-machine
     echo updating docker-machine
@@ -69,4 +79,4 @@ function update-dotfiles
   popd
 end
 
-complete -x -c update -d 'update' -a 'brew vim motion apt-get brew dotfiles all'
+complete -x -c update -d 'update' -a 'brew vim motion apt-get brew dotfiles npm all'
