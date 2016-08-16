@@ -1,6 +1,7 @@
 *.swp
 tags
 .netrwhist
+.DS_Store
 fish/fish_history
 fish/profile.fish
 fish/fishd.*
