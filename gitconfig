@@ -15,13 +15,17 @@
 [alias]
   ca = commit --amend
   cleanup = !git branch --merged | grep -v '*' | xargs git branch -d
+  d = diff
+  f = fetch
   fa = fetch --all
   last = log --oneline -1
   o = open
   pullf = !git fetch --all && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)
   pushf = push --force
+  r = rebase
   rc = rebase --continue
   ri = rebase --interactive
+  root = !cd $(git rev-parse --show-toplevel)
   st = status
   w = whatchanged
   wip = commit --amend --no-edit
