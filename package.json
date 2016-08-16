@@ -1,0 +1,7 @@
+{
+  "name": "dotfiles",
+  "version": "1.0.0",
+  "scripts": {
+    "preinstall": "npm install --global git-open npm-check"
+  }
+}
