@@ -12,8 +12,9 @@ alias b bundle
 alias be "bundle exec"
 alias g git
 alias ga "git add"
-alias gs "git status"
 alias gg exit
+alias groot "cd (git rev-parse --show-toplevel)"
+alias gs "git status"
 alias r rails
 alias s spring
 alias t tmux
