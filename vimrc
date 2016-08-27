@@ -56,9 +56,9 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'mxw/vim-jsx'
 Plugin 'othree/html5.vim'
 Plugin 'othree/yajs.vim'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'slim-template/vim-slim'
 Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 
@@ -131,9 +131,9 @@ set wildignore+=.DS_Store
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git\|node_modules\|bin\|\.hg\|\.svn\|build\|log\|resources\|coverage\|doc\|tmp\|public/assets\|vendor\|Android',
-  \ 'file': '\.jpg$\|\.exe$\|\.so$\|tags$\|\.dll$'
-  \ }
+\ 'dir':  '\.git\|node_modules\|bin\|\.hg\|\.svn\|build\|log\|resources\|coverage\|doc\|tmp\|public/assets\|vendor\|Android',
+\ 'file': '\.jpg$\|\.exe$\|\.so$\|tags$\|\.dll$'
+\ }
 nnoremap <C-b> :CtrlPBuffer<cr>
 
 " ----- scrooloose/syntastic settings -----
@@ -147,15 +147,21 @@ augroup mySyntastic
   autocmd FileType tex let b:syntastic_mode = "active"
 augroup END
 
-let g:multi_cursor_use_default_mapping=0
+let g:vim_markdown_fenced_languages = [
+\ 'c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini', 'ruby=rb', 'python=py',
+\ 'markdown=md', 'javascript=js']
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_new_list_item_indent = 2
+
+let g:multi_cursor_use_default_mapping = 0
 " Default mapping
-let g:multi_cursor_next_key='<C-n>'
-let g:multi_cursor_prev_key='<C-N>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
+let g:multi_cursor_next_key = '<C-n>'
+let g:multi_cursor_prev_key = '<C-N>'
+let g:multi_cursor_skip_key = '<C-x>'
+let g:multi_cursor_quit_key = '<Esc>'
 
 " Exclude JavaScript files in :Rtags via rails.vim due to warnings when parsing
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
+let g:Tlist_Ctags_Cmd = "ctags --exclude='*.js'"
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
