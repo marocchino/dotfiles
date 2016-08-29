@@ -1,4 +1,4 @@
-function pmvim
+function fmvim
   if test (count $argv) = 0
     find * -type f | fzf | read filename
     if test (count $filename) = 0

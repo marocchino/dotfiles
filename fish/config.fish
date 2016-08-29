@@ -10,11 +10,11 @@ alias n npm
 alias r rails
 alias s spring
 alias t tmux
-alias v pmvim
+alias v fmvim
 
 # wow! much doge!
 alias much git
-alias so pmvim
+alias so fmvim
 alias such git
 alias very git
 alias wow "git status"
