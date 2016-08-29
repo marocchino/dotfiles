@@ -1,5 +1,5 @@
 function fuck
-  ps aux | peco | read line
+  ps aux | fzf | read line
   echo $line | awk '{print $11}' | read process_name
   echo $line | awk '{print $2}' | read pid
   kill -9 $pid
