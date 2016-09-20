@@ -1,11 +1,14 @@
 alias b=bundle
 alias be="bundle exec"
+alias c="open -a 'Google Chrome'"
+alias chrome="open -a 'Google Chrome'"
 alias e=elixir
 alias g=git
 alias ga="git add"
 alias gg=exit
 alias groot="cd (git rev-parse --show-toplevel)"
 alias gs="git status"
+alias m=mix
 alias n=npm
 alias r=rails
 alias s=spring
