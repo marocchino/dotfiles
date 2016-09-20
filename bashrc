@@ -25,3 +25,8 @@ alias wow="git status"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export EDITOR=vim
 export PATH="$HOME/.rbenv/bin:$PATH"
+
+if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
+  GIT_PROMPT_THEME=Single_line
+  source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
+fi
