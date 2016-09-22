@@ -8,6 +8,7 @@ alias ga="git add"
 alias gg=exit
 alias groot="cd (git rev-parse --show-toplevel)"
 alias gs="git status"
+alias iex="rlwrap -a foo iex"
 alias m=mix
 alias n=npm
 alias r=rails
@@ -26,6 +27,8 @@ set -o vi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export EDITOR=vim
 export PATH="$HOME/.rbenv/bin:$PATH"
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
   GIT_PROMPT_THEME=Single_line
