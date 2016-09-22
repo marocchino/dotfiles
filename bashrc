@@ -22,6 +22,7 @@ alias such=git
 alias very=git
 alias wow="git status"
 
+set -o vi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export EDITOR=vim
 export PATH="$HOME/.rbenv/bin:$PATH"
