@@ -1,0 +1,2 @@
+#!/bin/bash
+yodaism ascii | lolcat || gem install yodaism lolcat

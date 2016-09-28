@@ -1,0 +1,69 @@
+#!/bin/bash
+
+function update-brew {
+  echo updating brew
+  brew update
+  brew upgrade --all
+  brew cleanup
+}
+
+function update-apt-get {
+  echo updating apt-get
+  sudo apt-get update -y
+}
+
+function update-vim {
+  echo updating vim
+  vim +PluginUpdate +qall
+}
+
+function update-npm {
+  echo updating npm
+  npm-check -u -g
+}
+
+function update-docker-machine {
+  echo updating docker-machine
+  docker-machine upgrade
+}
+
+function update-dotfiles {
+  echo updating dotfiles
+  pushd ~/dotfiles
+  git pull
+  popd
+}
+
+case $1 in
+brew)
+  update-brew
+  ;;
+apt-get)
+  update-apt-get
+  ;;
+vim)
+  update-vim
+  ;;
+npm)
+  update-npm
+  ;;
+docker-machine)
+  update-docker-machine
+  ;;
+dotfiles)
+  update-dotfiles
+  ;;
+all)
+  update-brew
+  update-vim
+  update-npm
+  update-docker-machine
+  update-dotfiles
+  ;;
+*)
+  echo 'update what?'
+  echo 'please select from [brew, apt-get, vim, npm,
+                            docker-machine, dotfiles, all]'
+  ;;
+esac
+
