@@ -2,5 +2,5 @@
 if [[ $# -eq 0 ]]; then
   git branch | fzf | xargs git checkout
 else
-  git checkout $1
+  git checkout $@
 fi

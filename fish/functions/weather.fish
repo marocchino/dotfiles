@@ -1,3 +1,3 @@
 function weather
-  curl -4 http://wttr.in/Seoul
+  curl -4 http://wttr.in/Tokyo
 end
