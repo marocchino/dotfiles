@@ -26,9 +26,14 @@ alias wow="git status"
 set -o vi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export EDITOR=vim
-export PATH="$HOME/.rbenv/bin:$HOME/dotfiles/bash/functions/:$PATH"
+export PATH="/usr/local/sbin:$HOME/.rbenv/bin:$HOME/dotfiles/bash/functions:$PATH"
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
+if [[ -d $HOME/.nvm ]]; then
+  export NVM_DIR="$HOME/.nvm"
+  . "$(brew --prefix nvm)/nvm.sh"
+fi
 
 if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
   GIT_PROMPT_THEME=Single_line
