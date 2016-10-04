@@ -10,6 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 " required!
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'AnsiEsc.vim'
+Plugin 'benmills/vimux'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'SirVer/ultisnips'
 Plugin 'Townk/vim-autoclose'
