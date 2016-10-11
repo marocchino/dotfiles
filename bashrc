@@ -26,7 +26,7 @@ alias wow="git status"
 set -o vi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export EDITOR=vim
-export PATH="/usr/local/sbin:$HOME/.rbenv/bin:$HOME/dotfiles/bash/functions:$PATH"
+export PATH="/usr/local/sbin:$HOME/bin:$HOME/.rbenv/bin:$HOME/dotfiles/bash/functions:$PATH"
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 

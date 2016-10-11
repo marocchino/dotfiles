@@ -20,6 +20,7 @@ Plugin 'bling/vim-airline'
 Plugin 'ctags.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'edsono/vim-matchit'
+Plugin 'ElmCast/elm-vim'
 Plugin 'honza/vim-snippets'
 Plugin 'jgdavey/vim-blockle'
 Plugin 'junegunn/vim-easy-align'
@@ -70,6 +71,7 @@ filetype on
 filetype indent on
 filetype plugin on
 
+let g:elm_format_autosave = 1
 set backspace=indent,eol,start
 set expandtab
 set encoding=utf-8  " Set encoding
