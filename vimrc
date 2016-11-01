@@ -10,17 +10,17 @@ Plugin 'VundleVim/Vundle.vim'
 " required!
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'AnsiEsc.vim'
-Plugin 'benmills/vimux'
+Plugin 'ElmCast/elm-vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'SirVer/ultisnips'
 Plugin 'Townk/vim-autoclose'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'andyl/vim-textobj-elixir'
 Plugin 'ap/vim-css-color'
+Plugin 'benmills/vimux'
 Plugin 'bling/vim-airline'
 Plugin 'ctags.vim'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'edsono/vim-matchit'
-Plugin 'ElmCast/elm-vim'
 Plugin 'honza/vim-snippets'
 Plugin 'jgdavey/vim-blockle'
 Plugin 'junegunn/vim-easy-align'
@@ -30,9 +30,11 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'osyo-manga/vim-over'
+Plugin 'rhysd/vim-textobj-ruby'
 Plugin 'rizzatti/dash.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tmhedberg/matchit'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-abolish'
@@ -302,6 +304,7 @@ nnoremap <silent> <C-J> :wincmd j<CR>
 nnoremap <silent> <C-K> :wincmd k<CR>
 nnoremap <silent> <C-L> :wincmd l<CR>
 nnoremap <esc><esc> :nohlsearch<CR>
+nnoremap <Leader>r :VimuxPromptCommand "!!"<CR><CR>
 nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
 xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
 nmap <Leader><Leader> <c-^>
