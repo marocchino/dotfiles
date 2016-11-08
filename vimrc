@@ -24,8 +24,10 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'honza/vim-snippets'
 Plugin 'jgdavey/vim-blockle'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'kana/vim-textobj-user'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
+Plugin 'marocchino/pipe_converter'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'ntpeters/vim-better-whitespace'
@@ -304,6 +306,8 @@ nnoremap <silent> <C-J> :wincmd j<CR>
 nnoremap <silent> <C-K> :wincmd k<CR>
 nnoremap <silent> <C-L> :wincmd l<CR>
 nnoremap <esc><esc> :nohlsearch<CR>
+nnoremap ec :call PipeConvert()<CR>
+nnoremap er :call PipeRevert()<CR>
 nnoremap <Leader>r :VimuxPromptCommand "!!"<CR><CR>
 nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
 xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
