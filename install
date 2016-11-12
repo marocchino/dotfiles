@@ -20,7 +20,7 @@ ln -sf $PWD/gemrc ~/.gemrc
 ln -sf $PWD/irbrc ~/.irbrc
 ln -sf $PWD/pryrc ~/.pryrc
 ln -sf $PWD/powconfig ~/.powconfig
-ln -sf $PWD/hyperterm.js  ~/.hyperterm.js
+ln -sf $PWD/hyper.js  ~/.hyper.js
 
 ln -sf $PWD/eslintrc.json ~/.eslintrc.json
 

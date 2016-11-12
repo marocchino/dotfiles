@@ -81,7 +81,6 @@ set expandtab
 set encoding=utf-8  " Set encoding
 set fileencoding=utf-8  " Set encoding
 set fileencodings=utf-8,cp949,cp932,euc-jp,shift-jis,euc-kr,big5,ucs-2le,latin1
-set guioptions-=r   " remove right scrollbar (macvim)
 set hidden          " allow buffer change in unsaved file
 set history=50
 set hlsearch
@@ -117,6 +116,9 @@ if $SHELL =~ 'bin/fish'
 endif
 if has("gui_running")
   set mouse=a
+  set guioptions-=r   " remove right scrollbar (macvim)
+  set macligatures
+  set guifont=Fira\ Code\ Retina:h12
 endif
 
 " Disable output and VCS files
