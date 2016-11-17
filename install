@@ -6,6 +6,7 @@ if not test -e ~/.gitconfig.local
   cp $PWD/gitconfig.local.sample ~/.gitconfig.local
 end
 
+ln -sfn $PWD/ctags ~/.ctags
 ln -sf $PWD/tmux.conf ~/.tmux.conf
 
 ln -sf $PWD/bashrc ~/.bashrc

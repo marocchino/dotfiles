@@ -10,31 +10,27 @@ Plugin 'VundleVim/Vundle.vim'
 " required!
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'AnsiEsc.vim'
-Plugin 'ElmCast/elm-vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'SirVer/ultisnips'
 Plugin 'Townk/vim-autoclose'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'andyl/vim-textobj-elixir'
-Plugin 'ap/vim-css-color'
 Plugin 'benmills/vimux'
 Plugin 'bling/vim-airline'
-Plugin 'ctags.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'honza/vim-snippets'
 Plugin 'jgdavey/vim-blockle'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'kana/vim-textobj-user'
 Plugin 'kien/ctrlp.vim'
-Plugin 'mattn/emmet-vim'
 Plugin 'marocchino/pipe_converter'
+Plugin 'mattn/emmet-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'ngmy/vim-rubocop'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'osyo-manga/vim-over'
-Plugin 'rhysd/vim-textobj-ruby'
 Plugin 'rizzatti/dash.vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'szw/vim-tags'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tmhedberg/matchit'
 Plugin 'tomtom/tcomment_vim'
@@ -52,22 +48,14 @@ Plugin 'summerfruit256.vim'
 Plugin 'Lokaltog/vim-distinguished'
 
 " formatter
+Plugin 'ElmCast/elm-vim'
+Plugin 'ap/vim-css-color'
 Plugin 'avdgaag/vim-phoenix'
-Plugin 'dag/vim-fish'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'dsawardekar/ember.vim'
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'groenewege/vim-less'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'mxw/vim-jsx'
 Plugin 'othree/html5.vim'
 Plugin 'othree/yajs.vim'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'slim-template/vim-slim'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-rails'
-Plugin 'vim-ruby/vim-ruby'
 
 call vundle#end()            " required
 
@@ -149,6 +137,8 @@ nnoremap <C-b> :CtrlPBuffer<cr>
 " ----- scrooloose/syntastic settings -----
 let g:syntastic_error_symbol = '✘'
 let g:syntastic_warning_symbol = "▲"
+let g:syntastic_enable_elixir_checker = 1
+let g:syntastic_elixir_checker = ["elixir"]
 let g:syntastic_ruby_checkers = ["rubocop"]
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_scss_checkers = ['scss_lint']
@@ -157,9 +147,11 @@ augroup mySyntastic
   autocmd FileType tex let b:syntastic_mode = "active"
 augroup END
 
+let g:vim_tags_auto_generate = 1
+
 let g:vim_markdown_fenced_languages = [
 \ 'c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini', 'ruby=rb', 'python=py',
-\ 'markdown=md', 'javascript=js']
+\ 'markdown=md', 'javascript=js', 'elixir=elixir']
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_new_list_item_indent = 2
@@ -172,7 +164,7 @@ let g:multi_cursor_skip_key = '<C-x>'
 let g:multi_cursor_quit_key = '<Esc>'
 
 " Exclude JavaScript files in :Rtags via rails.vim due to warnings when parsing
-let g:Tlist_Ctags_Cmd = "ctags --exclude='*.js'"
+" let g:Tlist_Ctags_Cmd = "ctags --exclude='*.js'"
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
@@ -307,6 +299,7 @@ nnoremap <silent> <C-H> :wincmd h<CR>
 nnoremap <silent> <C-J> :wincmd j<CR>
 nnoremap <silent> <C-K> :wincmd k<CR>
 nnoremap <silent> <C-L> :wincmd l<CR>
+nnoremap <C-]> g<C-]>
 nnoremap <esc><esc> :nohlsearch<CR>
 nnoremap ec :call PipeConvert()<CR>
 nnoremap er :call PipeRevert()<CR>

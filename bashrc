@@ -1,6 +1,7 @@
 alias b=bundle
 alias be="bundle exec"
 alias c="open -a 'Google Chrome'"
+alias ctags="`brew --prefix`/bin/ctags"
 alias chrome="open -a 'Google Chrome'"
 alias e=elixir
 alias g=git
@@ -22,6 +23,7 @@ alias so=vim
 alias such=git
 alias very=git
 alias wow="git status"
+
 
 set -o vi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
