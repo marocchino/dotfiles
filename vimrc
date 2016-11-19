@@ -52,6 +52,7 @@ Plugin 'ElmCast/elm-vim'
 Plugin 'ap/vim-css-color'
 Plugin 'avdgaag/vim-phoenix'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'fatih/vim-go'
 Plugin 'mxw/vim-jsx'
 Plugin 'othree/html5.vim'
 Plugin 'othree/yajs.vim'
@@ -142,6 +143,9 @@ let g:syntastic_elixir_checker = ["elixir"]
 let g:syntastic_ruby_checkers = ["rubocop"]
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_scss_checkers = ['scss_lint']
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:go_list_type = "quickfix"
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 augroup mySyntastic
   autocmd!
   autocmd FileType tex let b:syntastic_mode = "active"
@@ -294,6 +298,12 @@ augroup commit_width
   autocmd Filetype gitcommit setlocal spell textwidth=72
 augroup END
 
+augroup elixir_pipe_converter
+  autocmd!
+  autocmd FileType elixir nnoremap ec :call PipeConvert()<CR>
+  autocmd FileType elixir nnoremap er :call PipeRevert()<CR>
+augroup END
+
 " move windows with hjkl
 nnoremap <silent> <C-H> :wincmd h<CR>
 nnoremap <silent> <C-J> :wincmd j<CR>
@@ -301,8 +311,6 @@ nnoremap <silent> <C-K> :wincmd k<CR>
 nnoremap <silent> <C-L> :wincmd l<CR>
 nnoremap <C-]> g<C-]>
 nnoremap <esc><esc> :nohlsearch<CR>
-nnoremap ec :call PipeConvert()<CR>
-nnoremap er :call PipeRevert()<CR>
 nnoremap <Leader>r :VimuxPromptCommand "!!"<CR><CR>
 nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
 xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
