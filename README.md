@@ -8,6 +8,7 @@ brew tap homebrew/brewdler
 brew brewdle
 ./install
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 If you using git, need to set `.gitconfig.local` file

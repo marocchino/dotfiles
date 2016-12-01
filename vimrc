@@ -17,7 +17,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'andyl/vim-textobj-elixir'
 Plugin 'benmills/vimux'
 Plugin 'bling/vim-airline'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'haya14busa/vim-open-googletranslate'
 Plugin 'honza/vim-snippets'
 Plugin 'jgdavey/vim-blockle'
 Plugin 'junegunn/vim-easy-align'
@@ -64,7 +66,6 @@ filetype on
 filetype indent on
 filetype plugin on
 
-let g:elm_format_autosave = 1
 set backspace=indent,eol,start
 set expandtab
 set encoding=utf-8  " Set encoding
@@ -128,6 +129,8 @@ set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
 " Disable OS X index files
 set wildignore+=.DS_Store
 
+let g:elm_format_autosave = 1
+let g:opengoogletranslate#openbrowsercmd = 'open'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 let g:ctrlp_custom_ignore = {
 \ 'dir':  '\.git\|node_modules\|bin\|\.hg\|\.svn\|build\|log\|resources\|coverage\|doc\|tmp\|public/assets\|vendor\|Android',
@@ -305,10 +308,10 @@ augroup elixir_pipe_converter
 augroup END
 
 " move windows with hjkl
-nnoremap <silent> <C-H> :wincmd h<CR>
-nnoremap <silent> <C-J> :wincmd j<CR>
-nnoremap <silent> <C-K> :wincmd k<CR>
-nnoremap <silent> <C-L> :wincmd l<CR>
+" nnoremap <silent> <C-H> :wincmd h<CR>
+" nnoremap <silent> <C-J> :wincmd j<CR>
+" nnoremap <silent> <C-K> :wincmd k<CR>
+" nnoremap <silent> <C-L> :wincmd l<CR>
 nnoremap <C-]> g<C-]>
 nnoremap <esc><esc> :nohlsearch<CR>
 nnoremap <Leader>r :VimuxPromptCommand "!!"<CR><CR>

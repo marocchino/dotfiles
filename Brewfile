@@ -23,5 +23,6 @@ cask 'slate'
 cask 'iterm2'
 tap 'ravenac95/sudolikeaboss'
 brew 'sudolikeaboss'
+brew 'fpp'
 cask 'skype'
 brew 'macvim' # need xcode
