@@ -28,18 +28,18 @@ config resizePercentOf screenSize
 # bind left:ctrl;cmd   push left  bar-resize:screenSizeX/3
 # bind up:ctrl;cmd     push up    bar-resize:screenSizeY/2
 # bind down:ctrl;cmd   push down  bar-resize:screenSizeY/2
-bind l:shift;alt;cmd  push right bar-resize:screenSizeX/5*2
-bind h:shift;alt;cmd  push left  bar-resize:screenSizeX/5*3
-bind k:shift;alt;cmd  push up    bar-resize:screenSizeY/4*3
-bind j:shift;alt;cmd  push down  bar-resize:screenSizeY/4-1
-bind f:shift;alt;cmd  push up    bar-resize:screenSizeY
-bind 1:shift;alt;cmd  throw 0 resize
-bind 2:shift;alt;cmd  throw 1 resize
-bind l:cmd     focus right
-bind h:cmd     focus left
-bind k:cmd     focus up
-bind j:cmd     focus down
-bind b:cmd;alt focus behind
+bind l:ctrl;shift;alt;cmd  push right bar-resize:screenSizeX/5*2
+bind h:ctrl;shift;alt;cmd  push left  bar-resize:screenSizeX/5*3
+bind k:ctrl;shift;alt;cmd  push up    bar-resize:screenSizeY/4*3
+bind j:ctrl;shift;alt;cmd  push down  bar-resize:screenSizeY/4-1
+bind f:ctrl;shift;alt;cmd  push up    bar-resize:screenSizeY
+bind 1:ctrl;shift;alt;cmd  throw 0 resize
+bind 2:ctrl;shift;alt;cmd  throw 1 resize
+# bind l:cmd     focus right
+# bind h:cmd     focus left
+# bind k:cmd     focus up
+# bind j:cmd     focus down
+# bind b:cmd;alt focus behind
 
 # Nudge Bindings
 # bind right:shift;alt nudge +10% +0
