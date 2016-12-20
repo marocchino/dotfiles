@@ -1,5 +1,4 @@
 tap 'caskroom/cask'
-brew 'brew-cask'
 cask 'dropbox'
 brew 'wget'
 brew 'ctags'
