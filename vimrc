@@ -59,6 +59,8 @@ Plugin 'mxw/vim-jsx'
 Plugin 'othree/html5.vim'
 Plugin 'othree/yajs.vim'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
 
 call vundle#end()            " required
 
