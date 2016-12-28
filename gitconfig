@@ -30,8 +30,6 @@
   wip = commit --amend --no-edit
 [include]
   path = .gitconfig.local
-[commit]
-  gpgsign = true
 [push]
   default = current
 [url "git@github.com:"]
