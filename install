@@ -13,6 +13,7 @@ ln -sf $PWD/bashrc ~/.bashrc
 ln -sf $PWD/inputrc ~/.inputrc
 ln -sfn $PWD/vim ~/.vim
 ln -sf $PWD/vimrc ~/.vimrc
+ln -sf $PWD/editorconfig ~/.editorconfig
 
 ln -sf $PWD/slate ~/.slate
 

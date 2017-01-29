@@ -61,6 +61,7 @@ Plugin 'othree/yajs.vim'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end()            " required
 
