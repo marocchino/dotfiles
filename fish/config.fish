@@ -24,8 +24,6 @@ alias very git
 alias wow "git status"
 
 set -x PATH /usr/local/bin $PATH
-set -x PATH $HOME/.rbenv/shims $PATH
-
 set -x NODE_PATH /usr/local/lib/node_modules
 
 if test -f $HOME/.config/fish/profile.fish
@@ -34,4 +32,4 @@ end
 
 fish_user_key_bindings
 
-rbenv rehash >/dev/null ^&1
+source ~/.asdf/asdf.fish
