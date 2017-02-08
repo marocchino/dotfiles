@@ -27,6 +27,11 @@ alias wow="git status"
 
 set -o vi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# for python
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 export EDITOR=vim
 export PATH="/usr/local/sbin:$HOME/bin:$HOME/dotfiles/bash/functions:$PATH"
 export CLICOLOR=1
