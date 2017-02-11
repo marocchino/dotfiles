@@ -59,9 +59,11 @@ Plugin 'mxw/vim-jsx'
 Plugin 'othree/html5.vim'
 Plugin 'othree/yajs.vim'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'posva/vim-vue'
+Plugin 'rust-lang/rust.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'rust-lang/rust.vim'
+Plugin 'leafgarland/typescript-vim'
 
 call vundle#end()            " required
 
