@@ -55,6 +55,8 @@ Plugin 'ap/vim-css-color'
 Plugin 'avdgaag/vim-phoenix'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'fatih/vim-go'
+Plugin 'jparise/vim-graphql'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'othree/html5.vim'
 Plugin 'othree/yajs.vim'
@@ -63,7 +65,6 @@ Plugin 'posva/vim-vue'
 Plugin 'rust-lang/rust.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'leafgarland/typescript-vim'
 
 call vundle#end()            " required
 
