@@ -55,6 +55,7 @@ Plugin 'ap/vim-css-color'
 Plugin 'avdgaag/vim-phoenix'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'fatih/vim-go'
+Plugin 'joker1007/vim-ruby-heredoc-syntax'
 Plugin 'jparise/vim-graphql'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'mxw/vim-jsx'
@@ -159,6 +160,17 @@ augroup mySyntastic
   autocmd!
   autocmd FileType tex let b:syntastic_mode = "active"
 augroup END
+
+" === vim-ruby-heredoc-syntax ===
+" Add syntax rule
+let g:ruby_heredoc_syntax_filetypes = {
+\ "graphql" : {
+\   "start" : "GraphQL",
+\ },
+\ "json" : {
+\   "start" : "JSON",
+\ },
+\}
 
 let g:vim_tags_auto_generate = 1
 
