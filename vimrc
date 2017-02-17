@@ -163,12 +163,15 @@ augroup END
 
 " === vim-ruby-heredoc-syntax ===
 " Add syntax rule
-let g:ruby_heredoc_syntax_filetypes = {
+let g:ruby_heredoc_syntax_defaults = {
 \ "graphql" : {
-\   "start" : "GraphQL",
+\   "start" : "GRAPHQL",
 \ },
 \ "json" : {
 \   "start" : "JSON",
+\ },
+\ "sql" : {
+\   "start" : "SQL",
 \ },
 \}
 
