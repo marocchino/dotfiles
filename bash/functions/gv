@@ -1,0 +1,6 @@
+#!/bin/bash
+if [[ $# -eq 0 ]]; then
+  vim $(git ls-files --others --exclude-standard --modified | fzf --height 40% --border)
+else
+  vim $@
+fi

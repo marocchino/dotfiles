@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ $# -eq 0 ]]; then
-  git branch | fzf | xargs git branch -D
+  git branch | fzf --height 40% --border | xargs git branch -D
 else
   git branch -D $@
 fi
