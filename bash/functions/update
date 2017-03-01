@@ -34,6 +34,13 @@ function update-dotfiles {
   popd
 }
 
+function update-kuromoji {
+  echo updating kuromoji
+  brew services stop elasticsearch
+  elasticsearch-plugin install analysis-kuromoji
+  brew services start elasticsearch
+}
+
 case $1 in
 brew)
   update-brew
@@ -52,6 +59,9 @@ docker-machine)
   ;;
 dotfiles)
   update-dotfiles
+  ;;
+kuromoji)
+  update-kuromoji
   ;;
 all)
   update-brew
