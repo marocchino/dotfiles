@@ -303,6 +303,7 @@ endif
 
 augroup debugger_highlight
   autocmd!
+  autocmd BufEnter *.ex syn match Error "IO.puts\|IO.inspect"
   autocmd BufEnter *.rb syn match Error "binding.pry\|debugger"
   autocmd BufEnter *.{js,coffee} syn match Error "console.log"
 augroup END

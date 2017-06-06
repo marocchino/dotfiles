@@ -14,7 +14,7 @@ alias m=mix
 alias n=npm
 alias r=rails
 alias s=spring
-alias t='tmux attach || tmux'
+alias t='tmux attach -u || tmux -u'
 alias v=vim
 
 # wow! much doge!
