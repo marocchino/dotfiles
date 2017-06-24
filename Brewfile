@@ -25,3 +25,5 @@ brew 'sudolikeaboss'
 brew 'fpp'
 cask 'skype'
 brew 'macvim' # need xcode
+tap 'caskroom/fonts'
+cask 'font-fira-code'
