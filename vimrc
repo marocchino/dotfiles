@@ -18,6 +18,7 @@ Plugin 'andyl/vim-textobj-elixir'
 Plugin 'benmills/vimux'
 Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'haya14busa/vim-open-googletranslate'
 Plugin 'honza/vim-snippets'
@@ -135,6 +136,9 @@ set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
 
 " Disable OS X index files
 set wildignore+=.DS_Store
+
+let g:table_mode_corner_corner='|'
+let g:table_mode_header_fillchar='-'
 
 let g:elm_format_autosave = 1
 let g:opengoogletranslate#openbrowsercmd = 'open'
