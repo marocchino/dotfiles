@@ -2,10 +2,11 @@
 set nocompatible
 filetype off                   " required!
 
+" If installed using Homebrew
+set rtp+=/usr/local/opt/fzf
+
 call plug#begin('~/.vim/plugged')
 
-Plug 'VundleVim/Vundle.vim'
-" let Vundle manage Vundle
 " required!
 Plug 'AndrewRadev/switch.vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -24,7 +25,6 @@ Plug 'honza/vim-snippets'
 Plug 'jgdavey/vim-blockle'
 Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-textobj-user'
-Plug 'kien/ctrlp.vim'
 Plug 'marocchino/pipe_converter'
 Plug 'mattn/emmet-vim'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -143,12 +143,6 @@ let g:table_mode_header_fillchar='-'
 
 let g:elm_format_autosave = 1
 let g:opengoogletranslate#openbrowsercmd = 'open'
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
-let g:ctrlp_custom_ignore = {
-\ 'dir':  '\.git\|node_modules\|bin\|\.hg\|\.svn\|build\|log\|resources\|coverage\|doc\|tmp\|public/assets\|vendor\|Android',
-\ 'file': '\.jpg$\|\.exe$\|\.so$\|tags$\|\.dll$'
-\ }
-nnoremap <C-b> :CtrlPBuffer<cr>
 
 " ----- scrooloose/syntastic settings -----
 let g:syntastic_error_symbol = '✘'
@@ -350,6 +344,7 @@ nnoremap - :Switch<cr>
 " Use command d on top of a word to look it up in Dictionary.app
 nnoremap <silent> <D-d> :!open dict://<cword><CR><CR>
 nnoremap <silent> <D-e> :Dash<CR>
+nnoremap <silent> <C-b> :FZF<CR>
 vmap <Enter> <Plug>(EasyAlign)
 
 map ,. :TComment<CR>
