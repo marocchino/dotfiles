@@ -14,7 +14,7 @@ function update-apt-get {
 
 function update-vim {
   echo updating vim
-  vim +PluginUpdate +qall
+  vim +PlugUpdate +qall
 }
 
 function update-npm {

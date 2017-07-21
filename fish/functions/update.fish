@@ -54,7 +54,7 @@ end
 function update-vim
   if type vim
     echo updating vim
-    vim +PluginUpdate +qall
+    vim +PlugUpdate +qall
   end
 end
 
