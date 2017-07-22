@@ -7,7 +7,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew tap homebrew/brewdler
 brew bundle
 ./install
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```

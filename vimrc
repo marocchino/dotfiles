@@ -340,11 +340,29 @@ nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
 xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
 nmap <Leader><Leader> <c-^>
 
+function! s:buflist()
+  redir => ls
+  silent ls
+  redir END
+  return split(ls, '\n')
+endfunction
+
+function! s:bufopen(e)
+  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
+endfunction
+
+nnoremap <silent> <C-b> :call fzf#run({
+  \   'source':  reverse(<sid>buflist()),
+  \   'sink':    function('<sid>bufopen'),
+  \   'options': '+m',
+  \   'down':    len(<sid>buflist()) + 2
+  \ })<CR>
+
 nnoremap - :Switch<cr>
 " Use command d on top of a word to look it up in Dictionary.app
 nnoremap <silent> <D-d> :!open dict://<cword><CR><CR>
 nnoremap <silent> <D-e> :Dash<CR>
-nnoremap <silent> <C-b> :FZF<CR>
+nnoremap <silent> <C-p> :FZF<CR>
 vmap <Enter> <Plug>(EasyAlign)
 
 map ,. :TComment<CR>
