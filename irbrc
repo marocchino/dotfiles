@@ -1,3 +1,2 @@
-require 'pry'
-
-Pry.start || exit rescue LoadError
+require('pry')
+Pry.start || exit
