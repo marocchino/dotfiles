@@ -7,7 +7,6 @@ set rtp+=/usr/local/opt/fzf
 
 call plug#begin('~/.vim/plugged')
 
-" required!
 Plug 'AndrewRadev/switch.vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'SirVer/ultisnips'
@@ -51,7 +50,7 @@ Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'Lokaltog/vim-distinguished'
 Plug 'vim-scripts/summerfruit256.vim'
 
-" formatter
+" syntax
 Plug 'ElmCast/elm-vim'
 Plug 'ap/vim-css-color'
 Plug 'avdgaag/vim-phoenix'
@@ -116,7 +115,7 @@ if $SHELL =~ 'bin/fish'
 endif
 if has("gui_running")
   set mouse=a
-  set guioptions-=r   " remove right scrollbar (macvim)
+  set guioptions-=r   " remove right scroll-bar (macvim)
   set macligatures
   set guifont=Fira\ Code\ Retina:h12
 endif
@@ -130,7 +129,7 @@ set wildignore+=*.gif,*.jpg,*.png,*.log
 " Disable archive files
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 
-" Ignore bundler and sass cache
+" Ignore bundle and sass cache
 set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
 
 " Ignore rails temporary asset caches
@@ -139,7 +138,29 @@ set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
 " Disable OS X index files
 set wildignore+=.DS_Store
 
-let g:airline_theme='bubblegum'
+let g:airline_theme='papercolor'
+let g:airline_mode_map = {
+  \ '__' : '-',
+  \ 'n'  : 'N',
+  \ 'i'  : 'I',
+  \ 'R'  : 'R',
+  \ 'c'  : 'C',
+  \ 'v'  : 'V',
+  \ 'V'  : 'V',
+  \ '' : 'V',
+  \ 's'  : 'S',
+  \ 'S'  : 'S',
+  \ '' : 'S',
+  \ }
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
 
 let g:table_mode_corner_corner='|'
 let g:table_mode_header_fillchar='-'
