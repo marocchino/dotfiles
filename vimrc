@@ -15,7 +15,6 @@ Plug 'Townk/vim-autoclose'
 Plug 'airblade/vim-gitgutter'
 Plug 'andyl/vim-textobj-elixir'
 Plug 'benmills/vimux'
-Plug 'bling/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'editorconfig/editorconfig-vim'
@@ -44,6 +43,8 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/AnsiEsc.vim'
 
 " color
@@ -137,6 +138,8 @@ set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
 
 " Disable OS X index files
 set wildignore+=.DS_Store
+
+let g:airline_theme='bubblegum'
 
 let g:table_mode_corner_corner='|'
 let g:table_mode_header_fillchar='-'
