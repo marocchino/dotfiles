@@ -23,6 +23,7 @@ Plug 'honza/vim-snippets'
 Plug 'jgdavey/vim-blockle'
 Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-textobj-user'
+Plug 'lyokha/vim-xkbswitch'
 Plug 'marocchino/pipe_converter'
 Plug 'mattn/emmet-vim'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -137,6 +138,9 @@ set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
 
 " Disable OS X index files
 set wildignore+=.DS_Store
+
+let g:XkbSwitchEnabled = 1
+let g:XkbSwitchLib = expand('~/dotfiles/bash/libInputSourceSwitcher.dylib')
 
 let g:airline_theme='papercolor'
 let g:airline_mode_map = {
