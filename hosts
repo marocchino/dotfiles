@@ -5,19 +5,20 @@
 # when the system is booting.  Do not change this entry.
 ##
 127.0.0.1       localhost
-127.0.0.1       www.wikitree.co.kr wikitree.co.kr m.wikitree.co.kr
+127.0.0.1       media.daum.net m.media.daum.net
+127.0.0.1       news.nate.com
+127.0.0.1       news.naver.com m.news.naver.com
+127.0.0.1       tvple.com
+127.0.0.1       www.dispatch.co.kr m.dispatch.co.kr
+127.0.0.1       www.dt.co.kr
 127.0.0.1       www.huffingtonpost.kr huffingtonpost.kr
 127.0.0.1       www.insight.co.kr insight.co.kr m.insight.co.kr
-127.0.0.1       www.ttimes.co.kr
-127.0.0.1       www.dt.co.kr
-127.0.0.1       www.pikicast.com pikicast.com
 127.0.0.1       www.moncast.com moncast.com
-127.0.0.1       news.naver.com m.news.naver.com
-127.0.0.1       news.nate.com
-127.0.0.1       media.daum.net m.media.daum.net
-127.0.0.1       www.dispatch.co.kr m.dispatch.co.kr
-127.0.0.1       tvple.com
 127.0.0.1       www.pickis.co.kr
+127.0.0.1       www.pikicast.com pikicast.com
+127.0.0.1       www.ttimes.co.kr
+127.0.0.1       www.w3schools.com
+127.0.0.1       www.wikitree.co.kr wikitree.co.kr m.wikitree.co.kr
 255.255.255.255 broadcasthost
 ::1             localhost
 fe80::1%lo0     localhost
