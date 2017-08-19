@@ -114,8 +114,8 @@ set wrap
 if $SHELL =~ 'bin/fish'
   set shell=/bin/sh
 endif
+set mouse=a
 if has("gui_running")
-  set mouse=a
   set guioptions-=r   " remove right scroll-bar (macvim)
   set macligatures
   set guifont=Fira\ Code\ Retina:h12
