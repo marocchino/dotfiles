@@ -161,10 +161,10 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
+let g:airline_left_sep = "\uE0B4"
+let g:airline_left_alt_sep = "\uE0B5"
+let g:airline_right_sep = "\uE0B6"
+let g:airline_right_alt_sep = "\uE0B7"
 
 let g:table_mode_corner_corner='|'
 let g:table_mode_header_fillchar='-'
@@ -361,6 +361,10 @@ augroup END
 " nnoremap <silent> <C-J> :wincmd j<CR>
 " nnoremap <silent> <C-K> :wincmd k<CR>
 " nnoremap <silent> <C-L> :wincmd l<CR>
+tnoremap <silent> <C-H> <C-W>:wincmd h<CR>
+tnoremap <silent> <C-J> <C-W>:wincmd j<CR>
+tnoremap <silent> <C-K> <C-W>:wincmd k<CR>
+tnoremap <silent> <C-L> <C-W>:wincmd l<CR>
 nnoremap <C-]> g<C-]>
 nnoremap <esc><esc> :nohlsearch<CR>
 nnoremap <Leader>r :VimuxPromptCommand "!!"<CR><CR>
