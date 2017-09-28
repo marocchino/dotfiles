@@ -13,7 +13,6 @@ Plug 'SirVer/ultisnips'
 Plug 'Townk/vim-autoclose'
 Plug 'airblade/vim-gitgutter'
 Plug 'andyl/vim-textobj-elixir'
-Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'editorconfig/editorconfig-vim'
@@ -43,9 +42,11 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+
+" style
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-scripts/AnsiEsc.vim'
+Plug 'ryanoasis/vim-devicons'
 
 " color
 Plug 'Lokaltog/vim-distinguished'
@@ -142,6 +143,33 @@ set wildignore+=.DS_Store
 let g:XkbSwitchEnabled = 1
 let g:XkbSwitchLib = expand('~/dotfiles/bash/libInputSourceSwitcher.dylib')
 
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 0
+" adding the custom source to unite
+let g:webdevicons_enable_unite = 0
+" adding the column to vimfiler
+let g:webdevicons_enable_vimfiler = 0
+" adding to vim-airline's tabline
+let g:webdevicons_enable_airline_tabline = 1
+" adding to vim-airline's statusline
+let g:webdevicons_enable_airline_statusline = 1
+" ctrlp glyphs
+let g:webdevicons_enable_ctrlp = 0
+" adding to flagship's statusline
+let g:webdevicons_enable_flagship_statusline = 0
+" turn on/off file node glyph decorations (not particularly useful)
+let g:WebDevIconsUnicodeDecorateFileNodes = 1
+" use double-width(1) or single-width(0) glyphs
+" only manipulates padding, has no effect on terminal or set(guifont) font
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+" whether or not to show the nerdtree brackets around flags
+let g:webdevicons_conceal_nerdtree_brackets = 1
+" the amount of space to use after the glyph character (default ' ')
+let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
+" Force extra padding in NERDTree so that the filetype icons line up vertically
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 0
+
+let g:airline_powerline_fonts = 1
 let g:airline_theme='papercolor'
 let g:airline_mode_map = {
   \ '__' : '-',
@@ -160,11 +188,16 @@ let g:airline_mode_map = {
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_left_sep = "\uE0B4"
-let g:airline_left_alt_sep = "\uE0B5"
-let g:airline_right_sep = "\uE0B6"
-let g:airline_right_alt_sep = "\uE0B7"
+let g:airline_symbols.paste = "\uf0ea"
+let g:airline_symbols.readonly = "\ue0a2"
+let g:airline_symbols.modified = "\uf459"
+let g:airline_symbols.spell = "\uf49e"
+let g:airline_symbols.branch = "\uf418"
+
+" let g:airline_left_sep = "\uE0B4"
+" let g:airline_left_alt_sep = "\uE0B5"
+" let g:airline_right_sep = "\uE0B6"
+" let g:airline_right_alt_sep = "\uE0B7"
 
 let g:table_mode_corner_corner='|'
 let g:table_mode_header_fillchar='-'
@@ -367,7 +400,6 @@ tnoremap <silent> <C-K> <C-W>:wincmd k<CR>
 tnoremap <silent> <C-L> <C-W>:wincmd l<CR>
 nnoremap <C-]> g<C-]>
 nnoremap <esc><esc> :nohlsearch<CR>
-nnoremap <Leader>r :VimuxPromptCommand "!!"<CR><CR>
 nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
 xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
 nmap <Leader><Leader> <c-^>
