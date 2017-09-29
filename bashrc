@@ -40,9 +40,10 @@ export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
-  GIT_PROMPT_THEME=Single_line
+  GIT_PROMPT_THEME=Single_line_Minimalist
   source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
 fi
+
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash

@@ -16,7 +16,6 @@ Plug 'andyl/vim-textobj-elixir'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'edkolev/tmuxline.vim'
 Plug 'haya14busa/vim-open-googletranslate'
 Plug 'honza/vim-snippets'
 Plug 'jgdavey/vim-blockle'
@@ -47,6 +46,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
+Plug 'edkolev/tmuxline.vim'
 
 " color
 Plug 'Lokaltog/vim-distinguished'
@@ -194,10 +194,10 @@ let g:airline_symbols.modified = "\uf459"
 let g:airline_symbols.spell = "\uf49e"
 let g:airline_symbols.branch = "\uf418"
 
-" let g:airline_left_sep = "\uE0B4"
-" let g:airline_left_alt_sep = "\uE0B5"
-" let g:airline_right_sep = "\uE0B6"
-" let g:airline_right_alt_sep = "\uE0B7"
+let g:airline_left_sep = "\uE0B4"
+let g:airline_left_alt_sep = "\uE0B5"
+let g:airline_right_sep = "\uE0B6"
+let g:airline_right_alt_sep = "\uE0B7"
 
 let g:table_mode_corner_corner='|'
 let g:table_mode_header_fillchar='-'
@@ -206,8 +206,8 @@ let g:elm_format_autosave = 1
 let g:opengoogletranslate#openbrowsercmd = 'open'
 
 " ----- scrooloose/syntastic settings -----
-let g:syntastic_error_symbol = '✘'
-let g:syntastic_warning_symbol = "▲"
+let g:syntastic_error_symbol = "\uF068"
+let g:syntastic_warning_symbol = "\uF06B"
 let g:syntastic_enable_elixir_checker = 1
 let g:syntastic_elixir_checker = ["elixir"]
 let g:syntastic_ruby_checkers = ["rubocop"]
