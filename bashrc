@@ -1,7 +1,6 @@
 alias b=bundle
 alias be="bundle exec"
 alias c="open -a 'Google Chrome'"
-alias ctags="`brew --prefix`/bin/ctags"
 alias chrome="open -a 'Google Chrome'"
 alias e=elixir
 alias g=git
@@ -26,6 +25,7 @@ alias wow="git status"
 
 
 set -o vi
+# shellcheck source=/dev/null
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # for python
@@ -40,10 +40,12 @@ export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
-  GIT_PROMPT_THEME=Single_line_Minimalist
+  export GIT_PROMPT_THEME=Single_line_Minimalist
+  # shellcheck source=/dev/null
   source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
 fi
 
-
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+# shellcheck source=/dev/null
+source $HOME/.asdf/asdf.sh
+# shellcheck source=/dev/null
+source $HOME/.asdf/completions/asdf.bash
