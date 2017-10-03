@@ -30,7 +30,6 @@ ln -sf "$PWD/eslintrc.json" "$HOME/.eslintrc.json"
 
 ln -sfn "$PWD/fish" "$HOME/.config/fish"
 ln -sfn "$PWD/Sketch" "$HOME/Library/Application Support/com.bohemiancoding.sketch3/Plugins"
-ln -sf "$PWD/private.xml" "$HOME/Library/Application Support/Karabiner/private.xml"
 
 git clone https://github.com/asdf-vm/asdf.git "$HOME/.asdf" --branch v0.2.1
 
