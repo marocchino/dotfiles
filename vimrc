@@ -104,7 +104,6 @@ set spelllang=en_us,cjk " remove cjk words from spell check list
 set spell
 set splitbelow      " Open new split panes to right and bottom, which feels more natural
 set splitright
-set statusline=%#ErrorMsg#%#StatusLine#[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%#ErrorMsg#%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%=%-16(\ %l,%c-%v\ %)%P
 set sts=2
 set tabstop=2
 set tags=./tags
@@ -194,10 +193,10 @@ let g:airline_symbols.modified = "\uf459"
 let g:airline_symbols.spell = "\uf49e"
 let g:airline_symbols.branch = "\uf418"
 
-let g:airline_left_sep = "\uE0B4"
-let g:airline_left_alt_sep = "\uE0B5"
-let g:airline_right_sep = "\uE0B6"
-let g:airline_right_alt_sep = "\uE0B7"
+" let g:airline_left_sep = "\uE0B4"
+" let g:airline_left_alt_sep = "\uE0B5"
+" let g:airline_right_sep = "\uE0B6"
+" let g:airline_right_alt_sep = "\uE0B7"
 
 let g:table_mode_corner_corner='|'
 let g:table_mode_header_fillchar='-'
