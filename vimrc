@@ -35,6 +35,7 @@ Plug 'tmhedberg/matchit'
 Plug 'tomtom/tcomment_vim'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
@@ -59,6 +60,7 @@ Plug 'avdgaag/vim-phoenix'
 Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go'
 Plug 'hashivim/vim-terraform'
+Plug 'idris-hackers/idris-vim'
 Plug 'joker1007/vim-ruby-heredoc-syntax'
 Plug 'jparise/vim-graphql'
 Plug 'leafgarland/typescript-vim'
@@ -141,6 +143,7 @@ set wildignore+=.DS_Store
 
 let g:XkbSwitchEnabled = 1
 let g:XkbSwitchLib = expand('~/dotfiles/bash/libInputSourceSwitcher.dylib')
+let g:pipe_converter_command = "~/.vim/plugged/pipe_converter/pipe_converter"
 
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_nerdtree = 0
