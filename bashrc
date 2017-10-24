@@ -49,3 +49,4 @@ fi
 source $HOME/.asdf/asdf.sh
 # shellcheck source=/dev/null
 source $HOME/.asdf/completions/asdf.bash
+source "$(brew --prefix)/etc/profile.d/z.sh"

@@ -23,6 +23,7 @@ cask 'iterm2'
 tap 'ravenac95/sudolikeaboss'
 brew 'sudolikeaboss'
 brew 'fpp'
+brew 'z'
 cask 'skype'
 brew 'macvim' # need xcode
 tap 'caskroom/fonts'
