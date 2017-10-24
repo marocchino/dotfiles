@@ -12,11 +12,12 @@ alias groot="cd (git rev-parse --show-toplevel)"
 alias gs="git status"
 alias iex="rlwrap -a foo iex"
 alias m=mix
-alias n=npm
 alias r=rails
-alias s=spring
+alias sayk="say -v Yuna"
+alias sayj="say -v Kyoko"
 alias t='tmux attach || tmux -u'
 alias v=vim
+alias y=yarn
 
 # wow! much doge!
 alias much=git
