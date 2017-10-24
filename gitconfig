@@ -13,9 +13,13 @@
   extendRegexp = true
   lineNumber = true
 [alias]
+  aa = add --all
+  ai = add --all --intent-to-add
+  ap = add --patch
   ca = commit --amend
   cleanup = !git branch --merged | grep -v '*' | xargs git branch -d
   d = diff
+  ds = diff --staged
   f = fetch
   fa = fetch --all
   last = log --oneline -1
@@ -23,7 +27,9 @@
   pullf = !git fetch --all && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)
   pushf = push --force
   r = rebase
+  ra = rebase --abort
   rc = rebase --continue
+  rh = reset --hard HEAD
   ri = rebase --interactive
   st = status
   w = whatchanged
