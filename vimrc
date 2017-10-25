@@ -380,6 +380,11 @@ augroup reload_vimrc
   autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END
 
+augroup reload_vue_every_time
+  autocmd!
+  autocmd FileType vue syntax sync fromstart
+augroup END
+
 augroup commit_width
   autocmd!
   autocmd Filetype gitcommit setlocal spell textwidth=72
