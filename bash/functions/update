@@ -1,10 +1,9 @@
 #!/bin/bash
 
-function update-brew {
-  echo updating brew
-  brew update
-  brew upgrade --all
-  brew cleanup
+function update-asdf {
+  echo updating asdf
+  asdf update
+  asdf plugin-update --all
 }
 
 function update-apt-get {
@@ -12,19 +11,31 @@ function update-apt-get {
   sudo apt-get update -y
 }
 
+function update-brew {
+  echo updating brew
+  brew update
+  brew upgrade --all
+  brew cleanup
+}
+
 function update-vim {
   echo updating vim
   vim +PlugUpdate +qall
 }
+function update-yarn {
+  echo updating yarn to $VERSION
+  npm install -g "https://yarnpkg.com/downloads/${VERSION}/yarn-v${VERSION}.tar.gz"
+  asdf reshim nodejs
+}
+
+function update-plug {
+  echo updating vim
+  vim +PlugUpgrade +qall
+}
 
 function update-npm {
   echo updating npm
-  npm-check -u -g
-}
-
-function update-docker-machine {
-  echo updating docker-machine
-  docker-machine upgrade
+  npm i -g npm
 }
 
 function update-dotfiles {
@@ -42,33 +53,40 @@ function update-kuromoji {
 }
 
 case $1 in
-brew)
-  update-brew
+asdf)
+  update-asdf
   ;;
 apt-get)
   update-apt-get
   ;;
-vim)
-  update-vim
-  ;;
-npm)
-  update-npm
-  ;;
-docker-machine)
-  update-docker-machine
+brew)
+  update-brew
   ;;
 dotfiles)
   update-dotfiles
   ;;
+plug)
+  update-plug
+  ;;
+npm)
+  update-npm
+  ;;
 kuromoji)
   update-kuromoji
   ;;
-all)
-  update-brew
+vim)
   update-vim
-  update-npm
-  update-docker-machine
+  ;;
+yarn)
+  update-yarn
+  ;;
+all)
+  update-asdf
+  update-brew
   update-dotfiles
+  update-npm
+  update-plug
+  update-vim
   ;;
 *)
   echo 'update what?'
