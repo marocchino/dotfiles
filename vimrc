@@ -35,7 +35,7 @@ Plug 'tmhedberg/matchit'
 Plug 'tomtom/tcomment_vim'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-dispatch', { 'branch': 'job' }
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
@@ -407,6 +407,7 @@ tnoremap <silent> <C-K> <C-W>:wincmd k<CR>
 tnoremap <silent> <C-L> <C-W>:wincmd l<CR>
 nnoremap <C-]> g<C-]>
 nnoremap <esc><esc> :nohlsearch<CR>
+nnoremap <Leader>r :Dispatch<CR><CR>
 nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
 xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
 nmap <Leader><Leader> <c-^>
