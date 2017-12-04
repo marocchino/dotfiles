@@ -407,7 +407,7 @@ tnoremap <silent> <C-K> <C-W>:wincmd k<CR>
 tnoremap <silent> <C-L> <C-W>:wincmd l<CR>
 nnoremap <C-]> g<C-]>
 nnoremap <esc><esc> :nohlsearch<CR>
-nnoremap <Leader>r :Dispatch<CR><CR>
+nnoremap <Leader>r :silent Dispatch<CR>
 nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
 xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
 nmap <Leader><Leader> <c-^>
@@ -432,8 +432,8 @@ nnoremap <silent> <C-b> :call fzf#run({
 
 nnoremap - :Switch<cr>
 " Use command d on top of a word to look it up in Dictionary.app
-nnoremap <silent> <D-d> :!open dict://<cword><CR><CR>
-nnoremap <silent> <D-e> :Dash<CR>
+nnoremap <silent> <D-d> :silent !open dict://<cword><CR>
+nnoremap <silent> <C-d> :Dash<CR>
 nnoremap <silent> <C-p> :FZF<CR>
 vmap <Enter> <Plug>(EasyAlign)
 
