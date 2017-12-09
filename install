@@ -29,6 +29,7 @@ ln -sf "$PWD/hyper.js"  "$HOME/.hyper.js"
 ln -sf "$PWD/eslintrc.json" "$HOME/.eslintrc.json"
 
 ln -sfn "$PWD/fish" "$HOME/.config/fish"
+ln -sfn "$PWD/nvim" "$HOME/.config/nvim"
 ln -sfn "$PWD/Sketch" "$HOME/Library/Application Support/com.bohemiancoding.sketch3/Plugins"
 
 git clone https://github.com/asdf-vm/asdf.git "$HOME/.asdf" --branch v0.4.0
