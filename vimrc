@@ -5,75 +5,75 @@ filetype off                   " required!
 " If installed using Homebrew
 set rtp+=/usr/local/opt/fzf
 
-call plug#begin('~/.vim/plugged')
-
-Plug 'AndrewRadev/switch.vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'SirVer/ultisnips'
-Plug 'Townk/vim-autoclose'
-Plug 'airblade/vim-gitgutter'
-Plug 'andyl/vim-textobj-elixir'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'dhruvasagar/vim-table-mode'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'haya14busa/vim-open-googletranslate'
-Plug 'honza/vim-snippets'
-Plug 'jgdavey/vim-blockle'
-Plug 'junegunn/vim-easy-align'
-Plug 'kana/vim-textobj-user'
-Plug 'lyokha/vim-xkbswitch'
-Plug 'marocchino/pipe_converter'
-Plug 'mattn/emmet-vim'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'osyo-manga/vim-over'
-Plug 'rizzatti/dash.vim'
-Plug 'scrooloose/syntastic'
-Plug 'szw/vim-tags'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tmhedberg/matchit'
-Plug 'tomtom/tcomment_vim'
-Plug 'tomtom/tlib_vim'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-dispatch', { 'branch': 'job' }
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-ragtag'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
+packadd minpac
+call minpac#init()
+call minpac#add('AndrewRadev/switch.vim')
+call minpac#add('MarcWeber/vim-addon-mw-utils')
+call minpac#add('SirVer/ultisnips')
+call minpac#add('Townk/vim-autoclose')
+call minpac#add('airblade/vim-gitgutter')
+call minpac#add('andyl/vim-textobj-elixir', {'type': 'opt'})
+call minpac#add('christoomey/vim-tmux-navigator')
+call minpac#add('dhruvasagar/vim-table-mode')
+call minpac#add('editorconfig/editorconfig-vim')
+call minpac#add('haya14busa/vim-open-googletranslate')
+call minpac#add('honza/vim-snippets')
+call minpac#add('jgdavey/vim-blockle')
+call minpac#add('junegunn/vim-easy-align')
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+call minpac#add('kana/vim-textobj-user', {'type': 'opt'})
+call minpac#add('lyokha/vim-xkbswitch')
+call minpac#add('marocchino/pipe_converter')
+call minpac#add('mattn/emmet-vim')
+call minpac#add('nathanaelkane/vim-indent-guides')
+call minpac#add('ntpeters/vim-better-whitespace')
+call minpac#add('osyo-manga/vim-over')
+call minpac#add('prettier/vim-prettier', { 'do': 'yarn install' })
+call minpac#add('rizzatti/dash.vim')
+call minpac#add('scrooloose/syntastic')
+call minpac#add('szw/vim-tags')
+call minpac#add('terryma/vim-multiple-cursors', {'type': 'opt'})
+call minpac#add('tmhedberg/matchit')
+call minpac#add('tomtom/tcomment_vim')
+call minpac#add('tomtom/tlib_vim')
+call minpac#add('tpope/vim-abolish')
+call minpac#add('tpope/vim-dispatch', { 'branch': 'job' })
+call minpac#add('tpope/vim-endwise')
+call minpac#add('tpope/vim-fugitive')
+call minpac#add('tpope/vim-projectionist')
+call minpac#add('tpope/vim-ragtag')
+call minpac#add('tpope/vim-surround')
+call minpac#add('tpope/vim-unimpaired')
 
 " style
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
-Plug 'edkolev/tmuxline.vim'
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline-themes')
+call minpac#add('ryanoasis/vim-devicons')
+call minpac#add('edkolev/tmuxline.vim')
 
 " color
-Plug 'Lokaltog/vim-distinguished'
-Plug 'vim-scripts/summerfruit256.vim'
+call minpac#add('Lokaltog/vim-distinguished', {'type': 'opt'})
+call minpac#add('vim-scripts/summerfruit256.vim')
 
 " syntax
-Plug 'ElmCast/elm-vim'
-Plug 'ap/vim-css-color'
-Plug 'avdgaag/vim-phoenix'
-Plug 'elixir-lang/vim-elixir'
-Plug 'fatih/vim-go'
-Plug 'hashivim/vim-terraform'
-Plug 'idris-hackers/idris-vim'
-Plug 'joker1007/vim-ruby-heredoc-syntax'
-Plug 'jparise/vim-graphql'
-Plug 'leafgarland/typescript-vim'
-Plug 'mxw/vim-jsx'
-Plug 'othree/html5.vim'
-Plug 'othree/yajs.vim'
-Plug 'plasticboy/vim-markdown'
-Plug 'posva/vim-vue'
-Plug 'rust-lang/rust.vim'
-Plug 'tpope/vim-rails'
-Plug 'vim-ruby/vim-ruby'
-
-call plug#end()
+call minpac#add('ElmCast/elm-vim')
+call minpac#add('ap/vim-css-color')
+call minpac#add('avdgaag/vim-phoenix')
+call minpac#add('elixir-lang/vim-elixir')
+call minpac#add('fatih/vim-go')
+call minpac#add('hashivim/vim-terraform')
+call minpac#add('idris-hackers/idris-vim')
+call minpac#add('joker1007/vim-ruby-heredoc-syntax')
+call minpac#add('jparise/vim-graphql')
+call minpac#add('leafgarland/typescript-vim')
+call minpac#add('mxw/vim-jsx')
+call minpac#add('othree/html5.vim')
+call minpac#add('othree/yajs.vim')
+call minpac#add('plasticboy/vim-markdown')
+call minpac#add('posva/vim-vue')
+call minpac#add('rust-lang/rust.vim')
+call minpac#add('tpope/vim-rails')
+call minpac#add('vim-ruby/vim-ruby')
 
 filetype on
 filetype indent on
@@ -439,6 +439,9 @@ vmap <Enter> <Plug>(EasyAlign)
 
 map ,. :TComment<CR>
 map ., :TComment<CR>
+
+command! PackUpdate call minpac#update()
+command! PackClean call minpac#clean()
 
 syntax enable
 syntax sync fromstart

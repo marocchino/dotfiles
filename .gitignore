@@ -7,7 +7,7 @@ fish/profile.fish
 fish/fishd.*
 fish/generated_completions
 vim/autoload/
-vim/plugged/
+vim/pack/
 vim/.vim-flavor/
 vim/view/
 vim/VimFlavor.lock

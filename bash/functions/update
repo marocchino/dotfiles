@@ -20,7 +20,7 @@ function update-brew {
 
 function update-vim {
   echo updating vim
-  vim +PlugUpdate +qall
+  vim +PackUpdate +qall
 }
 function update-yarn {
   if [[ $VERSION ]]; then
@@ -31,11 +31,6 @@ function update-yarn {
     npm install -g "https://yarnpkg.com/latest.tar.gz"
   fi
   asdf reshim nodejs
-}
-
-function update-plug {
-  echo updating vim
-  vim +PlugUpgrade +qall
 }
 
 function update-npm {
@@ -70,9 +65,6 @@ brew)
 dotfiles)
   update-dotfiles
   ;;
-plug)
-  update-plug
-  ;;
 npm)
   update-npm
   ;;
@@ -90,13 +82,12 @@ all)
   update-brew
   update-dotfiles
   update-npm
-  update-plug
   update-vim
   ;;
 *)
   echo 'update what?'
   echo 'please select from:
-  apt-get, asdf, brew, dotfiles, kuromoji, npm, plug, vim, yarn, all'
+  apt-get, asdf, brew, dotfiles, kuromoji, npm, vim, yarn, all'
   ;;
 esac
 
