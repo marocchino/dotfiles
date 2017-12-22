@@ -267,20 +267,6 @@ let g:ragtag_global_maps = 1
 let g:indent_guides_enable_on_vim_startup = 0
 
 let g:rails_projections = {
-\ "frontend/src/views/*.jade": {
-\   "command": "design"
-\ },
-\ "frontend/src/scripts/*.coffee": {
-\   "command": "coffee",
-\   "test": "frontend/spec/{}_spec.coffee"
-\ },
-\ "app/decorators/*_decorator.rb": {
-\   "command": "decorator",
-\   "template":
-\     ["class {camelcase|capitalize|colons}Decorator < "
-\      . "Draper::Decorator", "  delegate_all", "end"],
-\   "test": "spec/decorators/{}_decorator_spec.rb"
-\ },
 \ "app/forms/*_form.rb": {
 \   "command": "form",
 \   "template":
@@ -299,10 +285,6 @@ let g:rails_projections = {
 \ "lib/*.rb": {
 \   "command": "lib",
 \   "test": "spec/lib/{}_spec.rb"
-\ },
-\ "app/services/*.rb": {
-\   "command": "service",
-\   "test": "spec/services/{}_spec.rb"
 \ },
 \ "app/validators/*_validator.rb": {
 \   "command": "service",
