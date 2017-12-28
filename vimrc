@@ -235,6 +235,9 @@ let g:ruby_heredoc_syntax_defaults = {
 \ "sql" : {
 \   "start" : "SQL",
 \ },
+\ "markdown" : {
+\   "start" : "MD",
+\ },
 \}
 
 let g:vim_tags_auto_generate = 1
