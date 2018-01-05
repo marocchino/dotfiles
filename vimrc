@@ -196,6 +196,7 @@ let g:airline_symbols.readonly = "\ue0a2"
 let g:airline_symbols.modified = "\uf459"
 let g:airline_symbols.spell = "\uf49e"
 let g:airline_symbols.branch = "\uf418"
+let g:airline_section_x = ''
 
 " let g:airline_left_sep = "\uE0B4"
 " let g:airline_left_alt_sep = "\uE0B5"
