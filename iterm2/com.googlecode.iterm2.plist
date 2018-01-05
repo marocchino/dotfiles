@@ -319,6 +319,11 @@
 	<false/>
 	<key>NSScrollViewShouldScrollUnderTitlebar</key>
 	<false/>
+	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
+	<array>
+		<string>0.000000, 0.000000, 224.000000, 263.000000, NO, NO</string>
+		<string>0.000000, 264.000000, 224.000000, 43.000000, NO, NO</string>
+	</array>
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -350,15 +355,21 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>334 699 628 481 0 0 1080 1897 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>1270 956 700 622 1080 0 1080 1897 </string>
+	<string>190 963 700 622 0 0 1080 1897 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>269 126 606 469 0 0 1080 1897 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>18 1496 918 401 0 0 1080 1897 </string>
+	<string>18 365 918 512 0 0 1080 1897 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>137 769 592 584 0 0 1080 1897 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 27 1080 1870 0 0 1080 1897 </string>
+	<string>0 1320 730 577 0 0 1080 1897 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>123 875 730 626 0 0 1080 1897 </string>
+	<key>NeverWarnAboutShortLivedSessions_62D7FE4E-45D1-4F34-AB01-1FFFD26D5FA7</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_62D7FE4E-45D1-4F34-AB01-1FFFD26D5FA7_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1121,7 +1132,16 @@
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
-			<array/>
+			<array>
+				<dict>
+					<key>action</key>
+					<string>ScriptTrigger</string>
+					<key>parameter</key>
+					<string>wakatime --entity Terminal --entity-type app --plugin "iterm2-wakatime/0.0.1" --project "&lt;&lt;LAST_PROJECT&gt;&gt;"</string>
+					<key>regex</key>
+					<string>.*</string>
+				</dict>
+			</array>
 			<key>Unicode Normalization</key>
 			<integer>3</integer>
 			<key>Unlimited Scrollback</key>
@@ -1306,7 +1326,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-09-28T06:03:05Z</date>
+	<date>2017-12-27T10:36:36Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1353,7 +1373,9 @@
 	<integer>0</integer>
 	<key>WordCharacters</key>
 	<string></string>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.1.20170926-nightly</string>
+	<string>3.1.20171224-nightly</string>
 </dict>
 </plist>
