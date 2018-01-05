@@ -44,6 +44,7 @@ call minpac#add('tpope/vim-projectionist')
 call minpac#add('tpope/vim-ragtag')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-unimpaired')
+call minpac#add('wakatime/vim-wakatime')
 
 " style
 call minpac#add('vim-airline/vim-airline')
