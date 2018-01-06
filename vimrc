@@ -31,7 +31,7 @@ call minpac#add('osyo-manga/vim-over')
 call minpac#add('prettier/vim-prettier', { 'do': 'yarn install' })
 call minpac#add('radenling/vim-dispatch-neovim')
 call minpac#add('rizzatti/dash.vim')
-call minpac#add('scrooloose/syntastic')
+call minpac#add('ruanyl/coverage.vim')
 call minpac#add('szw/vim-tags')
 call minpac#add('terryma/vim-multiple-cursors', {'type': 'opt'})
 call minpac#add('tmhedberg/matchit')
@@ -45,8 +45,8 @@ call minpac#add('tpope/vim-projectionist')
 call minpac#add('tpope/vim-ragtag')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-unimpaired')
+call minpac#add('w0rp/ale')
 call minpac#add('wakatime/vim-wakatime')
-call minpac#add('ruanyl/coverage.vim')
 
 " style
 call minpac#add('vim-airline/vim-airline')
@@ -214,21 +214,19 @@ let g:table_mode_header_fillchar='-'
 let g:elm_format_autosave = 1
 let g:opengoogletranslate#openbrowsercmd = 'open'
 
-" ----- scrooloose/syntastic settings -----
-let g:syntastic_error_symbol = "\uF068"
-let g:syntastic_warning_symbol = "\uF06B"
-let g:syntastic_enable_elixir_checker = 1
-let g:syntastic_elixir_checker = ["elixir"]
-let g:syntastic_ruby_checkers = ["rubocop"]
-let g:syntastic_javascript_checkers = ["eslint"]
-let g:syntastic_scss_checkers = ['scss_lint']
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:go_list_type = "quickfix"
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-augroup mySyntastic
-  autocmd!
-  autocmd FileType tex let b:syntastic_mode = "active"
-augroup END
+let g:ale_linters = {
+\   'elixir': ['credo'],
+\   'ruby': ['rubocop'],
+\   'javascript': ['eslint', 'prettier'],
+\   'markdown': ['mdl'],
+\   'json': ['prettier'],
+\   'css': ['prettier'],
+\   'go': ['golint', 'govet', 'errcheck'],
+\}
+
+let g:ale_fix_on_save = 1
+let g:ale_sign_error = "\uF05E"
+let g:ale_sign_warning = "\uF071"
 
 " === vim-ruby-heredoc-syntax ===
 " Add syntax rule
