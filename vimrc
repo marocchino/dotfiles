@@ -45,6 +45,7 @@ call minpac#add('tpope/vim-ragtag')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('wakatime/vim-wakatime')
+call minpac#add('ruanyl/coverage.vim')
 
 " style
 call minpac#add('vim-airline/vim-airline')
@@ -202,6 +203,9 @@ let g:airline_section_x = ''
 " let g:airline_left_alt_sep = "\uE0B5"
 " let g:airline_right_sep = "\uE0B6"
 " let g:airline_right_alt_sep = "\uE0B7"
+
+let g:coverage_json_report_path = 'coverage/coverage-final.json'
+let g:coverage_sign_uncovered = "\uF070"
 
 let g:table_mode_corner_corner='|'
 let g:table_mode_header_fillchar='-'
