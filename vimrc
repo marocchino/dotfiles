@@ -227,6 +227,8 @@ let g:ale_linters = {
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = "\uF05E"
 let g:ale_sign_warning = "\uF071"
+nmap <silent> [w <Plug>(ale_previous)
+nmap <silent> ]w <Plug>(ale_next)
 
 " === vim-ruby-heredoc-syntax ===
 " Add syntax rule
