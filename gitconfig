@@ -32,6 +32,7 @@
   rh = reset --hard HEAD
   ri = rebase --interactive
   st = status
+  ski = stash --keep-index
   w = whatchanged
   wip = commit --amend --no-edit
 [include]
