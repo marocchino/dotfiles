@@ -374,6 +374,7 @@ augroup END
 augroup reload_vue_every_time
   autocmd!
   autocmd FileType vue syntax sync fromstart
+  autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 augroup END
 
 augroup commit_width
