@@ -16,7 +16,7 @@ alias r=rails
 alias sayk="say -v Yuna"
 alias sayj="say -v Kyoko"
 alias t='tmux attach || tmux -u'
-alias v=vim
+alias v=nvim
 alias y=yarn
 
 # wow! much doge!
