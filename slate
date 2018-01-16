@@ -35,6 +35,9 @@ bind j:ctrl;shift;alt;cmd  push down  bar-resize:screenSizeY/4-1
 bind f:ctrl;shift;alt;cmd  push up    bar-resize:screenSizeY
 bind 1:ctrl;shift;alt;cmd  throw 0 resize
 bind 2:ctrl;shift;alt;cmd  throw 1 resize
+bind 0:ctrl;shift;alt;cmd  shell '~/dotfiles/bash/functions/issw com.apple.inputmethod.Korean.2SetKorean'
+bind 9:ctrl;shift;alt;cmd  shell '~/dotfiles/bash/functions/issw com.apple.inputmethod.Kotoeri.Japanese'
+bind 8:ctrl;shift;alt;cmd  shell '~/dotfiles/bash/functions/issw com.apple.keylayout.ABC'
 # bind l:cmd     focus right
 # bind h:cmd     focus left
 # bind k:cmd     focus up
