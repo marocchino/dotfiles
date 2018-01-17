@@ -11,7 +11,6 @@ call minpac#add('AndrewRadev/switch.vim')
 call minpac#add('MarcWeber/vim-addon-mw-utils')
 call minpac#add('SirVer/ultisnips')
 call minpac#add('Townk/vim-autoclose')
-call minpac#add('Valloric/YouCompleteMe', { 'do': './install.py --go-completer --js-completer' })
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('andyl/vim-textobj-elixir', {'type': 'opt'})
 call minpac#add('christoomey/vim-tmux-navigator')
@@ -49,6 +48,7 @@ call minpac#add('tpope/vim-unimpaired')
 call minpac#add('w0rp/ale')
 call minpac#add('wakatime/vim-wakatime')
 if has('nvim')
+  call minpac#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
   call minpac#add('radenling/vim-dispatch-neovim')
 endif
 
@@ -226,6 +226,11 @@ let g:ale_sign_warning = "\uF071"
 let g:coverage_json_report_path = 'coverage/coverage-final.json'
 let g:coverage_sign_uncovered = "\uF070"
 
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_start_length = 3
+let g:deoplete#disable_auto_complete = 0
+
 let g:elm_format_autosave = 1
 
 let g:table_mode_corner_corner='|'
@@ -314,14 +319,6 @@ let g:rails_projections = {
 \   "test": "spec/models/{}_uploader_spec.rb",
 \   "keywords": "process version"
 \ }}
-
-let g:ycm_auto_trigger = 1
-let g:ycm_min_num_of_chars_for_completion = 3
-let g:ycm_key_detailed_diagnostics = '<leader>d'
-let g:ycm_key_invoke_completion = '<TAB>'
-let g:ycm_key_list_stop_completion = ['<C-y>', '<Enter>']
-let g:ycm_key_list_select_completion = ['<C-p>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<Up>']
 
 " https://sites.google.com/site/fudist/Home/vim-nihongo-ban/vim-color#color-zenkaku
 """"""""""""""""""""""""""""""
