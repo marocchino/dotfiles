@@ -11,9 +11,11 @@ call minpac#add('AndrewRadev/switch.vim')
 call minpac#add('MarcWeber/vim-addon-mw-utils')
 call minpac#add('SirVer/ultisnips')
 call minpac#add('Townk/vim-autoclose')
+call minpac#add('Valloric/YouCompleteMe', { 'do': './install.py --go-completer --js-completer' })
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('andyl/vim-textobj-elixir', {'type': 'opt'})
 call minpac#add('christoomey/vim-tmux-navigator')
+call minpac#add('c-brenn/fuzzy-projectionist.vim')
 call minpac#add('dhruvasagar/vim-table-mode')
 call minpac#add('editorconfig/editorconfig-vim')
 call minpac#add('haya14busa/vim-open-googletranslate')
@@ -29,7 +31,6 @@ call minpac#add('nathanaelkane/vim-indent-guides')
 call minpac#add('ntpeters/vim-better-whitespace')
 call minpac#add('osyo-manga/vim-over')
 call minpac#add('prettier/vim-prettier', { 'do': 'yarn install' })
-call minpac#add('radenling/vim-dispatch-neovim')
 call minpac#add('rizzatti/dash.vim')
 call minpac#add('ruanyl/coverage.vim')
 call minpac#add('szw/vim-tags')
@@ -38,7 +39,7 @@ call minpac#add('tmhedberg/matchit')
 call minpac#add('tomtom/tcomment_vim')
 call minpac#add('tomtom/tlib_vim')
 call minpac#add('tpope/vim-abolish')
-call minpac#add('tpope/vim-dispatch', { 'branch': 'job' })
+call minpac#add('tpope/vim-dispatch')
 call minpac#add('tpope/vim-endwise')
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-projectionist')
@@ -47,6 +48,9 @@ call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('w0rp/ale')
 call minpac#add('wakatime/vim-wakatime')
+if has('nvim')
+  call minpac#add('radenling/vim-dispatch-neovim')
+endif
 
 " style
 call minpac#add('vim-airline/vim-airline')
@@ -205,15 +209,6 @@ let g:airline_section_x = ''
 " let g:airline_right_sep = "\uE0B6"
 " let g:airline_right_alt_sep = "\uE0B7"
 
-let g:coverage_json_report_path = 'coverage/coverage-final.json'
-let g:coverage_sign_uncovered = "\uF070"
-
-let g:table_mode_corner_corner='|'
-let g:table_mode_header_fillchar='-'
-
-let g:elm_format_autosave = 1
-let g:opengoogletranslate#openbrowsercmd = 'open'
-
 let g:ale_linters = {
 \   'elixir': ['credo'],
 \   'ruby': ['rubocop'],
@@ -227,6 +222,17 @@ let g:ale_linters = {
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = "\uF05E"
 let g:ale_sign_warning = "\uF071"
+
+let g:coverage_json_report_path = 'coverage/coverage-final.json'
+let g:coverage_sign_uncovered = "\uF070"
+
+let g:elm_format_autosave = 1
+
+let g:table_mode_corner_corner='|'
+let g:table_mode_header_fillchar='-'
+
+let g:opengoogletranslate#openbrowsercmd = 'open'
+
 nmap <silent> [w <Plug>(ale_previous)
 nmap <silent> ]w <Plug>(ale_next)
 
@@ -309,7 +315,13 @@ let g:rails_projections = {
 \   "keywords": "process version"
 \ }}
 
-
+let g:ycm_auto_trigger = 1
+let g:ycm_min_num_of_chars_for_completion = 3
+let g:ycm_key_detailed_diagnostics = '<leader>d'
+let g:ycm_key_invoke_completion = '<TAB>'
+let g:ycm_key_list_stop_completion = ['<C-y>', '<Enter>']
+let g:ycm_key_list_select_completion = ['<C-p>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<Up>']
 
 " https://sites.google.com/site/fudist/Home/vim-nihongo-ban/vim-color#color-zenkaku
 """"""""""""""""""""""""""""""
