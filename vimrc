@@ -73,6 +73,7 @@ call minpac#add('idris-hackers/idris-vim')
 call minpac#add('joker1007/vim-ruby-heredoc-syntax')
 call minpac#add('jparise/vim-graphql')
 call minpac#add('leafgarland/typescript-vim')
+call minpac#add('mhinz/vim-mix-format')
 call minpac#add('mxw/vim-jsx')
 call minpac#add('othree/html5.vim')
 call minpac#add('othree/yajs.vim')
@@ -232,6 +233,8 @@ let g:deoplete#auto_complete_start_length = 3
 let g:deoplete#disable_auto_complete = 0
 
 let g:elm_format_autosave = 1
+
+let g:mix_format_on_save = 1
 
 let g:table_mode_corner_corner='|'
 let g:table_mode_header_fillchar='-'
