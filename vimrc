@@ -73,7 +73,6 @@ call minpac#add('idris-hackers/idris-vim')
 call minpac#add('joker1007/vim-ruby-heredoc-syntax')
 call minpac#add('jparise/vim-graphql')
 call minpac#add('leafgarland/typescript-vim')
-call minpac#add('mhinz/vim-mix-format')
 call minpac#add('mxw/vim-jsx')
 call minpac#add('othree/html5.vim')
 call minpac#add('othree/yajs.vim')
@@ -399,6 +398,10 @@ augroup elixir_pipe_converter
   autocmd!
   autocmd FileType elixir nnoremap ec :call PipeConvert()<CR>
   autocmd FileType elixir nnoremap er :call PipeRevert()<CR>
+augroup END
+
+augroup elixir_mix_format
+  autocmd BufWritePost *.{ex,exs} silent :call LanguageClient_textDocument_formatting()
 augroup END
 
 " move windows with hjkl
