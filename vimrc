@@ -239,6 +239,7 @@ let g:table_mode_corner_corner='|'
 let g:table_mode_header_fillchar='-'
 
 let g:opengoogletranslate#openbrowsercmd = 'open'
+let g:UltiSnipsListSnippets = '<c-l>'
 
 nmap <silent> [w <Plug>(ale_previous)
 nmap <silent> ]w <Plug>(ale_next)
