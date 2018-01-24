@@ -48,7 +48,6 @@ call minpac#add('tpope/vim-unimpaired')
 call minpac#add('w0rp/ale')
 call minpac#add('wakatime/vim-wakatime')
 if has('nvim')
-  call minpac#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
   call minpac#add('radenling/vim-dispatch-neovim')
 endif
 
@@ -225,11 +224,6 @@ let g:ale_sign_warning = "\uF071"
 
 let g:coverage_json_report_path = 'coverage/coverage-final.json'
 let g:coverage_sign_uncovered = "\uF070"
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_start_length = 3
-let g:deoplete#disable_auto_complete = 0
 
 let g:elm_format_autosave = 1
 
