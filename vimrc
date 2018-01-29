@@ -85,7 +85,7 @@ filetype on
 filetype indent on
 filetype plugin on
 
-set backspace=indent,eol,start
+set backspace=indent,eol,start " http://vim.wikia.com/wiki/Backspace_and_delete_problems
 set expandtab
 set encoding=utf-8  " Set encoding
 set fileencoding=utf-8  " Set encoding
@@ -97,11 +97,15 @@ set incsearch       " do incremental searching
 set laststatus=2    " To display the status line always
 set list
 set listchars=tab:»·,trail:·,extends:»,precedes:«,nbsp:%
+" Prevents redrawing during automated tasks.
+set lazyredraw
 set loadplugins
 set magic           " regexp like movement
+set nrformats=bin,octal,hex
 set nobackup
 set noswapfile      " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
 set nowritebackup
+set relativenumber
 set number          " Show line number
 set numberwidth=5
 set ruler           " show the cursor position all the time
@@ -112,7 +116,8 @@ set spelllang=en_us,cjk " remove cjk words from spell check list
 set spell
 set splitbelow      " Open new split panes to right and bottom, which feels more natural
 set splitright
-set sts=2
+set softtabstop=2
+set synmaxcol=800
 set tabstop=2
 set tags=./tags
 set textwidth=80
@@ -361,6 +366,8 @@ if (exists('+colorcolumn'))
   highlight ColorColumn ctermbg=9
 endif
 
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
 augroup debugger_highlight
   autocmd!
   autocmd BufEnter *.ex syn match Error "IO.puts\|IO.inspect"
@@ -433,11 +440,15 @@ nnoremap <silent> <C-b> :call fzf#run({
   \   'down':    len(<sid>buflist()) + 2
   \ })<CR>
 
+noremap Q <Nop>
+noremap q: :q
+noremap ; :
 nnoremap - :Switch<cr>
 " Use command d on top of a word to look it up in Dictionary.app
 nnoremap <silent> <D-d> :silent !open dict://<cword><CR>
 nnoremap <silent> <C-d> :Dash<CR>
 nnoremap <silent> <C-p> :FZF<CR>
+nnoremap S i<cr><esc><right>
 vmap <Enter> <Plug>(EasyAlign)
 
 map ,. :TComment<CR>
