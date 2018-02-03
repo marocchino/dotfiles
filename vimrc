@@ -20,12 +20,13 @@ call minpac#add('editorconfig/editorconfig-vim')
 call minpac#add('haya14busa/vim-open-googletranslate')
 call minpac#add('honza/vim-snippets')
 call minpac#add('jgdavey/vim-blockle')
-call minpac#add('junegunn/vim-easy-align')
+call minpac#add('janko-m/vim-test')
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 call minpac#add('kana/vim-textobj-user', {'type': 'opt'})
 call minpac#add('lyokha/vim-xkbswitch')
 call minpac#add('marocchino/pipe_converter')
 call minpac#add('mattn/emmet-vim')
+call minpac#add('mhinz/vim-grepper')
 call minpac#add('nathanaelkane/vim-indent-guides')
 call minpac#add('ntpeters/vim-better-whitespace')
 call minpac#add('osyo-manga/vim-over')
@@ -133,6 +134,10 @@ if has("gui_running")
   set macligatures
   set guifont=Fira\ Code\ Retina:h12
 endif
+if has('nvim')
+  let $VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+  let $EDITOR="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+endif
 
 " Disable output and VCS files
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
@@ -232,10 +237,21 @@ let g:coverage_sign_uncovered = "\uF070"
 
 let g:elm_format_autosave = 1
 
+let g:grepper = {}
+let g:grepper.tools = ['grep', 'git', 'rg']
+
+" Search for the current word
+nnoremap <Leader>* :Grepper -cword -noprompt<CR>
+" Search for the current selection
+nmap gs <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)<Paste>
+
 let g:mix_format_on_save = 1
 
 let g:table_mode_corner_corner='|'
 let g:table_mode_header_fillchar='-'
+
+let test#strategy = "dispatch"
 
 let g:opengoogletranslate#openbrowsercmd = 'open'
 let g:UltiSnipsListSnippets = '<c-l>'
@@ -411,10 +427,19 @@ augroup END
 " nnoremap <silent> <C-J> :wincmd j<CR>
 " nnoremap <silent> <C-K> :wincmd k<CR>
 " nnoremap <silent> <C-L> :wincmd l<CR>
-tnoremap <silent> <C-H> <C-W>:wincmd h<CR>
-tnoremap <silent> <C-J> <C-W>:wincmd j<CR>
-tnoremap <silent> <C-K> <C-W>:wincmd k<CR>
-tnoremap <silent> <C-L> <C-W>:wincmd l<CR>
+if has('nvim')
+  " nnoremap :ter :split|terminal
+  tnoremap <C-W> <C-\><C-n>
+  tnoremap <silent> <C-H> <C-\><C-n>:wincmd h<CR>
+  tnoremap <silent> <C-J> <C-\><C-n>:wincmd j<CR>
+  tnoremap <silent> <C-K> <C-\><C-n>:wincmd k<CR>
+  tnoremap <silent> <C-L> <C-\><C-n>:wincmd l<CR>
+else
+  tnoremap <silent> <C-H> <C-W>:wincmd h<CR>
+  tnoremap <silent> <C-J> <C-W>:wincmd j<CR>
+  tnoremap <silent> <C-K> <C-W>:wincmd k<CR>
+  tnoremap <silent> <C-L> <C-W>:wincmd l<CR>
+endif
 nnoremap <C-]> g<C-]>
 nnoremap <esc><esc> :nohlsearch<CR>
 nnoremap <Leader>r :silent Dispatch<CR>

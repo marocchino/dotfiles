@@ -16,7 +16,7 @@ alias r=rails
 alias sayk="say -v Yuna"
 alias sayj="say -v Kyoko"
 alias t='tmux attach || tmux -u'
-alias v=nvim
+alias v=nvr
 alias y=yarn
 
 # wow! much doge!
@@ -35,9 +35,9 @@ set -o vi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export EDITOR=vim
+export EDITOR=nvr
 export GOPATH="$HOME/.go"
-PATH="/usr/local/sbin:$HOME/bin:$GOPATH/bin:$HOME/dotfiles/bash/functions:$PATH"
+PATH="$HOME/Library/Python/3.6/bin/:/usr/local/sbin:$HOME/bin:$GOPATH/bin:$HOME/dotfiles/bash/functions:$PATH"
 export PATH
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
