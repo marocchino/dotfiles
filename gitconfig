@@ -7,8 +7,6 @@
   pager = true
 [merge]
   tool = vimdiff
-[core]
-  editor = vim
 [grep]
   extendRegexp = true
   lineNumber = true

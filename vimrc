@@ -136,7 +136,6 @@ if has("gui_running")
 endif
 if has('nvim')
   let $VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
-  let $EDITOR="nvr -cc split --remote-wait +'set bufhidden=wipe'"
 endif
 
 " Disable output and VCS files
