@@ -474,6 +474,7 @@ nnoremap <silent> <C-b> :call fzf#run({
 noremap Q <Nop>
 noremap q: :q
 noremap ; :
+noremap bd :wall \| bd<cr>
 nnoremap - :Switch<cr>
 " Use command d on top of a word to look it up in Dictionary.app
 nnoremap <silent> <D-d> :silent !open dict://<cword><CR>
