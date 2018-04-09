@@ -53,6 +53,9 @@ function update-kuromoji {
 }
 
 case $1 in
+aset)
+  update-asdf
+  ;;
 asdf)
   update-asdf
   ;;

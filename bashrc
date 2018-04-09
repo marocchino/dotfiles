@@ -1,3 +1,4 @@
+alias aset=asdf
 alias b=bundle
 alias be="bundle exec"
 alias c="open -a 'Google Chrome'"
