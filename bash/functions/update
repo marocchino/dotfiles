@@ -14,7 +14,7 @@ function update-apt-get {
 function update-brew {
   echo updating brew
   brew update
-  brew upgrade --all
+  brew upgrade
   brew cleanup
 }
 
