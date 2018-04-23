@@ -17,7 +17,7 @@ alias r=rails
 alias sayk="say -v Yuna"
 alias sayj="say -v Kyoko"
 alias t='tmux attach || tmux -u'
-alias v='nvr -cc split --remote-wait'
+alias v='nvr --remote-wait'
 alias y=yarn
 
 # wow! much doge!
