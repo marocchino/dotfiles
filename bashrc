@@ -12,6 +12,7 @@ alias gg=exit
 alias groot="cd (git rev-parse --show-toplevel)"
 alias gs="git status"
 alias iex="rlwrap -a foo iex"
+alias npr="npm run"
 alias m=mix
 alias r=rails
 alias sayk="say -v Yuna"
