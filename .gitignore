@@ -2,6 +2,7 @@
 tags
 .netrwhist
 .DS_Store
+bash/functions/issw
 fish/fish_history
 fish/profile.fish
 fish/fishd.*
