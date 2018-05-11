@@ -30,7 +30,7 @@ call minpac#add('mhinz/vim-grepper')
 call minpac#add('nathanaelkane/vim-indent-guides')
 call minpac#add('ntpeters/vim-better-whitespace')
 call minpac#add('osyo-manga/vim-over')
-call minpac#add('prettier/vim-prettier', { 'do': 'yarn install' })
+call minpac#add('prettier/vim-prettier', { 'do': '!npm install' })
 call minpac#add('rizzatti/dash.vim')
 call minpac#add('ruanyl/coverage.vim')
 call minpac#add('szw/vim-tags')
@@ -51,6 +51,10 @@ call minpac#add('w0rp/ale')
 call minpac#add('wakatime/vim-wakatime')
 if has('nvim')
   call minpac#add('radenling/vim-dispatch-neovim')
+  call minpac#add('autozimu/LanguageClient-neovim', {'branch': 'next', 'do': '!bash install.sh'})
+else
+  call minpac#add('prabirshrestha/async.vim')
+  call minpac#add('prabirshrestha/vim-lsp')
 endif
 
 " style
@@ -80,6 +84,7 @@ call minpac#add('othree/yajs.vim')
 call minpac#add('plasticboy/vim-markdown')
 call minpac#add('posva/vim-vue')
 call minpac#add('rust-lang/rust.vim')
+call minpac#add('reasonml-editor/vim-reason-plus')
 call minpac#add('tpope/vim-rails')
 call minpac#add('vim-ruby/vim-ruby')
 
@@ -152,7 +157,7 @@ set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
 
 " Ignore rails temporary asset caches
-set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
+set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/o*
 
 " Disable OS X index files
 set wildignore+=.DS_Store
@@ -284,6 +289,20 @@ let g:ruby_heredoc_syntax_defaults = {
 \}
 
 let g:vim_tags_auto_generate = 1
+if has('nvim')
+  " Automatically start language servers.
+  let g:LanguageClient_autoStart = 1
+  let g:LanguageClient_serverCommands = {
+  \ 'reason': ['ocaml-language-server', '--stdio'],
+  \ 'ocaml': ['ocaml-language-server', '--stdio'],
+  \ }
+else
+  au User lsp_setup call lsp#register_server({
+  \ 'name': 'ocaml-language-server',
+  \ 'cmd': {server_info->[&shell, &shellcmdflag, 'ocaml-language-server --stdio']},
+  \ 'whitelist': ['reason', 'ocaml'],
+  \ })
+endif
 
 let g:vim_markdown_fenced_languages = [
 \ 'c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini', 'ruby=rb', 'python=py',
