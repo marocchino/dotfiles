@@ -465,6 +465,7 @@ else
   tnoremap <silent> <C-J> <C-W>:wincmd j<CR>
   tnoremap <silent> <C-K> <C-W>:wincmd k<CR>
   tnoremap <silent> <C-L> <C-W>:wincmd l<CR>
+  tnoremap <silent> <C-N> <C-W>N
 endif
 nnoremap <C-]> g<C-]>
 nnoremap <esc><esc> :nohlsearch<CR>
