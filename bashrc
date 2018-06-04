@@ -12,7 +12,6 @@ alias gg=exit
 alias groot="cd (git rev-parse --show-toplevel)"
 alias gs="git status"
 alias iex="rlwrap -a foo iex"
-alias npr="npm run"
 alias m=mix
 alias r=rails
 alias sayk="say -v Yuna"
@@ -39,7 +38,7 @@ export LANG=en_US.UTF-8
 
 export EDITOR=vim
 export GOPATH="$HOME/.go"
-PATH="$HOME/Library/Python/3.6/bin/:/usr/local/bin:/usr/local/sbin:$HOME/bin:$GOPATH/bin:$HOME/dotfiles/bash/functions:$PATH"
+PATH="$HOME/Library/Python/3.6/bin/:/usr/local/sbin:$HOME/bin:$GOPATH/bin:$HOME/dotfiles/bash/functions:/usr/local/bin:$PATH"
 export PATH
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
