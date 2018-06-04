@@ -2,7 +2,7 @@ tap 'caskroom/cask'
 cask 'dropbox'
 brew 'wget'
 brew 'ctags'
-brew 'git'
+brew 'git', args: ['with-completions']
 brew 'git-open'
 brew 'go'
 brew 'node'

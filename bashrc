@@ -1,3 +1,44 @@
+set -o vi
+# shellcheck source=/dev/null
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# for python
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+export EDITOR=vim
+export GOPATH="$HOME/.go"
+PATH="$HOME/Library/Python/3.6/bin/:/usr/local/sbin:$HOME/bin:$GOPATH/bin:$HOME/dotfiles/bash/functions:/usr/local/bin:$PATH"
+export PATH
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
+if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
+  export GIT_PROMPT_THEME=Single_line_Minimalist
+  # shellcheck source=/dev/null
+  source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
+fi
+
+# shellcheck source=/dev/null
+source $HOME/.asdf/asdf.sh
+# shellcheck source=/dev/null
+source $HOME/.asdf/completions/asdf.bash
+source "$(brew --prefix)/etc/profile.d/z.sh"
+
+# Git branch bash completion
+if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+  . /usr/local/etc/bash_completion.d/git-completion.bash
+
+  # Add git completion to aliases
+  __git_complete g __git_main
+  __git_complete ga _git_add
+  __git_complete gaa _git_add
+  __git_complete gai _git_add
+  __git_complete gs _git_status
+  __git_complete gc _git_checkout
+  __git_complete gd _git_branch
+fi
+
 alias aset=asdf
 alias b=bundle
 alias be="bundle exec"
@@ -26,31 +67,3 @@ alias so=vim
 alias such=git
 alias very=git
 alias wow="git status"
-
-
-set -o vi
-# shellcheck source=/dev/null
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# for python
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
-export EDITOR=vim
-export GOPATH="$HOME/.go"
-PATH="$HOME/Library/Python/3.6/bin/:/usr/local/sbin:$HOME/bin:$GOPATH/bin:$HOME/dotfiles/bash/functions:/usr/local/bin:$PATH"
-export PATH
-export CLICOLOR=1
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-
-if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
-  export GIT_PROMPT_THEME=Single_line_Minimalist
-  # shellcheck source=/dev/null
-  source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
-fi
-
-# shellcheck source=/dev/null
-source $HOME/.asdf/asdf.sh
-# shellcheck source=/dev/null
-source $HOME/.asdf/completions/asdf.bash
-source "$(brew --prefix)/etc/profile.d/z.sh"
