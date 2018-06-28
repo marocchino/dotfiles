@@ -112,7 +112,6 @@ set nrformats=bin,octal,hex
 set nobackup
 set noswapfile      " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
 set nowritebackup
-set relativenumber
 set number          " Show line number
 set numberwidth=5
 set ruler           " show the cursor position all the time
