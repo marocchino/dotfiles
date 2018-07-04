@@ -25,6 +25,8 @@ source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
 source "$(brew --prefix)/etc/profile.d/z.sh"
 
+source ~/Documents/bash-wakatime/bash-wakatime.sh
+
 # Git branch bash completion
 if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
   . /usr/local/etc/bash_completion.d/git-completion.bash
@@ -67,3 +69,6 @@ alias so=vim
 alias such=git
 alias very=git
 alias wow="git status"
+
+# added by travis gem
+[ -f /Users/shim.taewon/.travis/travis.sh ] && source /Users/shim.taewon/.travis/travis.sh
