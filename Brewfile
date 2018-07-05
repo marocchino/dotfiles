@@ -21,6 +21,7 @@ brew 'fpp'
 brew 'rg'
 brew 'z'
 brew 'jq'
+brew 'yq'
 brew 'gnupq'
 cask 'skype'
 brew 'macvim' # need xcode
