@@ -20,7 +20,7 @@ function update-brew {
 
 function update-vim {
   echo updating vim
-  vim +PackUpdate +qall
+  nvim +PackUpdate +qall
 }
 function update-yarn {
   if [[ $VERSION ]]; then
