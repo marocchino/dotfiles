@@ -16,12 +16,12 @@ $if mode=vi
   # <ctrl> a  -- move to beginning of line (^)
   "\C-a": vi-insert-beg
   # <ctrl> [  -- move to beginning of line (^)
-  "\C-[": vi-insert-beg
+  # "\C-[": vi-insert-beg
 
   # <ctrl> e  -- move to end of line ($)
   "\C-e": vi-append-eol
   # <ctrl> ]  -- move to end of line ($)
-  "\C-]": vi-append-eol
+  # "\C-]": vi-append-eol
 
   # <ctrl> w  -- delete last word
   "\C-w": backward-kill-word
@@ -41,12 +41,12 @@ $if mode=vi
   # <ctrl> a  -- move to beginning of line (^)
   "\C-a": vi-insert-beg
   # <ctrl> [  -- move to beginning of line (^)
-  "\C-[": vi-insert-beg
+  # "\C-[": vi-insert-beg
 
   # <ctrl> e  -- move to end of line ($)
   "\C-e": vi-append-eol
   # <ctrl> ]  -- move to end of line ($)
-  "\C-]": vi-append-eol
+  # "\C-]": vi-append-eol
 
   # <ctrl> w  -- delete last word
   "\C-w": backward-kill-word
