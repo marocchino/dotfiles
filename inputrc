@@ -1,5 +1,56 @@
 set editing-mode vi
-set show-mode-in-prompt off
+set show-mode-in-prompt of
 set vi-ins-mode-string \1\e[34;1m\2+ \1\e[0m\2
 set vi-cmd-mode-string \1\e[35;1m\2: \1\e[0m\2
 set emacs-mode-string \1\e[34;1m\2@ \1\e[0m\2
+
+$if mode=vi
+  set keymap vi-command
+
+  # <ctrl> l  -- clear screen
+  "\C-l": clear-screen
+
+  # <ctrl> k  -- clear whole line
+  "\C-k": kill-whole-line
+
+  # <ctrl> a  -- move to beginning of line (^)
+  "\C-a": vi-insert-beg
+  # <ctrl> [  -- move to beginning of line (^)
+  "\C-[": vi-insert-beg
+
+  # <ctrl> e  -- move to end of line ($)
+  "\C-e": vi-append-eol
+  # <ctrl> ]  -- move to end of line ($)
+  "\C-]": vi-append-eol
+
+  # <ctrl> w  -- delete last word
+  "\C-w": backward-kill-word
+
+  # <ctrl> gx -- expand without executing
+  "\C-gx": glob-expand-word
+
+  set keymap vi-insert
+
+  # emulate a few options from "set -o emacs":
+  # <ctrl> l  -- clear screen
+  "\C-l": clear-screen
+
+  # <ctrl> k  -- clear whole line
+  "\C-k": kill-whole-line
+
+  # <ctrl> a  -- move to beginning of line (^)
+  "\C-a": vi-insert-beg
+  # <ctrl> [  -- move to beginning of line (^)
+  "\C-[": vi-insert-beg
+
+  # <ctrl> e  -- move to end of line ($)
+  "\C-e": vi-append-eol
+  # <ctrl> ]  -- move to end of line ($)
+  "\C-]": vi-append-eol
+
+  # <ctrl> w  -- delete last word
+  "\C-w": backward-kill-word
+
+  # <ctrl> gx -- glob expand without executing
+  "\C-gx": glob-expand-word
+$endif
