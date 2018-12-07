@@ -65,7 +65,8 @@ call minpac#add('edkolev/tmuxline.vim')
 
 " color
 call minpac#add('Lokaltog/vim-distinguished', {'type': 'opt'})
-call minpac#add('vim-scripts/summerfruit256.vim')
+call minpac#add('vim-scripts/summerfruit256.vim', {'type': 'opt'})
+call minpac#add('dracula/vim', {'type': 'opt'})
 
 " syntax
 call minpac#add('ElmCast/elm-vim')
@@ -397,7 +398,7 @@ endif
 
 
 " Color scheme
-colorscheme summerfruit256
+colorscheme dracula
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
