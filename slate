@@ -28,6 +28,10 @@ config resizePercentOf screenSize
 # bind left:ctrl;cmd   push left  bar-resize:screenSizeX/3
 # bind up:ctrl;cmd     push up    bar-resize:screenSizeY/2
 # bind down:ctrl;cmd   push down  bar-resize:screenSizeY/2
+bind right:ctrl;shift;alt;cmd  push right bar-resize:screenSizeX/5*2
+bind left:ctrl;shift;alt;cmd   push left  bar-resize:screenSizeX/5*3
+bind up:ctrl;shift;alt;cmd     push up    bar-resize:screenSizeY/4*3
+bind down:ctrl;shift;alt;cmd   push down  bar-resize:screenSizeY/4-1
 bind l:ctrl;shift;alt;cmd  push right bar-resize:screenSizeX/5*2
 bind h:ctrl;shift;alt;cmd  push left  bar-resize:screenSizeX/5*3
 bind k:ctrl;shift;alt;cmd  push up    bar-resize:screenSizeY/4*3
@@ -35,8 +39,9 @@ bind j:ctrl;shift;alt;cmd  push down  bar-resize:screenSizeY/4-1
 bind f:ctrl;shift;alt;cmd  push up    bar-resize:screenSizeY
 bind 1:ctrl;shift;alt;cmd  throw 0 resize
 bind 2:ctrl;shift;alt;cmd  throw 1 resize
+bind 3:ctrl;shift;alt;cmd  throw 2 resize
 bind 0:ctrl;shift;alt;cmd  shell '~/dotfiles/bash/functions/issw com.apple.inputmethod.Korean.2SetKorean'
-bind 9:ctrl;shift;alt;cmd  shell '~/dotfiles/bash/functions/issw com.apple.inputmethod.Kotoeri.Japanese'
+bind 9:ctrl;shift;alt;cmd  shell '~/dotfiles/bash/functions/issw com.google.inputmethod.Japanese.base'
 bind 8:ctrl;shift;alt;cmd  shell '~/dotfiles/bash/functions/issw com.apple.keylayout.ABC'
 # bind l:cmd     focus right
 # bind h:cmd     focus left
