@@ -1,36 +1,38 @@
 set -o vi
-# shellcheck source=/dev/null
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # for python
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
 export EDITOR=nvim
+export BULLET=1
 export GOPATH="$HOME/.go"
-PATH="$HOME/Library/Python/3.6/bin/:/usr/local/sbin:$HOME/bin:$GOPATH/bin:$HOME/dotfiles/bash/functions:/usr/local/bin:$PATH"
-export PATH
+export PATH="$HOME/Library/Python/3.6/bin/:/usr/local/sbin:$HOME/bin:$GOPATH/bin:$HOME/dotfiles/bash/functions:/usr/local/bin:$PATH"
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export GIT_PROMPT_THEME=Single_line_Minimalist
 
-if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
-  export GIT_PROMPT_THEME=Single_line_Minimalist
-  # shellcheck source=/dev/null
-  source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
-fi
+declare -a commends=("$HOME/.fzf.bash"
+                     "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
+                     "$HOME/.asdf/asdf.sh"
+                     "$HOME/.asdf/completions/asdf.bash"
+                     "$(brew --prefix)/etc/profile.d/z.sh"
+                     "$HOME/Documents/bash-wakatime/bash-wakatime.sh"
+                     "/usr/local/etc/bash_completion.d/git-completion.bash"
+                     "$HOME/.travis/travis.sh"
+                    )
 
-# shellcheck source=/dev/null
-source $HOME/.asdf/asdf.sh
-# shellcheck source=/dev/null
-source $HOME/.asdf/completions/asdf.bash
-source "$(brew --prefix)/etc/profile.d/z.sh"
-
-source ~/Documents/bash-wakatime/bash-wakatime.sh
+function source_list () {
+  for commend in "$@"; do
+    if [ -f "$commend" ]; then
+      # shellcheck source=/dev/null
+      source "$commend"
+    fi
+  done
+}
+source_list "${commends[@]}"
 
 # Git branch bash completion
-if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-  . /usr/local/etc/bash_completion.d/git-completion.bash
-
+if [ -f "/usr/local/etc/bash_completion.d/git-completion.bash" ]; then
   # Add git completion to aliases
   __git_complete g __git_main
   __git_complete ga _git_add
@@ -69,6 +71,3 @@ alias so=nvim
 alias such=git
 alias very=git
 alias wow="git status"
-
-# added by travis gem
-[ -f /Users/shim.taewon/.travis/travis.sh ] && source /Users/shim.taewon/.travis/travis.sh
