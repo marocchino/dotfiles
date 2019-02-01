@@ -22,7 +22,7 @@ brew 'rg'
 brew 'z'
 brew 'jq'
 brew 'yq'
-brew 'gnupq'
+brew 'gnupg'
 cask 'skype'
 brew 'macvim' # need xcode
 tap 'caskroom/fonts'

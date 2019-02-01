@@ -52,10 +52,8 @@ call minpac#add('wakatime/vim-wakatime')
 call minpac#add('junegunn/vader.vim')
 if has('nvim')
   call minpac#add('radenling/vim-dispatch-neovim')
-  call minpac#add('autozimu/LanguageClient-neovim', {'branch': 'next', 'do': '!bash install.sh'})
 else
   call minpac#add('prabirshrestha/async.vim')
-  call minpac#add('prabirshrestha/vim-lsp')
 endif
 
 " style
@@ -291,20 +289,6 @@ let g:ruby_heredoc_syntax_defaults = {
 \}
 
 let g:vim_tags_auto_generate = 1
-if has('nvim')
-  " Automatically start language servers.
-  let g:LanguageClient_autoStart = 1
-  let g:LanguageClient_serverCommands = {
-  \ 'reason': ['ocaml-language-server', '--stdio'],
-  \ 'ocaml': ['ocaml-language-server', '--stdio'],
-  \ }
-else
-  au User lsp_setup call lsp#register_server({
-  \ 'name': 'ocaml-language-server',
-  \ 'cmd': {server_info->[&shell, &shellcmdflag, 'ocaml-language-server --stdio']},
-  \ 'whitelist': ['reason', 'ocaml'],
-  \ })
-endif
 
 let g:vim_markdown_fenced_languages = [
 \ 'c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini', 'ruby=rb', 'python=py',
@@ -444,10 +428,6 @@ augroup elixir_pipe_converter
   autocmd!
   autocmd FileType elixir nnoremap ec :call PipeConvert()<CR>
   autocmd FileType elixir nnoremap er :call PipeRevert()<CR>
-augroup END
-
-augroup elixir_mix_format
-  autocmd BufWritePost *.{ex,exs} silent :call LanguageClient_textDocument_formatting()
 augroup END
 
 " move windows with hjkl
