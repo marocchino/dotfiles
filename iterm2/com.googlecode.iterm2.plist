@@ -562,13 +562,13 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>2016 495 400 129 1680 -30 1920 1057 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>932 508 620 392 0 0 1680 1027 </string>
+	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>3642 844 606 469 3600 -388 1080 1897 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>2158 557 918 423 1680 -30 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1680 32 1918 995 1680 -30 1920 1057 </string>
+	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>NeverWarnAboutShortLivedSessions_62D7FE4E-45D1-4F34-AB01-1FFFD26D5FA7</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_62D7FE4E-45D1-4F34-AB01-1FFFD26D5FA7_selection</key>
@@ -1453,12 +1453,14 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-12-05T06:00:49Z</date>
+	<date>2018-12-11T10:14:42Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
+	<false/>
+	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>ShowPaneTitles</key>
 	<true/>

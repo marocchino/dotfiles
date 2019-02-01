@@ -49,6 +49,7 @@ call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('w0rp/ale')
 call minpac#add('wakatime/vim-wakatime')
+call minpac#add('junegunn/vader.vim')
 if has('nvim')
   call minpac#add('radenling/vim-dispatch-neovim')
   call minpac#add('autozimu/LanguageClient-neovim', {'branch': 'next', 'do': '!bash install.sh'})
@@ -230,6 +231,7 @@ let g:ale_linters = {
 \   'markdown': ['mdl'],
 \   'json': ['prettier'],
 \   'css': ['prettier'],
+\   'vim': ['vlit'],
 \   'go': ['golint', 'govet', 'errcheck'],
 \}
 
