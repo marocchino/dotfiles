@@ -413,6 +413,11 @@ augroup reload_vimrc
   autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END
 
+augroup reload_vim
+  autocmd!
+  autocmd BufWritePost *.vim source %
+augroup END
+
 augroup reload_vue_every_time
   autocmd!
   autocmd FileType vue syntax sync fromstart
