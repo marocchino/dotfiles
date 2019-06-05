@@ -102,7 +102,7 @@ tabspaces: 8
 font:
   # Normal (roman) font face
   normal:
-    family: Iosevka Nerd Font Medium
+    family: Iosevka Nerd Font
     # Font family
     #
     # Default:
@@ -116,7 +116,7 @@ font:
 
   # Bold font face
   bold:
-    family: Iosevka Nerd Font Heavy
+    family: Iosevka Nerd Font
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
@@ -139,7 +139,7 @@ font:
     #style: Italic
 
   # Point size
-  size: 11.0
+  size: 16.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
