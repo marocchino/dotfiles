@@ -4,7 +4,6 @@ set -o vi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=nvim
-export BULLET=1
 export GOPATH="$HOME/.go"
 export PATH="$HOME/Library/Python/3.6/bin/:/usr/local/sbin:$HOME/bin:$GOPATH/bin:$HOME/dotfiles/bash/functions:/usr/local/bin:$PATH"
 export CLICOLOR=1
