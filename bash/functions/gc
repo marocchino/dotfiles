@@ -1,6 +1,0 @@
-#!/bin/bash
-if [[ $# -eq 0 ]]; then
-  git branch | fzf --height 40% --border | xargs git checkout
-else
-  git checkout $@
-fi
