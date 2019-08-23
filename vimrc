@@ -267,7 +267,7 @@ let test#strategy = "dispatch"
 
 let g:opengoogletranslate#openbrowsercmd = 'open'
 let g:UltiSnipsListSnippets = '<c-l>'
-let g:UltiSnipsSnippetsDir = $HOME.'/dotfiles/vim/snippets'
+let g:UltiSnipsSnippetsDir = $HOME.'/dotfiles/vim/UltiSnips'
 
 nmap <silent> [w <Plug>(ale_previous)
 nmap <silent> ]w <Plug>(ale_next)
