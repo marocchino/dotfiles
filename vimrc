@@ -50,6 +50,7 @@ call minpac#add('tpope/vim-unimpaired')
 call minpac#add('w0rp/ale')
 call minpac#add('wakatime/vim-wakatime')
 call minpac#add('junegunn/vader.vim')
+call minpac#add('zxqfl/tabnine-vim', { 'do': 'install.py' })
 if has('nvim')
   call minpac#add('radenling/vim-dispatch-neovim')
 else
@@ -65,7 +66,7 @@ call minpac#add('edkolev/tmuxline.vim')
 " color
 call minpac#add('Lokaltog/vim-distinguished', {'type': 'opt'})
 call minpac#add('vim-scripts/summerfruit256.vim', {'type': 'opt'})
-call minpac#add('dracula/vim', {'type': 'opt'})
+call minpac#add('dracula/vim', {'name': 'dracula'})
 
 " syntax
 call minpac#add('ElmCast/elm-vim')
@@ -385,7 +386,9 @@ endif
 
 
 " Color scheme
-colorscheme dracula
+packadd! dracula
+color dracula
+" colorscheme dracula
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
