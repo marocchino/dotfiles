@@ -5,10 +5,12 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=nvim
 export GOPATH="$HOME/.go"
-export PATH="$HOME/Library/Python/3.6/bin/:/usr/local/sbin:$HOME/bin:$GOPATH/bin:$HOME/dotfiles/bash/functions:/usr/local/bin:$PATH"
+export PATH="$HOME/Library/Python/3.6/bin/:/usr/local/sbin:$HOME/bin:$GOPATH/bin:$HOME/Documents/flutter_macos_v1.7.8+hotfix.4-stable/bin/cache/dart-sdk/bin:$HOME/Documents/flutter_macos_v1.7.8+hotfix.4-stable/bin:$HOME/dotfiles/bash/functions:/usr/local/bin:$PATH"
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export GIT_PROMPT_THEME=Single_line_Minimalist
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 declare -a commends=("$HOME/.fzf.bash"
                      "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
