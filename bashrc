@@ -34,6 +34,64 @@ source_list "${commends[@]}"
 
 # Git branch bash completion
 if [ -f "/usr/local/etc/bash_completion.d/git-completion.bash" ]; then
+  function _git_aa() {
+    _git_add
+  }
+  function _git_ai() {
+    _git_add
+  }
+  function _git_ap() {
+    _git_add
+  }
+  function _git_ca() {
+    _git_commit
+  }
+  function _git_d() {
+    _git_diff
+  }
+  function _git_ds() {
+    _git_diff
+  }
+  function _git_f() {
+    _git_fetch
+  }
+  function _git_fa() {
+    _git_fetch
+  }
+  function _git_last() {
+    _git_log
+  }
+  function _git_pushf() {
+    _git_push
+  }
+  function _git_r() {
+    _git_rebase
+  }
+  function _git_ra() {
+    _git_rebase
+  }
+  function _git_rc() {
+    _git_rebase
+  }
+  function _git_rh() {
+    _git_rebase
+  }
+  function _git_ri() {
+    _git_rebase
+  }
+  function _git_st() {
+    _git_status
+  }
+  function _git_ski() {
+    _git_stash
+  }
+  function _git_w() {
+    _git_whatchanged
+  }
+  function _git_wip() {
+    _git_commit
+  }
+
   # Add git completion to aliases
   __git_complete g __git_main
   __git_complete ga _git_add
