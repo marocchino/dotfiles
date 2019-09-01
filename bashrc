@@ -39,8 +39,8 @@ if [ -f "/usr/local/etc/bash_completion.d/git-completion.bash" ]; then
   __git_complete ga _git_add
   __git_complete gaa _git_add
   __git_complete gai _git_add
-  __git_complete gs _git_status
-  __git_complete gc _git_checkout
+  __git_complete gs _git_switch
+  __git_complete gr _git_restore
   __git_complete gd _git_branch
 fi
 
@@ -56,7 +56,6 @@ alias gaa="git add --all"
 alias gai="git add --all --intent-to-add"
 alias gg=exit
 alias groot="cd (git rev-parse --show-toplevel)"
-alias gs="git status"
 alias iex="rlwrap -a foo iex"
 alias m=mix
 alias r=rails
