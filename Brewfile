@@ -5,6 +5,7 @@ brew 'git', args: ['with-completions']
 brew 'go'
 brew 'python'
 brew 'bash'
+brew 'bash-completion@2'
 brew 'bash-git-prompt'
 brew 'fish'
 brew 'fd'

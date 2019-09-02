@@ -11,6 +11,7 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export GIT_PROMPT_THEME=Single_line_Minimalist
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
+export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 
 declare -a commends=("$HOME/.fzf.bash"
                      "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
@@ -20,6 +21,7 @@ declare -a commends=("$HOME/.fzf.bash"
                      "$HOME/Documents/bash-wakatime/bash-wakatime.sh"
                      "/usr/local/etc/bash_completion.d/git-completion.bash"
                      "$HOME/.travis/travis.sh"
+                     "/usr/local/etc/profile.d/bash_completion.sh"
                     )
 
 function source_list () {
@@ -93,25 +95,26 @@ if [ -f "/usr/local/etc/bash_completion.d/git-completion.bash" ]; then
   }
 
   # Add git completion to aliases
+  alias g=git
   __git_complete g __git_main
+  alias ga="git add"
   __git_complete ga _git_add
+  alias gaa="git add --all"
   __git_complete gaa _git_add
+  alias gai="git add --all --intent-to-add"
   __git_complete gai _git_add
   __git_complete gs _git_switch
   __git_complete gr _git_restore
   __git_complete gd _git_branch
 fi
-
 alias aset=asdf
+complete -F _asdf aset
+
 alias b=bundle
 alias be="bundle exec"
 alias c="open -a 'Google Chrome'"
 alias chrome="open -a 'Google Chrome'"
 alias e=elixir
-alias g=git
-alias ga="git add"
-alias gaa="git add --all"
-alias gai="git add --all --intent-to-add"
 alias gg=exit
 alias groot="cd (git rev-parse --show-toplevel)"
 alias iex="rlwrap -a foo iex"
@@ -129,3 +132,4 @@ alias so=nvim
 alias such=git
 alias very=git
 alias wow="git status"
+source <(kubectl completion bash)
