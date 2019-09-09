@@ -64,9 +64,7 @@ call minpac#add('ryanoasis/vim-devicons')
 call minpac#add('edkolev/tmuxline.vim')
 
 " color
-call minpac#add('Lokaltog/vim-distinguished', {'type': 'opt'})
-call minpac#add('vim-scripts/summerfruit256.vim', {'type': 'opt'})
-call minpac#add('dracula/vim', {'name': 'dracula'})
+call minpac#add('tssm/fairyfloss.vim')
 
 " syntax
 call minpac#add('ElmCast/elm-vim')
@@ -386,9 +384,7 @@ endif
 
 
 " Color scheme
-packadd! dracula
-color dracula
-" colorscheme dracula
+colorscheme fairyfloss
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
