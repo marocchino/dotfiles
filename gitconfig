@@ -14,6 +14,7 @@
   aa = add --all
   ai = add --all --intent-to-add
   ap = add --patch
+  authors = !git-authors
   ca = commit --amend
   cleanup = !git branch --merged | grep -v '*' | xargs git branch -d
   d = diff
