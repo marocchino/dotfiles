@@ -1,6 +1,6 @@
 [user]
-       name = Shim Won
-       email = marocchino@gmail.com
+       name = marocchino
+       email = marocchino@users.noreply.github.com
        signingkey = AAAAAAAA
 [commit]
        gpgsign = true
