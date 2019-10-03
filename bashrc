@@ -21,6 +21,7 @@ declare -a commends=("$HOME/.fzf.bash"
                      "$HOME/Documents/bash-wakatime/bash-wakatime.sh"
                      "/usr/local/etc/bash_completion.d/git-completion.bash"
                      "$HOME/.travis/travis.sh"
+                     "$HOME/.bashrc.local"
                      "/usr/local/etc/profile.d/bash_completion.sh"
                     )
 

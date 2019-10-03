@@ -24,6 +24,7 @@ brew 'z'
 brew 'jq'
 brew 'yq'
 brew 'gnupg'
+brew 'hub'
 cask 'skype'
 brew 'macvim' # need xcode
 tap 'caskroom/fonts'
