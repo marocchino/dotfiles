@@ -50,7 +50,6 @@ call minpac#add('tpope/vim-unimpaired')
 call minpac#add('w0rp/ale')
 call minpac#add('wakatime/vim-wakatime')
 call minpac#add('junegunn/vader.vim')
-call minpac#add('zxqfl/tabnine-vim', { 'do': 'install.py' })
 if has('nvim')
   call minpac#add('radenling/vim-dispatch-neovim')
 else
