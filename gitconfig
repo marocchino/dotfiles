@@ -22,7 +22,7 @@
   f = fetch
   fa = fetch --all
   last = log --oneline -1
-  o = open
+  open = browse
   pullf = !git fetch --all && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)
   pushf = push --force
   r = rebase

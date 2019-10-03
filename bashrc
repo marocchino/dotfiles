@@ -127,6 +127,9 @@ alias t='tmux attach || tmux -u'
 alias v='nvim'
 alias y=yarn
 
+# see: https://github.com/github/hub#aliasing
+eval "$(hub alias -s)"
+
 # wow! much doge!
 alias much=git
 alias so=nvim
