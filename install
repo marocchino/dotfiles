@@ -34,7 +34,7 @@ ln -sfn "$PWD/nvim" "$HOME/.config/nvim"
 ln -sfn "$PWD/alacritty" "$HOME/.config/alacritty"
 ln -sfn "$PWD/Sketch" "$HOME/Library/Application Support/com.bohemiancoding.sketch3/Plugins"
 
-git clone https://github.com/asdf-vm/asdf.git "$HOME/.asdf" --branch v0.4.0
+git clone https://github.com/asdf-vm/asdf.git "$HOME/.asdf" --branch v0.7.5
 
 mkdir -p "$HOME/.go"
 # shellcheck source=/dev/null
@@ -45,7 +45,7 @@ source "$HOME/.asdf/completions/asdf.bash"
 asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 
-pip install wakatime neovim --upgrade
+pip3 install wakatime neovim --upgrade
 
 defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)

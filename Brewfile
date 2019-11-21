@@ -1,7 +1,7 @@
-tap 'caskroom/cask'
+tap 'homebrew/cask-cask'
 brew 'wget'
 brew 'ctags'
-brew 'git', args: ['with-completions']
+brew 'git'
 brew 'go'
 brew 'python'
 brew 'bash'
@@ -27,5 +27,5 @@ brew 'gnupg'
 brew 'hub'
 cask 'skype'
 brew 'macvim' # need xcode
-tap 'caskroom/fonts'
+tap 'homebrew/cask-fonts'
 cask 'font-iosevka-nerd-font'
