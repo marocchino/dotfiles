@@ -64,6 +64,7 @@ call minpac#add('edkolev/tmuxline.vim')
 
 " color
 call minpac#add('tssm/fairyfloss.vim')
+call minpac#add('albertorestifo/github.vim')
 
 " syntax
 call minpac#add('ElmCast/elm-vim')
@@ -190,7 +191,13 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 0
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='papercolor'
+
+if $ITERM_PROFILE == "Dark"
+  let g:airline_theme='violet'
+else
+  let g:airline_theme='papercolor'
+endif
+
 let g:airline_mode_map = {
   \ '__' : '-',
   \ 'n'  : 'N',
@@ -384,7 +391,13 @@ endif
 
 " Color scheme
 set termguicolors
-colorscheme fairyfloss
+
+if $ITERM_PROFILE == "Dark"
+  colorscheme fairyfloss
+else
+  colorscheme github
+endif
+
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 

@@ -35,6 +35,17 @@ function source_list () {
 }
 source_list "${commends[@]}"
 
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  style=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
+  if [[ $style == "Dark" ]]; then
+    echo -ne "\033]50;SetProfile=Dark\a"
+    export ITERM_PROFILE="Dark"
+  else
+    echo -ne "\033]50;SetProfile=Default\a"
+    export ITERM_PROFILE="DefaultDefault"
+  fi
+fi
+
 # Git branch bash completion
 if [ -f "/usr/local/etc/bash_completion.d/git-completion.bash" ]; then
   function _git_aa() {
