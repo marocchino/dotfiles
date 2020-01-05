@@ -50,3 +50,8 @@ defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # http://www.idownloadblog.com/2015/01/14/how-to-enable-key-repeats-on-your-mac/
+
+# https://blog.appsignal.com/2019/07/09/productive-procrastination-for-programmers.html?utm_source=boostedblogpost&utm_medium=twitter&utm_campaign=productive_procrastination_dec_2019&utm_content=ruby_audience
+defaults write com.apple.dock autohide-time-modifier -float 0.25;killall Dock
+defaults write -g NSWindowResizeTime -float 0.003
+
