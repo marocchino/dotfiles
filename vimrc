@@ -7,6 +7,7 @@ set rtp+=/usr/local/opt/fzf
 
 packadd minpac
 call minpac#init()
+call minpac#add('k-takata/minpac', {'type': 'opt'})
 call minpac#add('AndrewRadev/switch.vim')
 call minpac#add('MarcWeber/vim-addon-mw-utils')
 call minpac#add('SirVer/ultisnips')
@@ -21,7 +22,6 @@ call minpac#add('haya14busa/vim-open-googletranslate')
 call minpac#add('honza/vim-snippets')
 call minpac#add('jgdavey/vim-blockle')
 call minpac#add('janko-m/vim-test')
-call minpac#add('k-takata/minpac', {'type': 'opt'})
 call minpac#add('kana/vim-textobj-user', {'type': 'opt'})
 call minpac#add('lyokha/vim-xkbswitch')
 call minpac#add('marocchino/pipe_converter')
