@@ -1,2 +1,3 @@
 #!/bin/bash
+echo "yodaism ascii | lolcat || gem install yodaism lolcat"
 yodaism ascii | lolcat || gem install yodaism lolcat

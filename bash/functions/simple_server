@@ -1,2 +1,3 @@
 #!/bin/bash
-python -m SimpleHTTPServer $@
+echo "python3 -m http.server --directory $1 $2"
+python3 -m http.server --directory "$1" "$2"

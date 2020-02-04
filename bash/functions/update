@@ -1,55 +1,71 @@
 #!/bin/bash
 
-function update-asdf {
+function update-asdf() {
   echo updating asdf
+  echo asdf update
   asdf update
+  echo asdf plugin-update --all
   asdf plugin-update --all
 }
 
-function update-apt-get {
+function update-apt-get() {
   echo updating apt-get
+  echo sudo apt-get update -y
   sudo apt-get update -y
 }
 
-function update-brew {
+function update-brew() {
   echo updating brew
+  echo brew update
   brew update
+  echo brew upgrade
   brew upgrade
+  echo brew cleanup
   brew cleanup
 }
 
-function update-vim {
+function update-vim() {
   echo updating vim
+  echo nvim +PackUpdate +qall
   nvim +PackUpdate +qall
 }
-function update-yarn {
+function update-yarn() {
   if [[ $VERSION ]]; then
     echo updating yarn to $VERSION
+    echo npm install -g "https://yarnpkg.com/downloads/${VERSION}/yarn-v${VERSION}.tar.gz"
     npm install -g "https://yarnpkg.com/downloads/${VERSION}/yarn-v${VERSION}.tar.gz"
   else
     echo updating yarn to latest
+    echo npm install -g "https://yarnpkg.com/latest.tar.gz"
     npm install -g "https://yarnpkg.com/latest.tar.gz"
   fi
+  echo asdf reshim nodejs
   asdf reshim nodejs
 }
 
-function update-npm {
+function update-npm() {
   echo updating npm
+  echo npm i -g npm
   npm i -g npm
 }
 
-function update-dotfiles {
+function update-dotfiles() {
   echo updating dotfiles
-  pushd ~/dotfiles
+  pushd ~/dotfiles || return
+  echo git pull
   git pull
-  popd
+  popd || return
 }
 
-function update-kuromoji {
+function update-kuromoji() {
   echo updating kuromoji
+  echo brew services stop elasticsearch
   brew services stop elasticsearch
+  echo elasticsearch-plugin remove analysis-kuromoji
   elasticsearch-plugin remove analysis-kuromoji
+  echo elasticsearch-plugin install analysis-kuromoji
   elasticsearch-plugin install analysis-kuromoji
+  echo brew services start elasticsearch
   brew services start elasticsearch
 }
 
@@ -94,4 +110,3 @@ all)
   apt-get, asdf, brew, dotfiles, kuromoji, npm, vim, yarn, all'
   ;;
 esac
-

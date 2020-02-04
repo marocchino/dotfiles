@@ -1,6 +1,9 @@
 #!/bin/bash
 if [[ $# -eq 0 ]]; then
+  echo "git branch | fzf --height 40% --border | xargs git branch -D"
   git branch | fzf --height 40% --border | xargs git branch -D
 else
+  echo "git branch -D $*"
+  # shellcheck disable=SC2068
   git branch -D $@
 fi
