@@ -24,7 +24,6 @@ call minpac#add('jgdavey/vim-blockle')
 call minpac#add('janko-m/vim-test')
 call minpac#add('kana/vim-textobj-user', {'type': 'opt'})
 call minpac#add('lyokha/vim-xkbswitch')
-call minpac#add('marocchino/pipe_converter')
 call minpac#add('mattn/emmet-vim')
 call minpac#add('mhinz/vim-grepper')
 call minpac#add('nathanaelkane/vim-indent-guides')
@@ -67,25 +66,39 @@ call minpac#add('tssm/fairyfloss.vim')
 call minpac#add('albertorestifo/github.vim')
 
 " syntax
-call minpac#add('ElmCast/elm-vim')
-call minpac#add('ap/vim-css-color')
-call minpac#add('avdgaag/vim-phoenix')
-call minpac#add('elixir-lang/vim-elixir')
-call minpac#add('fatih/vim-go')
-call minpac#add('hashivim/vim-terraform')
-call minpac#add('idris-hackers/idris-vim')
-call minpac#add('joker1007/vim-ruby-heredoc-syntax')
-call minpac#add('jparise/vim-graphql')
 call minpac#add('leafgarland/typescript-vim')
 call minpac#add('mxw/vim-jsx')
-call minpac#add('othree/html5.vim')
 call minpac#add('othree/yajs.vim')
+" == css ==
+call minpac#add('ap/vim-css-color')
+" == elixir ==
+call minpac#add('avdgaag/vim-phoenix')
+call minpac#add('elixir-lang/vim-elixir')
+call minpac#add('marocchino/pipe_converter')
+" == html ==
+call minpac#add('othree/html5.vim')
+" == golang ==
+call minpac#add('fatih/vim-go')
+" == graphql ==
+call minpac#add('jparise/vim-graphql')
+" == markdown ==
 call minpac#add('plasticboy/vim-markdown')
-call minpac#add('posva/vim-vue')
+" == rust ==
 call minpac#add('rust-lang/rust.vim')
+" == reason ==
 call minpac#add('reasonml-editor/vim-reason-plus')
-call minpac#add('tpope/vim-rails')
-call minpac#add('vim-ruby/vim-ruby')
+" == terraform ==
+call minpac#add('hashivim/vim-terraform')
+" == elm ==
+" call minpac#add('ElmCast/elm-vim')
+" == idris ==
+" call minpac#add('idris-hackers/idris-vim')
+" == ruby ==
+" call minpac#add('joker1007/vim-ruby-heredoc-syntax')
+" call minpac#add('tpope/vim-rails')
+" call minpac#add('vim-ruby/vim-ruby')
+" == vue ==
+" call minpac#add('posva/vim-vue')
 
 filetype on
 filetype indent on
@@ -234,7 +247,7 @@ let g:ale_linters = {
 \   'markdown': ['mdl'],
 \   'json': ['prettier'],
 \   'css': ['prettier'],
-\   'vim': ['vlit'],
+\   'vim': ['vint'],
 \   'go': ['golint', 'govet', 'errcheck'],
 \}
 
@@ -322,39 +335,6 @@ let g:rubycomplete_rails = 1
 let g:ragtag_global_maps = 1
 
 let g:indent_guides_enable_on_vim_startup = 0
-
-let g:rails_projections = {
-\ "app/forms/*_form.rb": {
-\   "command": "form",
-\   "template":
-\     ["class {camelcase|capitalize|colons}Form < ",
-\      "  include Virtus.model",
-\      "  include ActiveModel::Model", "end"],
-\   "test": "spec/forms/{}_form_spec.rb"
-\ },
-\ "app/jobs/*_job.rb": {
-\   "command": "job",
-\   "template":
-\     ["class {camelcase|capitalize|colons}Job < "
-\      . "ActiveJob::Base", "  def perform", "  end", "end"],
-\   "test": "spec/jobs/{}_job_spec.rb"
-\ },
-\ "lib/*.rb": {
-\   "command": "lib",
-\   "test": "spec/lib/{}_spec.rb"
-\ },
-\ "app/validators/*_validator.rb": {
-\   "command": "service",
-\   "test": "spec/validators/{}_validator_spec.rb"
-\ },
-\ "app/uploaders/*_uploader.rb": {
-\   "command": "uploader",
-\   "template":
-\     ["class {camelcase|capitalize|colons}Uploader < "
-\      . "CarrierWave::Uploader::Base", "end"],
-\   "test": "spec/models/{}_uploader_spec.rb",
-\   "keywords": "process version"
-\ }}
 
 " https://sites.google.com/site/fudist/Home/vim-nihongo-ban/vim-color#color-zenkaku
 """"""""""""""""""""""""""""""
