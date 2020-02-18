@@ -39,12 +39,13 @@ source_list "${commends[@]}"
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
   style=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
+  toggle=$HOME/.toggle_dark
   if [[ $style == "Dark" ]]; then
     echo -ne "\033]50;SetProfile=Dark\a"
-    export ITERM_PROFILE="Dark"
+    touch "$toggle"
   else
     echo -ne "\033]50;SetProfile=Default\a"
-    export ITERM_PROFILE="DefaultDefault"
+    [ ! -e "$toggle" ] || rm "$toggle"
   fi
 fi
 

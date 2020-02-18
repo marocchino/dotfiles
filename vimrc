@@ -192,7 +192,7 @@ let g:WebDevIconsNerdTreeGitPluginForceVAlign = 0
 
 let g:airline_powerline_fonts = 1
 
-if $ITERM_PROFILE == "Dark"
+if filereadable(expand('~/.toggle_dark'))
   let g:airline_theme='violet'
 else
   let g:airline_theme='papercolor'
@@ -392,7 +392,7 @@ endif
 " Color scheme
 set termguicolors
 
-if $ITERM_PROFILE == "Dark"
+if filereadable(expand('~/.toggle_dark'))
   colorscheme fairyfloss
 else
   colorscheme github

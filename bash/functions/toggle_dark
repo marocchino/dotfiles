@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+toggle=$HOME/.toggle_dark
+
+if [ ! -e "$toggle" ]; then
+  touch "$toggle"
+  echo -ne "\033]50;SetProfile=Dark\a"
+else
+  rm "$toggle"
+  echo -ne "\033]50;SetProfile=Default\a"
+fi
