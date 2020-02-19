@@ -450,6 +450,8 @@ endif
 nnoremap <C-]> g<C-]>
 nnoremap <esc><esc> :nohlsearch<CR>
 nnoremap <Leader>r :silent Dispatch<CR>
+nnoremap <Leader>[ :tabp<cr>
+nnoremap <Leader>] :tabn<cr>
 nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
 xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
 nmap <Leader><Leader> <c-^>
