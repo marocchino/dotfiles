@@ -13,6 +13,8 @@ vim/pack/
 vim/.vim-flavor/
 vim/view/
 vim/VimFlavor.lock
+vscode/workspaceStorage
+vscode/globalStorage
 gitconfig.local
 node_modules/*
 package-lock.json
