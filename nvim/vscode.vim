@@ -11,6 +11,8 @@ nnoremap ., :<C-u>call VSCodeNotify('editor.action.commentLine')<CR>
 nnoremap <Leader>s :<C-u>call VSCodeNotify('extension.dash.specific')<CR>
 nnoremap <Leader>d :<C-u>call VSCodeNotify('extension.macDictionary.lookup')<CR>
 nnoremap <Leader>f :<C-u>call VSCodeNotify('workbench.action.findInFiles')<CR>
+nnoremap <Leader>r :<C-u>call VSCodeNotify('workbench.action.replaceInFiles')<CR>
+nnoremap <Leader>e :<C-u>call VSCodeNotify('workbench.view.extensions')<CR>
 nnoremap <Leader>b :<C-u>call VSCodeNotify('workbench.view.explorer')<CR>
 nnoremap <Leader>g :<C-u>call VSCodeNotify('workbench.view.scm')<CR>
 nnoremap <Leader>t :<C-u>call VSCodeNotify('workbench.action.terminal.focus')<CR>
