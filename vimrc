@@ -22,6 +22,7 @@ call minpac#add('haya14busa/vim-open-googletranslate')
 call minpac#add('honza/vim-snippets')
 call minpac#add('jgdavey/vim-blockle')
 call minpac#add('janko-m/vim-test')
+call minpac#add('junegunn/fzf.vim')
 call minpac#add('kana/vim-textobj-user', {'type': 'opt'})
 call minpac#add('lyokha/vim-xkbswitch')
 call minpac#add('mattn/emmet-vim')
@@ -449,11 +450,11 @@ else
 endif
 nnoremap <C-]> g<C-]>
 nnoremap <esc><esc> :nohlsearch<CR>
-nnoremap <Leader>r :silent Dispatch<CR>
-nnoremap <Leader>[ :tabp<cr>
-nnoremap <Leader>] :tabn<cr>
-nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
-xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
+nnoremap <Leader>[ :tabp<CR>
+nnoremap <Leader>] :tabn<CR>
+nnoremap <Leader>f :Rg<Space>
+nnoremap <Leader>r :call VisualFindAndReplace()<CR>
+xnoremap <Leader>r :call VisualFindAndReplaceWithSelection()<CR>
 nmap <Leader><Leader> <c-^>
 
 function! s:buflist()
