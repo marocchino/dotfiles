@@ -25,6 +25,7 @@ declare -a commends=("$HOME/.fzf.bash"
                      "$HOME/.travis/travis.sh"
                      "$HOME/.bashrc.local"
                      "/usr/local/etc/profile.d/bash_completion.sh"
+                     "$HOME/.opam/opam-init/init.sh"
                     )
 
 function source_list () {
