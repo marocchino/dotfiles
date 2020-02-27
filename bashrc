@@ -130,14 +130,22 @@ alias b=bundle
 alias be="bundle exec"
 alias c="open -a 'Google Chrome'"
 alias chrome="open -a 'Google Chrome'"
+alias d=docker
+complete -F _docker d
 alias e=elixir
 alias gg=exit
 alias groot="cd (git rev-parse --show-toplevel)"
 alias iex="rlwrap -a foo iex"
+source <(kubectl completion bash)
+alias k=kubectl
+if [[ $(type -t compopt) = "builtin" ]]; then
+    complete -o default -F __start_kubectl k
+else
+    complete -o default -o nospace -F __start_kubectl k
+fi
 alias m=mix
-alias r=rails
-alias sayk="say -v Yuna"
 alias sayj="say -v Kyoko"
+alias sayk="say -v Yuna"
 alias t='tmux attach || tmux -u'
 alias v='nvim'
 alias y=yarn
@@ -151,5 +159,4 @@ alias so=nvim
 alias such=git
 alias very=git
 alias wow="git status"
-source <(kubectl completion bash)
 eval "$(direnv hook bash)"
