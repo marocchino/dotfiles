@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ $# = 0 ]; then
+  echo "Usage: sshs-in-tmux <private RSA key path>"
+  exit 0
+fi
+
+public_ips=()
+split_list=()
+
+while IFS='' read -r line; do
+  public_ips+=("$line")
+done < <(get-all-instance-public-ips)
+
+for ip in "${public_ips[@]:1}"; do
+  split_list+=(split-pane ssh -i "$*" "ec2-user@$ip" ';')
+done
+
+tmux new-session -s "aws" -d ssh -i "$*" "ec2-user@${public_ips[0]}" ';' \
+  "${split_list[@]}" \
+  select-layout tiled ';' \
+  set-option -w synchronize-panes ';' \
+  attach-session -d -t aws
