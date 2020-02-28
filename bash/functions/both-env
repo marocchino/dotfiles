@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ -f mix.exs ]; then
+  echo ===== elixir project =====
+  MIX_ENV=test "$@"
+  MIX_ENV=dev "$@"
+fi

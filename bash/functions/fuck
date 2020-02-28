@@ -1,0 +1,7 @@
+#!/bin/bash
+line=$(ps aux | fzf)
+process_name=$(echo $line | awk '{print $11}')
+pid=$(echo $line | awk '{print $2}')
+kill -9 $pid
+echo
+echo " (╯°□°）╯︵ $(echo $process_name | flip 2>/dev/null)"
