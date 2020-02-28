@@ -132,6 +132,8 @@ alias c="open -a 'Google Chrome'"
 alias chrome="open -a 'Google Chrome'"
 alias d=docker
 complete -F _docker d
+alias dc=docker-compose
+complete -F _docker_compose dc
 alias e=elixir
 alias gg=exit
 alias groot="cd (git rev-parse --show-toplevel)"
