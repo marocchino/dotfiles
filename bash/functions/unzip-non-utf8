@@ -1,0 +1,7 @@
+#!/bin/bash
+
+function main() {
+  echo "ditto -V -x -k --sequesterRsrc --rsrc $*"
+  ditto -V -x -k --sequesterRsrc --rsrc "$@"
+}
+main "$@"

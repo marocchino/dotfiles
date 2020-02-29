@@ -1,0 +1,12 @@
+#!/bin/bash
+function main() {
+  if [[ $# -eq 0 ]]; then
+    echo "jq -r '.scripts | keys[]' package.json | fzf --height 40% --border | xargs npm run"
+    jq -r '.scripts | keys[]' package.json | fzf --height 40% --border | xargs npm run
+  else
+    echo "npm run $*"
+    # shellcheck disable=SC2068
+    npm run $@
+  fi
+}
+main "$@"

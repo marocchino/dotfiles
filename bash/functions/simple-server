@@ -1,3 +1,6 @@
 #!/bin/bash
-echo "python3 -m http.server --directory $1 $2"
-python3 -m http.server --directory "$1" "$2"
+function main() {
+  echo "python3 -m http.server --directory $1 $2"
+  python3 -m http.server --directory "$1" "$2"
+}
+main "$@"

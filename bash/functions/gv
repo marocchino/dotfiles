@@ -1,8 +1,0 @@
-#!/bin/bash
-if [[ $# -eq 0 ]]; then
-  git ls-files --others --exclude-standard --modified | fzf --height 40% --border | xargs vim
-else
-  echo "vim $*"
-  # shellcheck disable=SC2068
-  vim $@
-fi

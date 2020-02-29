@@ -69,44 +69,47 @@ function update-kuromoji() {
   brew services start elasticsearch
 }
 
-case $1 in
-aset)
-  update-asdf
-  ;;
-asdf)
-  update-asdf
-  ;;
-apt-get)
-  update-apt-get
-  ;;
-brew)
-  update-brew
-  ;;
-dotfiles)
-  update-dotfiles
-  ;;
-npm)
-  update-npm
-  ;;
-kuromoji)
-  update-kuromoji
-  ;;
-vim)
-  update-vim
-  ;;
-yarn)
-  update-yarn
-  ;;
-all)
-  update-asdf
-  update-brew
-  update-dotfiles
-  update-npm
-  update-vim
-  ;;
-*)
-  echo 'update what?'
-  echo 'please select from:
+function main() {
+  case $1 in
+  aset)
+    update-asdf
+    ;;
+  asdf)
+    update-asdf
+    ;;
+  apt-get)
+    update-apt-get
+    ;;
+  brew)
+    update-brew
+    ;;
+  dotfiles)
+    update-dotfiles
+    ;;
+  npm)
+    update-npm
+    ;;
+  kuromoji)
+    update-kuromoji
+    ;;
+  vim)
+    update-vim
+    ;;
+  yarn)
+    update-yarn
+    ;;
+  all)
+    update-asdf
+    update-brew
+    update-dotfiles
+    update-npm
+    update-vim
+    ;;
+  *)
+    echo 'update what?'
+    echo 'please select from:
   apt-get, asdf, brew, dotfiles, kuromoji, npm, vim, yarn, all'
-  ;;
-esac
+    ;;
+  esac
+}
+main "$@"

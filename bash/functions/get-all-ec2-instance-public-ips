@@ -1,0 +1,5 @@
+#!/bin/bash
+function main() {
+  aws ec2 describe-instances | jq -r '.Reservations[].Instances[].NetworkInterfaces[].Association.PublicIp | select(.!=null)'
+}
+main "$@"
