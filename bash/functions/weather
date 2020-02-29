@@ -1,6 +1,6 @@
 #!/bin/bash
 function main() {
-  echo curl -4 http://wttr.in/${1-Tokyo}
-  curl -4 http://wttr.in/${1-Tokyo}
+  echo "curl -4 http://wttr.in/${1-Tokyo}"
+  curl -4 "http://wttr.in/${1-Tokyo}"
 }
 main "$@"

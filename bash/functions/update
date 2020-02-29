@@ -31,9 +31,9 @@ function update-vim() {
 }
 function update-yarn() {
   if [[ $VERSION ]]; then
-    echo updating yarn to $VERSION
-    echo npm install -g "https://yarnpkg.com/downloads/${VERSION}/yarn-v${VERSION}.tar.gz"
-    npm install -g "https://yarnpkg.com/downloads/${VERSION}/yarn-v${VERSION}.tar.gz"
+    echo "updating yarn to $VERSION"
+    echo "npm install -g https://yarnpkg.com/downloads/$VERSION/yarn-v$VERSION.tar.gz"
+    npm install -g "https://yarnpkg.com/downloads/$VERSION/yarn-v$VERSION.tar.gz"
   else
     echo updating yarn to latest
     echo npm install -g "https://yarnpkg.com/latest.tar.gz"

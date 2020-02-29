@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function main() {
-  cat ~/.ssh/id_rsa.pub | ssh "$*" 'cat >> ~/.ssh/authorized_keys'
+  echo "ssh $* 'cat >> ~/.ssh/authorized_keys' <~/.ssh/id_rsa.pub"
+  ssh "$@" 'cat >> ~/.ssh/authorized_keys' <~/.ssh/id_rsa.pub
 }
 main "$@"

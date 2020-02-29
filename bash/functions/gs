@@ -4,8 +4,7 @@ function main() {
     git branch | fzf --height 40% --border | xargs git switch
   else
     echo "git switch $*"
-    # shellcheck disable=SC2068
-    git switch $@
+    git switch "$@"
   fi
 }
 main "$@"
