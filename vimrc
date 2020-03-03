@@ -180,6 +180,7 @@ set wildignore+=.DS_Store
 
 " lsp
 let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
+let g:lsp_preview_float = 0
 
 
 let g:XkbSwitchEnabled = 1
