@@ -4,6 +4,7 @@ filetype off                   " required!
 
 " If installed using Homebrew
 set rtp+=/usr/local/opt/fzf
+set completeopt+=preview
 
 packadd minpac
 call minpac#init()
@@ -50,11 +51,14 @@ call minpac#add('tpope/vim-unimpaired')
 call minpac#add('w0rp/ale')
 call minpac#add('wakatime/vim-wakatime')
 call minpac#add('junegunn/vader.vim')
-if has('nvim')
-  call minpac#add('radenling/vim-dispatch-neovim')
-else
-  call minpac#add('prabirshrestha/async.vim')
-endif
+
+call minpac#add('prabirshrestha/async.vim')
+call minpac#add('prabirshrestha/asyncomplete.vim')
+call minpac#add('prabirshrestha/asyncomplete-lsp.vim')
+call minpac#add('prabirshrestha/vim-lsp')
+call minpac#add('mattn/vim-lsp-settings')
+call minpac#add('thomasfaingnaert/vim-lsp-snippets')
+call minpac#add('thomasfaingnaert/vim-lsp-ultisnips')
 
 " style
 call minpac#add('vim-airline/vim-airline')
@@ -173,6 +177,10 @@ set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/o*
 
 " Disable OS X index files
 set wildignore+=.DS_Store
+
+" lsp
+let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
+
 
 let g:XkbSwitchEnabled = 1
 let g:XkbSwitchLib = expand('~/dotfiles/bash/libInputSourceSwitcher.dylib')
@@ -412,6 +420,11 @@ augroup reload_vim
   autocmd BufWritePost *.vim source %
 augroup END
 
+augroup auto_format
+  autocmd!
+  autocmd BufWritePost *.ex LspDocumentFormat
+augroup END
+
 augroup reload_vue_every_time
   autocmd!
   autocmd FileType vue syntax sync fromstart
@@ -453,9 +466,11 @@ nnoremap <esc><esc> :nohlsearch<CR>
 nnoremap <Leader>[ :tabp<CR>
 nnoremap <Leader>] :tabn<CR>
 nnoremap <Leader>f :Rg<Space>
+nnoremap <Leader>h :LspHover<CR>
 nnoremap <Leader>r :call VisualFindAndReplace()<CR>
 xnoremap <Leader>r :call VisualFindAndReplaceWithSelection()<CR>
 nmap <Leader><Leader> <c-^>
+imap <c-space> <Plug>(asyncomplete_force_refresh)
 
 function! s:buflist()
   redir => ls
@@ -486,6 +501,8 @@ nnoremap <silent> <C-d> :Dash<CR>
 nnoremap <silent> <C-p> :FZF<CR>
 nnoremap S i<cr><esc><right>
 vmap <Enter> <Plug>(EasyAlign)
+
+inoremap <expr> <Tab>   pumvisible() ? '<C-n>' : '<Tab>'
 
 map ,. :TComment<CR>
 map ., :TComment<CR>
