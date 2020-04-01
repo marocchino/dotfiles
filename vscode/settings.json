@@ -104,7 +104,8 @@
   "editor.tabSize": 2,
   "javascript.updateImportsOnFileMove.enabled": "never",
   "yaml.schemas": {
-    "file:///Users/shim.taewon/.vscode/extensions/me-dutour-mathieu.vscode-github-actions-2.2.4/schemas/action.schema.json": "/action.yml"
+    "file:///Users/marocchino/.vscode/extensions/me-dutour-mathieu.vscode-github-actions-2.2.7/schemas/workflow.schema.json": "/.github/workflows/*.yml",
+    "file:///Users/marocchino/.vscode/extensions/me-dutour-mathieu.vscode-github-actions-2.2.7/schemas/action.schema.json": "/action.yml"
   },
   "wallaby.startAutomatically": false,
   "go.formatTool": "goimports",
