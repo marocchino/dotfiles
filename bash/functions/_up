@@ -1,0 +1,10 @@
+#!/bin/bash
+
+function up() {
+  unset path
+  for item in $(seq 1 "$1"); do
+    path="${path}../"
+  done
+  echo "cd $path"
+  cd "$path" || return 0
+}
