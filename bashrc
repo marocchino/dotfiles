@@ -22,17 +22,16 @@ declare -a commends=("$HOME/.fzf.bash"
                      "$(brew --prefix)/etc/profile.d/z.sh"
                      "$HOME/Documents/bash-wakatime/bash-wakatime.sh"
                      "/usr/local/etc/bash_completion.d/git-completion.bash"
-                     "$HOME/.travis/travis.sh"
                      "$HOME/.bashrc.local"
-                     "/usr/local/etc/profile.d/bash_completion.sh"
                      "$HOME/.opam/opam-init/init.sh"
                     )
 
+source "/usr/local/etc/profile.d/bash_completion.sh"
 function source_list () {
   for commend in "$@"; do
     if [ -f "$commend" ]; then
       # shellcheck source=/dev/null
-      source "$commend"
+      source "$commend" &
     fi
   done
 }
@@ -49,6 +48,37 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     [ ! -e "$toggle" ] || rm "$toggle"
   fi
 fi
+
+alias aset=asdf
+complete -F _asdf aset
+
+alias b=bundle
+alias be="bundle exec"
+alias c="open -a 'Google Chrome'"
+alias chrome="open -a 'Google Chrome'"
+alias d=docker
+complete -F _docker d
+alias dc=docker-compose
+complete -F _docker_compose dc
+alias e=elixir
+alias gg=exit
+alias groot="cd (git rev-parse --show-toplevel)"
+alias iex="rlwrap -a foo iex"
+alias ls=exa
+alias m=mix
+alias sayj="say -v Kyoko"
+alias sayk="say -v Yuna"
+alias t='tmux attach || tmux -u'
+alias v='nvim'
+alias y=yarn
+
+
+# wow! much doge!
+alias much=git
+alias so=nvim
+alias such=git
+alias very=git
+alias wow="git status"
 
 # Git branch bash completion
 if [ -f "/usr/local/etc/bash_completion.d/git-completion.bash" ]; then
@@ -123,44 +153,8 @@ if [ -f "/usr/local/etc/bash_completion.d/git-completion.bash" ]; then
   __git_complete gr _git_restore
   __git_complete gd _git_branch
 fi
-alias aset=asdf
-complete -F _asdf aset
-
-alias b=bundle
-alias be="bundle exec"
-alias c="open -a 'Google Chrome'"
-alias chrome="open -a 'Google Chrome'"
-alias d=docker
-complete -F _docker d
-alias dc=docker-compose
-complete -F _docker_compose dc
-alias e=elixir
-alias gg=exit
-alias groot="cd (git rev-parse --show-toplevel)"
-alias iex="rlwrap -a foo iex"
-source <(kubectl completion bash)
-alias k=kubectl
-if [[ $(type -t compopt) = "builtin" ]]; then
-    complete -o default -F __start_kubectl k
-else
-    complete -o default -o nospace -F __start_kubectl k
-fi
-alias ls=exa
-alias m=mix
-alias sayj="say -v Kyoko"
-alias sayk="say -v Yuna"
-alias t='tmux attach || tmux -u'
-alias v='nvim'
-alias y=yarn
-
 # see: https://github.com/github/hub#aliasing
-eval "$(hub alias -s)"
-
-# wow! much doge!
-alias much=git
-alias so=nvim
-alias such=git
-alias very=git
-alias wow="git status"
-eval "$(direnv hook bash)"
+eval "$(hub alias -s)" &
+eval "$(direnv hook bash)" &
+wait
 eval "$(starship init bash)"
