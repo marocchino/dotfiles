@@ -1,0 +1,8 @@
+#!/bin/bash
+function main() {
+  echo
+  echo " (╯°□°）╯︵ $(echo "$1" | flip 2>/dev/null)" >&2
+  echo
+  exit ${2-1}
+}
+main "$@"
