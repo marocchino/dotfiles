@@ -1,0 +1,45 @@
+[directory]
+truncation_length = 1
+
+[elixir]
+symbol = " "
+
+[nodejs]
+disabled = true
+symbol = " "
+
+[aws]
+disabled = true
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[terraform]
+show_version = true
+
+
+[git_state]
+rebase = ""
+merge = " "
+revert = ""
+cherry_pick = "🍒 "
+
+[git_status]
+conflicted = "💔 "
+ahead = "⬆️  "
+behind = "⬇️  "
+staged = " "
+staged_count.enabled = true
+staged_count.style = "green"
+stashed = "📦 "
+stashed_count.enabled = true
+diverged = "😵"
+deleted = " "
+deleted_count.enabled = true
+untracked = " "
+untracked_count.enabled = true
+modified = " "
+modified_count.enabled = true
+renamed = " "
+renamed_count.enabled = true
