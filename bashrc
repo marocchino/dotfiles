@@ -14,7 +14,6 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 
 declare -a commends=("$HOME/.fzf.bash"
-                     "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
                      "$HOME/.asdf/asdf.sh"
                      "$HOME/.asdf/completions/asdf.bash"
                      "$HOME/dotfiles/bash/completions/mix.sh"
@@ -163,3 +162,4 @@ alias such=git
 alias very=git
 alias wow="git status"
 eval "$(direnv hook bash)"
+eval "$(starship init bash)"
