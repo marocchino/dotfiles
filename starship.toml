@@ -1,23 +1,24 @@
-[directory]
-truncation_length = 1
-
-[elixir]
-symbol = " "
-
-[nodejs]
-disabled = true
-symbol = " "
+add_newline = false
 
 [aws]
 disabled = true
 symbol = " "
 
+[character]
+symbol = "$"
+
+[directory]
+truncation_length = 1
+
+[elixir]
+disabled = true
+symbol = " "
+
+[jobs]
+disabled = true
+
 [git_branch]
 symbol = " "
-
-[terraform]
-show_version = true
-
 
 [git_state]
 rebase = ""
@@ -43,3 +44,17 @@ modified = " "
 modified_count.enabled = true
 renamed = " "
 renamed_count.enabled = true
+
+[line_break]
+disabled = true
+
+[nodejs]
+disabled = true
+symbol = " "
+
+[package]
+disabled = true
+symbol = "🔖 "
+
+[terraform]
+show_version = true
