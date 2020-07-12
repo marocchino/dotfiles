@@ -145,6 +145,7 @@ if [[ $(type -t compopt) = "builtin" ]]; then
 else
     complete -o default -o nospace -F __start_kubectl k
 fi
+alias ls=exa
 alias m=mix
 alias sayj="say -v Kyoko"
 alias sayk="say -v Yuna"
