@@ -52,6 +52,7 @@
     "asdf",
     "aset",
     "baal",
+    "csrf",
     "csvs",
     "dialyxir",
     "direnv",
@@ -98,8 +99,11 @@
   },
   "elixirLinter.useStrict": true,
   "terraform.languageServer": {
-    "enabled": true,
-    "args": []
+  
+    "external": true,
+    "args": [
+      "serve"
+    ]
   },
   "editor.tabSize": 2,
   "javascript.updateImportsOnFileMove.enabled": "never",
@@ -172,5 +176,7 @@
   ],
   "editor.tabCompletion": "on",
   "editor.snippetSuggestions": "top",
-  "git.suggestSmartCommit": false
+  "git.suggestSmartCommit": false,
+  "liveshare.featureSet": "insiders",
+  "tabnine.experimentalAutoImports": true
 }
