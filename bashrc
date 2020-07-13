@@ -13,29 +13,35 @@ export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 
-declare -a commends=("$HOME/.fzf.bash"
-                     "$HOME/.asdf/asdf.sh"
-                     "$HOME/.asdf/completions/asdf.bash"
-                     "$HOME/dotfiles/bash/completions/mix.sh"
-                     "$HOME/dotfiles/bash/completions/npm.sh"
-                     "$HOME/dotfiles/bash/functions/_up"
-                     "$(brew --prefix)/etc/profile.d/z.sh"
-                     "$HOME/Documents/bash-wakatime/bash-wakatime.sh"
-                     "/usr/local/etc/bash_completion.d/git-completion.bash"
-                     "$HOME/.bashrc.local"
-                     "$HOME/.opam/opam-init/init.sh"
-                    )
+declare -a paths=(
+  "/usr/local/etc/profile.d/z.sh"
+  "/usr/local/etc/bash_completion.d/git-completion.bash"
+  "/usr/local/etc/profile.d/bash_completion.sh"
+  "$HOME/.asdf/asdf.sh"
+  "$HOME/.asdf/completions/asdf.bash"
+  "$HOME/.bashrc.local"
+  "$HOME/.fzf.bash"
+  "$HOME/.opam/opam-init/init.sh"
+  "$HOME/Documents/bash-wakatime/bash-wakatime.sh"
+  "$HOME/dotfiles/bash/completions/mix.sh"
+  "$HOME/dotfiles/bash/completions/npm.sh"
+  "$HOME/dotfiles/bash/functions/_up"
+)
+declare -a evals=(
+  "$(hub alias -s)"
+  "$(direnv hook bash)"
+  "$(starship init bash)"
+)
 
-source "/usr/local/etc/profile.d/bash_completion.sh"
-function source_list () {
-  for commend in "$@"; do
-    if [ -f "$commend" ]; then
-      # shellcheck source=/dev/null
-      source "$commend" &
-    fi
-  done
-}
-source_list "${commends[@]}"
+for p in "${paths[@]}"; do
+  if [ -f "$p" ]; then
+    # shellcheck source=/dev/null
+    source "$p"
+  fi
+done
+for e in "${evals[@]}"; do
+  eval "$e"
+done
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
   style=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
@@ -154,7 +160,3 @@ if [ -f "/usr/local/etc/bash_completion.d/git-completion.bash" ]; then
   __git_complete gd _git_branch
 fi
 # see: https://github.com/github/hub#aliasing
-eval "$(hub alias -s)" &
-eval "$(direnv hook bash)" &
-wait
-eval "$(starship init bash)"
