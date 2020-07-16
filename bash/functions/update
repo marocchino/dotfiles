@@ -26,8 +26,8 @@ function update-brew() {
 
 function update-vim() {
   echo updating vim
-  echo nvim +PackUpdate +qall
-  nvim +PackUpdate +qall
+  echo nvim -c 'call minpac#update("", {"do": "quit"})'
+  nvim -c 'call minpac#update("", {"do": "quit"})'
 }
 function update-yarn() {
   if [[ $VERSION ]]; then
