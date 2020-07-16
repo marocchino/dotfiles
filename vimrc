@@ -508,8 +508,9 @@ inoremap <expr> <Tab>   pumvisible() ? '<C-n>' : '<Tab>'
 map ,. :TComment<CR>
 map ., :TComment<CR>
 
-command! PackUpdate call minpac#update()
-command! PackClean call minpac#clean()
+command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update('', {'do': 'call minpac#status()'})
+command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
+command! PackStatus packadd minpac | source $MYVIMRC | call minpac#status()
 
 syntax enable
 syntax sync fromstart
