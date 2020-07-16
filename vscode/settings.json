@@ -178,5 +178,6 @@
   "editor.snippetSuggestions": "top",
   "git.suggestSmartCommit": false,
   "liveshare.featureSet": "insiders",
-  "tabnine.experimentalAutoImports": true
+  "tabnine.experimentalAutoImports": true,
+  "latex-workshop.view.pdf.viewer": "tab"
 }
