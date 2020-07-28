@@ -58,8 +58,7 @@ fi
 alias aset=asdf
 complete -F _asdf aset
 
-alias b=bundle
-alias be="bundle exec"
+alias bat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
 alias c="open -a 'Google Chrome'"
 alias chrome="open -a 'Google Chrome'"
 alias d=docker
