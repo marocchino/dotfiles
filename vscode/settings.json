@@ -117,7 +117,7 @@
   "workbench.editor.showTabs": false,
   "workbench.editor.enablePreview": false,
   "editor.minimap.enabled": false,
-  "workbench.colorTheme": "Winter is Coming (Light)",
+  "workbench.colorTheme": "Synthwave x Fluoromachine",
   "cSpell.enabledLanguageIds": [
     "asciidoc",
     "css",
@@ -167,7 +167,6 @@
   "indentRainbow.ignoreErrorLanguages": [
     "elixir"
   ],
-  "window.autoDetectColorScheme": true,
   "workbench.preferredDarkColorTheme": "Synthwave x Fluoromachine",
   "workbench.preferredLightColorTheme": "Winter is Coming (Light)",
   "vscode_custom_css.policy": true,
@@ -179,5 +178,6 @@
   "git.suggestSmartCommit": false,
   "liveshare.featureSet": "insiders",
   "tabnine.experimentalAutoImports": true,
-  "latex-workshop.view.pdf.viewer": "tab"
+  "latex-workshop.view.pdf.viewer": "tab",
+  "window.autoDetectColorScheme": true
 }
