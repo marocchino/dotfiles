@@ -83,6 +83,8 @@ call minpac#add('othree/html5.vim')
 call minpac#add('fatih/vim-go')
 " == graphql ==
 call minpac#add('jparise/vim-graphql')
+" == github-action ==
+call minpac#add('yasuhiroki/github-actions-yaml.vim')
 " == markdown ==
 call minpac#add('plasticboy/vim-markdown')
 " == rust ==
