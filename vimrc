@@ -179,12 +179,12 @@ set wildignore+=.DS_Store
 
 " lsp
 let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
-let g:lsp_preview_float = 0
+let g:lsp_preview_float = 1
 
 
 let g:XkbSwitchEnabled = 1
 let g:XkbSwitchLib = expand('~/dotfiles/bash/libInputSourceSwitcher.dylib')
-let g:pipe_converter_command = "~/.vim/plugged/pipe_converter/pipe_converter"
+let g:pipe_converter_command = "~/.vim/pack/minpac/start/pipe_converter/pipe_converter"
 
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_nerdtree = 0
