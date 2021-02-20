@@ -64,8 +64,8 @@ call minpac#add('ryanoasis/vim-devicons')
 call minpac#add('edkolev/tmuxline.vim')
 
 " color
-call minpac#add('tssm/fairyfloss.vim')
 call minpac#add('albertorestifo/github.vim')
+call minpac#add('jacoborus/tender.vim')
 
 " syntax
 call minpac#add('leafgarland/typescript-vim')
@@ -215,7 +215,7 @@ let g:WebDevIconsNerdTreeGitPluginForceVAlign = 0
 let g:airline_powerline_fonts = 1
 
 if filereadable(expand('~/.toggle_dark'))
-  let g:airline_theme='violet'
+  let g:airline_theme='tender'
 else
   let g:airline_theme='papercolor'
 endif
@@ -382,7 +382,7 @@ endif
 set termguicolors
 
 if filereadable(expand('~/.toggle_dark'))
-  colorscheme fairyfloss
+  colorscheme tender
 else
   colorscheme github
 endif
