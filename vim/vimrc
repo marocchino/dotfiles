@@ -445,6 +445,7 @@ augroup elixir_pipe_converter
   autocmd FileType elixir nnoremap ec :call PipeConvert()<CR>
   autocmd FileType elixir nnoremap er :call PipeRevert()<CR>
   autocmd FileType elixir nnoremap td :call ToggleDo()<CR>
+  autocmd FileType elixir nnoremap tw :call ToggleWith()<CR>
 augroup END
 
 " move windows with hjkl

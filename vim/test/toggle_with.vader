@@ -1,0 +1,84 @@
+Given elixir (with statement):
+  defmodule SomeModule do
+    def upcase(name) do
+      with true <- is_binary(name) do
+        :ok
+      else
+        false -> :error
+      end
+    end
+  end
+Do (toggle to case):
+  jjtw
+Expect elixir (change to case):
+  defmodule SomeModule do
+    def upcase(name) do
+      case is_binary(name) do
+        true -> :ok
+        false -> :error
+      end
+    end
+  end
+Do (toggle to with):
+  tw
+Expect elixir (revert to with):
+  defmodule SomeModule do
+    def upcase(name) do
+      with true <- is_binary(name) do
+        :ok
+      else
+        false -> :error
+      end
+    end
+  end
+
+Given elixir (with statement):
+  defmodule SomeModule do
+    def upcase(name) do
+      with true <- is_binary(name) do
+        :ok
+      else
+        false ->
+          :error
+      end
+    end
+  end
+Do (toggle to case):
+  jjtw
+Expect elixir (change to case):
+  defmodule SomeModule do
+    def upcase(name) do
+      case is_binary(name) do
+        true -> :ok
+        false ->
+          :error
+      end
+    end
+  end
+
+Given elixir (with statement):
+  defmodule SomeModule do
+    def upcase(name) do
+      case is_binary(name) do
+        true ->
+          :ok
+
+        false ->
+          :error
+      end
+    end
+  end
+Do (toggle to case):
+  jjtw
+Expect elixir (change to case):
+  defmodule SomeModule do
+    def upcase(name) do
+      with true <- is_binary(name) do
+        :ok
+      else
+
+        false ->
+          :error
+      end
+    end
+  end
