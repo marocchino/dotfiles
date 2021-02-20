@@ -1,0 +1,1 @@
+vim -c 'Vader! test/*'
