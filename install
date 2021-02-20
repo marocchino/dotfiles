@@ -13,7 +13,6 @@ ln -sf "$PWD/tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$PWD/bashrc" "$HOME/.bashrc"
 ln -sf "$PWD/inputrc" "$HOME/.inputrc"
 ln -sfn "$PWD/vim" "$HOME/.vim"
-ln -sf "$PWD/vimrc" "$HOME/.vimrc"
 ln -sf "$PWD/asdfrc"  "$HOME/.asdfrc"
 ln -sf "$PWD/editorconfig" "$HOME/.editorconfig"
 
