@@ -182,6 +182,9 @@ set wildignore+=.DS_Store
 let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
 let g:lsp_preview_float = 1
 
+" elixir
+let g:elixir_use_markdown_for_docs = 1
+
 
 let g:XkbSwitchEnabled = 1
 let g:XkbSwitchLib = expand('~/dotfiles/bash/libInputSourceSwitcher.dylib')
