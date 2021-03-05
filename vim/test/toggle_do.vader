@@ -3,12 +3,20 @@ Given elixir (single line method):
     def upcase(name) do
       String.upcase(name)
     end
+
+    def downcase(name) do
+      String.downcase(name)
+    end
   end
 Do (toggle do):
   jtd
 Expect elixir (one liner with do:):
   defmodule SomeModule do
     def upcase(name), do: String.upcase(name)
+
+    def downcase(name) do
+      String.downcase(name)
+    end
   end
 Do (toggle do):
   td
@@ -16,5 +24,9 @@ Expect elixir (revert do ... end):
   defmodule SomeModule do
     def upcase(name) do
       String.upcase(name)
+    end
+
+    def downcase(name) do
+      String.downcase(name)
     end
   end

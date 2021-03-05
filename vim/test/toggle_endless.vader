@@ -1,20 +1,32 @@
 Given ruby (single line method):
   class SomeClass
-    def upcase(name)
+    def to_string(name)
       name.to_s
+    end
+
+    def to_integer(number)
+      number.to_i
     end
   end
 Do (toggle do):
   jte
 Expect ruby (one liner with do:):
   class SomeClass
-    def upcase(name) = name.to_s
+    def to_string(name) = name.to_s
+
+    def to_integer(number)
+      number.to_i
+    end
   end
 Do (toggle do):
   te
 Expect ruby (revert do ... end):
   class SomeClass
-    def upcase(name)
+    def to_string(name)
       name.to_s
+    end
+
+    def to_integer(number)
+      number.to_i
     end
   end

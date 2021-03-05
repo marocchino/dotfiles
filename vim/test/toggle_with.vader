@@ -6,6 +6,10 @@ Given elixir (with statement):
       else
         false -> :error
       end
+      |> case do
+        :ok -> true
+        _ -> false
+      end
     end
   end
 Do (toggle to case):
@@ -16,6 +20,10 @@ Expect elixir (change to case):
       case is_binary(name) do
         true -> :ok
         false -> :error
+      end
+      |> case do
+        :ok -> true
+        _ -> false
       end
     end
   end
@@ -29,6 +37,10 @@ Expect elixir (revert to with):
       else
         false -> :error
       end
+      |> case do
+        :ok -> true
+        _ -> false
+      end
     end
   end
 
@@ -41,6 +53,10 @@ Given elixir (with statement):
         false ->
           :error
       end
+      |> case do
+        :ok -> true
+        _ -> false
+      end
     end
   end
 Do (toggle to case):
@@ -52,6 +68,10 @@ Expect elixir (change to case):
         true -> :ok
         false ->
           :error
+      end
+      |> case do
+        :ok -> true
+        _ -> false
       end
     end
   end
@@ -66,6 +86,10 @@ Given elixir (with statement):
         false ->
           :error
       end
+      |> case do
+        :ok -> true
+        _ -> false
+      end
     end
   end
 Do (toggle to case):
@@ -79,6 +103,10 @@ Expect elixir (change to case):
 
         false ->
           :error
+      end
+      |> case do
+        :ok -> true
+        _ -> false
       end
     end
   end
