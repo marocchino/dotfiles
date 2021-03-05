@@ -440,12 +440,13 @@ augroup commit_width
   autocmd Filetype gitcommit setlocal spell textwidth=72
 augroup END
 
-augroup elixir_pipe_converter
+augroup converter
   autocmd!
   autocmd FileType elixir nnoremap ec :call PipeConvert()<CR>
   autocmd FileType elixir nnoremap er :call PipeRevert()<CR>
   autocmd FileType elixir nnoremap td :call ToggleDo()<CR>
   autocmd FileType elixir nnoremap tw :call ToggleWith()<CR>
+  autocmd FileType ruby nnoremap te :call ToggleEndless()<CR>
 augroup END
 
 " move windows with hjkl
