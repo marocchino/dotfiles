@@ -4,7 +4,7 @@ Given elixir (single line method):
       String.upcase(name)
     end
 
-    def downcase(name) do
+    defp downcase(name) do
       String.downcase(name)
     end
   end
@@ -14,7 +14,7 @@ Expect elixir (one liner with do:):
   defmodule SomeModule do
     def upcase(name), do: String.upcase(name)
 
-    def downcase(name) do
+    defp downcase(name) do
       String.downcase(name)
     end
   end
@@ -26,7 +26,29 @@ Expect elixir (revert do ... end):
       String.upcase(name)
     end
 
-    def downcase(name) do
+    defp downcase(name) do
+      String.downcase(name)
+    end
+  end
+Do (toggle do):
+  4jtd
+Expect elixir (revert do ... end):
+  defmodule SomeModule do
+    def upcase(name) do
+      String.upcase(name)
+    end
+
+    defp downcase(name), do: String.downcase(name)
+  end
+Do (toggle do):
+  td
+Expect elixir (revert do ... end):
+  defmodule SomeModule do
+    def upcase(name) do
+      String.upcase(name)
+    end
+
+    defp downcase(name) do
       String.downcase(name)
     end
   end
