@@ -69,9 +69,11 @@ call minpac#add('albertorestifo/github.vim')
 call minpac#add('jacoborus/tender.vim')
 
 " syntax
-call minpac#add('leafgarland/typescript-vim')
-call minpac#add('mxw/vim-jsx')
-call minpac#add('othree/yajs.vim')
+
+" == js,ts ==
+call minpac#add('HerringtonDarkholme/yats.vim')
+call minpac#add('pangloss/vim-javascript')
+call minpac#add('MaxMEllon/vim-jsx-pretty')
 " == css ==
 call minpac#add('ap/vim-css-color')
 " == elixir ==
@@ -79,7 +81,7 @@ call minpac#add('avdgaag/vim-phoenix')
 call minpac#add('elixir-lang/vim-elixir')
 call minpac#add('marocchino/pipe_converter')
 " == html ==
-call minpac#add('othree/html5.vim')
+call minpac#add('sheerun/html5.vim')
 " == golang ==
 call minpac#add('fatih/vim-go')
 " == graphql ==
@@ -94,14 +96,17 @@ call minpac#add('rust-lang/rust.vim')
 call minpac#add('reasonml-editor/vim-reason-plus')
 " == terraform ==
 call minpac#add('hashivim/vim-terraform')
+" == toml ==
+call minpac#add('cespare/vim-toml')
 " == elm ==
-" call minpac#add('ElmCast/elm-vim')
+call minpac#add('ElmCast/elm-vim')
 " == idris ==
-" call minpac#add('idris-hackers/idris-vim')
+call minpac#add('idris-hackers/idris-vim')
 " == ruby ==
-" call minpac#add('joker1007/vim-ruby-heredoc-syntax')
-" call minpac#add('tpope/vim-rails')
-" call minpac#add('vim-ruby/vim-ruby')
+call minpac#add('joker1007/vim-ruby-heredoc-syntax')
+call minpac#add('tpope/vim-rails')
+call minpac#add('vim-ruby/vim-ruby')
+call minpac#add('keith/rspec.vim')
 " == vue ==
 " call minpac#add('posva/vim-vue')
 
@@ -184,6 +189,10 @@ let g:lsp_preview_float = 1
 
 " elixir
 let g:elixir_use_markdown_for_docs = 1
+
+" terraform
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
 
 
 let g:XkbSwitchEnabled = 1
