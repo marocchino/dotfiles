@@ -67,6 +67,8 @@ complete -F _docker d
 alias dc=docker-compose
 complete -F _docker_compose dc
 alias e=elixir
+alias ff="open -a Firefox"
+alias firefox="open -a Firefox"
 alias gg=exit
 alias groot="cd (git rev-parse --show-toplevel)"
 alias iex="rlwrap -a foo iex"
