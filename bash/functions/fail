@@ -5,6 +5,6 @@ function main() {
   echo " (╯°□°）╯︵ $(echo "$1" | flip 2>/dev/null)"
   echo
   echo "error: $1" >&2
-  exit ${2-1}
+  exit "${2-1}"
 }
 main "$@"

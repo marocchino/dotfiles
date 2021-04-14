@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -o vi
 
 # for python
