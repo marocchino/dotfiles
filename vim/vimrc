@@ -50,7 +50,6 @@ call minpac#add('tpope/vim-projectionist')
 call minpac#add('tpope/vim-ragtag')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-unimpaired')
-call minpac#add('w0rp/ale')
 call minpac#add('wakatime/vim-wakatime')
 call minpac#add('junegunn/vader.vim')
 
@@ -262,21 +261,6 @@ let g:airline_section_x = ''
 " let g:airline_right_sep = "\uE0B6"
 " let g:airline_right_alt_sep = "\uE0B7"
 
-let g:ale_linters = {
-\   'elixir': ['credo'],
-\   'ruby': ['rubocop'],
-\   'javascript': ['eslint', 'prettier'],
-\   'markdown': ['mdl'],
-\   'json': ['prettier'],
-\   'css': ['prettier'],
-\   'vim': ['vint'],
-\   'go': ['golint', 'govet', 'errcheck'],
-\}
-
-let g:ale_fix_on_save = 1
-let g:ale_sign_error = "\uF05E"
-let g:ale_sign_warning = "\uF071"
-
 let g:coverage_json_report_path = 'coverage/coverage-final.json'
 let g:coverage_sign_uncovered = "\uF070"
 
@@ -308,9 +292,6 @@ let test#strategy = "dispatch"
 let g:opengoogletranslate#openbrowsercmd = 'open'
 let g:UltiSnipsListSnippets = '<c-l>'
 let g:UltiSnipsSnippetsDir = $HOME.'/dotfiles/vim/UltiSnips'
-
-nmap <silent> [w <Plug>(ale_previous)
-nmap <silent> ]w <Plug>(ale_next)
 
 " === vim-ruby-heredoc-syntax ===
 " Add syntax rule

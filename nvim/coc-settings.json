@@ -1,0 +1,45 @@
+{
+  "eslint.autoFixOnSave": true,
+  "highlight.colors.enable": true,
+  "highlight.document.enable": true,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.icon.enableVimDevicons": true,
+  "explorer.datetime.format": "yy/MM/dd HH:mm:ss",
+  "coc.preferences.colorSupport": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "reason",
+    "rescript"
+  ],
+  "html.enable": true,
+  "html.filetypes": [
+    "html",
+    "handlebars",
+    "htmldjango",
+    "blade",
+    "markdown",
+    "reason",
+    "rescript",
+    "javascriptreact",
+    "typescriptreact"
+  ],
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-lsp",
+      "filetypes": ["terraform"],
+      "initializationOptions": {}
+    }
+  },
+  "diagnostic-languageserver.filetypes": {
+    "bash": "shellcheck",
+    "css": "prettier",
+    "eelixir": ["mix_credo", "mix_credo_compile"],
+    "elixir": ["mix_credo", "mix_credo_compile", "mix_format"],
+    "graphql": "prettier",
+    "javascript": ["eslint", "prettier"],
+    "json": "prettier",
+    "markdown": ["write-good", "markdownlint"],
+    "ruby": "rubocop",
+    "sh": "shellcheck",
+    "vim": "vint"
+  }
+}
