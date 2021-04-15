@@ -29,7 +29,6 @@ call minpac#add('lyokha/vim-xkbswitch')
 call minpac#add('mattn/emmet-vim')
 call minpac#add('mhinz/vim-grepper')
 call minpac#add('nathanaelkane/vim-indent-guides')
-call minpac#add('neoclide/coc.nvim', {'do': '!yarn install --frozen-lockfile'})
 call minpac#add('ntpeters/vim-better-whitespace')
 call minpac#add('osyo-manga/vim-over')
 call minpac#add('prettier/vim-prettier', { 'do': '!npm install' })
@@ -53,9 +52,32 @@ call minpac#add('tpope/vim-unimpaired')
 call minpac#add('wakatime/vim-wakatime')
 call minpac#add('junegunn/vader.vim')
 
-call minpac#add('prabirshrestha/async.vim')
-call minpac#add('prabirshrestha/vim-lsp')
-call minpac#add('mattn/vim-lsp-settings')
+" coc
+call minpac#add('neoclide/coc.nvim', {'do': '!yarn install --frozen-lockfile'})
+call minpac#add('antonk52/coc-cssmodules', { 'do': '!npm ci' })
+call minpac#add('elixir-lsp/coc-elixir', { 'do': '!yarn install --frozen-lockfile && yarn prepack' })
+call minpac#add('fannheyward/coc-sql', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('fannheyward/coc-xml', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('felippepuhle/coc-graphql', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('iamcco/coc-diagnostic', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('iamcco/coc-svg', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('josa42/coc-go', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('kkiyama117/coc-toml', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('neoclide/coc-css', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('neoclide/coc-git', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('neoclide/coc-highlight', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('neoclide/coc-html', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('neoclide/coc-json', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('neoclide/coc-lists', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('neoclide/coc-solargraph', { 'do': '!yarn install --frozen-lockfile && yarn prepare' })
+call minpac#add('neoclide/coc-tabnine', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('neoclide/coc-tsserver', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('neoclide/coc-yaml', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('neoclide/coc-yank', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('voldikss/coc-browser', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('voldikss/coc-gist', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('yaegassy/coc-html-css-support', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('yaegassy/coc-htmlhint', { 'do': '!yarn install --frozen-lockfile' })
 
 " style
 call minpac#add('vim-airline/vim-airline')
@@ -181,10 +203,6 @@ set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/o*
 
 " Disable OS X index files
 set wildignore+=.DS_Store
-
-" lsp
-let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
-let g:lsp_preview_float = 1
 
 " elixir
 let g:elixir_use_markdown_for_docs = 1
@@ -414,11 +432,6 @@ augroup reload_vim
   autocmd BufWritePost *.vim source %
 augroup END
 
-augroup auto_format
-  autocmd!
-  autocmd BufWritePost *.ex LspDocumentFormat
-augroup END
-
 augroup reload_vue_every_time
   autocmd!
   autocmd FileType vue syntax sync fromstart
@@ -463,11 +476,11 @@ nnoremap <esc><esc> :nohlsearch<CR>
 nnoremap <Leader>[ :tabp<CR>
 nnoremap <Leader>] :tabn<CR>
 nnoremap <Leader>f :Rg<Space>
-nnoremap <Leader>h :LspHover<CR>
 nnoremap <Leader>r :call VisualFindAndReplace()<CR>
 xnoremap <Leader>r :call VisualFindAndReplaceWithSelection()<CR>
 nmap <Leader><Leader> <c-^>
-imap <c-space> <Plug>(asyncomplete_force_refresh)
+nmap <silent> [w <Plug>(coc-diagnostic-prev)
+nmap <silent> ]w <Plug>(coc-diagnostic-next)
 
 function! s:buflist()
   redir => ls

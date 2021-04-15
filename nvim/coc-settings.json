@@ -1,17 +1,22 @@
 {
-  "eslint.autoFixOnSave": true,
   "highlight.colors.enable": true,
   "highlight.document.enable": true,
-  "explorer.icon.enableNerdfont": true,
-  "explorer.icon.enableVimDevicons": true,
-  "explorer.datetime.format": "yy/MM/dd HH:mm:ss",
   "coc.preferences.colorSupport": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "elixir",
+    "graphql",
+    "html",
+    "javascript",
+    "json",
+    "ruby",
+    "terraform",
+    "typescript"
+  ],
   "html.enable": true,
   "html.filetypes": [
     "html",
     "handlebars",
-    "htmldjango",
-    "blade",
     "markdown",
     "reason",
     "rescript",
@@ -25,6 +30,7 @@
       "initializationOptions": {}
     }
   },
+  "diagnostic.enable": true,
   "diagnostic-languageserver.filetypes": {
     "bash": "shellcheck",
     "eelixir": ["mix_credo", "mix_credo_compile"],
@@ -36,6 +42,7 @@
   },
   "diagnostic-languageserver.formatFiletypes": {
     "css": "prettier",
+    "eelixir": "mix_format",
     "elixir": "mix_format",
     "go": "gofmt",
     "graphql": "prettier",
