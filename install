@@ -7,6 +7,7 @@ if [[ ! -f "$HOME/.gitconfig.local" ]]; then
   cp "$PWD/gitconfig.local.sample" "$HOME/.gitconfig.local"
 fi
 
+ln -sf "$PWD/.tool-versions" "$HOME/.tool-versions"
 ln -sfn "$PWD/ctags" "$HOME/.ctags"
 ln -sf "$PWD/tmux.conf" "$HOME/.tmux.conf"
 
