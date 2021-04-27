@@ -1,0 +1,12 @@
+#!/bin/bash
+# need sudo
+# https://macpaw.com/how-to/clear-dns-cache-on-mac
+if [[ "$(whoami)" == "root" ]]; then
+  dscacheutil -flushcache
+  killall -HUP mDNSResponder
+  echo "Flushed"
+else
+  echo "Need sudo rerun with:" >&2
+  echo "  sudo flush-dns-cache" >&2
+fi
+
