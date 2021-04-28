@@ -1,6 +1,7 @@
 #!/bin/bash
+set -ex -o pipefail
+
 function main() {
-  echo "python3 -m http.server --directory $1 $2"
   python3 -m http.server --directory "$1" "$2"
 }
 main "$@"

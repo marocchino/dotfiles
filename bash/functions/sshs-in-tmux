@@ -1,9 +1,9 @@
 #!/bin/bash
+set -ex -o pipefail
 
 function main() {
   if [ $# = 0 ]; then
-    echo "Usage: sshs-in-tmux <private RSA key path>"
-    exit 0
+    usage
   fi
 
   public_ips=()
@@ -23,4 +23,13 @@ function main() {
     set-option -w synchronize-panes ';' \
     attach-session -d -t aws
 }
+
+function usage() {
+cat <<_EOT_
+Usage:
+  "${0##*/} [private RSA key path]
+_EOT_
+exit 1
+}
+
 main "$@"

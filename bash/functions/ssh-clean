@@ -1,4 +1,6 @@
 #!/bin/bash
+set -ex -o pipefail
+
 function main() {
   if [[ $# -eq 0 ]]; then
     delete-line "^$(awk '{print $1}' ~/.ssh/known_hosts | fzf --height 40% --border) " ~/.ssh/known_hosts

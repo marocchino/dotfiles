@@ -1,10 +1,10 @@
 #!/bin/bash
+set -ex -o pipefail
+
 function main() {
   if [[ $# -eq 0 ]]; then
-    echo "git branch | fzf --height 40% --border | xargs git branch -D"
     git branch | fzf --height 40% --border | xargs git branch -D
   else
-    echo "git branch -D $*"
     git branch -D "$@"
   fi
 }

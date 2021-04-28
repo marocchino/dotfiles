@@ -1,6 +1,7 @@
 #!/bin/bash
+set -ex -o pipefail
+
 function main() {
-  echo "git grep -e \"$1\" --name-only | xargs perl -pi -e \"s/$1/$2/g\""
   git grep -e "$1" --name-only | xargs perl -pi -e "s/$1/$2/g"
 }
 main "$@"

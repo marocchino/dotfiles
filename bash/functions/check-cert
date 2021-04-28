@@ -1,6 +1,7 @@
 #!/bin/bash
+set -ex -o pipefail
+
 function main() {
-  echo "openssl s_client -connect $1:443"
   openssl s_client -connect "$1:443"
 }
 main "$@"

@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex -o pipefail
 
 function main() {
   toggle=$HOME/.toggle_dark
@@ -10,6 +11,6 @@ function main() {
     rm "$toggle"
     echo -ne "\033]50;SetProfile=Default\a"
   fi
+  osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
 }
 main "$@"
-osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'

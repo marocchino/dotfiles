@@ -1,6 +1,7 @@
 #!/bin/bash
+set -ex -o pipefail
+
 function main() {
-  echo "git log --format='%aN <%aE>' | awk '{arr[$0]++} END{for (i in arr){print arr[i], i;}}' | sort -rn"
   git log --format='%aN <%aE>' | awk '{arr[$0]++} END{for (i in arr){print arr[i], i;}}' | sort -rn
 }
 main "$@"

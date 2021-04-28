@@ -1,71 +1,56 @@
 #!/bin/bash
+set -ex -o pipefail
 
 function update-asdf() {
   echo updating asdf
-  echo asdf update
   asdf update
-  echo asdf plugin-update --all
   asdf plugin-update --all
 }
 
 function update-apt-get() {
   echo updating apt-get
-  echo sudo apt-get update -y
   sudo apt-get update -y
 }
 
 function update-brew() {
   echo updating brew
-  echo brew update
   brew update
-  echo brew upgrade
   brew upgrade
-  echo brew cleanup
   brew cleanup
 }
 
 function update-vim() {
   echo updating vim
-  echo nvim -c 'call minpac#update("", {"do": "quit"})'
   nvim -c 'call minpac#update("", {"do": "quit"})'
 }
 function update-yarn() {
   if [[ $VERSION ]]; then
     echo "updating yarn to $VERSION"
-    echo "npm install -g https://yarnpkg.com/downloads/$VERSION/yarn-v$VERSION.tar.gz"
     npm install -g "https://yarnpkg.com/downloads/$VERSION/yarn-v$VERSION.tar.gz"
   else
     echo updating yarn to latest
-    echo npm install -g "https://yarnpkg.com/latest.tar.gz"
     npm install -g "https://yarnpkg.com/latest.tar.gz"
   fi
-  echo asdf reshim nodejs
   asdf reshim nodejs
 }
 
 function update-npm() {
   echo updating npm
-  echo npm i -g npm
   npm i -g npm
 }
 
 function update-dotfiles() {
   echo updating dotfiles
   pushd ~/dotfiles || return
-  echo git pull
   git pull
   popd || return
 }
 
 function update-kuromoji() {
   echo updating kuromoji
-  echo brew services stop elasticsearch
   brew services stop elasticsearch
-  echo elasticsearch-plugin remove analysis-kuromoji
   elasticsearch-plugin remove analysis-kuromoji
-  echo elasticsearch-plugin install analysis-kuromoji
   elasticsearch-plugin install analysis-kuromoji
-  echo brew services start elasticsearch
   brew services start elasticsearch
 }
 
@@ -106,10 +91,20 @@ function main() {
     update-vim
     ;;
   *)
-    echo 'update what?'
-    echo 'please select from:
-  apt-get, asdf, brew, dotfiles, kuromoji, npm, vim, yarn, all'
+    usage
     ;;
   esac
+}
+function usage() {
+cat <<_EOT_
+Usage:
+  ${0##*/} [target]
+
+Description:
+  Update target.
+  target could be one of apt-get, asdf, brew, dotfiles, kuromoji, npm, vim, yarn
+  or all
+_EOT_
+exit 1
 }
 main "$@"

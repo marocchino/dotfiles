@@ -1,6 +1,7 @@
 #!/bin/bash
+set -ex -o pipefail
+
 function main() {
-  echo "curl -4 http://wttr.in/${1-Tokyo}"
   curl -4 "http://wttr.in/${1-Tokyo}"
 }
 main "$@"

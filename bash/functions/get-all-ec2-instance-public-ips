@@ -1,4 +1,6 @@
 #!/bin/bash
+set -ex -o pipefail
+
 function main() {
   aws ec2 describe-instances | jq -r '.Reservations[].Instances[].NetworkInterfaces[].Association.PublicIp | select(.!=null)'
 }

@@ -1,9 +1,10 @@
 #!/bin/bash
+set -ex -o pipefail
+
 function main() {
   if [[ $# -eq 0 ]]; then
     git ls-files --others --exclude-standard --modified | fzf --height 40% --border | xargs vim
   else
-    echo "v $*"
     v "$@"
   fi
 }

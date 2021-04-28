@@ -1,5 +1,10 @@
 #!/bin/bash
+set -ex -o pipefail
 
-git branch -m master main
-git fetch origin
-git branch -u origin/main main
+function main() {
+  git branch -m master main
+  git fetch origin
+  git branch -u origin/main main
+}
+
+main "$@"
