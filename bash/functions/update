@@ -42,7 +42,15 @@ function update-npm() {
 function update-dotfiles() {
   echo updating dotfiles
   pushd ~/dotfiles || return
-  git pull
+  if [[ $(git diff --stat) != '' ]]; then
+    echo 'it is dirty'
+    git stash
+    git pull
+    git stash pop
+  else
+    echo 'clean'
+    git pull
+  fi
   popd || return
 }
 
@@ -54,8 +62,27 @@ function update-kuromoji() {
   brew services start elasticsearch
 }
 
+function list-all() {
+echo '
+apt-get
+asdf
+brew
+dotfiles
+kuromoji
+npm
+vim
+yarn
+all' | fzf --height 40% --border
+}
+
 function main() {
-  case $1 in
+  if [[ $# -eq 0 ]]; then
+    target=$(list-all)
+  else
+    target=$1
+  fi
+
+  case $target in
   aset)
     update-asdf
     ;;
@@ -95,6 +122,7 @@ function main() {
     ;;
   esac
 }
+
 function usage() {
 cat <<_EOT_
 Usage:
