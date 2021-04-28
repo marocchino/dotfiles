@@ -1,0 +1,27 @@
+#!/bin/bash
+set -ex -o pipefail
+
+function main() {
+  if [[ $# -eq 1 ]]; then
+    unset path
+    for _ in $(seq 1 "$1"); do
+      path="${path}../"
+    done
+    cd "$path" || return 0
+  else
+    usage
+  fi
+}
+
+function usage() {
+cat <<_EOT_
+Usage:
+  ${0##*/} [number]
+
+Description:
+  cd .. N times
+_EOT_
+exit 1
+}
+
+main "$@"

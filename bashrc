@@ -28,7 +28,6 @@ declare -a paths=(
   "$HOME/Documents/bash-wakatime/bash-wakatime.sh"
   "$HOME/dotfiles/bash/completions/mix.sh"
   "$HOME/dotfiles/bash/completions/npm.sh"
-  "$HOME/dotfiles/bash/functions/_up"
 )
 declare -a evals=(
   "$(hub alias -s)"
