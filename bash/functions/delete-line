@@ -1,0 +1,33 @@
+#!/bin/bash
+function main() {
+  if [[ $# -eq 2 ]]; then
+    sed "/$1/d" "$2" > __tmpfile__
+    mv __tmpfile__ "$2"
+  else
+    usage
+  fi
+}
+
+function usage() {
+cat <<_EOT_
+Usage:
+  ${0##*/} [regexp] [filename]
+
+Description:
+  Finds and deletes lines with given regexp in the specified file.
+
+Example:
+
+  $ cat file
+  a apple
+  b banana
+  c cherry
+  $ ${0##*/} "^c" file
+  $ cat file
+  a apple
+  b banana
+
+_EOT_
+exit 1
+}
+main "$@"

@@ -1,0 +1,24 @@
+#!/bin/bash
+function main() {
+  if [[ $# -eq 0 ]]; then
+    delete-line "^$(awk '{print $1}' ~/.ssh/known_hosts | fzf --height 40% --border) " ~/.ssh/known_hosts
+  elif [[ $# -eq 1 ]]; then
+    delete-line "^$1 " ~/.ssh/known_hosts
+  else
+    usage
+  fi
+}
+
+function usage() {
+cat <<_EOT_
+Usage:
+  ${0##*/} [host]
+
+Description:
+  Finds and deletes lines with specific host in the ~/.ssh/known_hosts.
+  When host is not given, select host with fzf.
+  host could be regexp.
+_EOT_
+exit 1
+}
+main "$@"
