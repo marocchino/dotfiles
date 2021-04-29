@@ -25,6 +25,8 @@ disabled = true
 
 [git_branch]
 symbol = " "
+format = "[$symbol$branch]($style) "
+only_attached = true
 
 [git_state]
 rebase = ""
