@@ -5,10 +5,16 @@ disabled = true
 symbol = " "
 
 [character]
-symbol = "$"
+success_symbol = "[\\$](bold green)"
+error_symbol = "[\\$](bold red)"
+vicmd_symbol = "[](bold green)"
 
 [directory]
 truncation_length = 1
+
+[ruby]
+disabled = true
+symbol = " "
 
 [elixir]
 disabled = true
@@ -30,20 +36,13 @@ cherry_pick = "🍒 "
 conflicted = "💔 "
 ahead = "⬆️  "
 behind = "⬇️  "
-staged = " "
-staged_count.enabled = true
-staged_count.style = "green"
-stashed = "📦 "
-stashed_count.enabled = true
-diverged = "😵"
-deleted = " "
-deleted_count.enabled = true
-untracked = " "
-untracked_count.enabled = true
-modified = " "
-modified_count.enabled = true
-renamed = " "
-renamed_count.enabled = true
+staged = " $count"
+stashed = "📦 $count"
+diverged = "😵$count"
+deleted = " $count"
+untracked = " $count"
+modified = " $count"
+renamed = " $count"
 
 [line_break]
 disabled = true
@@ -55,6 +54,3 @@ symbol = " "
 [package]
 disabled = true
 symbol = "🔖 "
-
-[terraform]
-show_version = true
