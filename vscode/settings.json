@@ -99,7 +99,7 @@
   },
   "elixirLinter.useStrict": true,
   "terraform.languageServer": {
-  
+
     "external": true,
     "args": [
       "serve"
@@ -179,5 +179,7 @@
   "liveshare.featureSet": "insiders",
   "tabnine.experimentalAutoImports": true,
   "latex-workshop.view.pdf.viewer": "tab",
-  "window.autoDetectColorScheme": true
+  "window.autoDetectColorScheme": true,
+  "elixirLS.mixTarget": "1.11.4",
+  "elixirLS.projectDir": "./"
 }
