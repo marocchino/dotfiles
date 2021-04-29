@@ -57,6 +57,36 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   fi
 fi
 
+# FZF
+
+export FZF_TMUX_OPTS='-p80%,60%'
+export FZF_CTRL_R_OPTS="
+  --preview 'echo {}' --preview-window down:3:hidden:wrap
+  --bind 'ctrl-/:toggle-preview'
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'"
+
+if command -v fd > /dev/null; then
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+  export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
+  export FZF_CTRL_T_COMMAND='fd --type f --type d --hidden --follow --exclude .git'
+fi
+command -v bat > /dev/null && export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}'"
+
+## & Z
+unalias z 2> /dev/null
+z() {
+  if [[ $# -gt 0 ]]; then
+    _z "$@"
+  else
+    cd "$(_z -l 2>&1 |
+          fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" |
+          sed 's/^[0-9,.]* *//'
+        )" || return
+  fi
+}
+
 alias aset=asdf
 complete -F _asdf aset
 

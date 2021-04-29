@@ -19,6 +19,7 @@ symbol = " "
 [elixir]
 disabled = true
 symbol = " "
+format = "[$symbol$version]($style)"
 
 [jobs]
 disabled = true
