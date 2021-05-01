@@ -81,7 +81,8 @@ z() {
     _z "$@"
   else
     cd "$(_z -l 2>&1 |
-          fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" |
+          fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" \
+              --preview 'ls {-1}' --preview-window right,50,border-vertical |
           sed 's/^[0-9,.]* *//'
         )" || return
   fi
