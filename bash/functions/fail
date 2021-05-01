@@ -2,11 +2,13 @@
 set -ex -o pipefail
 
 function main() {
-  echo "output:"
-  echo
-  echo " (╯°□°）╯︵ $(echo "$1" | flip 2>/dev/null)"
-  echo
-  echo "error: $1" >&2
-  exit "${2-1}"
+cat <<_EOT_
+stdout:
+
+ (╯°□°）╯︵ $(echo "$1" | flip 2>/dev/null)"
+
+_EOT_
+echo "error: $1" >&2
+exit "${2-1}"
 }
 main "$@"
