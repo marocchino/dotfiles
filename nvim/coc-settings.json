@@ -13,6 +13,7 @@
     "terraform",
     "typescript"
   ],
+  "solargraph.diagnostics": true,
   "html.enable": true,
   "html.filetypes": [
     "html",
