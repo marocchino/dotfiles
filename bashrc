@@ -19,7 +19,6 @@ export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 declare -a paths=(
   "/usr/local/etc/profile.d/z.sh"
   "/usr/local/etc/bash_completion.d/git-completion.bash"
-  "/usr/local/etc/profile.d/bash_completion.sh"
   "$HOME/.asdf/asdf.sh"
   "$HOME/.asdf/completions/asdf.bash"
   "$HOME/.bashrc.local"
