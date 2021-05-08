@@ -14,6 +14,7 @@ vim/pack/
 vim/.vim-flavor/
 vim/view/
 vim/VimFlavor.lock
+nvim/pack/
 oni2/extensions
 oni2/store
 oni2/workspace
