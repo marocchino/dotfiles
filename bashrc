@@ -16,7 +16,7 @@ export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 
-declare -a paths=(
+declare -a PATHS=(
   "/usr/local/etc/profile.d/z.sh"
   "/usr/local/etc/bash_completion.d/git-completion.bash"
   "$HOME/.asdf/asdf.sh"
@@ -27,32 +27,35 @@ declare -a paths=(
   "$HOME/Documents/bash-wakatime/bash-wakatime.sh"
   "$HOME/dotfiles/bash/completions/mix.sh"
   "$HOME/dotfiles/bash/completions/npm.sh"
+  "$HOME/dotfiles/bash/completions/git.sh"
+  "$HOME/dotfiles/bash/functions/_up"
+  "$HOME/dotfiles/bash/functions/_z"
 )
-declare -a evals=(
+declare -a EVALS=(
   "$(hub alias -s)"
   "$(direnv hook bash)"
   "$(starship init bash)"
 )
 
-for p in "${paths[@]}"; do
-  if [ -f "$p" ]; then
+for P in "${PATHS[@]}"; do
+  if [ -f "$P" ]; then
     # shellcheck source=/dev/null
-    source "$p"
+    source "$P"
   fi
 done
-for e in "${evals[@]}"; do
-  eval "$e"
+for E in "${EVALS[@]}"; do
+  eval "$E"
 done
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
-  style=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
-  toggle=$HOME/.toggle_dark
-  if [[ $style == "Dark" ]]; then
+  STYLE=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
+  TOGGLE=$HOME/.toggle_dark
+  if [[ $STYLE == "Dark" ]]; then
     echo -ne "\033]50;SetProfile=Dark\a"
-    touch "$toggle"
+    touch "$TOGGLE"
   else
     echo -ne "\033]50;SetProfile=Default\a"
-    [ ! -e "$toggle" ] || rm "$toggle"
+    [ ! -e "$TOGGLE" ] || rm "$TOGGLE"
   fi
 fi
 
@@ -72,20 +75,6 @@ if command -v fd > /dev/null; then
   export FZF_CTRL_T_COMMAND='fd --type f --type d --hidden --follow --exclude .git'
 fi
 command -v bat > /dev/null && export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}'"
-
-## & Z
-unalias z 2> /dev/null
-z() {
-  if [[ $# -gt 0 ]]; then
-    _z "$@"
-  else
-    cd "$(_z -l 2>&1 |
-          fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" \
-              --preview 'ls {-1}' --preview-window right,50,border-vertical |
-          sed 's/^[0-9,.]* *//'
-        )" || return
-  fi
-}
 
 alias aset=asdf
 complete -F _asdf aset
@@ -111,85 +100,9 @@ alias t='tmux attach || tmux -u'
 alias v='nvim'
 alias y=yarn
 
-
 # wow! much doge!
 alias much=git
 alias so=nvim
 alias such=git
 alias very=git
 alias wow="git status"
-
-# Git branch bash completion
-if [ -f "/usr/local/etc/bash_completion.d/git-completion.bash" ]; then
-  function _git_aa() {
-    _git_add
-  }
-  function _git_ai() {
-    _git_add
-  }
-  function _git_ap() {
-    _git_add
-  }
-  function _git_ca() {
-    _git_commit
-  }
-  function _git_d() {
-    _git_diff
-  }
-  function _git_ds() {
-    _git_diff
-  }
-  function _git_f() {
-    _git_fetch
-  }
-  function _git_fa() {
-    _git_fetch
-  }
-  function _git_last() {
-    _git_log
-  }
-  function _git_pushf() {
-    _git_push
-  }
-  function _git_r() {
-    _git_rebase
-  }
-  function _git_ra() {
-    _git_rebase
-  }
-  function _git_rc() {
-    _git_rebase
-  }
-  function _git_rh() {
-    _git_rebase
-  }
-  function _git_ri() {
-    _git_rebase
-  }
-  function _git_st() {
-    _git_status
-  }
-  function _git_ski() {
-    _git_stash
-  }
-  function _git_w() {
-    _git_whatchanged
-  }
-  function _git_wip() {
-    _git_commit
-  }
-
-  # Add git completion to aliases
-  alias g=git
-  __git_complete g __git_main
-  alias ga="git add"
-  __git_complete ga _git_add
-  alias gaa="git add --all"
-  __git_complete gaa _git_add
-  alias gai="git add --all --intent-to-add"
-  __git_complete gai _git_add
-  __git_complete gs _git_switch
-  __git_complete gr _git_restore
-  __git_complete gd _git_branch
-fi
-# see: https://github.com/github/hub#aliasing

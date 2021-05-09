@@ -1,0 +1,20 @@
+#!/bin/bash
+
+function up() {
+  if [[ $# -eq 1 ]]; then
+    cd "$(printf "../%.0s" $(seq "$1"))" || return 0
+  else
+    _up_usage
+  fi
+}
+
+function _up_usage() {
+cat <<_EOT_
+Usage:
+  ${0##*/} number
+
+Description:
+  cd .. N times
+_EOT_
+exit 2
+}
