@@ -1,0 +1,16 @@
+#!/bin/bash
+set -ex -o pipefail
+
+function main() {
+  if [[ $# -eq 0 ]]; then
+    word="$(man -aWS 1 \* 2> /dev/null |
+      xargs basename |
+      sed 's/\.[^.]*$//' |
+      sort -u |
+      fzf)"
+  else
+    word="$*"
+  fi
+  open "dash://$word"
+}
+main "$@"
