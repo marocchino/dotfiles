@@ -6,19 +6,19 @@ function main() {
     usage
   fi
 
-  public_ips=()
-  split_list=()
+  PUBLIC_IPS=()
+  SPLIT_LIST=()
 
-  while IFS='' read -r line; do
-    public_ips+=("$line")
+  while IFS='' read -r LINE; do
+    PUBLIC_IPS+=("$LINE")
   done < <(get-all-ec2-instance-public-ips)
 
-  for ip in "${public_ips[@]:1}"; do
-    split_list+=(split-pane ssh -i "$*" "ec2-user@$ip" ';')
+  for IP in "${PUBLIC_IPS[@]:1}"; do
+    SPLIT_LIST+=(split-pane ssh -i "$*" "ec2-user@$IP" ';')
   done
 
-  tmux new-session -s "aws" -d ssh -i "$*" "ec2-user@${public_ips[0]}" ';' \
-    "${split_list[@]}" \
+  tmux new-session -s "aws" -d ssh -i "$*" "ec2-user@${PUBLIC_IPS[0]}" ';' \
+    "${SPLIT_LIST[@]}" \
     select-layout tiled ';' \
     set-option -w synchronize-panes ';' \
     attach-session -d -t aws
@@ -29,7 +29,7 @@ cat <<_EOT_
 Usage:
   "${0##*/} [private RSA key path]
 _EOT_
-exit 1
+exit 2
 }
 
 main "$@"

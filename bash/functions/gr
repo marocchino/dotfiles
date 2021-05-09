@@ -3,10 +3,10 @@ set -ex -o pipefail
 
 function main() {
   if [[ $# -eq 0 ]]; then
-    preview="git diff --color=always -- {-1}"
+    PREVIEW="git diff --color=always -- {-1}"
     git status --porcelain | \
       awk '{print $2}' | \
-      fzf --height 80% --preview "$preview" --layout reverse \
+      fzf --height 80% --preview "$PREVIEW" --layout reverse \
           --preview-window up,20,border-horizontal | \
       xargs git restore
   else

@@ -2,12 +2,12 @@
 set -ex -o pipefail
 
 function main() {
-  line=$(ps aux | fzf)
-  process_name=$(echo "$line" | awk '{print $11}')
-  pid=$(echo "$line" | awk '{print $2}')
-  kill -9 "$pid"
+  LINE=$(ps aux | fzf)
+  PROCESS_NAME=$(echo "$LINE" | awk '{print $11}')
+  PID=$(echo "$LINE" | awk '{print $2}')
+  kill -9 "$PID"
   echo
-  echo " (╯°□°）╯︵ $(echo "$process_name" | flip 2>/dev/null)"
+  echo " (╯°□°）╯︵ $(echo "$PROCESS_NAME" | flip 2>/dev/null)"
   echo
 }
 main "$@"

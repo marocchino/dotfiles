@@ -3,11 +3,11 @@ set -ex -o pipefail
 
 function main() {
   if [[ $# -eq 1 ]]; then
-    unset path
+    unset PATH
     for _ in $(seq 1 "$1"); do
-      path="${path}../"
+      PATH="$PATH../"
     done
-    cd "$path" || return 0
+    cd "$PATH" || return 0
   else
     usage
   fi
@@ -21,7 +21,7 @@ Usage:
 Description:
   cd .. N times
 _EOT_
-exit 1
+exit 2
 }
 
 main "$@"

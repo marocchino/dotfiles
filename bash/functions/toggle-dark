@@ -2,13 +2,13 @@
 set -ex -o pipefail
 
 function main() {
-  toggle=$HOME/.toggle_dark
+  TOGGLE=$HOME/.toggle_dark
 
-  if [ ! -e "$toggle" ]; then
-    touch "$toggle"
+  if [ ! -e "$TOGGLE" ]; then
+    touch "$TOGGLE"
     echo -ne "\033]50;SetProfile=Dark\a"
   else
-    rm "$toggle"
+    rm "$TOGGLE"
     echo -ne "\033]50;SetProfile=Default\a"
   fi
   osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'

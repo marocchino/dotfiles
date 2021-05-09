@@ -21,6 +21,6 @@ Description:
   When host is not given, select host with fzf.
   host could be regexp.
 _EOT_
-exit 1
+exit 2
 }
 main "$@"

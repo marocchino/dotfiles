@@ -77,12 +77,12 @@ all' | fzf --height 40% --border
 
 function main() {
   if [[ $# -eq 0 ]]; then
-    target=$(list-all)
+    TARGET=$(list-all)
   else
-    target=$1
+    TARGET=$1
   fi
 
-  case $target in
+  case $TARGET in
   aset)
     update-asdf
     ;;
@@ -133,6 +133,6 @@ Description:
   target could be one of apt-get, asdf, brew, dotfiles, kuromoji, npm, vim, yarn
   or all
 _EOT_
-exit 1
+exit 2
 }
 main "$@"

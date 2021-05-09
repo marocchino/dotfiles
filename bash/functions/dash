@@ -3,14 +3,14 @@ set -ex -o pipefail
 
 function main() {
   if [[ $# -eq 0 ]]; then
-    word="$(man -aWS 1 \* 2> /dev/null |
+    WORD="$(man -aWS 1 \* 2> /dev/null |
       xargs basename |
       sed 's/\.[^.]*$//' |
       sort -u |
       fzf)"
   else
-    word="$*"
+    WORD="$*"
   fi
-  open "dash://$word"
+  open "dash://$WORD"
 }
 main "$@"

@@ -30,6 +30,6 @@ Example:
   b banana
 
 _EOT_
-exit 1
+exit 2
 }
 main "$@"
