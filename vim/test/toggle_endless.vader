@@ -19,7 +19,7 @@ Expect ruby (one liner with do:):
     end
   end
 Do (toggle do):
-  te
+  jtete
 Expect ruby (revert do ... end):
   class SomeClass
     def to_string(name)

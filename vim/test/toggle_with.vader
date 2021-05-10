@@ -28,7 +28,7 @@ Expect elixir (change to case):
     end
   end
 Do (toggle to with):
-  tw
+  jjtwtw
 Expect elixir (revert to with):
   defmodule SomeModule do
     def upcase(name) do
