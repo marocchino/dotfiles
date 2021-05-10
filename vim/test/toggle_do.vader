@@ -1,18 +1,4 @@
-Given elixir (SomeModule with functions):
-  defmodule SomeModule do
-    def upcase(name) when is_binary(name), do: String.upcase(name)
-    def upcase(name) do
-      String.upcase(name)
-    end
-
-    defp downcase(name) when is_binary(name), do: String.downcase(name)
-    defp downcase(name) do
-      String.downcase(name)
-    end
-  end
-Do (toggle def when, do:):
-  jtd
-Expect elixir (def when do ... end):
+Given elixir (SomeModule with normal functions):
   defmodule SomeModule do
     def upcase(name) when is_binary(name) do
       String.upcase(name)
@@ -21,54 +7,16 @@ Expect elixir (def when do ... end):
       String.upcase(name)
     end
 
-    defp downcase(name) when is_binary(name), do: String.downcase(name)
+    defp downcase(name) when is_binary(name) do
+      String.downcase(name)
+    end
     defp downcase(name) do
       String.downcase(name)
     end
   end
 Do (toggle def when do):
-  jtdtd
+  jtd
 Expect elixir (def when, do:):
-  defmodule SomeModule do
-    def upcase(name) when is_binary(name), do: String.upcase(name)
-    def upcase(name) do
-      String.upcase(name)
-    end
-
-    defp downcase(name) when is_binary(name), do: String.downcase(name)
-    defp downcase(name) do
-      String.downcase(name)
-    end
-  end
-Do (toggle def do):
-  2jtd
-Expect elixir (def do:):
-  defmodule SomeModule do
-    def upcase(name) when is_binary(name), do: String.upcase(name)
-    def upcase(name), do: String.upcase(name)
-
-    defp downcase(name) when is_binary(name), do: String.downcase(name)
-    defp downcase(name) do
-      String.downcase(name)
-    end
-  end
-Do (toggle def do:):
-  2jtdtd
-Expect elixir (def do ... end):
-  defmodule SomeModule do
-    def upcase(name) when is_binary(name), do: String.upcase(name)
-    def upcase(name) do
-      String.upcase(name)
-    end
-
-    defp downcase(name) when is_binary(name), do: String.downcase(name)
-    defp downcase(name) do
-      String.downcase(name)
-    end
-  end
-Do (toggle defp, when do:):
-  6jtd
-Expect elixir (defp when do ... end):
   defmodule SomeModule do
     def upcase(name) when is_binary(name), do: String.upcase(name)
     def upcase(name) do
@@ -82,11 +30,29 @@ Expect elixir (defp when do ... end):
       String.downcase(name)
     end
   end
+Do (toggle def do):
+  4jtd
+Expect elixir (def do:):
+  defmodule SomeModule do
+    def upcase(name) when is_binary(name) do
+      String.upcase(name)
+    end
+    def upcase(name), do: String.upcase(name)
+
+    defp downcase(name) when is_binary(name) do
+      String.downcase(name)
+    end
+    defp downcase(name) do
+      String.downcase(name)
+    end
+  end
 Do (toggle defp when, do:):
-  6jtdtd
+  8jtd
 Expect elixir (defp when do ... end):
   defmodule SomeModule do
-    def upcase(name) when is_binary(name), do: String.upcase(name)
+    def upcase(name) when is_binary(name) do
+      String.upcase(name)
+    end
     def upcase(name) do
       String.upcase(name)
     end
@@ -97,8 +63,44 @@ Expect elixir (defp when do ... end):
     end
   end
 Do (toggle defp do):
-  7jtd
+  11jtd
 Expect elixir (defp, do:):
+  defmodule SomeModule do
+    def upcase(name) when is_binary(name) do
+      String.upcase(name)
+    end
+    def upcase(name) do
+      String.upcase(name)
+    end
+
+    defp downcase(name) when is_binary(name) do
+      String.downcase(name)
+    end
+    defp downcase(name), do: String.downcase(name)
+  end
+Given elixir (SomeModule with one line functions):
+  defmodule SomeModule do
+    def upcase(name) when is_binary(name), do: String.upcase(name)
+    def upcase(name), do: String.upcase(name)
+
+    defp downcase(name) when is_binary(name), do: String.downcase(name)
+    defp downcase(name), do: String.downcase(name)
+  end
+Do (toggle def when, do:):
+  jtd
+Expect elixir (def when do ... end):
+  defmodule SomeModule do
+    def upcase(name) when is_binary(name) do
+      String.upcase(name)
+    end
+    def upcase(name), do: String.upcase(name)
+
+    defp downcase(name) when is_binary(name), do: String.downcase(name)
+    defp downcase(name), do: String.downcase(name)
+  end
+Do (toggle def do:):
+  2jtd
+Expect elixir (def do ... end):
   defmodule SomeModule do
     def upcase(name) when is_binary(name), do: String.upcase(name)
     def upcase(name) do
@@ -108,14 +110,24 @@ Expect elixir (defp, do:):
     defp downcase(name) when is_binary(name), do: String.downcase(name)
     defp downcase(name), do: String.downcase(name)
   end
+Do (toggle defp, when do:):
+  4jtd
+Expect elixir (defp when do ... end):
+  defmodule SomeModule do
+    def upcase(name) when is_binary(name), do: String.upcase(name)
+    def upcase(name), do: String.upcase(name)
+
+    defp downcase(name) when is_binary(name) do
+      String.downcase(name)
+    end
+    defp downcase(name), do: String.downcase(name)
+  end
 Do (toggle defp do:):
-  7jtdtd
+  5jtd
 Expect elixir (defp do ... end):
   defmodule SomeModule do
     def upcase(name) when is_binary(name), do: String.upcase(name)
-    def upcase(name) do
-      String.upcase(name)
-    end
+    def upcase(name), do: String.upcase(name)
 
     defp downcase(name) when is_binary(name), do: String.downcase(name)
     defp downcase(name) do
