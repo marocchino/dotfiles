@@ -9,9 +9,9 @@ function main() {
       sed 's/[.0-9]*$//' |
       sort -u |
       fzf)"
+    man "$WORD"
   else
-    WORD="$*"
+    man "$@"
   fi
-  open "dash://$WORD"
 }
 main "$@"
