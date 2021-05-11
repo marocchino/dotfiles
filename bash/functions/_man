@@ -1,17 +1,14 @@
 #!/bin/bash
-set -ex -o pipefail
-
-function main() {
+function man() {
   if [[ $# -eq 0 ]]; then
-    WORD="$(man -aWS 1 \* 2> /dev/null |
+    WORD="$(command man -aWS 1 \* 2> /dev/null |
       xargs basename |
       sed 's/-[^-]*$//' |
       sed 's/[.0-9]*$//' |
       sort -u |
       fzf)"
-    man "$WORD"
+    command man "$WORD"
   else
-    man "$@"
+    command man "$@"
   fi
 }
-main "$@"

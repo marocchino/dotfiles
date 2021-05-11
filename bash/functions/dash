@@ -3,7 +3,7 @@ set -ex -o pipefail
 
 function main() {
   if [[ $# -eq 0 ]]; then
-    WORD="$(man -aWS 1 \* 2> /dev/null |
+    WORD="$(command man -aWS 1 \* 2> /dev/null |
       xargs basename |
       sed 's/-[^-]*$//' |
       sed 's/[.0-9]*$//' |

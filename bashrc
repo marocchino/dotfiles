@@ -28,6 +28,7 @@ declare -a PATHS=(
   "$HOME/dotfiles/bash/completions/mix.sh"
   "$HOME/dotfiles/bash/completions/npm.sh"
   "$HOME/dotfiles/bash/completions/git.sh"
+  "$HOME/dotfiles/bash/functions/_man"
   "$HOME/dotfiles/bash/functions/_up"
   "$HOME/dotfiles/bash/functions/_z"
 )
