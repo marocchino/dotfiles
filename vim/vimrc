@@ -98,7 +98,7 @@ call minpac#add('ap/vim-css-color')
 " == elixir ==
 call minpac#add('avdgaag/vim-phoenix')
 call minpac#add('elixir-lang/vim-elixir')
-call minpac#add('marocchino/pipe_converter', { 'do': 'mix escript.build' })
+call minpac#add('marocchino/pipe_converter', { 'do': '!mix escript.build' })
 call minpac#add('andyl/vim-textobj-elixir')
 " == html ==
 call minpac#add('sheerun/html5.vim')
