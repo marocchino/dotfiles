@@ -1,0 +1,31 @@
+Given elixir (SomeModule with normal functions):
+  defmodule SomeModule do
+    alias MyApp.{Foo, Bar, Baz}
+    alias MyApp.SomeLongModule.{
+      Foo,
+      Bar,
+      Baz
+    }
+  end
+Do (expand one line multi alias):
+  jem
+Expect elixir (def when, do:):
+  defmodule SomeModule do
+    alias MyApp.Bar
+    alias MyApp.Baz
+    alias MyApp.Foo
+    alias MyApp.SomeLongModule.{
+      Foo,
+      Bar,
+      Baz
+    }
+  end
+Do (expand multi alias with linebreak):
+  jjem
+Expect elixir (def when, do:):
+  defmodule SomeModule do
+    alias MyApp.{Foo, Bar, Baz}
+    alias MyApp.SomeLongModule.Bar
+    alias MyApp.SomeLongModule.Baz
+    alias MyApp.SomeLongModule.Foo
+  end

@@ -448,6 +448,7 @@ augroup converter
   autocmd FileType elixir nnoremap er :call PipeRevert()<CR>
   autocmd FileType elixir nnoremap td :call ToggleDo()<CR>
   autocmd FileType elixir nnoremap tw :call ToggleWith()<CR>
+  autocmd FileType elixir nnoremap em :call ExpandMulti()<CR>
   autocmd FileType ruby nnoremap te :call ToggleEndless()<CR>
 augroup END
 
