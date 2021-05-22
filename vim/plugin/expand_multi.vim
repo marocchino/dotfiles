@@ -8,7 +8,6 @@ function! ExpandMulti()
     normal ``
     let matched = join(getline('.', end), "")
     let modules = sort(split(substitute(matched, "^.\\+\.{\\_\\s*\\(.\\{-}\\)\\_\\s*}", "\\1", ""), ",\\_\\s*"))
-    echo modules
     let lines = join(map(copy(modules), 'prefix . "." . v:val'), "\n")
     s/^.\+{\_[^}]\+}$/\=lines/
   else

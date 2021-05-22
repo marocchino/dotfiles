@@ -9,7 +9,7 @@ Given elixir (SomeModule with normal functions):
   end
 Do (expand one line multi alias):
   jem
-Expect elixir (def when, do:):
+Expect elixir (expand alias):
   defmodule SomeModule do
     alias MyApp.Bar
     alias MyApp.Baz
@@ -22,7 +22,7 @@ Expect elixir (def when, do:):
   end
 Do (expand multi alias with linebreak):
   jjem
-Expect elixir (def when, do:):
+Expect elixir (expand alias):
   defmodule SomeModule do
     alias MyApp.{Foo, Bar, Baz}
     alias MyApp.SomeLongModule.Bar
