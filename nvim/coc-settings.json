@@ -13,6 +13,7 @@
     "terraform",
     "typescript"
   ],
+  "elixir.pathToElixirLS": "~/Documents/elixir-ls/release/language_server.sh",
   "solargraph.diagnostics": true,
   "html.enable": true,
   "html.filetypes": [
@@ -39,6 +40,10 @@
     "elixir": ["mix_credo", "mix_credo_compile"],
     "markdown": ["write-good", "markdownlint"],
     "ruby": "rubocop",
+    "javascript": ["eslint"],
+    "javascript.jsx": ["eslint"],
+    "typescript": ["eslint"],
+    "typescript.tsx": ["eslint"],
     "sh": "shellcheck",
     "vim": "vint"
   },
@@ -48,7 +53,10 @@
     "elixir": "mix_format",
     "go": "gofmt",
     "graphql": "prettier",
-    "javascript": ["eslint", "prettier"],
+    "javascript": ["prettier"],
+    "javascript.jsx": ["prettier"],
+    "typescript": ["prettier"],
+    "typescript.tsx": ["prettier"],
     "json": "prettier",
     "terraform": "tffmt"
   }
