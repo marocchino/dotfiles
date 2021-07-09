@@ -76,6 +76,7 @@ call minpac#add('voldikss/coc-browser', { 'do': '!yarn install --frozen-lockfile
 call minpac#add('voldikss/coc-gist', { 'do': '!yarn install --frozen-lockfile' })
 call minpac#add('yaegassy/coc-html-css-support', { 'do': '!yarn install --frozen-lockfile' })
 call minpac#add('yaegassy/coc-htmlhint', { 'do': '!yarn install --frozen-lockfile' })
+call minpac#add('weirongxu/coc-explorer', { 'do': '!yarn install --frozen-lockfile' })
 
 " style
 call minpac#add('vim-airline/vim-airline')
@@ -173,16 +174,16 @@ set ttimeoutlen=50  " Make ESC work faster
 set wildmenu
 set wrap
 if $SHELL =~ 'bin/fish'
-  set shell=/bin/sh
+set shell=/bin/sh
 endif
 set mouse=a
 if has("gui_running")
-  set guioptions-=r   " remove right scroll-bar (macvim)
-  set macligatures
-  set guifont=Fira\ Code\ Retina:h12
+set guioptions-=r   " remove right scroll-bar (macvim)
+set macligatures
+set guifont=Fira\ Code\ Retina:h12
 endif
 if has('nvim')
-  let $VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+let $VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
 endif
 
 " Disable output and VCS files
@@ -244,27 +245,27 @@ let g:WebDevIconsNerdTreeGitPluginForceVAlign = 0
 let g:airline_powerline_fonts = 1
 
 if filereadable(expand('~/.toggle_dark'))
-  let g:airline_theme='tender'
+let g:airline_theme='tender'
 else
-  let g:airline_theme='papercolor'
+let g:airline_theme='papercolor'
 endif
 
 let g:airline_mode_map = {
-  \ '__' : '-',
-  \ 'n'  : 'N',
-  \ 'i'  : 'I',
-  \ 'R'  : 'R',
-  \ 'c'  : 'C',
-  \ 'v'  : 'V',
-  \ 'V'  : 'V',
-  \ '' : 'V',
-  \ 's'  : 'S',
-  \ 'S'  : 'S',
-  \ '' : 'S',
-  \ }
+\ '__' : '-',
+\ 'n'  : 'N',
+\ 'i'  : 'I',
+\ 'R'  : 'R',
+\ 'c'  : 'C',
+\ 'v'  : 'V',
+\ 'V'  : 'V',
+\ '' : 'V',
+\ 's'  : 'S',
+\ 'S'  : 'S',
+\ '' : 'S',
+\ }
 
 if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
+let g:airline_symbols = {}
 endif
 let g:airline_symbols.paste = "\uf0ea"
 let g:airline_symbols.readonly = "\ue0a2"
@@ -473,6 +474,8 @@ else
 endif
 nnoremap <C-]> g<C-]>
 nnoremap <esc><esc> :nohlsearch<CR>
+nnoremap <Leader>e :CocCommand explorer<CR>
+nnoremap <Leader>t :call CocAction('doHover')<CR>
 nnoremap <Leader>[ :tabp<CR>
 nnoremap <Leader>] :tabn<CR>
 nnoremap <Leader>f :Rg<Space>
