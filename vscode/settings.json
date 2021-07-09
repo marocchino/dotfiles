@@ -181,5 +181,6 @@
   "latex-workshop.view.pdf.viewer": "tab",
   "window.autoDetectColorScheme": true,
   "elixirLS.mixTarget": "1.11.4",
-  "elixirLS.projectDir": "./"
+  "elixirLS.projectDir": "./",
+  "editor.inlineSuggest.enabled": true
 }
