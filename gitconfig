@@ -30,8 +30,10 @@
   rc = rebase --continue
   rh = reset --hard HEAD
   ri = rebase --interactive
-  st = status
+  rs = restore --staged
   ski = stash --keep-index
+  sp = stash pop
+  st = status
   w = whatchanged
   wip = commit --amend --no-edit
 [include]
