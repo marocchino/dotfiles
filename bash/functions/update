@@ -19,6 +19,15 @@ function update-brew() {
   brew cleanup
 }
 
+function update-coc() {
+  for dir in ~/.vim/pack/minpac/start/coc-*; do
+    pushd "$dir"
+    yarn install --frozen-lockfile || continue
+    yarn prepare || continue
+    popd
+  done
+}
+
 function update-vim() {
   echo updating vim
   nvim -c 'call minpac#update("", {"do": "quit | quit"})'
@@ -67,6 +76,7 @@ echo '
 apt-get
 asdf
 brew
+coc
 dotfiles
 kuromoji
 npm
@@ -94,6 +104,9 @@ function main() {
     ;;
   brew)
     update-brew
+    ;;
+  coc)
+    update-coc
     ;;
   dotfiles)
     update-dotfiles
@@ -130,8 +143,8 @@ Usage:
 
 Description:
   Update target.
-  target could be one of apt-get, asdf, brew, dotfiles, kuromoji, npm, vim, yarn
-  or all
+  target could be one of apt-get, asdf, brew, coc, dotfiles, kuromoji, npm, vim,
+  yarn or all
 _EOT_
 exit 2
 }
