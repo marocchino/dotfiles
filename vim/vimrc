@@ -50,33 +50,31 @@ call minpac#add('tpope/vim-unimpaired')
 call minpac#add('wakatime/vim-wakatime')
 call minpac#add('junegunn/vader.vim')
 
+" lsp
+call minpac#add('alexaandru/nvim-lspupdate')
+call minpac#add('hrsh7th/nvim-compe')
+call minpac#add('kabouzeid/nvim-lspinstall')
+call minpac#add('neovim/nvim-lspconfig')
+call minpac#add('creativenull/diagnosticls-configs-nvim')
+
 " coc
-call minpac#add('neoclide/coc.nvim', {'do': '!yarn install --frozen-lockfile'})
-call minpac#add('antonk52/coc-cssmodules', { 'do': '!npm ci' })
-call minpac#add('elixir-lsp/coc-elixir', { 'do': '!yarn install --frozen-lockfile && yarn prepack' })
-call minpac#add('fannheyward/coc-sql', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('fannheyward/coc-xml', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('felippepuhle/coc-graphql', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('iamcco/coc-diagnostic', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('iamcco/coc-svg', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('josa42/coc-go', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('kkiyama117/coc-toml', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('neoclide/coc-css', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('neoclide/coc-git', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('neoclide/coc-highlight', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('neoclide/coc-html', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('neoclide/coc-json', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('neoclide/coc-lists', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('neoclide/coc-solargraph', { 'do': '!yarn install --frozen-lockfile && yarn prepare' })
-call minpac#add('neoclide/coc-tabnine', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('neoclide/coc-tsserver', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('neoclide/coc-yaml', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('neoclide/coc-yank', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('voldikss/coc-browser', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('voldikss/coc-gist', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('yaegassy/coc-html-css-support', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('yaegassy/coc-htmlhint', { 'do': '!yarn install --frozen-lockfile' })
-call minpac#add('weirongxu/coc-explorer', { 'do': '!yarn install --frozen-lockfile' })
+" call minpac#add('neoclide/coc.nvim', {'do': '!yarn install --frozen-lockfile'})
+" call minpac#add('antonk52/coc-cssmodules', { 'do': '!npm ci' })
+" call minpac#add('fannheyward/coc-sql', { 'do': '!yarn install --frozen-lockfile' })
+" call minpac#add('fannheyward/coc-xml', { 'do': '!yarn install --frozen-lockfile' })
+" call minpac#add('iamcco/coc-diagnostic', { 'do': '!yarn install --frozen-lockfile' })
+" call minpac#add('iamcco/coc-svg', { 'do': '!yarn install --frozen-lockfile' })
+" call minpac#add('kkiyama117/coc-toml', { 'do': '!yarn install --frozen-lockfile' })
+" call minpac#add('neoclide/coc-git', { 'do': '!yarn install --frozen-lockfile' })
+" call minpac#add('neoclide/coc-highlight', { 'do': '!yarn install --frozen-lockfile' })
+" call minpac#add('neoclide/coc-lists', { 'do': '!yarn install --frozen-lockfile' })
+" call minpac#add('neoclide/coc-tabnine', { 'do': '!yarn install --frozen-lockfile' })
+" call minpac#add('neoclide/coc-yank', { 'do': '!yarn install --frozen-lockfile' })
+" call minpac#add('voldikss/coc-browser', { 'do': '!yarn install --frozen-lockfile' })
+" call minpac#add('voldikss/coc-gist', { 'do': '!yarn install --frozen-lockfile' })
+" call minpac#add('yaegassy/coc-html-css-support', { 'do': '!yarn install --frozen-lockfile' })
+" call minpac#add('yaegassy/coc-htmlhint', { 'do': '!yarn install --frozen-lockfile' })
+" call minpac#add('weirongxu/coc-explorer', { 'do': '!yarn install --frozen-lockfile' })
 
 " style
 call minpac#add('vim-airline/vim-airline')
@@ -91,43 +89,43 @@ call minpac#add('jacoborus/tender.vim')
 " syntax
 
 " == js,ts ==
-call minpac#add('HerringtonDarkholme/yats.vim')
-call minpac#add('pangloss/vim-javascript')
-call minpac#add('MaxMEllon/vim-jsx-pretty')
+" call minpac#add('HerringtonDarkholme/yats.vim')
+" call minpac#add('pangloss/vim-javascript')
+" call minpac#add('MaxMEllon/vim-jsx-pretty')
 " == css ==
-call minpac#add('ap/vim-css-color')
+" call minpac#add('ap/vim-css-color')
 " == elixir ==
-call minpac#add('avdgaag/vim-phoenix')
-call minpac#add('elixir-lang/vim-elixir')
-call minpac#add('marocchino/pipe_converter', { 'do': '!mix escript.build' })
-call minpac#add('andyl/vim-textobj-elixir')
+" call minpac#add('avdgaag/vim-phoenix')
+" call minpac#add('elixir-lang/vim-elixir')
+" call minpac#add('marocchino/pipe_converter', { 'do': '!mix escript.build' })
+" call minpac#add('andyl/vim-textobj-elixir')
 " == html ==
-call minpac#add('sheerun/html5.vim')
+" call minpac#add('sheerun/html5.vim')
 " == golang ==
-call minpac#add('fatih/vim-go')
+" call minpac#add('fatih/vim-go')
 " == graphql ==
-call minpac#add('jparise/vim-graphql')
+" call minpac#add('jparise/vim-graphql')
 " == github-action ==
-call minpac#add('yasuhiroki/github-actions-yaml.vim')
+" call minpac#add('yasuhiroki/github-actions-yaml.vim')
 " == markdown ==
-call minpac#add('plasticboy/vim-markdown')
+" call minpac#add('plasticboy/vim-markdown')
 " == rust ==
-call minpac#add('rust-lang/rust.vim')
+" call minpac#add('rust-lang/rust.vim')
 " == reason ==
-call minpac#add('reasonml-editor/vim-reason-plus')
+" call minpac#add('reasonml-editor/vim-reason-plus')
 " == terraform ==
-call minpac#add('hashivim/vim-terraform')
+" call minpac#add('hashivim/vim-terraform')
 " == toml ==
-call minpac#add('cespare/vim-toml')
+" call minpac#add('cespare/vim-toml')
 " == elm ==
-call minpac#add('ElmCast/elm-vim')
+" call minpac#add('ElmCast/elm-vim')
 " == idris ==
-call minpac#add('idris-hackers/idris-vim')
+" call minpac#add('idris-hackers/idris-vim')
 " == ruby ==
-call minpac#add('joker1007/vim-ruby-heredoc-syntax')
-call minpac#add('tpope/vim-rails')
-call minpac#add('vim-ruby/vim-ruby')
-call minpac#add('keith/rspec.vim')
+" call minpac#add('joker1007/vim-ruby-heredoc-syntax')
+" call minpac#add('tpope/vim-rails')
+" call minpac#add('vim-ruby/vim-ruby')
+" call minpac#add('keith/rspec.vim')
 " == vue ==
 " call minpac#add('posva/vim-vue')
 
@@ -185,6 +183,10 @@ endif
 if has('nvim')
 let $VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
 endif
+
+luafile ~/.vim/lua/lsp-config.lua
+luafile ~/.vim/lua/compe-config.lua
+luafile ~/.vim/lua/diagnosticls-config.lua
 
 " Disable output and VCS files
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
@@ -474,16 +476,22 @@ else
 endif
 nnoremap <C-]> g<C-]>
 nnoremap <esc><esc> :nohlsearch<CR>
-nnoremap <Leader>e :CocCommand explorer<CR>
-nnoremap <Leader>t :call CocAction('doHover')<CR>
 nnoremap <Leader>[ :tabp<CR>
 nnoremap <Leader>] :tabn<CR>
 nnoremap <Leader>f :Rg<Space>
 nnoremap <Leader>r :call VisualFindAndReplace()<CR>
 xnoremap <Leader>r :call VisualFindAndReplaceWithSelection()<CR>
+" nnoremap <Leader>e :CocCommand explorer<CR>
+" LSP config (the mappings used in the default file don't quite work right)
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <Leader>t <cmd>lua vim.lsp.buf.hover()<CR>
 nmap <Leader><Leader> <c-^>
-nmap <silent> [w <Plug>(coc-diagnostic-prev)
-nmap <silent> ]w <Plug>(coc-diagnostic-next)
+nmap <silent> [w <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nmap <silent> ]w <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
 function! s:buflist()
   redir => ls
