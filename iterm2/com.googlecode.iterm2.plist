@@ -1727,6 +1727,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>BD84DE67-DD6E-4FE4-83F4-1CD949D56535</string>
+	<key>EnableAPIServer</key>
+	<true/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
@@ -3510,7 +3512,7 @@
 	<key>StatusBarPosition</key>
 	<integer>1</integer>
 	<key>UseMetal</key>
-	<false/>
+	<true/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 </dict>

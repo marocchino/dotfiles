@@ -1,0 +1,1 @@
+/Users/marocchino/.fig/shell/post.fish
