@@ -47,7 +47,7 @@ call minpac#add('alexaandru/nvim-lspupdate')
 call minpac#add('hrsh7th/nvim-compe')
 call minpac#add('kabouzeid/nvim-lspinstall')
 call minpac#add('neovim/nvim-lspconfig')
-call minpac#add('creativenull/diagnosticls-configs-nvim')
+call minpac#add('creativenull/diagnosticls-configs-nvim', {'do': '!yarn add global diagnostic-languageserver'})
 
 " coc
 " call minpac#add('neoclide/coc.nvim', {'do': '!yarn install --frozen-lockfile'})
