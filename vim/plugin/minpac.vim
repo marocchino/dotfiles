@@ -68,9 +68,8 @@ call minpac#add('creativenull/diagnosticls-configs-nvim', {'do': '!yarn add glob
 " call minpac#add('weirongxu/coc-explorer', { 'do': '!yarn install --frozen-lockfile' })
 
 " style
-call minpac#add('vim-airline/vim-airline')
-call minpac#add('vim-airline/vim-airline-themes')
-call minpac#add('ryanoasis/vim-devicons')
+call minpac#add('hoob3rt/lualine.nvim')
+call minpac#add('kyazdani42/nvim-web-devicons')
 call minpac#add('edkolev/tmuxline.vim')
 
 " color

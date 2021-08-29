@@ -95,8 +95,8 @@ let g:XkbSwitchEnabled = 1
 let g:XkbSwitchLib = expand('~/dotfiles/bash/libInputSourceSwitcher.dylib')
 let g:pipe_converter_command = "~/.vim/pack/minpac/start/pipe_converter/pipe_converter"
 
-source ~/.vim/plugin/devicons.vim
-source ~/.vim/plugin/airline.vim
+luafile ~/.vim/lua/web-devicons-config.lua
+luafile ~/.vim/lua/lualine-config.lua
 
 let g:coverage_json_report_path = 'coverage/coverage-final.json'
 let g:coverage_sign_uncovered = "\uF070"
