@@ -47,7 +47,8 @@ call minpac#add('alexaandru/nvim-lspupdate')
 call minpac#add('hrsh7th/nvim-compe')
 call minpac#add('kabouzeid/nvim-lspinstall')
 call minpac#add('neovim/nvim-lspconfig')
-call minpac#add('creativenull/diagnosticls-configs-nvim', {'do': '!yarn add global diagnostic-languageserver'})
+call minpac#add('folke/lsp-colors.nvim')
+call minpac#add('glepnir/lspsaga.nvim')
 
 " coc
 " call minpac#add('neoclide/coc.nvim', {'do': '!yarn install --frozen-lockfile'})
@@ -71,6 +72,7 @@ call minpac#add('creativenull/diagnosticls-configs-nvim', {'do': '!yarn add glob
 call minpac#add('hoob3rt/lualine.nvim')
 call minpac#add('kyazdani42/nvim-web-devicons')
 call minpac#add('edkolev/tmuxline.vim')
+call minpac#add('kyazdani42/nvim-tree.lua')
 
 " color
 call minpac#add('albertorestifo/github.vim')

@@ -62,8 +62,8 @@ endif
 let $VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
 
 luafile ~/.vim/lua/lsp-config.lua
+luafile ~/.vim/lua/lspsaga-config.lua
 luafile ~/.vim/lua/compe-config.lua
-luafile ~/.vim/lua/diagnosticls-config.lua
 
 " Disable output and VCS files
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
@@ -291,17 +291,21 @@ nnoremap <Leader>] :tabn<CR>
 nnoremap <Leader>f :Rg<Space>
 nnoremap <Leader>r :call VisualFindAndReplace()<CR>
 xnoremap <Leader>r :call VisualFindAndReplaceWithSelection()<CR>
-" nnoremap <Leader>e :CocCommand explorer<CR>
+nnoremap <Leader>e :NvimTreeToggle<CR>
 " LSP config (the mappings used in the default file don't quite work right)
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> gh :Lspsaga lsp_finder<CR>
 nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <Leader>t <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <Leader>t <Cmd>Lspsaga hover_doc<CR>
+nnoremap <silent><leader>ca :Lspsaga code_action<CR>
+vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
 nmap <Leader><Leader> <c-^>
 nmap <silent> [w <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nmap <silent> ]w <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+
 
 function! s:buflist()
   redir => ls
