@@ -5,7 +5,6 @@ filetype off                   " required!
 " If installed using Homebrew
 set rtp+=/usr/local/opt/fzf
 set completeopt+=preview
-
 source ~/.vim/plugin/minpac.vim
 
 filetype on
@@ -61,11 +60,11 @@ set guifont=Fira\ Code\ Retina:h12
 endif
 let $VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
 
-luafile ~/.vim/lua/lsp-config.lua
-luafile ~/.vim/lua/lspsaga-config.lua
 luafile ~/.vim/lua/compe-config.lua
 luafile ~/.vim/lua/hop-config.lua
 luafile ~/.vim/lua/gitsigns-config.lua
+luafile ~/.vim/lua/lsp-config.lua
+luafile ~/.vim/lua/lspsaga-config.lua
 
 " Disable output and VCS files
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
@@ -118,7 +117,6 @@ let test#strategy = "dispatch"
 
 let g:opengoogletranslate#openbrowsercmd = 'open'
 let g:UltiSnipsListSnippets = '<c-l>'
-let g:UltiSnipsSnippetsDir = $HOME.'/dotfiles/vim/UltiSnips'
 
 " === vim-ruby-heredoc-syntax ===
 " Add syntax rule
@@ -346,8 +344,6 @@ nnoremap <silent> <C-d> :Dash<CR>
 nnoremap <silent> <C-p> :FZF<CR>
 nnoremap S i<cr><esc><right>
 vmap <Enter> <Plug>(EasyAlign)
-
-inoremap <expr> <Tab>   pumvisible() ? '<C-n>' : '<Tab>'
 
 map ,. :TComment<CR>
 map ., :TComment<CR>
