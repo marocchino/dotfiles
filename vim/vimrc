@@ -3,6 +3,7 @@ set nocompatible
 filetype off                   " required!
 set completeopt+=preview
 source ~/.vim/plugin/minpac.vim
+luafile ~/.vim/lua/packer-config.lua
 
 filetype on
 filetype indent on
@@ -91,6 +92,8 @@ luafile ~/.vim/lua/lspsaga-config.lua
 luafile ~/.vim/lua/telescope-config.lua
 luafile ~/.vim/lua/autopairs-config.lua
 luafile ~/.vim/lua/neoclip-config.lua
+luafile ~/.vim/lua/web-devicons-config.lua
+luafile ~/.vim/lua/lualine-config.lua
 
 " elixir
 let g:elixir_use_markdown_for_docs = 1
@@ -104,16 +107,10 @@ let g:XkbSwitchEnabled = 1
 let g:XkbSwitchLib = expand('~/dotfiles/bash/libInputSourceSwitcher.dylib')
 let g:pipe_converter_command = "~/.vim/pack/minpac/start/pipe_converter/pipe_converter"
 
-luafile ~/.vim/lua/web-devicons-config.lua
-luafile ~/.vim/lua/lualine-config.lua
-
 let g:coverage_json_report_path = 'coverage/coverage-final.json'
 let g:coverage_sign_uncovered = "\uF070"
 
 let g:elm_format_autosave = 1
-
-let g:grepper = {}
-let g:grepper.tools = ['grep', 'git', 'rg']
 
 let g:mix_format_on_save = 1
 
@@ -314,7 +311,6 @@ nmap <leader><leader> <c-^>
 nmap <silent> [w <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nmap <silent> ]w <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
-nnoremap <leader>fw <cmd>Telescope arecibo<cr>
 nnoremap <leader>ff <cmd>Telescope frecency<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>

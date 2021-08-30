@@ -40,19 +40,7 @@ call minpac#add('wakatime/vim-wakatime')
 call minpac#add('junegunn/vader.vim')
 
 " nvim only
-call minpac#add('nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' })
-call minpac#add('nvim-lua/completion-nvim')
-call minpac#add('phaazon/hop.nvim')
-call minpac#add('nvim-lua/plenary.nvim')
-call minpac#add('lewis6991/gitsigns.nvim')
-call minpac#add('nvim-telescope/telescope.nvim')
-call minpac#add('windwp/nvim-autopairs')
-call minpac#add('fhill2/telescope-ultisnips.nvim')
-call minpac#add('AckslD/nvim-neoclip.lua')
-call minpac#add('nvim-telescope/telescope-hop.nvim')
-call minpac#add('nvim-telescope/telescope-frecency.nvim')
-call minpac#add('nvim-telescope/telescope-arecibo.nvim')
-call minpac#add('tami5/sql.nvim')
+call minpac#add('wbthomason/packer.nvim')
 
 " lsp
 call minpac#add('alexaandru/nvim-lspupdate')

@@ -60,7 +60,7 @@ nvim_lsp.lua.setup {
   settings = {
     Lua = {
       diagnostics = {
-        globals = { 'vim' }
+        globals = { 'vim', 'use' }
       }
     }
   }

@@ -55,7 +55,6 @@ telescope.setup {
   }
 }
 require('telescope').load_extension('frecency')
-require('telescope').load_extension('arecibo')
 require('telescope').load_extension('ultisnips')
 require('telescope').load_extension('neoclip')
 telescope.load_extension('hop')
