@@ -149,16 +149,6 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_new_list_item_indent = 2
 
-let g:multi_cursor_use_default_mapping = 0
-" Default mapping:h hop-config
-let g:multi_cursor_next_key = '<C-n>'
-let g:multi_cursor_prev_key = '<C-N>'
-let g:multi_cursor_skip_key = '<C-x>'
-let g:multi_cursor_quit_key = '<Esc>'
-
-" Exclude JavaScript files in :Rtags via rails.vim due to warnings when parsing
-" let g:Tlist_Ctags_Cmd = "ctags --exclude='*.js'"
-
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
