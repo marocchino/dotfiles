@@ -24,4 +24,27 @@ return require('packer').startup(function()
     'nvim-telescope/telescope-frecency.nvim',
     requires = {'tami5/sql.nvim'}
   }
+  use {
+    'hrsh7th/nvim-compe',
+    requires = {'SirVer/ultisnips'}
+  }
+
+  -- lsp
+  use {'kabouzeid/nvim-lspinstall'}
+  use {'neovim/nvim-lspconfig'}
+  use {'folke/lsp-colors.nvim'}
+  use {
+    'glepnir/lspsaga.nvim',
+    requires = {'neovim/nvim-lspconfig'}
+  }
+
+  -- style
+  use {
+    'hoob3rt/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
 end)

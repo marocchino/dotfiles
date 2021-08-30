@@ -42,14 +42,6 @@ call minpac#add('junegunn/vader.vim')
 " nvim only
 call minpac#add('wbthomason/packer.nvim')
 
-" lsp
-call minpac#add('alexaandru/nvim-lspupdate')
-call minpac#add('hrsh7th/nvim-compe')
-call minpac#add('kabouzeid/nvim-lspinstall')
-call minpac#add('neovim/nvim-lspconfig')
-call minpac#add('folke/lsp-colors.nvim')
-call minpac#add('glepnir/lspsaga.nvim')
-
 " coc
 " call minpac#add('fannheyward/coc-sql', { 'do': '!yarn install --frozen-lockfile' })
 " call minpac#add('fannheyward/coc-xml', { 'do': '!yarn install --frozen-lockfile' })
@@ -57,12 +49,6 @@ call minpac#add('glepnir/lspsaga.nvim')
 " call minpac#add('kkiyama117/coc-toml', { 'do': '!yarn install --frozen-lockfile' })
 " call minpac#add('neoclide/coc-tabnine', { 'do': '!yarn install --frozen-lockfile' })
 " call minpac#add('voldikss/coc-browser', { 'do': '!yarn install --frozen-lockfile' })
-
-" style
-call minpac#add('hoob3rt/lualine.nvim')
-call minpac#add('kyazdani42/nvim-web-devicons')
-call minpac#add('edkolev/tmuxline.vim')
-call minpac#add('kyazdani42/nvim-tree.lua')
 
 " color
 call minpac#add('albertorestifo/github.vim')

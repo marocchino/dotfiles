@@ -3,7 +3,10 @@ set nocompatible
 filetype off                   " required!
 set completeopt+=preview
 source ~/.vim/plugin/minpac.vim
-luafile ~/.vim/lua/packer-config.lua
+
+if has('nvim')
+  luafile ~/.vim/lua/packer-config.lua
+endif
 
 filetype on
 filetype indent on
@@ -84,16 +87,18 @@ if (exists('+colorcolumn'))
   highlight ColorColumn ctermbg=9
 endif
 
-luafile ~/.vim/lua/compe-config.lua
-luafile ~/.vim/lua/hop-config.lua
-luafile ~/.vim/lua/gitsigns-config.lua
-luafile ~/.vim/lua/lsp-config.lua
-luafile ~/.vim/lua/lspsaga-config.lua
-luafile ~/.vim/lua/telescope-config.lua
-luafile ~/.vim/lua/autopairs-config.lua
-luafile ~/.vim/lua/neoclip-config.lua
-luafile ~/.vim/lua/web-devicons-config.lua
-luafile ~/.vim/lua/lualine-config.lua
+if has('nvim')
+  luafile ~/.vim/lua/compe-config.lua
+  luafile ~/.vim/lua/hop-config.lua
+  luafile ~/.vim/lua/gitsigns-config.lua
+  luafile ~/.vim/lua/lsp-config.lua
+  luafile ~/.vim/lua/lspsaga-config.lua
+  luafile ~/.vim/lua/telescope-config.lua
+  luafile ~/.vim/lua/autopairs-config.lua
+  luafile ~/.vim/lua/neoclip-config.lua
+  luafile ~/.vim/lua/web-devicons-config.lua
+  luafile ~/.vim/lua/lualine-config.lua
+endif
 
 " elixir
 let g:elixir_use_markdown_for_docs = 1
@@ -262,7 +267,7 @@ augroup converter
   autocmd FileType elixir nnoremap td :call ToggleDo()<CR>
   autocmd FileType elixir nnoremap tw :call ToggleWith()<CR>
   autocmd FileType elixir nnoremap em :call ExpandMulti()<CR>
-  autocmd FileType ruby nnoremap te :call ToggleEndless()<CR>
+  autocmd FileType ruby nnoremap td :call ToggleEndless()<CR>
 augroup END
 
 " move windows with hjkl
