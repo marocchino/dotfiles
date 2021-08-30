@@ -1,5 +1,5 @@
 local nvim_lsp = require('lspconfig')
-local protocol = require'vim.lsp.protocol'
+local protocol = require('vim.lsp.protocol')
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -38,8 +38,8 @@ local on_attach = function(client, bufnr)
 end
 
 local function setup_servers()
-  require'lspinstall'.setup()
-  local servers = require'lspinstall'.installed_servers()
+  require('lspinstall').setup()
+  local servers = require('lspinstall').installed_servers()
   for _, server in pairs(servers) do
     nvim_lsp[server].setup{
       on_attach = on_attach,

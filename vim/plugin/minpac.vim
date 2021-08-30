@@ -49,6 +49,10 @@ call minpac#add('nvim-telescope/telescope.nvim')
 call minpac#add('windwp/nvim-autopairs')
 call minpac#add('fhill2/telescope-ultisnips.nvim')
 call minpac#add('AckslD/nvim-neoclip.lua')
+call minpac#add('nvim-telescope/telescope-hop.nvim')
+call minpac#add('nvim-telescope/telescope-frecency.nvim')
+call minpac#add('nvim-telescope/telescope-arecibo.nvim')
+call minpac#add('tami5/sql.nvim')
 
 " lsp
 call minpac#add('alexaandru/nvim-lspupdate')

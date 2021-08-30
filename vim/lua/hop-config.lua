@@ -1,3 +1,3 @@
 require'hop'.setup {
-  keys = '12345qwertasdfgzxcvb',
+  keys = 'asdfgqwertzxcvb12345',
 }

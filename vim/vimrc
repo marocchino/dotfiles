@@ -74,6 +74,15 @@ set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/o*
 " Disable OS X index files
 set wildignore+=.DS_Store
 
+" Color scheme
+set termguicolors
+
+" http://mattn.kaoriya.net/software/vim/20150209151638.htm
+if (exists('+colorcolumn'))
+  set colorcolumn=80
+  highlight ColorColumn ctermbg=9
+endif
+
 luafile ~/.vim/lua/compe-config.lua
 luafile ~/.vim/lua/hop-config.lua
 luafile ~/.vim/lua/gitsigns-config.lua
@@ -105,7 +114,6 @@ let g:elm_format_autosave = 1
 
 let g:grepper = {}
 let g:grepper.tools = ['grep', 'git', 'rg']
-
 
 let g:mix_format_on_save = 1
 
@@ -194,8 +202,6 @@ if has('syntax')
   call ZenkakuSpace()
 endif
 
-" Color scheme
-set termguicolors
 
 if filereadable(expand('~/.toggle_dark'))
   colorscheme tender
@@ -206,11 +212,6 @@ endif
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
-" http://mattn.kaoriya.net/software/vim/20150209151638.htm
-if (exists('+colorcolumn'))
-  set colorcolumn=80
-  highlight ColorColumn ctermbg=9
-endif
 
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
@@ -302,17 +303,19 @@ nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> gh :Lspsaga lsp_finder<CR>
 nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent><leader>t <Cmd>Lspsaga hover_doc<CR>
-nnoremap <silent><leader>h :HopWord<CR>
-nnoremap <silent><leader>hl :HopLine<CR>
-nnoremap <silent><leader>hp :HopPattern<CR>
-nnoremap <silent><leader>hc :HopChar2<CR>
+nnoremap <silent><leader>w :HopWord<CR>
+nnoremap <silent><leader>l :HopLine<CR>
+nnoremap <silent><leader>p :HopPattern<CR>
+nnoremap <silent><leader>h :HopChar1<CR>
+nnoremap <silent><leader>h2 :HopChar2<CR>
 nnoremap <silent><leader>ca :Lspsaga code_action<CR>
 vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
 nmap <leader><leader> <c-^>
 nmap <silent> [w <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nmap <silent> ]w <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fw <cmd>Telescope arecibo<cr>
+nnoremap <leader>ff <cmd>Telescope frecency<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
