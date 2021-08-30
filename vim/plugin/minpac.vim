@@ -48,6 +48,7 @@ call minpac#add('nvim-lua/plenary.nvim')
 call minpac#add('lewis6991/gitsigns.nvim')
 call minpac#add('nvim-telescope/telescope.nvim')
 call minpac#add('windwp/nvim-autopairs')
+call minpac#add('fhill2/telescope-ultisnips.nvim')
 
 " lsp
 call minpac#add('alexaandru/nvim-lspupdate')

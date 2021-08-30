@@ -1,7 +1,6 @@
 " 交換性を無くす。
 set nocompatible
 filetype off                   " required!
-
 " If installed using Homebrew
 set rtp+=/usr/local/opt/fzf
 set completeopt+=preview
@@ -118,7 +117,6 @@ let g:table_mode_header_fillchar='-'
 let test#strategy = "dispatch"
 
 let g:opengoogletranslate#openbrowsercmd = 'open'
-let g:UltiSnipsListSnippets = '<c-l>'
 
 " === vim-ruby-heredoc-syntax ===
 " Add syntax rule
@@ -320,6 +318,7 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fs <cmd>Telescope ultisnips<cr>
 
 
 noremap Q <Nop>
