@@ -2,9 +2,6 @@ packadd minpac
 call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 call minpac#add('AndrewRadev/switch.vim')
-call minpac#add('MarcWeber/vim-addon-mw-utils')
-call minpac#add('SirVer/ultisnips')
-call minpac#add('c-brenn/fuzzy-projectionist.vim')
 call minpac#add('christoomey/vim-tmux-navigator')
 call minpac#add('dhruvasagar/vim-table-mode')
 call minpac#add('editorconfig/editorconfig-vim')
@@ -13,7 +10,6 @@ call minpac#add('honza/vim-snippets')
 call minpac#add('janko-m/vim-test')
 call minpac#add('jgdavey/vim-blockle')
 call minpac#add('kana/vim-textobj-user')
-call minpac#add('lyokha/vim-xkbswitch')
 call minpac#add('mattn/emmet-vim')
 call minpac#add('mhinz/vim-grepper')
 call minpac#add('nathanaelkane/vim-indent-guides')
@@ -37,10 +33,19 @@ call minpac#add('tpope/vim-ragtag')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('wakatime/vim-wakatime')
-call minpac#add('junegunn/vader.vim')
+call minpac#add('junegunn/vader.vim', {'type': 'opt'})
 
-" nvim only
-call minpac#add('wbthomason/packer.nvim')
+if has("mac")
+  call minpac#add('MarcWeber/vim-addon-mw-utils')
+endif
+
+if has("unix")
+  call minpac#add('lyokha/vim-xkbswitch')
+endif
+
+if has('nvim')
+  call minpac#add('wbthomason/packer.nvim', {'type': 'opt'})
+endif
 
 " coc
 " call minpac#add('fannheyward/coc-sql', { 'do': '!yarn install --frozen-lockfile' })

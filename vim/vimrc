@@ -323,7 +323,6 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fs <cmd>Telescope ultisnips<cr>
 nnoremap <leader>fc <cmd>Telescope neoclip<cr>
 
-
 noremap Q <Nop>
 noremap q: :q
 noremap ; :

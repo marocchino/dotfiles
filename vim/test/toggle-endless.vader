@@ -9,7 +9,7 @@ Given ruby (single line method):
     end
   end
 Do (toggle do):
-  jte
+  jtd
 Expect ruby (one liner with do:):
   class SomeClass
     def to_string(name) = name.to_s
@@ -19,7 +19,7 @@ Expect ruby (one liner with do:):
     end
   end
 Do (toggle do):
-  jtete
+  jtdtd
 Expect ruby (revert do ... end):
   class SomeClass
     def to_string(name)
