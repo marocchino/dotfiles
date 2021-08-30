@@ -18,6 +18,7 @@ require'nvim-treesitter.configs'.setup {
     'html',
     'json',
     'lua',
+    'query',
     'regex',
     'ruby',
     'rust',

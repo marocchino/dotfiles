@@ -3,11 +3,20 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
   use {'nvim-treesitter/nvim-treesitter', branch = '0.5-compat', run = ':TSUpdate'}
-  use {'nvim-treesitter/nvim-treesitter-textobjects', branch = '0.5-compat', run = ':TSUpdate'}
+  use {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    branch = '0.5-compat',
+    requires = {'nvim-treesitter/nvim-treesitter'}
+  }
+  use {
+    'nvim-treesitter/playground',
+    opt = true,
+    requires = {'nvim-treesitter/nvim-treesitter'}
+  }
   use {'nvim-lua/completion-nvim'}
   use {'phaazon/hop.nvim', as = 'hop'}
   use {
-  'lewis6991/gitsigns.nvim',
+    'lewis6991/gitsigns.nvim',
     requires = {'nvim-lua/plenary.nvim'}
   }
   use {
