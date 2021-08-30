@@ -45,6 +45,7 @@ call minpac#add('junegunn/vader.vim')
 " nvim only
 call minpac#add('nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' })
 call minpac#add('nvim-lua/completion-nvim')
+call minpac#add('phaazon/hop.nvim')
 
 " lsp
 call minpac#add('alexaandru/nvim-lspupdate')

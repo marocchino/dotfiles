@@ -64,6 +64,7 @@ let $VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
 luafile ~/.vim/lua/lsp-config.lua
 luafile ~/.vim/lua/lspsaga-config.lua
 luafile ~/.vim/lua/compe-config.lua
+luafile ~/.vim/lua/hop-config.lua
 
 " Disable output and VCS files
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
@@ -106,18 +107,6 @@ let g:elm_format_autosave = 1
 let g:grepper = {}
 let g:grepper.tools = ['grep', 'git', 'rg']
 
-" Search for the current word
-nnoremap <Leader>* :Grepper -cword -noprompt<CR>
-" Search for the current selection
-nmap gs <plug>(GrepperOperator)
-xmap gs <plug>(GrepperOperator)<Paste>
-
-" these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
 
 let g:mix_format_on_save = 1
 
@@ -157,7 +146,7 @@ let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_new_list_item_indent = 2
 
 let g:multi_cursor_use_default_mapping = 0
-" Default mapping
+" Default mapping:h hop-config
 let g:multi_cursor_next_key = '<C-n>'
 let g:multi_cursor_prev_key = '<C-N>'
 let g:multi_cursor_skip_key = '<C-x>'
@@ -207,7 +196,6 @@ if has('syntax')
   augroup END
   call ZenkakuSpace()
 endif
-
 
 " Color scheme
 set termguicolors
@@ -286,12 +274,24 @@ tnoremap <silent> <C-K> <C-\><C-n>:wincmd k<CR>
 tnoremap <silent> <C-L> <C-\><C-n>:wincmd l<CR>
 nnoremap <C-]> g<C-]>
 nnoremap <esc><esc> :nohlsearch<CR>
-nnoremap <Leader>[ :tabp<CR>
-nnoremap <Leader>] :tabn<CR>
-nnoremap <Leader>f :Rg<Space>
-nnoremap <Leader>r :call VisualFindAndReplace()<CR>
-xnoremap <Leader>r :call VisualFindAndReplaceWithSelection()<CR>
-nnoremap <Leader>e :NvimTreeToggle<CR>
+nnoremap <silent><leader>[ :tabp<CR>
+nnoremap <silent><leader>] :tabn<CR>
+nnoremap <silent><leader>f :Rg<Space>
+nnoremap <silent><leader>r :call VisualFindAndReplace()<CR>
+xnoremap <silent><leader>r :call VisualFindAndReplaceWithSelection()<CR>
+nnoremap <silent><leader>e :NvimTreeToggle<CR>
+" Search for the current word
+nnoremap <silent><leader>* :Grepper -cword -noprompt<CR>
+" Search for the current selection
+nmap gs <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)<Paste>
+
+" these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
 " LSP config (the mappings used in the default file don't quite work right)
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
@@ -299,10 +299,13 @@ nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> gh :Lspsaga lsp_finder<CR>
 nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <Leader>t <Cmd>Lspsaga hover_doc<CR>
+nnoremap <silent><leader>t <Cmd>Lspsaga hover_doc<CR>
+nnoremap <silent><leader>h :HopWord<CR>
+nnoremap <silent><leader>hl :HopLine<CR>
+nnoremap <silent><leader>hp :HopPattern<CR>
 nnoremap <silent><leader>ca :Lspsaga code_action<CR>
 vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
-nmap <Leader><Leader> <c-^>
+nmap <leader><leader> <c-^>
 nmap <silent> [w <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nmap <silent> ]w <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
