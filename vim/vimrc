@@ -65,6 +65,7 @@ luafile ~/.vim/lua/lsp-config.lua
 luafile ~/.vim/lua/lspsaga-config.lua
 luafile ~/.vim/lua/compe-config.lua
 luafile ~/.vim/lua/hop-config.lua
+luafile ~/.vim/lua/gitsigns-config.lua
 
 " Disable output and VCS files
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
@@ -222,6 +223,11 @@ augroup debugger_highlight
   autocmd BufEnter *.ex syn match Error "IO.puts\|IO.inspect"
   autocmd BufEnter *.rb syn match Error "binding.pry\|debugger"
   autocmd BufEnter *.{js,coffee} syn match Error "console.log"
+augroup END
+
+augroup highlight_yank
+  autocmd!
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
 augroup END
 
 augroup auto_save

@@ -1,20 +1,5 @@
 local nvim_lsp = require('lspconfig')
 local protocol = require'vim.lsp.protocol'
-local function setup_servers()
-  require'lspinstall'.setup()
-  local servers = require'lspinstall'.installed_servers()
-  for _, server in pairs(servers) do
-    require'lspconfig'[server].setup{}
-  end
-end
-
-setup_servers()
-
--- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
-require'lspinstall'.post_install_hook = function ()
-  setup_servers() -- reload installed servers
-  vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
-end
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -51,6 +36,25 @@ local on_attach = function(client, bufnr)
     '', -- TypeParameter
   }
 end
+
+local function setup_servers()
+  require'lspinstall'.setup()
+  local servers = require'lspinstall'.installed_servers()
+  for _, server in pairs(servers) do
+    nvim_lsp[server].setup{
+      on_attach = on_attach,
+    }
+  end
+end
+
+-- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
+require'lspinstall'.post_install_hook = function ()
+  setup_servers() -- reload installed servers
+  vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
+end
+
+setup_servers()
+
 nvim_lsp.lua.setup {
   on_attach = on_attach,
   settings = {
@@ -60,18 +64,6 @@ nvim_lsp.lua.setup {
       }
     }
   }
-}
-nvim_lsp.typescript.setup {
-  on_attach = on_attach,
-}
-nvim_lsp.go.setup {
-  on_attach = on_attach,
-}
-nvim_lsp.rust.setup {
-  on_attach = on_attach,
-}
-nvim_lsp.elixir.setup {
-  on_attach = on_attach,
 }
 nvim_lsp.solargraph.setup {
   on_attach = on_attach,
@@ -88,7 +80,7 @@ nvim_lsp.solargraph.setup {
 }
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach,
-  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'ruby', 'elixir', 'graphql' },
+  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'ruby', 'elixir', 'graphql', 'go', 'rust', 'lua' },
   init_options = {
     linters = {
       eslint = {
