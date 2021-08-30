@@ -94,6 +94,7 @@ if has('nvim')
   luafile ~/.vim/lua/lsp-config.lua
   luafile ~/.vim/lua/lspsaga-config.lua
   luafile ~/.vim/lua/telescope-config.lua
+  luafile ~/.vim/lua/treesitter-config.lua
   luafile ~/.vim/lua/autopairs-config.lua
   luafile ~/.vim/lua/neoclip-config.lua
   luafile ~/.vim/lua/web-devicons-config.lua
@@ -172,10 +173,10 @@ function! ZenkakuSpace()
 endfunction
 
 function! VisualFindAndReplace()
-    :OverCommandLine%s/
+  :OverCommandLine%s/
 endfunction
 function! VisualFindAndReplaceWithSelection() range
-    :'<,'>OverCommandLine s/
+  :'<,'>OverCommandLine s/
 endfunction
 
 if has('syntax')

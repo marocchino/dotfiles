@@ -121,6 +121,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
+  ["nvim-treesitter-textobjects"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"

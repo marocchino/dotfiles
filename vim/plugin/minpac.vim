@@ -58,42 +58,42 @@ call minpac#add('jacoborus/tender.vim')
 " syntax
 
 " == js,ts ==
-call minpac#add('HerringtonDarkholme/yats.vim')
-call minpac#add('pangloss/vim-javascript')
-call minpac#add('MaxMEllon/vim-jsx-pretty')
+" call minpac#add('HerringtonDarkholme/yats.vim')
+" call minpac#add('pangloss/vim-javascript')
+" call minpac#add('MaxMEllon/vim-jsx-pretty')
 " == css ==
-call minpac#add('ap/vim-css-color')
+" call minpac#add('ap/vim-css-color')
 " == elixir ==
-call minpac#add('avdgaag/vim-phoenix')
-call minpac#add('elixir-lang/vim-elixir')
+" call minpac#add('avdgaag/vim-phoenix')
+" call minpac#add('elixir-lang/vim-elixir')
 call minpac#add('marocchino/pipe_converter', { 'do': '!mix do deps.get, compile, escript.build' })
-call minpac#add('andyl/vim-textobj-elixir')
+" call minpac#add('andyl/vim-textobj-elixir')
 " == html ==
-call minpac#add('sheerun/html5.vim')
+" call minpac#add('sheerun/html5.vim')
 " == golang ==
-call minpac#add('fatih/vim-go')
+" call minpac#add('fatih/vim-go')
 " == graphql ==
-call minpac#add('jparise/vim-graphql')
+" call minpac#add('jparise/vim-graphql')
 " == github-action ==
 call minpac#add('yasuhiroki/github-actions-yaml.vim')
 " == markdown ==
-call minpac#add('plasticboy/vim-markdown')
+" call minpac#add('plasticboy/vim-markdown')
 " == rust ==
-call minpac#add('rust-lang/rust.vim')
+" call minpac#add('rust-lang/rust.vim')
 " == reason ==
 call minpac#add('reasonml-editor/vim-reason-plus')
 " == terraform ==
-call minpac#add('hashivim/vim-terraform')
+" call minpac#add('hashivim/vim-terraform')
 " == toml ==
-call minpac#add('cespare/vim-toml')
+" call minpac#add('cespare/vim-toml')
 " == elm ==
-call minpac#add('ElmCast/elm-vim')
+" call minpac#add('ElmCast/elm-vim')
 " == idris ==
-call minpac#add('idris-hackers/idris-vim')
+" call minpac#add('idris-hackers/idris-vim')
 " == ruby ==
-call minpac#add('joker1007/vim-ruby-heredoc-syntax')
+" call minpac#add('joker1007/vim-ruby-heredoc-syntax')
 call minpac#add('tpope/vim-rails')
-call minpac#add('vim-ruby/vim-ruby')
-call minpac#add('keith/rspec.vim')
+" call minpac#add('vim-ruby/vim-ruby')
+" call minpac#add('keith/rspec.vim')
 " == vue ==
 " call minpac#add('posva/vim-vue')

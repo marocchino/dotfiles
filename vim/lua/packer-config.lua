@@ -2,7 +2,8 @@ vim.cmd [[packadd packer.nvim]]
 -- vim._update_package_paths()
 
 return require('packer').startup(function()
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use {'nvim-treesitter/nvim-treesitter', branch = '0.5-compat', run = ':TSUpdate'}
+  use {'nvim-treesitter/nvim-treesitter-textobjects', branch = '0.5-compat', run = ':TSUpdate'}
   use {'nvim-lua/completion-nvim'}
   use {'phaazon/hop.nvim', as = 'hop'}
   use {
