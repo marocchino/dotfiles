@@ -51,6 +51,16 @@ local on_attach = function(client, bufnr)
     '', -- TypeParameter
   }
 end
+nvim_lsp.lua.setup {
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
+    }
+  }
+}
 nvim_lsp.typescript.setup {
   on_attach = on_attach,
 }

@@ -303,6 +303,7 @@ nnoremap <silent><leader>t <Cmd>Lspsaga hover_doc<CR>
 nnoremap <silent><leader>h :HopWord<CR>
 nnoremap <silent><leader>hl :HopLine<CR>
 nnoremap <silent><leader>hp :HopPattern<CR>
+nnoremap <silent><leader>hc :HopChar2<CR>
 nnoremap <silent><leader>ca :Lspsaga code_action<CR>
 vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
 nmap <leader><leader> <c-^>
