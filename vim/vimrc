@@ -65,6 +65,8 @@ luafile ~/.vim/lua/hop-config.lua
 luafile ~/.vim/lua/gitsigns-config.lua
 luafile ~/.vim/lua/lsp-config.lua
 luafile ~/.vim/lua/lspsaga-config.lua
+luafile ~/.vim/lua/telescope-config.lua
+luafile ~/.vim/lua/autopairs-config.lua
 
 " Disable output and VCS files
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
@@ -314,24 +316,11 @@ nmap <leader><leader> <c-^>
 nmap <silent> [w <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nmap <silent> ]w <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-function! s:buflist()
-  redir => ls
-  silent ls
-  redir END
-  return split(ls, '\n')
-endfunction
-
-function! s:bufopen(e)
-  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
-endfunction
-
-nnoremap <silent> <C-b> :call fzf#run({
-  \   'source':  reverse(<sid>buflist()),
-  \   'sink':    function('<sid>bufopen'),
-  \   'options': '+m',
-  \   'down':    len(<sid>buflist()) + 2
-  \ })<CR>
 
 noremap Q <Nop>
 noremap q: :q
