@@ -112,9 +112,6 @@ let g:XkbSwitchEnabled = 1
 let g:XkbSwitchLib = expand('~/dotfiles/bash/libInputSourceSwitcher.dylib')
 let g:pipe_converter_command = "~/.vim/pack/minpac/start/pipe_converter/pipe_converter"
 
-let g:coverage_json_report_path = 'coverage/coverage-final.json'
-let g:coverage_sign_uncovered = "\uF070"
-
 let g:elm_format_autosave = 1
 
 let g:mix_format_on_save = 1
@@ -169,8 +166,6 @@ let g:ruby_minlines = 500
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_rails = 1
 let g:ragtag_global_maps = 1
-
-let g:indent_guides_enable_on_vim_startup = 0
 
 " https://sites.google.com/site/fudist/Home/vim-nihongo-ban/vim-color#color-zenkaku
 """"""""""""""""""""""""""""""
@@ -285,11 +280,6 @@ nnoremap <silent><leader>f :Rg<Space>
 nnoremap <silent><leader>r :call VisualFindAndReplace()<CR>
 xnoremap <silent><leader>r :call VisualFindAndReplaceWithSelection()<CR>
 nnoremap <silent><leader>e :NvimTreeToggle<CR>
-" Search for the current word
-nnoremap <silent><leader>* :Grepper -cword -noprompt<CR>
-" Search for the current selection
-nmap gs <plug>(GrepperOperator)
-xmap gs <plug>(GrepperOperator)<Paste>
 
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
 nmap <silent> t<C-n> :TestNearest<CR>
