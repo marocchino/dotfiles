@@ -1,8 +1,6 @@
 " 交換性を無くす。
 set nocompatible
 filetype off                   " required!
-" If installed using Homebrew
-set rtp+=/usr/local/opt/fzf
 set completeopt+=preview
 source ~/.vim/plugin/minpac.vim
 
@@ -58,15 +56,6 @@ set macligatures
 set guifont=Fira\ Code\ Retina:h12
 endif
 let $VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
-
-luafile ~/.vim/lua/compe-config.lua
-luafile ~/.vim/lua/hop-config.lua
-luafile ~/.vim/lua/gitsigns-config.lua
-luafile ~/.vim/lua/lsp-config.lua
-luafile ~/.vim/lua/lspsaga-config.lua
-luafile ~/.vim/lua/telescope-config.lua
-luafile ~/.vim/lua/autopairs-config.lua
-
 " Disable output and VCS files
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
 
@@ -84,6 +73,15 @@ set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/o*
 
 " Disable OS X index files
 set wildignore+=.DS_Store
+
+luafile ~/.vim/lua/compe-config.lua
+luafile ~/.vim/lua/hop-config.lua
+luafile ~/.vim/lua/gitsigns-config.lua
+luafile ~/.vim/lua/lsp-config.lua
+luafile ~/.vim/lua/lspsaga-config.lua
+luafile ~/.vim/lua/telescope-config.lua
+luafile ~/.vim/lua/autopairs-config.lua
+luafile ~/.vim/lua/neoclip-config.lua
 
 " elixir
 let g:elixir_use_markdown_for_docs = 1
@@ -319,6 +317,7 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fs <cmd>Telescope ultisnips<cr>
+nnoremap <leader>fc <cmd>Telescope neoclip<cr>
 
 
 noremap Q <Nop>
