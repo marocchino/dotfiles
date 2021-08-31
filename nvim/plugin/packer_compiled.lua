@@ -129,6 +129,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
+  playground = {
+    loaded = false,
+    needs_bufread = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/opt/playground"
+  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/plenary.nvim"
@@ -156,6 +161,10 @@ _G.packer_plugins = {
   ultisnips = {
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/ultisnips"
+  },
+  ["vim-textobj-user"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-textobj-user"
   }
 }
 
