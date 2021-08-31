@@ -121,9 +121,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
+  ["nvim-treesitter-context"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context"
+  },
   ["nvim-treesitter-textobjects"] = {
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects"
+  },
+  ["nvim-ts-context-commentstring"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -157,6 +165,10 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ["twilight.nvim"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/twilight.nvim"
   },
   ultisnips = {
     loaded = true,

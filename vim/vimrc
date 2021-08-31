@@ -225,6 +225,7 @@ augroup END
 augroup reload_vimrc
   autocmd!
   autocmd BufWritePost $MYVIMRC source $MYVIMRC
+  autocmd BufWritePost vim/vimrc source %
 augroup END
 
 augroup reload_vim
@@ -318,9 +319,15 @@ nnoremap <silent> <C-p> :FZF<CR>
 nnoremap S i<cr><esc><right>
 vmap <Enter> <Plug>(EasyAlign)
 
-map ,. :TComment<CR>
-map ., :TComment<CR>
+" vim-commentary
+nmap ,. gcc
+nmap ., gcc
+xmap ,. gc
+xmap ., gc
+omap ,. gc
+omap ., gc
 
+" minpac
 command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update('', {'do': 'call minpac#status()'})
 command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
 command! PackStatus packadd minpac | source $MYVIMRC | call minpac#status()

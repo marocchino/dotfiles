@@ -18,7 +18,11 @@ return require('packer').startup(function()
     requires = {'nvim-treesitter/nvim-treesitter'},
   }
   use {
-    "folke/twilight.nvim",
+    'folke/twilight.nvim',
+    requires = {'nvim-treesitter/nvim-treesitter'},
+  }
+  use {
+    'JoosepAlviste/nvim-ts-context-commentstring',
     requires = {'nvim-treesitter/nvim-treesitter'},
   }
   use {'nvim-lua/completion-nvim'}

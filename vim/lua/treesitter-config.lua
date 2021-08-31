@@ -7,6 +7,10 @@ require'nvim-treesitter.configs'.setup {
     enable = false,
     disable = {},
   },
+  context_commentstring = {
+    enable = true,
+    enable_autocmd = false,
+  },
   ensure_installed = {
     'bash',
     'css',
