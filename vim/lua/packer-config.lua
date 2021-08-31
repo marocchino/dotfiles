@@ -13,6 +13,14 @@ return require('packer').startup(function()
     opt = true,
     requires = {'nvim-treesitter/nvim-treesitter'}
   }
+  use {
+   'romgrk/nvim-treesitter-context',
+    requires = {'nvim-treesitter/nvim-treesitter'},
+  }
+  use {
+    "folke/twilight.nvim",
+    requires = {'nvim-treesitter/nvim-treesitter'},
+  }
   use {'nvim-lua/completion-nvim'}
   use {'phaazon/hop.nvim', as = 'hop'}
   use {
