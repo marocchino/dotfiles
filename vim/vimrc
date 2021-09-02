@@ -122,8 +122,6 @@ let g:mix_format_on_save = 1
 let g:table_mode_corner_corner='|'
 let g:table_mode_header_fillchar='-'
 
-let test#strategy = "dispatch"
-
 let g:opengoogletranslate#openbrowsercmd = 'open'
 
 " === vim-ruby-heredoc-syntax ===
@@ -142,6 +140,12 @@ let g:ruby_heredoc_syntax_defaults = {
 \   "start" : "MD",
 \ },
 \}
+
+" === vim-ultest ===
+let g:ultest_pass_sign = ''
+let g:ultest_fail_sign = ''
+let g:ultest_running_sign = ''
+let g:ultest_not_run_sign = ''
 
 let g:vim_tags_auto_generate = 1
 
@@ -276,11 +280,17 @@ xnoremap <silent><leader>r :call VisualFindAndReplaceWithSelection()<CR>
 nnoremap <silent><leader>e :NvimTreeToggle<CR>
 
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-n> <Plug>(ultest-run-nearest)
+nmap <silent> t<C-f> <Plug>(ultest-run-file)
+nmap <silent> t<C-j> <Plug>(ultest-summary-jump)
+nmap <silent> t<C-t> <Plug>(ultest-summary-toggle)
 nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
+nmap <silent> [t <Plug>(ultest-next-fail)
+nmap <silent> ]t <Plug>(ultest-prev-fail)
+
+
 " LSP config (the mappings used in the default file don't quite work right)
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
