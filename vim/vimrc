@@ -141,6 +141,9 @@ let g:ruby_heredoc_syntax_defaults = {
 \ },
 \}
 
+" === vim-test ===
+let test#strategy = "dispatch"
+
 " === vim-ultest ===
 let g:ultest_pass_sign = ''
 let g:ultest_fail_sign = ''
@@ -172,6 +175,16 @@ let g:ragtag_global_maps = 1
 "このファイルのエンコードが一致するよう注意！
 "全角スペースが強調表示されない場合、ここでscriptencodingを指定すると良い。
 scriptencoding utf-8
+
+" https://github.com/gibfahn/dot/commit/6b7f23ab4d127fbadfe9234716b6df8347d1521a
+" Open path or URL using system open command.
+function! Browse(pathOrUrl)
+  " This doesn't work with /usr/bin/vim on macOS (doesn't identify as macOS).
+  if has('mac')| let openCmd = 'open'| else| let openCmd = 'xdg-open'| endif
+    silent execute "! " . openCmd . " " . shellescape(a:pathOrUrl, 1)| " Escape Path or URL and pass as arg to open command.
+    echo openCmd . " " shellescape(a:pathOrUrl, 1)| " Echo what we ran so it's visible.
+endfunction
+command! -nargs=1 Browse call Browse(<q-args>)|
 
 "デフォルトのZenkakuSpaceを定義
 function! ZenkakuSpace()
@@ -290,6 +303,12 @@ nmap <silent> t<C-g> :TestVisit<CR>
 nmap <silent> [t <Plug>(ultest-next-fail)
 nmap <silent> ]t <Plug>(ultest-prev-fail)
 
+augroup ruby_fail_ultests
+  autocmd!
+  autocmd FileType ruby nmap <silent> t<C-n> :TestNearest<CR>
+  autocmd FileType ruby nmap <silent> t<C-f> :TestFile<CR>
+augroup END
+
 
 " LSP config (the mappings used in the default file don't quite work right)
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
@@ -310,12 +329,12 @@ nmap <leader><leader> <c-^>
 nmap <silent> [w <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nmap <silent> ]w <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
-nnoremap <leader>ff <cmd>Telescope frecency<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>b <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>fs <cmd>Telescope ultisnips<cr>
-nnoremap <leader>fc <cmd>Telescope neoclip<cr>
+nnoremap <silent><leader>ff <cmd>Telescope frecency<cr>
+nnoremap <silent><leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <silent><leader>fb <cmd>Telescope buffers<cr>
+nnoremap <silent><leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <silent><leader>fs <cmd>Telescope ultisnips<cr>
+nnoremap <silent><leader>fc <cmd>Telescope neoclip<cr>
 
 noremap Q <Nop>
 noremap q: :q

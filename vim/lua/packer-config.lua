@@ -51,6 +51,7 @@ return require('packer').startup(function()
     requires = {'SirVer/ultisnips'}
   }
   use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" }
+  use { "vim-test/vim-test" }
 
   -- lsp
   use {'kabouzeid/nvim-lspinstall'}

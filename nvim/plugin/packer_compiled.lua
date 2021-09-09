@@ -174,9 +174,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/ultisnips"
   },
+  ["vim-test"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-test"
+  },
   ["vim-textobj-user"] = {
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-textobj-user"
+  },
+  ["vim-ultest"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-ultest"
   }
 }
 
