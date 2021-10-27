@@ -52,6 +52,7 @@ return require('packer').startup(function()
   }
   use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" }
   use { "vim-test/vim-test" }
+  use { "github/copilot.vim" }
 
   -- lsp
   use {'kabouzeid/nvim-lspinstall'}
