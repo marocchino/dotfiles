@@ -4,4 +4,9 @@ function fail() {
   echo Failure >&2
   exit 1
 }
-nvim -c 'packadd vader.vim | Vader! test/*' && echo Success || fail
+
+if nvim -c 'packadd vader.vim | Vader! test/*'; then
+  echo Success
+else
+  fail
+fi
