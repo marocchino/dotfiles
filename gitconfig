@@ -5,8 +5,17 @@
   interactive = auto
   ui = true
   pager = true
+[core]
+  editor = nvim
+  whitespace = trailing-space,space-before-tab
+[diff]
+  tool = nvimdiff
+[difftool]
+  prompt = false
 [merge]
-  tool = vimdiff
+  tool = fugitive
+[mergetool "fugitive"]
+  cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
 [grep]
   extendRegexp = true
   lineNumber = true
