@@ -79,6 +79,31 @@ _G.packer_plugins = {
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["dash.vim"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/dash.vim",
+    url = "https://github.com/rizzatti/dash.vim"
+  },
+  ["editorconfig-vim"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/editorconfig-vim",
+    url = "https://github.com/editorconfig/editorconfig-vim"
+  },
+  ["emmet-vim"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/emmet-vim",
+    url = "https://github.com/mattn/emmet-vim"
+  },
+  ["github-actions-yaml.vim"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/github-actions-yaml.vim",
+    url = "https://github.com/yasuhiroki/github-actions-yaml.vim"
+  },
+  ["github.vim"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/github.vim",
+    url = "https://github.com/albertorestifo/github.vim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -103,6 +128,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/hoob3rt/lualine.nvim"
+  },
+  matchit = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/matchit",
+    url = "https://github.com/tmhedberg/matchit"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -160,6 +190,16 @@ _G.packer_plugins = {
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["packer.nvim"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
+  },
+  pipe_converter = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/pipe_converter",
+    url = "https://github.com/marocchino/pipe_converter"
+  },
   playground = {
     loaded = false,
     needs_bufread = true,
@@ -175,6 +215,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/sql.nvim",
     url = "https://github.com/tami5/sql.nvim"
+  },
+  ["switch.vim"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/switch.vim",
+    url = "https://github.com/AndrewRadev/switch.vim"
   },
   ["telescope-frecency.nvim"] = {
     loaded = true,
@@ -196,6 +241,11 @@ _G.packer_plugins = {
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tender.vim"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/tender.vim",
+    url = "https://github.com/jacoborus/tender.vim"
+  },
   ["twilight.nvim"] = {
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/twilight.nvim",
@@ -205,6 +255,123 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/ultisnips",
     url = "https://github.com/SirVer/ultisnips"
+  },
+  ["vader.vim"] = {
+    loaded = false,
+    needs_bufread = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/opt/vader.vim",
+    url = "https://github.com/junegunn/vader.vim"
+  },
+  ["vim-abolish"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-abolish",
+    url = "https://github.com/tpope/vim-abolish"
+  },
+  ["vim-addon-mw-utils"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-addon-mw-utils",
+    url = "https://github.com/MarcWeber/vim-addon-mw-utils"
+  },
+  ["vim-better-whitespace"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-better-whitespace",
+    url = "https://github.com/ntpeters/vim-better-whitespace"
+  },
+  ["vim-blockle"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-blockle",
+    url = "https://github.com/jgdavey/vim-blockle"
+  },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
+  },
+  ["vim-dispatch"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-dispatch",
+    url = "https://github.com/tpope/vim-dispatch"
+  },
+  ["vim-endwise"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-endwise",
+    url = "https://github.com/tpope/vim-endwise"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-markdown"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-markdown",
+    url = "https://github.com/plasticboy/vim-markdown"
+  },
+  ["vim-multiple-cursors"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/opt/vim-multiple-cursors",
+    url = "https://github.com/terryma/vim-multiple-cursors"
+  },
+  ["vim-open-googletranslate"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-open-googletranslate",
+    url = "https://github.com/haya14busa/vim-open-googletranslate"
+  },
+  ["vim-over"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-over",
+    url = "https://github.com/osyo-manga/vim-over"
+  },
+  ["vim-projectionist"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-projectionist",
+    url = "https://github.com/tpope/vim-projectionist"
+  },
+  ["vim-ragtag"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-ragtag",
+    url = "https://github.com/tpope/vim-ragtag"
+  },
+  ["vim-rails"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-rails",
+    url = "https://github.com/tpope/vim-rails"
+  },
+  ["vim-reason-plus"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-reason-plus",
+    url = "https://github.com/reasonml-editor/vim-reason-plus"
+  },
+  ["vim-rhubarb"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
+    url = "https://github.com/tpope/vim-rhubarb"
+  },
+  ["vim-ruby-heredoc-syntax"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-ruby-heredoc-syntax",
+    url = "https://github.com/joker1007/vim-ruby-heredoc-syntax"
+  },
+  ["vim-snippets"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-snippets",
+    url = "https://github.com/honza/vim-snippets"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
+  },
+  ["vim-table-mode"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-table-mode",
+    url = "https://github.com/dhruvasagar/vim-table-mode"
+  },
+  ["vim-terraform"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-terraform",
+    url = "https://github.com/hashivim/vim-terraform"
   },
   ["vim-test"] = {
     loaded = true,
@@ -216,10 +383,35 @@ _G.packer_plugins = {
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-textobj-user",
     url = "https://github.com/kana/vim-textobj-user"
   },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
   ["vim-ultest"] = {
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-ultest",
     url = "https://github.com/rcarriga/vim-ultest"
+  },
+  ["vim-unimpaired"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-unimpaired",
+    url = "https://github.com/tpope/vim-unimpaired"
+  },
+  ["vim-wakatime"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-wakatime",
+    url = "https://github.com/wakatime/vim-wakatime"
+  },
+  ["vim-xkbswitch"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-xkbswitch",
+    url = "https://github.com/lyokha/vim-xkbswitch"
+  },
+  ["vim-xtract"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-xtract",
+    url = "https://github.com/rstacruz/vim-xtract"
   }
 }
 
