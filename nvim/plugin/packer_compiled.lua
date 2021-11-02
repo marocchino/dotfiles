@@ -71,128 +71,163 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["completion-nvim"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/completion-nvim"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/completion-nvim",
+    url = "https://github.com/nvim-lua/completion-nvim"
   },
   ["copilot.vim"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/copilot.vim"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   hop = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/hop"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/hop",
+    url = "https://github.com/phaazon/hop.nvim"
   },
   ["lsp-colors.nvim"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim",
+    url = "https://github.com/folke/lsp-colors.nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/hoob3rt/lualine.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-compe"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-compe"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-compe",
+    url = "https://github.com/hrsh7th/nvim-compe"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-lspinstall"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-lspinstall",
+    url = "https://github.com/kabouzeid/nvim-lspinstall"
   },
   ["nvim-neoclip.lua"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-neoclip.lua"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-neoclip.lua",
+    url = "https://github.com/AckslD/nvim-neoclip.lua"
   },
   ["nvim-tree.lua"] = {
+    config = { "\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0" },
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-treesitter-context"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
+    url = "https://github.com/romgrk/nvim-treesitter-context"
   },
   ["nvim-treesitter-textobjects"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
   ["nvim-ts-context-commentstring"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
+    url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   playground = {
     loaded = false,
     needs_bufread = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/opt/playground"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/opt/playground",
+    url = "https://github.com/nvim-treesitter/playground"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["sql.nvim"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/sql.nvim"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/sql.nvim",
+    url = "https://github.com/tami5/sql.nvim"
   },
   ["telescope-frecency.nvim"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/telescope-frecency.nvim"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/telescope-frecency.nvim",
+    url = "https://github.com/nvim-telescope/telescope-frecency.nvim"
   },
   ["telescope-hop.nvim"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/telescope-hop.nvim"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/telescope-hop.nvim",
+    url = "https://github.com/nvim-telescope/telescope-hop.nvim"
   },
   ["telescope-ultisnips.nvim"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/telescope-ultisnips.nvim"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/telescope-ultisnips.nvim",
+    url = "https://github.com/fhill2/telescope-ultisnips.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["twilight.nvim"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/twilight.nvim"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/twilight.nvim",
+    url = "https://github.com/folke/twilight.nvim"
   },
   ultisnips = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/ultisnips"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/ultisnips",
+    url = "https://github.com/SirVer/ultisnips"
   },
   ["vim-test"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-test"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-test",
+    url = "https://github.com/vim-test/vim-test"
   },
   ["vim-textobj-user"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-textobj-user"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-textobj-user",
+    url = "https://github.com/kana/vim-textobj-user"
   },
   ["vim-ultest"] = {
     loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-ultest"
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/vim-ultest",
+    url = "https://github.com/rcarriga/vim-ultest"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
 if should_profile then save_profiles() end
 
 end)
