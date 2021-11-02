@@ -8,13 +8,8 @@ fish/fish_history
 fish/profile.fish
 fish/fishd.*
 fish/generated_completions
-vim/autoload/
-vim/sessions/
-vim/pack/
-vim/.vim-flavor/
-vim/view/
-vim/VimFlavor.lock
 nvim/pack/
+nvim/sessions/
 oni2/extensions
 oni2/store
 oni2/workspace
