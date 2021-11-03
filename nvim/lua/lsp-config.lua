@@ -76,7 +76,7 @@ nvim_lsp.diagnosticls.setup {
         debounce = 100,
         args = {
           'exec', 'rubocop', '--format', 'json', '--force-exclusion', '--stdin',
-          '%filepath'
+          '%filepath', '--stderr'
         },
         parseJson = {
           errorsRoot = 'files[0].offenses',
@@ -94,7 +94,9 @@ nvim_lsp.diagnosticls.setup {
           convention = 'info',
           refactor = 'info',
           info = 'info'
-        }
+        },
+        isStderr = true,
+        rootPatterns = {'.rubocop.yml'}
       },
       shellcheck = {
         command = 'shellcheck',
@@ -176,51 +178,52 @@ nvim_lsp.diagnosticls.setup {
       ruby = 'rubocop'
     },
     formatters = {
-      eslint_d = {
-        command = 'eslint_d',
-        args = {'--stdin', '--stdin-filename', '%file', '--fix-to-stdout'},
-        rootPatterns = {'.git'}
-      },
       lua_format = {
         command = 'lua-format',
         args = {'%file'},
         rootPatterns = {'.lua-format'}
-      },
-      mix_format = {
-        command = 'mix',
-        args = {'format', '-'},
-        rootPatterns = {'.formatter.exs'}
-      },
-      prettier = {
-        command = 'prettier',
-        args = {'--stdin-filepath', '%file'},
-        rootPatterns = {'.prettierrc', '.prettierrc.json'}
-      },
-      rubocop = {
-        command = 'bundle',
-        args = {
-          'exec', 'rubocop', '--auto-correct', '--stdin', '%file', '--stderr'
-        },
-        rootPatterns = {'.rubocop.yml'}
       }
+      -- rubocop = {
+      --   command = 'bundle',
+      --   args = {
+      --     'exec', 'rubocop', '--auto-correct', '--stdin', '%file', '--stderr'
+      --   },
+      --   isStderr = true,
+      --   rootPatterns = {'.rubocop.yml'}
+      -- }
+      -- eslint_d = {
+      --   command = 'eslint_d',
+      --   args = {'--stdin', '--stdin-filename', '%file', '--fix-to-stdout'},
+      --   rootPatterns = {'.git'}
+      -- },
+      -- mix_format = {
+      --   command = 'mix',
+      --   args = {'format', '-'},
+      --   rootPatterns = {'.formatter.exs'}
+      -- },
+      -- prettier = {
+      --   command = 'prettier',
+      --   args = {'--stdin', '--stdin-filepath', '%file'},
+      --   rootPatterns = {'.prettierrc', '.prettierrc.json'}
+      -- },
     },
     formatFiletypes = {
-      javascript = 'prettier',
-      javascriptreact = 'prettier',
-      json = 'prettier',
-      scss = 'prettier',
-      css = 'prettier',
-      less = 'prettier',
-      yaml = 'prettier',
-      vue = 'prettier',
-      html = 'prettier',
-      typescript = 'prettier',
-      typescriptreact = 'prettier',
-      markdown = 'prettier',
       -- luarocks install --server=https://luarocks.org/dev luaformatter
-      lua = 'lua_format',
-      elixir = 'mix_format',
-      ruby = 'rubocop'
+      lua = 'lua_format'
+      -- ruby = 'rubocop'
+      -- javascript = 'prettier',
+      -- javascriptreact = 'prettier',
+      -- json = 'prettier',
+      -- scss = 'prettier',
+      -- css = 'prettier',
+      -- less = 'prettier',
+      -- yaml = 'prettier',
+      -- vue = 'prettier',
+      -- html = 'prettier',
+      -- typescript = 'prettier',
+      -- typescriptreact = 'prettier',
+      -- markdown = 'prettier',
+      -- elixir = 'mix_format',
     }
   }
 }
