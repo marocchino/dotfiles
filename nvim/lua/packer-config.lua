@@ -5,8 +5,14 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'AndrewRadev/switch.vim'
   use 'christoomey/vim-tmux-navigator'
-  use 'dhruvasagar/vim-table-mode'
-  use 'haya14busa/vim-open-googletranslate'
+  use {
+    'dhruvasagar/vim-table-mode',
+    config = require('table-mode-config')
+  }
+  use {
+    'haya14busa/vim-open-googletranslate',
+    config = require('open-googletranslate-config')
+  }
   use 'honza/vim-snippets'
   use 'jgdavey/vim-blockle'
   use { 'junegunn/vader.vim', opt = true }
@@ -23,7 +29,10 @@ return require('packer').startup(function()
   use 'tpope/vim-endwise'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-projectionist'
-  use 'tpope/vim-ragtag'
+  use {
+    'tpope/vim-ragtag',
+    config = require('ragtag-config')
+  }
   use 'tpope/vim-rhubarb'
   use 'tpope/vim-surround'
   use 'tpope/vim-unimpaired'
@@ -33,30 +42,40 @@ return require('packer').startup(function()
   use 'MarcWeber/vim-addon-mw-utils'
 
   -- unix
-  use 'lyokha/vim-xkbswitch'
+  use {
+    'lyokha/vim-xkbswitch',
+    config = require('xkbswitch-config')
+  }
   -- color
   use 'albertorestifo/github.vim'
   use 'jacoborus/tender.vim'
 
   -- syntax
   -- == elixir ==
-  -- use 'avdgaag/vim-phoenix'
   use {
     'marocchino/pipe_converter',
-    run = 'mix do deps.get, compile, escript.build'
+    run = 'mix do deps.get, compile, escript.build',
+    config = require('pipe-converter-config')
   }
   -- == github-action ==
   use 'yasuhiroki/github-actions-yaml.vim'
   -- == markdown ==
-  use 'plasticboy/vim-markdown'
+  use {
+    'plasticboy/vim-markdown',
+    config = require('markdown-config')
+  }
   -- == reason ==
   use 'reasonml-editor/vim-reason-plus'
   -- == terraform ==
-  use 'hashivim/vim-terraform'
-  -- == idris ==
-  -- use 'idris-hackers/idris-vim'
+  use {
+    'hashivim/vim-terraform',
+    config = require('terraform-config')
+  }
   -- == ruby ==
-  use 'joker1007/vim-ruby-heredoc-syntax'
+  use {
+    'joker1007/vim-ruby-heredoc-syntax',
+    config = require('ruby-heredoc-syntax-config')
+  }
   use 'tpope/vim-rails'
 
   -- nvim
@@ -131,9 +150,13 @@ return require('packer').startup(function()
   use {
     'rcarriga/vim-ultest',
     requires = { 'vim-test/vim-test' },
-    run = ':UpdateRemotePlugins'
+    run = ':UpdateRemotePlugins',
+    config = require('ultest-config')
   }
-  use 'vim-test/vim-test'
+  use {
+    'vim-test/vim-test',
+    config = require('test-config')
+  }
   use 'github/copilot.vim'
 
   -- lsp
