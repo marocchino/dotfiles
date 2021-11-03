@@ -215,6 +215,7 @@ augroup ruby_fail_ultests
   autocmd!
   autocmd FileType ruby nmap <silent> t<C-n> :TestNearest<CR>
   autocmd FileType ruby nmap <silent> t<C-f> :TestFile<CR>
+  autocmd FileType ruby nmap <silent> t<C-f> :TestFile<CR>
 augroup END
 
 
@@ -226,6 +227,10 @@ nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> gh :Lspsaga lsp_finder<CR>
 nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <C-p> <cmd>lua vim.lsp.buf.formatting_sync()<CR>
+augroup ruby_rubocop
+  autocmd!
+  autocmd FileType ruby nnoremap <silent> <C-p> <cmd>!bundle exec rubocop -a %<CR><CR>
+augroup END
 nnoremap <silent><leader>t <Cmd>Lspsaga hover_doc<CR>
 nnoremap <silent><leader>w :HopWord<CR>
 nnoremap <silent><leader>l :HopLine<CR>
