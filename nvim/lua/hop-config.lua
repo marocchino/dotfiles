@@ -1,3 +1,1 @@
-require'hop'.setup {
-  keys = 'asdfgqwertzxcvb12345',
-}
+require'hop'.setup {keys = 'asdfgqwertzxcvb12345'}
