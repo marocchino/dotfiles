@@ -175,18 +175,13 @@ return require('packer').startup(function()
 
   -- style
   use {
-    'kyazdani42/nvim-web-devicons',
-    opt = true,
-    config = require('web-devicons-config')
-  }
-  use {
     'hoob3rt/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
     config = require('lualine-config')
   }
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = { 'kyazdani42/nvim-web-devicons' },
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
     config = function() require'nvim-tree'.setup {} end
   }
 end)
