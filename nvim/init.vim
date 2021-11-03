@@ -163,11 +163,6 @@ augroup reload_vim
   autocmd BufWritePost *.vim source %
 augroup END
 
-augroup reload_lua
-  autocmd!
-  autocmd BufWritePost *.lua luafile %
-augroup END
-
 augroup reload_vue_every_time
   autocmd!
   autocmd FileType vue syntax sync fromstart
@@ -230,6 +225,7 @@ nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> gh :Lspsaga lsp_finder<CR>
 nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> <C-p> <cmd>lua vim.lsp.buf.formatting_sync()<CR>
 nnoremap <silent><leader>t <Cmd>Lspsaga hover_doc<CR>
 nnoremap <silent><leader>w :HopWord<CR>
 nnoremap <silent><leader>l :HopLine<CR>

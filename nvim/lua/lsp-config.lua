@@ -8,6 +8,11 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   require'completion'.on_attach(client, bufnr)
+
+  if client.name ~= "diagnosticls" then
+    client.resolved_capabilities.document_formatting = false
+  end
+
   protocol.CompletionItemKind = {
     '', -- Text
     '', -- Method
@@ -57,13 +62,6 @@ nvim_lsp.lua.setup {
   on_attach = on_attach,
   settings = {Lua = {diagnostics = {globals = {'vim', 'use'}}}}
 }
-nvim_lsp.solargraph.setup {
-  on_attach = on_attach,
-  cmd = {"solargraph", "stdio"},
-  filetypes = {"ruby"},
-  init_options = {formatting = true},
-  settings = {solargraph = {diagnostics = true}}
-}
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach,
   filetypes = {
@@ -73,6 +71,31 @@ nvim_lsp.diagnosticls.setup {
   },
   init_options = {
     linters = {
+      rubocop = {
+        command = 'bundle',
+        debounce = 100,
+        args = {
+          'exec', 'rubocop', '--format', 'json', '--force-exclusion', '--stdin',
+          '%filepath'
+        },
+        parseJson = {
+          errorsRoot = 'files[0].offenses',
+          line = 'location.start_line',
+          endLine = 'location.last_line',
+          column = 'location.start_column',
+          endColumn = 'location.end_column',
+          message = '[rubocop] [${cop_name}] ${message}',
+          security = 'severity'
+        },
+        securities = {
+          fatal = 'error',
+          error = 'error',
+          warning = 'warning',
+          convention = 'info',
+          refactor = 'info',
+          info = 'info'
+        }
+      },
       shellcheck = {
         command = 'shellcheck',
         debounce = 100,
@@ -149,7 +172,8 @@ nvim_lsp.diagnosticls.setup {
       typescript = 'eslint',
       typescriptreact = 'eslint',
       sh = 'shellcheck',
-      vim = 'vint'
+      vim = 'vint',
+      ruby = 'rubocop'
     },
     formatters = {
       eslint_d = {
@@ -158,8 +182,8 @@ nvim_lsp.diagnosticls.setup {
         rootPatterns = {'.git'}
       },
       lua_format = {
-        command = 'lua_format',
-        args = {'-i'},
+        command = 'lua-format',
+        args = {'%file'},
         rootPatterns = {'.lua-format'}
       },
       mix_format = {
@@ -171,6 +195,13 @@ nvim_lsp.diagnosticls.setup {
         command = 'prettier',
         args = {'--stdin-filepath', '%file'},
         rootPatterns = {'.prettierrc', '.prettierrc.json'}
+      },
+      rubocop = {
+        command = 'bundle',
+        args = {
+          'exec', 'rubocop', '--auto-correct', '--stdin', '%file', '--stderr'
+        },
+        rootPatterns = {'.rubocop.yml'}
       }
     },
     formatFiletypes = {
@@ -188,9 +219,8 @@ nvim_lsp.diagnosticls.setup {
       markdown = 'prettier',
       -- luarocks install --server=https://luarocks.org/dev luaformatter
       lua = 'lua_format',
-      elixir = 'mix_format'
+      elixir = 'mix_format',
+      ruby = 'rubocop'
     }
   }
 }
-
--- vim.lsp.buf.formatting_sync(nil, 100)
