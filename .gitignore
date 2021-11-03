@@ -2,8 +2,6 @@
 tags
 .netrwhist
 .DS_Store
-bash/functions/issw
-bash/functions/libInputSourceSwitcher.dylib
 fish/fish_history
 fish/profile.fish
 fish/fishd.*

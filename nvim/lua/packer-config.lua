@@ -7,11 +7,11 @@ return require('packer').startup(function()
   use 'christoomey/vim-tmux-navigator'
   use {
     'dhruvasagar/vim-table-mode',
-    config = require('table-mode-config')
+    config = function() require('table-mode-config') end
   }
   use {
     'haya14busa/vim-open-googletranslate',
-    config = require('open-googletranslate-config')
+    config = function() require('open-googletranslate-config') end
   }
   use 'honza/vim-snippets'
   use 'jgdavey/vim-blockle'
@@ -31,7 +31,7 @@ return require('packer').startup(function()
   use 'tpope/vim-projectionist'
   use {
     'tpope/vim-ragtag',
-    config = require('ragtag-config')
+    config = function() require('ragtag-config') end
   }
   use 'tpope/vim-rhubarb'
   use 'tpope/vim-surround'
@@ -41,11 +41,6 @@ return require('packer').startup(function()
   -- mac
   use 'MarcWeber/vim-addon-mw-utils'
 
-  -- unix
-  use {
-    'lyokha/vim-xkbswitch',
-    config = require('xkbswitch-config')
-  }
   -- color
   use 'albertorestifo/github.vim'
   use 'jacoborus/tender.vim'
@@ -55,26 +50,26 @@ return require('packer').startup(function()
   use {
     'marocchino/pipe_converter',
     run = 'mix do deps.get, compile, escript.build',
-    config = require('pipe-converter-config')
+    config = function() require('pipe-converter-config') end
   }
   -- == github-action ==
   use 'yasuhiroki/github-actions-yaml.vim'
   -- == markdown ==
   use {
     'plasticboy/vim-markdown',
-    config = require('markdown-config')
+    config = function() require('markdown-config') end
   }
   -- == reason ==
   use 'reasonml-editor/vim-reason-plus'
   -- == terraform ==
   use {
     'hashivim/vim-terraform',
-    config = require('terraform-config')
+    config = function() require('terraform-config') end
   }
   -- == ruby ==
   use {
     'joker1007/vim-ruby-heredoc-syntax',
-    config = require('ruby-heredoc-syntax-config')
+    config = function() require('ruby-heredoc-syntax-config') end
   }
   use 'tpope/vim-rails'
 
@@ -83,7 +78,7 @@ return require('packer').startup(function()
     'nvim-treesitter/nvim-treesitter',
     branch = '0.5-compat',
     run = ':TSUpdate',
-    config = require('treesitter-config')
+    config = function() require('treesitter-config') end
   }
   use {
     'nvim-treesitter/nvim-treesitter-textobjects',
@@ -98,12 +93,12 @@ return require('packer').startup(function()
   use {
    'romgrk/nvim-treesitter-context',
     requires = { 'nvim-treesitter/nvim-treesitter' },
-    config = require('treesitter-context-config')
+    config = function() require('treesitter-context-config') end
   }
   use {
     'folke/twilight.nvim',
     requires = { 'nvim-treesitter/nvim-treesitter' },
-    config = require('twilight-config')
+    config = function() require('twilight-config') end
   }
   use {
     'JoosepAlviste/nvim-ts-context-commentstring',
@@ -113,21 +108,21 @@ return require('packer').startup(function()
   use {
     'phaazon/hop.nvim',
     as = 'hop',
-    config = require('hop-config')
+    config = function() require('hop-config') end
   }
   use {
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
-    config = require('gitsigns-config')
+    config = function() require('gitsigns-config') end
   }
   use {
     'nvim-telescope/telescope.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
-    config = require('telescope-config')
+    config = function() require('telescope-config') end
   }
   use {
     'windwp/nvim-autopairs',
-    config = require('autopairs-config')
+    config = function() require('autopairs-config') end
   }
   use {
     'fhill2/telescope-ultisnips.nvim',
@@ -135,7 +130,7 @@ return require('packer').startup(function()
   }
   use {
     'AckslD/nvim-neoclip.lua',
-    config = require('neoclip-config')
+    config = function() require('neoclip-config') end
   }
   use 'nvim-telescope/telescope-hop.nvim'
   use {
@@ -145,17 +140,17 @@ return require('packer').startup(function()
   use {
     'hrsh7th/nvim-compe',
     requires = { 'SirVer/ultisnips' },
-    config = require('compe-config')
+    config = function() require('compe-config') end
   }
   use {
     'rcarriga/vim-ultest',
     requires = { 'vim-test/vim-test' },
     run = ':UpdateRemotePlugins',
-    config = require('ultest-config')
+    config = function() require('ultest-config') end
   }
   use {
     'vim-test/vim-test',
-    config = require('test-config')
+    config = function() require('test-config') end
   }
   use 'github/copilot.vim'
 
@@ -164,20 +159,20 @@ return require('packer').startup(function()
   use 'kabouzeid/nvim-lspinstall'
   use {
     'neovim/nvim-lspconfig',
-    config = require('lsp-config')
+    config = function() require('lsp-config') end
   }
   use 'folke/lsp-colors.nvim'
   use {
     'glepnir/lspsaga.nvim',
     requires = { 'neovim/nvim-lspconfig' },
-    config = require('lspsaga-config')
+    config = function() require('lspsaga-config') end
   }
 
   -- style
   use {
     'hoob3rt/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-    config = require('lualine-config')
+    config = function() require('lualine-config') end
   }
   use {
     'kyazdani42/nvim-tree.lua',
