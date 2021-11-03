@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/dash.vim",
     url = "https://github.com/rizzatti/dash.vim"
   },
-  ["editorconfig-vim"] = {
-    loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/editorconfig-vim",
-    url = "https://github.com/editorconfig/editorconfig-vim"
-  },
   ["emmet-vim"] = {
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/emmet-vim",

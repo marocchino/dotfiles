@@ -6,7 +6,6 @@ return require('packer').startup(function()
   use 'AndrewRadev/switch.vim'
   use 'christoomey/vim-tmux-navigator'
   use 'dhruvasagar/vim-table-mode'
-  use 'editorconfig/editorconfig-vim'
   use 'haya14busa/vim-open-googletranslate'
   use 'honza/vim-snippets'
   use 'jgdavey/vim-blockle'

@@ -309,6 +309,7 @@ nmap <silent> ]w <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <silent><leader>ff <cmd>Telescope frecency<cr>
 nnoremap <silent><leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <silent><leader>fb <cmd>Telescope buffers<cr>
+nnoremap <silent><leader>b <cmd>Telescope buffers<cr>
 nnoremap <silent><leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <silent><leader>fs <cmd>Telescope ultisnips<cr>
 nnoremap <silent><leader>fc <cmd>Telescope neoclip<cr>
