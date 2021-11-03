@@ -64,10 +64,10 @@ return require('packer').startup(function()
     config = function() require('terraform-config') end
   }
   -- == ruby ==
-  use {
-    'joker1007/vim-ruby-heredoc-syntax',
-    config = function() require('ruby-heredoc-syntax-config') end
-  }
+  -- use {
+  --   'joker1007/vim-ruby-heredoc-syntax',
+  --   config = function() require('ruby-heredoc-syntax-config') end
+  -- }
   use 'tpope/vim-rails'
 
   -- nvim

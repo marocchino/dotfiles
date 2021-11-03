@@ -71,33 +71,33 @@ nvim_lsp.diagnosticls.setup {
   },
   init_options = {
     linters = {
-      rubocop = {
-        command = 'bundle',
-        debounce = 100,
-        args = {
-          'exec', 'rubocop', '--format', 'json', '--force-exclusion', '--stdin',
-          '%filepath', '--stderr'
-        },
-        parseJson = {
-          errorsRoot = 'files[0].offenses',
-          line = 'location.start_line',
-          endLine = 'location.last_line',
-          column = 'location.start_column',
-          endColumn = 'location.end_column',
-          message = '[rubocop] [${cop_name}] ${message}',
-          security = 'severity'
-        },
-        securities = {
-          fatal = 'error',
-          error = 'error',
-          warning = 'warning',
-          convention = 'info',
-          refactor = 'info',
-          info = 'info'
-        },
-        isStderr = true,
-        rootPatterns = {'.rubocop.yml'}
-      },
+      -- rubocop = {
+      --   command = 'bundle',
+      --   debounce = 100,
+      --   args = {
+      --     'exec', 'rubocop', '--format', 'json', '--force-exclusion', '--stdin',
+      --     '%filepath', '--stderr'
+      --   },
+      --   parseJson = {
+      --     errorsRoot = 'files[0].offenses',
+      --     line = 'location.start_line',
+      --     endLine = 'location.last_line',
+      --     column = 'location.start_column',
+      --     endColumn = 'location.end_column',
+      --     message = '[rubocop] [${cop_name}] ${message}',
+      --     security = 'severity'
+      --   },
+      --   securities = {
+      --     fatal = 'error',
+      --     error = 'error',
+      --     warning = 'warning',
+      --     convention = 'info',
+      --     refactor = 'info',
+      --     info = 'info'
+      --   },
+      --   isStderr = true,
+      --   rootPatterns = {'.rubocop.yml', 'Gemfile'}
+      -- },
       shellcheck = {
         command = 'shellcheck',
         debounce = 100,
@@ -174,8 +174,8 @@ nvim_lsp.diagnosticls.setup {
       typescript = 'eslint',
       typescriptreact = 'eslint',
       sh = 'shellcheck',
-      vim = 'vint',
-      ruby = 'rubocop'
+      vim = 'vint'
+      -- ruby = 'rubocop'
     },
     formatters = {
       lua_format = {
@@ -183,6 +183,11 @@ nvim_lsp.diagnosticls.setup {
         args = {'%file'},
         rootPatterns = {'.lua-format'}
       }
+      -- prettier = {
+      --   command = 'prettier',
+      --   args = {'--stdin', '--stdin-filepath', '%file'},
+      --   rootPatterns = {'.prettierrc', '.prettierrc.json'}
+      -- }
       -- rubocop = {
       --   command = 'bundle',
       --   args = {
@@ -201,17 +206,12 @@ nvim_lsp.diagnosticls.setup {
       --   args = {'format', '-'},
       --   rootPatterns = {'.formatter.exs'}
       -- },
-      -- prettier = {
-      --   command = 'prettier',
-      --   args = {'--stdin', '--stdin-filepath', '%file'},
-      --   rootPatterns = {'.prettierrc', '.prettierrc.json'}
-      -- },
     },
     formatFiletypes = {
       -- luarocks install --server=https://luarocks.org/dev luaformatter
       lua = 'lua_format'
-      -- ruby = 'rubocop'
       -- javascript = 'prettier',
+      -- typescript = 'prettier'
       -- javascriptreact = 'prettier',
       -- json = 'prettier',
       -- scss = 'prettier',
@@ -220,9 +220,9 @@ nvim_lsp.diagnosticls.setup {
       -- yaml = 'prettier',
       -- vue = 'prettier',
       -- html = 'prettier',
-      -- typescript = 'prettier',
       -- typescriptreact = 'prettier',
       -- markdown = 'prettier',
+      -- ruby = 'rubocop'
       -- elixir = 'mix_format',
     }
   }
