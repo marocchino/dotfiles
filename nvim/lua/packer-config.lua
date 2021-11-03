@@ -60,7 +60,12 @@ return require('packer').startup(function()
   use 'tpope/vim-rails'
 
   -- nvim
-  use { 'nvim-treesitter/nvim-treesitter', branch = '0.5-compat', run = ':TSUpdate' }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    branch = '0.5-compat',
+    run = ':TSUpdate',
+    config = require('treesitter-config')
+  }
   use {
     'nvim-treesitter/nvim-treesitter-textobjects',
     branch = '0.5-compat',
@@ -74,31 +79,45 @@ return require('packer').startup(function()
   use {
    'romgrk/nvim-treesitter-context',
     requires = { 'nvim-treesitter/nvim-treesitter' },
+    config = require('treesitter-context-config')
   }
   use {
     'folke/twilight.nvim',
     requires = { 'nvim-treesitter/nvim-treesitter' },
+    config = require('twilight-config')
   }
   use {
     'JoosepAlviste/nvim-ts-context-commentstring',
     requires = { 'nvim-treesitter/nvim-treesitter' },
   }
   use 'nvim-lua/completion-nvim'
-  use { 'phaazon/hop.nvim', as = 'hop' }
+  use {
+    'phaazon/hop.nvim',
+    as = 'hop',
+    config = require('hop-config')
+  }
   use {
     'lewis6991/gitsigns.nvim',
-    requires = { 'nvim-lua/plenary.nvim' }
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = require('gitsigns-config')
   }
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { 'nvim-lua/plenary.nvim' }
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = require('telescope-config')
   }
-  use 'windwp/nvim-autopairs'
+  use {
+    'windwp/nvim-autopairs',
+    config = require('autopairs-config')
+  }
   use {
     'fhill2/telescope-ultisnips.nvim',
     requires = { 'nvim-telescope/telescope.nvim', 'SirVer/ultisnips' }
   }
-  use 'AckslD/nvim-neoclip.lua'
+  use {
+    'AckslD/nvim-neoclip.lua',
+    config = require('neoclip-config')
+  }
   use 'nvim-telescope/telescope-hop.nvim'
   use {
     'nvim-telescope/telescope-frecency.nvim',
@@ -106,7 +125,8 @@ return require('packer').startup(function()
   }
   use {
     'hrsh7th/nvim-compe',
-    requires = { 'SirVer/ultisnips' }
+    requires = { 'SirVer/ultisnips' },
+    config = require('compe-config')
   }
   use {
     'rcarriga/vim-ultest',
@@ -119,17 +139,27 @@ return require('packer').startup(function()
   -- lsp
   -- sql, xml, svg, toml, voldikss/coc-browser
   use 'kabouzeid/nvim-lspinstall'
-  use 'neovim/nvim-lspconfig'
+  use {
+    'neovim/nvim-lspconfig',
+    config = require('lsp-config')
+  }
   use 'folke/lsp-colors.nvim'
   use {
     'glepnir/lspsaga.nvim',
-    requires = { 'neovim/nvim-lspconfig' }
+    requires = { 'neovim/nvim-lspconfig' },
+    config = require('lspsaga-config')
   }
 
   -- style
   use {
+    'kyazdani42/nvim-web-devicons',
+    opt = true,
+    config = require('web-devicons-config')
+  }
+  use {
     'hoob3rt/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    config = require('lualine-config')
   }
   use {
     'kyazdani42/nvim-tree.lua',
