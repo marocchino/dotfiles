@@ -227,9 +227,10 @@ nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> gh :Lspsaga lsp_finder<CR>
 nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <C-p> <cmd>lua vim.lsp.buf.formatting_sync()<CR>
+" need gem install rubocop-daemon
 augroup ruby_rubocop
   autocmd!
-  autocmd FileType ruby nnoremap <silent> <C-p> <cmd>!bundle exec rubocop -a %<CR><CR>
+  autocmd FileType ruby nnoremap <silent> <C-p> <cmd>!rubocop-daemon exec % -- -A<CR><CR>
 augroup END
 nnoremap <silent><leader>t <Cmd>Lspsaga hover_doc<CR>
 nnoremap <silent><leader>w :HopWord<CR>
