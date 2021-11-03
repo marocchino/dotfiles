@@ -107,3 +107,5 @@ alias so=nvim
 alias such=git
 alias very=git
 alias wow="git status"
+
+export PATH="$(yarn global bin):$PATH"
