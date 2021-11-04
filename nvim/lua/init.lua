@@ -1,1 +1,1 @@
-require('packer-config')
+require("packer-config")

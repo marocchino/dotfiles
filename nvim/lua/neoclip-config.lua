@@ -1,1 +1,1 @@
-require('neoclip').setup()
+require("neoclip").setup()

@@ -1,1 +1,1 @@
-vim.g['opengoogletranslate#openbrowsercmd'] = 'open'
+vim.g["opengoogletranslate#openbrowsercmd"] = "open"

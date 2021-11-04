@@ -1,1 +1,1 @@
-require('treesitter-context').setup {enable = true}
+require("treesitter-context").setup({ enable = true })
