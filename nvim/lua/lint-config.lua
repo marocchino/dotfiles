@@ -42,6 +42,7 @@ require("lint").linters.rubocop = {
 require("lint").linters_by_ft = {
   ruby = { "ruby", "rubocop" },
   sh = { "shellcheck" },
+  vim = { "vint" },
 }
 
 vim.api.nvim_exec(

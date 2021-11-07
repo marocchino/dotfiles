@@ -1,3 +1,4 @@
+scriptencoding utf-8
 if filereadable(expand('~/.toggle_dark'))
   colorscheme tender
 else

@@ -1,8 +1,8 @@
-set nocompatible
 set completeopt+=preview
 set backspace=indent,eol,start " http://vim.wikia.com/wiki/Backspace_and_delete_problems
 set expandtab
 set encoding=utf-8  " Set encoding
+scriptencoding utf-8
 set fileencoding=utf-8  " Set encoding
 set fileencodings=utf-8,cp949,cp932,euc-jp,shift-jis,euc-kr,big5,ucs-2le,latin1
 set hidden          " allow buffer change in unsaved file
@@ -38,11 +38,11 @@ set textwidth=80
 set ttimeoutlen=50  " Make ESC work faster
 set wildmenu
 set wrap
-if $SHELL =~ 'bin/fish'
+if $SHELL =~# 'bin/fish'
 set shell=/bin/sh
 endif
 set mouse=a
-if has("gui_running")
+if has('gui_running')
 set guioptions-=r   " remove right scroll-bar (macvim)
 set macligatures
 set guifont=Fira\ Code\ Retina:h12
@@ -79,7 +79,6 @@ augroup END
 
 lua require('init')
 
-scriptencoding utf-8
 
 runtime functions.vim
 runtime colors.vim
