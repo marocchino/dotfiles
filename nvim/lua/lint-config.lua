@@ -43,6 +43,11 @@ require("lint").linters_by_ft = {
   ruby = { "ruby", "rubocop" },
   sh = { "shellcheck" },
   vim = { "vint" },
+  go = { "golangcilint" },
+  dockerfile = { "hadolint" },
+  gitcommit = { "codeshell" },
+  typescript = { "eslint" },
+  javascript = { "eslint" },
 }
 
 vim.api.nvim_exec(

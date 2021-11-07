@@ -31,6 +31,7 @@ cask 'font-iosevka-nerd-font'
 cask 'font-monofur-nerd-font'
 
 # linter
+brew 'golangci-lint'
+brew 'hadolint'
 brew 'shellcheck'
 brew 'vint'
-brew 'hadolint'
