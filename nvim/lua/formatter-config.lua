@@ -12,7 +12,6 @@ local formatters = {
       args = {
         "--stdin-filepath",
         vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
-        "--single-quote",
       },
       stdin = true,
     }
@@ -73,7 +72,7 @@ vim.api.nvim_exec(
   [[
   augroup FormatAutogroup
     autocmd!
-    autocmd BufWritePost *.tf,*.js,*.jsx,*.ts,*.tsx,*.rb,*.ex,*.exs,*.lua,*.yml FormatWrite
+    autocmd BufWritePost *.tf,*.js,*.jsx,*.ts,*.tsx,*.rb,*.ex,*.exs,*.lua,*.yml,*.json FormatWrite
   augroup END
   ]],
   true
