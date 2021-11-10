@@ -138,6 +138,10 @@ return require("packer").startup(function()
     config = try_require("telescope-config"),
   })
   use({
+    "nvim-telescope/telescope-symbols.nvim",
+    requires = { "nvim-telescope/telescope.nvim" },
+  })
+  use({
     "windwp/nvim-autopairs",
     config = try_require("autopairs-config"),
   })

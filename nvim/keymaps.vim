@@ -71,6 +71,11 @@ nnoremap <silent><leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <silent><leader>fs <cmd>Telescope ultisnips<cr>
 nnoremap <silent><leader>fc <cmd>Telescope neoclip<cr>
 
+augroup commit_gitmoji
+  autocmd!
+  autocmd Filetype gitcommit nnoremap <silent><leader>g <cmd>lua require'telescope.builtin'.symbols{ sources = {'gitmoji'} }<CR>
+augroup END
+
 noremap Q <Nop>
 noremap q: :q
 noremap ; :
