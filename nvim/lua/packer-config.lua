@@ -1,26 +1,21 @@
 vim.cmd([[packadd packer.nvim]])
 -- vim._update_package_paths()
 
-local try_require = function(name)
-  local ok, mod = pcall(require, name)
-  if ok then
-    return mod
-  else
-    print(name .. " is not loaded.")
-  end
-end
-
 return require("packer").startup(function()
   use("wbthomason/packer.nvim")
   use("AndrewRadev/switch.vim")
   use("christoomey/vim-tmux-navigator")
   use({
     "dhruvasagar/vim-table-mode",
-    config = try_require("table-mode-config"),
+    config = function()
+      pcall(require, "table-mode-config")
+    end,
   })
   use({
     "haya14busa/vim-open-googletranslate",
-    config = try_require("open-googletranslate-config"),
+    config = function()
+      pcall(require, "open-googletranslate-config")
+    end,
   })
   use("honza/vim-snippets")
   use("jgdavey/vim-blockle")
@@ -40,7 +35,9 @@ return require("packer").startup(function()
   use("tpope/vim-projectionist")
   use({
     "tpope/vim-ragtag",
-    config = try_require("ragtag-config"),
+    config = function()
+      pcall(require, "ragtag-config")
+    end,
   })
   use("tpope/vim-rhubarb")
   use("tpope/vim-surround")
@@ -59,21 +56,27 @@ return require("packer").startup(function()
   use({
     "marocchino/pipe_converter",
     run = "mix do deps.get, compile, escript.build",
-    config = try_require("pipe-converter-config"),
+    config = function()
+      pcall(require, "pipe-converter-config")
+    end,
   })
   -- == github-action ==
   use("yasuhiroki/github-actions-yaml.vim")
   -- == markdown ==
   use({
     "plasticboy/vim-markdown",
-    config = try_require("markdown-config"),
+    config = function()
+      pcall(require, "markdown-config")
+    end,
   })
   -- == reason ==
   use("reasonml-editor/vim-reason-plus")
   -- == terraform ==
   use({
     "hashivim/vim-terraform",
-    config = try_require("terraform-config"),
+    config = function()
+      pcall(require, "terraform-config")
+    end,
   })
   -- == ruby ==
   -- use {
@@ -85,17 +88,23 @@ return require("packer").startup(function()
   -- nvim
   use({
     "mfussenegger/nvim-lint",
-    config = try_require("lint-config"),
+    config = function()
+      pcall(require, "lint-config")
+    end,
   })
   use({
     "mhartington/formatter.nvim",
-    config = try_require("formatter-config"),
+    config = function()
+      pcall(require, "formatter-config")
+    end,
   })
   use({
     "nvim-treesitter/nvim-treesitter",
     branch = "0.5-compat",
     run = ":TSUpdate",
-    config = try_require("treesitter-config"),
+    config = function()
+      pcall(require, "treesitter-config")
+    end,
   })
   use({
     "nvim-treesitter/nvim-treesitter-textobjects",
@@ -110,12 +119,16 @@ return require("packer").startup(function()
   use({
     "romgrk/nvim-treesitter-context",
     requires = { "nvim-treesitter/nvim-treesitter" },
-    config = try_require("treesitter-context-config"),
+    config = function()
+      pcall(require, "treesitter-context-config")
+    end,
   })
   use({
     "folke/twilight.nvim",
     requires = { "nvim-treesitter/nvim-treesitter" },
-    config = try_require("twilight-config"),
+    config = function()
+      pcall(require, "twilight-config")
+    end,
   })
   use({
     "JoosepAlviste/nvim-ts-context-commentstring",
@@ -125,17 +138,23 @@ return require("packer").startup(function()
   use({
     "phaazon/hop.nvim",
     as = "hop",
-    config = try_require("hop-config"),
+    config = function()
+      pcall(require, "hop-config")
+    end,
   })
   use({
     "lewis6991/gitsigns.nvim",
     requires = { "nvim-lua/plenary.nvim" },
-    config = try_require("gitsigns-config"),
+    config = function()
+      pcall(require, "gitsigns-config")
+    end,
   })
   use({
     "nvim-telescope/telescope.nvim",
     requires = { "nvim-lua/plenary.nvim" },
-    config = try_require("telescope-config"),
+    config = function()
+      pcall(require, "telescope-config")
+    end,
   })
   use({
     "nvim-telescope/telescope-symbols.nvim",
@@ -143,7 +162,9 @@ return require("packer").startup(function()
   })
   use({
     "windwp/nvim-autopairs",
-    config = try_require("autopairs-config"),
+    config = function()
+      pcall(require, "autopairs-config")
+    end,
   })
   use({
     "fhill2/telescope-ultisnips.nvim",
@@ -151,7 +172,9 @@ return require("packer").startup(function()
   })
   use({
     "AckslD/nvim-neoclip.lua",
-    config = try_require("neoclip-config"),
+    config = function()
+      pcall(require, "neoclip-config")
+    end,
   })
   use("nvim-telescope/telescope-hop.nvim")
   use({
@@ -161,17 +184,23 @@ return require("packer").startup(function()
   use({
     "hrsh7th/nvim-compe",
     requires = { "SirVer/ultisnips" },
-    config = try_require("compe-config"),
+    config = function()
+      pcall(require, "compe-config")
+    end,
   })
   use({
     "rcarriga/vim-ultest",
     requires = { "vim-test/vim-test" },
     run = ":UpdateRemotePlugins",
-    config = try_require("ultest-config"),
+    config = function()
+      pcall(require, "ultest-config")
+    end,
   })
   use({
     "vim-test/vim-test",
-    config = try_require("test-config"),
+    config = function()
+      pcall(require, "test-config")
+    end,
   })
   use("github/copilot.vim")
 
@@ -180,24 +209,32 @@ return require("packer").startup(function()
   use("kabouzeid/nvim-lspinstall")
   use({
     "neovim/nvim-lspconfig",
-    config = try_require("lsp-config"),
+    config = function()
+      pcall(require, "lsp-config")
+    end,
   })
   use("folke/lsp-colors.nvim")
   use({
     "glepnir/lspsaga.nvim",
     requires = { "neovim/nvim-lspconfig" },
-    config = try_require("lspsaga-config"),
+    config = function()
+      pcall(require, "lspsaga-config")
+    end,
   })
 
   -- style
   use({
     "hoob3rt/lualine.nvim",
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
-    config = try_require("lualine-config"),
+    config = function()
+      pcall(require, "lualine-config")
+    end,
   })
   use({
     "kyazdani42/nvim-tree.lua",
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
-    config = try_require("tree-config"),
+    config = function()
+      pcall(require, "tree-config")
+    end,
   })
 end)
