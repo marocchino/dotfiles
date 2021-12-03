@@ -8,8 +8,10 @@ local formatters = {
   end,
   prettier = function()
     return {
-      exe = "prettier",
+      exe = "asdf",
       args = {
+        "exec",
+        "prettier",
         "--stdin-filepath",
         vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
       },
