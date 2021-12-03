@@ -134,7 +134,20 @@ return require("packer").startup(function()
     "JoosepAlviste/nvim-ts-context-commentstring",
     requires = { "nvim-treesitter/nvim-treesitter" },
   })
-  use("hrsh7th/nvim-cmp")
+  use({
+    "hrsh7th/nvim-cmp",
+    config = function()
+      pcall(require, "cmp-config")
+    end,
+  })
+  use({
+    "quangnguyen30192/cmp-nvim-ultisnips",
+    requires = { "hrsh7th/nvim-cmp", "SirVer/ultisnips" },
+  })
+  use({ "hrsh7th/cmp-buffer", requires = { "hrsh7th/nvim-cmp" } })
+  use({ "hrsh7th/cmp-path", requires = { "hrsh7th/nvim-cmp" } })
+  use({ "hrsh7th/cmp-cmdline", requires = { "hrsh7th/nvim-cmp" } })
+  use({ "hrsh7th/cmp-nvim-lsp", requires = { "hrsh7th/nvim-cmp" } })
   use({
     "phaazon/hop.nvim",
     as = "hop",
