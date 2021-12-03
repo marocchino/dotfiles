@@ -134,7 +134,7 @@ return require("packer").startup(function()
     "JoosepAlviste/nvim-ts-context-commentstring",
     requires = { "nvim-treesitter/nvim-treesitter" },
   })
-  use("nvim-lua/completion-nvim")
+  use("hrsh7th/nvim-cmp")
   use({
     "phaazon/hop.nvim",
     as = "hop",
@@ -182,13 +182,6 @@ return require("packer").startup(function()
     requires = { "tami5/sql.nvim" },
   })
   use({
-    "hrsh7th/nvim-compe",
-    requires = { "SirVer/ultisnips" },
-    config = function()
-      pcall(require, "compe-config")
-    end,
-  })
-  use({
     "rcarriga/vim-ultest",
     requires = { "vim-test/vim-test" },
     run = ":UpdateRemotePlugins",
@@ -206,7 +199,7 @@ return require("packer").startup(function()
 
   -- lsp
   -- sql, xml, svg, toml, voldikss/coc-browser
-  use("kabouzeid/nvim-lspinstall")
+  use("williamboman/nvim-lsp-installer")
   use({
     "neovim/nvim-lspconfig",
     config = function()
@@ -215,7 +208,7 @@ return require("packer").startup(function()
   })
   use("folke/lsp-colors.nvim")
   use({
-    "glepnir/lspsaga.nvim",
+    "tami5/lspsaga.nvim",
     requires = { "neovim/nvim-lspconfig" },
     config = function()
       pcall(require, "lspsaga-config")

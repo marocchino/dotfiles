@@ -23,6 +23,22 @@ local formatters = {
       stdin = true,
     }
   end,
+  clippy = function()
+    return {
+      exe = "cargo",
+      args = { "clippy", "--fix" },
+      stdin = false,
+      ignore_exitcode = true,
+    }
+  end,
+  cargo = function()
+    return {
+      exe = "cargo",
+      args = { "fix" },
+      stdin = false,
+      ignore_exitcode = true,
+    }
+  end,
   rubocop = function()
     return {
       exe = "rubocop-daemon-wrapper",
@@ -51,6 +67,7 @@ require("formatter").setup({
   filetype = {
     terraform = { formatters.terraform },
     ruby = { formatters.rubocop },
+    rust = { formatters.clippy, formatters.cargo },
     lua = { formatters.stylua },
     elixir = { formatters.mixformat },
     javascript = { formatters.prettier },
