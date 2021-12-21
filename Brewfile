@@ -35,3 +35,6 @@ brew 'golangci-lint'
 brew 'hadolint'
 brew 'shellcheck'
 brew 'vint'
+
+# formatter
+brew 'shellharden'
