@@ -12,7 +12,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=nvim
 export GOPATH="$HOME/.go"
-export PATH="$HOME/.cargo/bin:$HOME/Library/Python/3.6/bin/:/usr/local/sbin:/Library/TeX/texbin:/Library/Apple/usr/bin:$HOME/bin:$GOPATH/bin:$HOME/Documents/flutter_macos_v1.9.1+hotfix.6-stable/bin/cache/dart-sdk/bin:$HOME/Documents/flutter_macos_v1.9.1+hotfix.6-stable/bin:$HOME/dotfiles/bash/functions:/usr/local/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.cargo/bin:$HOME/Library/Python/3.6/bin/:/usr/local/sbin:/Library/TeX/texbin:/Library/Apple/usr/bin:$HOME/bin:$GOPATH/bin:$HOME/Documents/flutter_macos_v1.9.1+hotfix.6-stable/bin/cache/dart-sdk/bin:$HOME/Documents/flutter_macos_v1.9.1+hotfix.6-stable/bin:$HOME/dotfiles/bash/functions:/usr/local/bin:$PATH"
 
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
@@ -37,6 +37,8 @@ declare -a PATHS=(
   "$HOME/dotfiles/bash/functions/_up"
   "$HOME/dotfiles/bash/functions/_z"
 )
+
+
 declare -a EVALS=(
   "$(hub alias -s)"
   "$(direnv hook bash)"
@@ -52,6 +54,8 @@ done
 for E in "${EVALS[@]}"; do
   eval "$E"
 done
+
+export PATH="$(yarn global bin):$PATH"
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
   STYLE=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
@@ -112,8 +116,6 @@ alias so=nvim
 alias such=git
 alias very=git
 alias wow="git status"
-
-export PATH="$(yarn global bin):$PATH"
 
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the end of this file.
