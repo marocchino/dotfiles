@@ -34,13 +34,8 @@ nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 nmap <silent> [t <Plug>(ultest-next-fail)
 nmap <silent> ]t <Plug>(ultest-prev-fail)
-
-augroup ruby_fail_ultests
-  autocmd!
-  autocmd FileType ruby nmap <silent> t<C-n> :TestNearest<CR>
-  autocmd FileType ruby nmap <silent> t<C-f> :TestFile<CR>
-  autocmd FileType ruby nmap <silent> t<C-f> :TestFile<CR>
-augroup END
+nmap <silent> T<C-n> :TestNearest<CR>
+nmap <silent> T<C-f> :TestFile<CR>
 
 
 " LSP config (the mappings used in the default file don't quite work right)
@@ -63,13 +58,19 @@ nmap <leader><leader> <c-^>
 nmap <silent> [w <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nmap <silent> ]w <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
+nnoremap <silent><leader>f <cmd>Telescope builtin<cr>
+nnoremap <silent><leader>f" <cmd>Telescope registers<cr>
+nnoremap <silent><leader>fa <cmd>Telescope lsp_code_actions<cr>
+nnoremap <silent><leader>fb <cmd>Telescope buffers<cr>
+nnoremap <silent><leader>fc <cmd>Telescope neoclip<cr>
+nnoremap <silent><leader>fd <cmd>Telescope lsp_definitions<cr>
 nnoremap <silent><leader>ff <cmd>Telescope frecency<cr>
 nnoremap <silent><leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <silent><leader>fb <cmd>Telescope buffers<cr>
-nnoremap <silent><leader>b <cmd>Telescope buffers<cr>
 nnoremap <silent><leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <silent><leader>fi <cmd>Telescope lsp_implementations<cr>
 nnoremap <silent><leader>fs <cmd>Telescope ultisnips<cr>
-nnoremap <silent><leader>fc <cmd>Telescope neoclip<cr>
+nnoremap <silent><leader>ft <cmd>Telescope treesitter<cr>
+nnoremap <silent><leader>b <cmd>Telescope buffers<cr>
 
 augroup commit_gitmoji
   autocmd!
