@@ -1,27 +1,9 @@
 #!/bin/bash
 
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the start of this file.
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
-#### END FIG ENV VARIABLES ####
-
 set -o vi
 
-# for python
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export EDITOR=nvim
-export GOPATH="$HOME/.go"
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.cargo/bin:$HOME/Library/Python/3.6/bin/:/usr/local/sbin:/Library/TeX/texbin:/Library/Apple/usr/bin:$HOME/bin:$GOPATH/bin:$HOME/Documents/flutter_macos_v1.9.1+hotfix.6-stable/bin/cache/dart-sdk/bin:$HOME/Documents/flutter_macos_v1.9.1+hotfix.6-stable/bin:$HOME/dotfiles/bash/functions:/usr/local/bin:$PATH"
-
-export CLICOLOR=1
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-export GIT_PROMPT_THEME=Single_line_Minimalist
-export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
-export ANDROID_HOME="$HOME/Library/Android/sdk"
-export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
-
 declare -a PATHS=(
+  "$HOME/.fig/shell/pre.sh"
   "/usr/local/etc/profile.d/z.sh"
   "/usr/local/etc/bash_completion.d/git-completion.bash"
   "$HOME/.asdf/asdf.sh"
@@ -38,6 +20,28 @@ declare -a PATHS=(
   "$HOME/dotfiles/bash/functions/_z"
 )
 
+for P in "${PATHS[@]}"; do
+  if [ -f "$P" ]; then
+    # shellcheck source=/dev/null
+    source "$P"
+  fi
+done
+
+# for python
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export EDITOR=nvim
+export GOPATH="$HOME/.go"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.cargo/bin:$HOME/Library/Python/3.6/bin/:/usr/local/sbin:/Library/TeX/texbin:/Library/Apple/usr/bin:$HOME/bin:$GOPATH/bin:$HOME/Documents/flutter_macos_v1.9.1+hotfix.6-stable/bin/cache/dart-sdk/bin:$HOME/Documents/flutter_macos_v1.9.1+hotfix.6-stable/bin:$HOME/dotfiles/bash/functions:/usr/local/bin:$PATH"
+YARN_GLOBAL_PATH=$(yarn global bin)
+export PATH="$YARN_GLOBAL_PATH:$PATH"
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export GIT_PROMPT_THEME=Single_line_Minimalist
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+
 
 declare -a EVALS=(
   "$(hub alias -s)"
@@ -45,17 +49,10 @@ declare -a EVALS=(
   "$(starship init bash)"
 )
 
-for P in "${PATHS[@]}"; do
-  if [ -f "$P" ]; then
-    # shellcheck source=/dev/null
-    source "$P"
-  fi
-done
 for E in "${EVALS[@]}"; do
   eval "$E"
 done
 
-export PATH="$(yarn global bin):$PATH"
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
   STYLE=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
@@ -119,5 +116,6 @@ alias wow="git status"
 
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the end of this file.
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+# shellcheck source=/dev/null
+[ -s "$HOME/.fig/fig.sh" ] && source "$HOME/.fig/fig.sh"
 #### END FIG ENV VARIABLES ####
