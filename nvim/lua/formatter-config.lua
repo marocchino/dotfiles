@@ -55,7 +55,16 @@ local formatters = {
       stdin = true,
     }
   end,
-  -- luarocks install --server=https://luarocks.org/dev luaformatter
+  shellharden = function()
+    return {
+      exe = "shellharden",
+      args = {
+        "--transform",
+        vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
+      },
+      stdin = false,
+    }
+  end,
   stylua = function()
     return {
       exe = "stylua",
@@ -74,8 +83,10 @@ require("formatter").setup({
     elixir = { formatters.mixformat },
     javascript = { formatters.prettier },
     javascriptreact = { formatters.prettier },
+    graphql = { formatters.prettier },
     json = { formatters.prettier },
     scss = { formatters.prettier },
+    sh = { formatters.shellharden },
     css = { formatters.prettier },
     less = { formatters.prettier },
     yaml = { formatters.prettier },
@@ -91,7 +102,7 @@ vim.api.nvim_exec(
   [[
   augroup FormatAutogroup
     autocmd!
-    autocmd FileType terraform,ruby,lua,elixir,javascript,javascriptreact,json,scss,css,less,yaml,vue,html,typescript,typescriptreact,markdown
+    autocmd FileType terraform,ruby,lua,elixir,javascript,javascriptreact,json,scss,css,sh,less,yaml,vue,html,typescript,typescriptreact,markdown
     \ autocmd BufWritePost * FormatWrite
   augroup END
   ]],
