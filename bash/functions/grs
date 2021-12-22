@@ -1,0 +1,15 @@
+#!/bin/bash
+set -ex -o pipefail
+
+function main() {
+  if [[ $# -eq 0 ]]; then
+    PREVIEW="git diff --staged --color=always -- {-1}"
+    git diff --name-only --cached | \
+      fzf --height 80% --preview "$PREVIEW" --layout reverse \
+          --preview-window up,20,border-horizontal | \
+      xargs git restore --staged
+  else
+    git restore --staged "$@"
+  fi
+}
+main "$@"
