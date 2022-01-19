@@ -1,6 +1,5 @@
-ruby 3.0.2
-nodejs 16.4.1
-erlang 24.1.5
-elixir 1.12.3-otp-24
-gleam 0.17.0
-terraform 1.0.0
+ruby 3.1.0
+nodejs 17.4.0
+erlang 24.2
+elixir 1.13.1-otp-24
+gleam 0.19.0
