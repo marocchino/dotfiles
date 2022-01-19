@@ -1,0 +1,26 @@
+#!/bin/bash
+set -eo pipefail
+
+TIMES=${3:-1}
+
+function usage() {
+  echo "Usage: $0 <range1> <range2> <times>"
+  echo "  range1: the first range of numbers with - delimiter"
+  echo "  range2: the secound range of numbers with - delimiter"
+  echo "  times:  repeat times"
+  echo "Example: $0 1-10 1-10 10"
+  exit 1
+}
+function print() {
+  A=$(shuf -i "${1:-11-80}" -n 1) || usage
+  B=$(shuf -i "${2:-1-9}" -n 1) || usage
+  echo "$A + $B ="
+}
+
+if [ "$TIMES" -gt 1 ]; then
+  for _i in $(seq "$TIMES"); do
+    print "$1" "$2"
+  done
+else
+  print "$1" "$2"
+fi
