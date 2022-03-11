@@ -1,4 +1,8 @@
-#!/bin/bash
+# Fig pre block. Keep at the top of this file.
+export PATH="${PATH}:${HOME}/.local/bin"
+eval "$(fig init bash pre)"
+
+
 
 set -o vi
 
@@ -114,8 +118,9 @@ alias such=git
 alias very=git
 alias wow="git status"
 
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the end of this file.
-# shellcheck source=/dev/null
-[ -s "$HOME/.fig/fig.sh" ] && source "$HOME/.fig/fig.sh"
-#### END FIG ENV VARIABLES ####
+
+
+
+
+# Fig post block. Keep at the bottom of this file.
+eval "$(fig init bash post)"
