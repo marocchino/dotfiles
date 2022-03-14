@@ -86,18 +86,25 @@ return require("packer").startup(function()
   use("tpope/vim-rails")
 
   -- nvim
+  -- use({
+  --   "mfussenegger/nvim-lint",
+  --   config = function()
+  --     pcall(require, "lint-config")
+  --   end,
+  -- })
+  -- use({
+  --   "mhartington/formatter.nvim",
+  --   config = function()
+  --     pcall(require, "formatter-config")
+  --   end,
+  -- })
   use({
-    "mfussenegger/nvim-lint",
+    "jose-elias-alvarez/null-ls.nvim",
     config = function()
-      pcall(require, "lint-config")
+      pcall(require, "null-ls-config")
     end,
   })
-  use({
-    "mhartington/formatter.nvim",
-    config = function()
-      pcall(require, "formatter-config")
-    end,
-  })
+
   use({
     "nvim-treesitter/nvim-treesitter",
     branch = "0.5-compat",

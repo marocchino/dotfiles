@@ -69,6 +69,31 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-nvim-ultisnips"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/cmp-nvim-ultisnips",
+    url = "https://github.com/quangnguyen30192/cmp-nvim-ultisnips"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
   ["copilot.vim"] = {
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/copilot.vim",
@@ -83,12 +108,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
-  },
-  ["formatter.nvim"] = {
-    config = { "\27LJ\2\n:\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\21formatter-config\frequire\npcall\0" },
-    loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/formatter.nvim",
-    url = "https://github.com/mhartington/formatter.nvim"
   },
   ["github-actions-yaml.vim"] = {
     loaded = true,
@@ -121,7 +140,7 @@ _G.packer_plugins = {
     config = { "\27LJ\2\n8\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\19lspsaga-config\frequire\npcall\0" },
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
-    url = "https://github.com/glepnir/lspsaga.nvim"
+    url = "https://github.com/tami5/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     config = { "\27LJ\2\n8\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\19lualine-config\frequire\npcall\0" },
@@ -134,6 +153,12 @@ _G.packer_plugins = {
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/matchit",
     url = "https://github.com/tmhedberg/matchit"
   },
+  ["null-ls.nvim"] = {
+    config = { "\27LJ\2\n8\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\19null-ls-config\frequire\npcall\0" },
+    loaded = true,
+    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
   ["nvim-autopairs"] = {
     config = { "\27LJ\2\n:\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\21autopairs-config\frequire\npcall\0" },
     loaded = true,
@@ -141,15 +166,10 @@ _G.packer_plugins = {
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
+    config = { "\27LJ\2\n4\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\15cmp-config\frequire\npcall\0" },
     loaded = true,
     path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
-  },
-  ["nvim-lint"] = {
-    config = { "\27LJ\2\n5\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\16lint-config\frequire\npcall\0" },
-    loaded = true,
-    path = "/Users/marocchino/.local/share/nvim/site/pack/packer/start/nvim-lint",
-    url = "https://github.com/mfussenegger/nvim-lint"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -432,74 +452,50 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-treesitter-context
-time([[Config for nvim-treesitter-context]], true)
-try_loadstring("\27LJ\2\nC\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\30treesitter-context-config\frequire\npcall\0", "config", "nvim-treesitter-context")
-time([[Config for nvim-treesitter-context]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-try_loadstring("\27LJ\2\n:\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\21autopairs-config\frequire\npcall\0", "config", "nvim-autopairs")
-time([[Config for nvim-autopairs]], false)
--- Config for: formatter.nvim
-time([[Config for formatter.nvim]], true)
-try_loadstring("\27LJ\2\n:\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\21formatter-config\frequire\npcall\0", "config", "formatter.nvim")
-time([[Config for formatter.nvim]], false)
--- Config for: vim-table-mode
-time([[Config for vim-table-mode]], true)
-try_loadstring("\27LJ\2\n;\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\22table-mode-config\frequire\npcall\0", "config", "vim-table-mode")
-time([[Config for vim-table-mode]], false)
--- Config for: vim-open-googletranslate
-time([[Config for vim-open-googletranslate]], true)
-try_loadstring("\27LJ\2\nE\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0 open-googletranslate-config\frequire\npcall\0", "config", "vim-open-googletranslate")
-time([[Config for vim-open-googletranslate]], false)
--- Config for: nvim-lint
-time([[Config for nvim-lint]], true)
-try_loadstring("\27LJ\2\n5\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\16lint-config\frequire\npcall\0", "config", "nvim-lint")
-time([[Config for nvim-lint]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-try_loadstring("\27LJ\2\n:\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\21telescope-config\frequire\npcall\0", "config", "telescope.nvim")
-time([[Config for telescope.nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-try_loadstring("\27LJ\2\n4\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\15lsp-config\frequire\npcall\0", "config", "nvim-lspconfig")
-time([[Config for nvim-lspconfig]], false)
+-- Config for: null-ls.nvim
+time([[Config for null-ls.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\19null-ls-config\frequire\npcall\0", "config", "null-ls.nvim")
+time([[Config for null-ls.nvim]], false)
 -- Config for: pipe_converter
 time([[Config for pipe_converter]], true)
 try_loadstring("\27LJ\2\n?\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\26pipe-converter-config\frequire\npcall\0", "config", "pipe_converter")
 time([[Config for pipe_converter]], false)
--- Config for: vim-ragtag
-time([[Config for vim-ragtag]], true)
-try_loadstring("\27LJ\2\n7\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\18ragtag-config\frequire\npcall\0", "config", "vim-ragtag")
-time([[Config for vim-ragtag]], false)
 -- Config for: twilight.nvim
 time([[Config for twilight.nvim]], true)
 try_loadstring("\27LJ\2\n9\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\20twilight-config\frequire\npcall\0", "config", "twilight.nvim")
 time([[Config for twilight.nvim]], false)
--- Config for: nvim-neoclip.lua
-time([[Config for nvim-neoclip.lua]], true)
-try_loadstring("\27LJ\2\n8\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\19neoclip-config\frequire\npcall\0", "config", "nvim-neoclip.lua")
-time([[Config for nvim-neoclip.lua]], false)
 -- Config for: vim-markdown
 time([[Config for vim-markdown]], true)
 try_loadstring("\27LJ\2\n9\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\20markdown-config\frequire\npcall\0", "config", "vim-markdown")
 time([[Config for vim-markdown]], false)
--- Config for: vim-ultest
-time([[Config for vim-ultest]], true)
-try_loadstring("\27LJ\2\n7\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\18ultest-config\frequire\npcall\0", "config", "vim-ultest")
-time([[Config for vim-ultest]], false)
--- Config for: hop
-time([[Config for hop]], true)
-try_loadstring("\27LJ\2\n4\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\15hop-config\frequire\npcall\0", "config", "hop")
-time([[Config for hop]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\2\n5\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\16tree-config\frequire\npcall\0", "config", "nvim-tree.lua")
-time([[Config for nvim-tree.lua]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\2\n4\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\15lsp-config\frequire\npcall\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
+-- Config for: vim-table-mode
+time([[Config for vim-table-mode]], true)
+try_loadstring("\27LJ\2\n;\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\22table-mode-config\frequire\npcall\0", "config", "vim-table-mode")
+time([[Config for vim-table-mode]], false)
+-- Config for: nvim-neoclip.lua
+time([[Config for nvim-neoclip.lua]], true)
+try_loadstring("\27LJ\2\n8\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\19neoclip-config\frequire\npcall\0", "config", "nvim-neoclip.lua")
+time([[Config for nvim-neoclip.lua]], false)
 -- Config for: vim-terraform
 time([[Config for vim-terraform]], true)
 try_loadstring("\27LJ\2\n:\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\21terraform-config\frequire\npcall\0", "config", "vim-terraform")
 time([[Config for vim-terraform]], false)
+-- Config for: lspsaga.nvim
+time([[Config for lspsaga.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\19lspsaga-config\frequire\npcall\0", "config", "lspsaga.nvim")
+time([[Config for lspsaga.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\2\n5\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\16tree-config\frequire\npcall\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+try_loadstring("\27LJ\2\n:\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\21telescope-config\frequire\npcall\0", "config", "telescope.nvim")
+time([[Config for telescope.nvim]], false)
 -- Config for: vim-test
 time([[Config for vim-test]], true)
 try_loadstring("\27LJ\2\n5\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\16test-config\frequire\npcall\0", "config", "vim-test")
@@ -516,14 +512,39 @@ time([[Config for nvim-treesitter]], false)
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n9\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\20gitsigns-config\frequire\npcall\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
--- Config for: lspsaga.nvim
-time([[Config for lspsaga.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\19lspsaga-config\frequire\npcall\0", "config", "lspsaga.nvim")
-time([[Config for lspsaga.nvim]], false)
+-- Config for: vim-ragtag
+time([[Config for vim-ragtag]], true)
+try_loadstring("\27LJ\2\n7\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\18ragtag-config\frequire\npcall\0", "config", "vim-ragtag")
+time([[Config for vim-ragtag]], false)
+-- Config for: hop
+time([[Config for hop]], true)
+try_loadstring("\27LJ\2\n4\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\15hop-config\frequire\npcall\0", "config", "hop")
+time([[Config for hop]], false)
+-- Config for: nvim-treesitter-context
+time([[Config for nvim-treesitter-context]], true)
+try_loadstring("\27LJ\2\nC\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\30treesitter-context-config\frequire\npcall\0", "config", "nvim-treesitter-context")
+time([[Config for nvim-treesitter-context]], false)
+-- Config for: vim-open-googletranslate
+time([[Config for vim-open-googletranslate]], true)
+try_loadstring("\27LJ\2\nE\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0 open-googletranslate-config\frequire\npcall\0", "config", "vim-open-googletranslate")
+time([[Config for vim-open-googletranslate]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+try_loadstring("\27LJ\2\n:\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\21autopairs-config\frequire\npcall\0", "config", "nvim-autopairs")
+time([[Config for nvim-autopairs]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+try_loadstring("\27LJ\2\n4\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\15cmp-config\frequire\npcall\0", "config", "nvim-cmp")
+time([[Config for nvim-cmp]], false)
+-- Config for: vim-ultest
+time([[Config for vim-ultest]], true)
+try_loadstring("\27LJ\2\n7\0\0\4\0\3\0\0056\0\0\0006\2\1\0'\3\2\0B\0\3\1K\0\1\0\18ultest-config\frequire\npcall\0", "config", "vim-ultest")
+time([[Config for vim-ultest]], false)
 if should_profile then save_profiles() end
 
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end
