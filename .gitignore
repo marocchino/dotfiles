@@ -2,6 +2,7 @@
 tags
 .netrwhist
 .DS_Store
+Brewfile.lock.json
 fish/fish_history
 fish/profile.fish
 fish/fishd.*
