@@ -2,14 +2,12 @@
 export PATH="${PATH}:${HOME}/.local/bin"
 eval "$(fig init bash pre)"
 
-
-
 set -o vi
 
 declare -a PATHS=(
   "$HOME/.fig/shell/pre.sh"
-  "/usr/local/etc/profile.d/z.sh"
-  "/usr/local/etc/bash_completion.d/git-completion.bash"
+  "$HOMEBREW_PREFIX/etc/profile.d/z.sh"
+  "$HOMEBREW_PREFIX/etc/bash_completion.d/git-completion.bash"
   "$HOME/.asdf/asdf.sh"
   "$HOME/.asdf/completions/asdf.bash"
   "$HOME/.bashrc.local"
@@ -36,7 +34,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=nvim
 export GOPATH="$HOME/.go"
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.cargo/bin:$HOME/Library/Python/3.6/bin/:/usr/local/sbin:/Library/TeX/texbin:/Library/Apple/usr/bin:$HOME/bin:$GOPATH/bin:$HOME/Documents/flutter_macos_v1.9.1+hotfix.6-stable/bin/cache/dart-sdk/bin:$HOME/Documents/flutter_macos_v1.9.1+hotfix.6-stable/bin:$HOME/dotfiles/bash/functions:/usr/local/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.cargo/bin:$HOME/Library/Python/3.6/bin/:$HOMEBREW_PREFIX/sbin:/Library/TeX/texbin:/Library/Apple/usr/bin:$HOME/bin:$GOPATH/bin:$HOME/Documents/flutter_macos_v1.9.1+hotfix.6-stable/bin/cache/dart-sdk/bin:$HOME/Documents/flutter_macos_v1.9.1+hotfix.6-stable/bin:$HOME/dotfiles/bash/functions:$HOMEBREW_PREFIX/bin:$PATH"
 YARN_GLOBAL_PATH=$(yarn global bin)
 export PATH="$YARN_GLOBAL_PATH:$PATH"
 export CLICOLOR=1
@@ -44,7 +42,7 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export GIT_PROMPT_THEME=Single_line_Minimalist
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
-export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+export BASH_COMPLETION_COMPAT_DIR="$HOMEBREW_PREFIX/etc/bash_completion.d"
 
 
 declare -a EVALS=(
@@ -118,9 +116,6 @@ alias such=git
 alias very=git
 alias wow="git status"
 
-
-
-
-
 # Fig post block. Keep at the bottom of this file.
 eval "$(fig init bash post)"
+

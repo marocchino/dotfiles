@@ -1,2 +1,2 @@
 require("packer-config")
-vim.g.python3_host_prog = "/usr/local/bin/python3"
+vim.g.python3_host_prog = "$HOMEBREW_PREFIX/bin/python3"

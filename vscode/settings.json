@@ -154,7 +154,7 @@
     "yaml",
     "yml"
   ],
-  "vscode-neovim.neovimPath": "/usr/local/bin/nvim",
+  "vscode-neovim.neovimPath": "$HOMEBREW_PREFIX/bin/nvim",
   "vscode-neovim.neovimInitPath": "/Users/marocchino/.config/nvim/vscode.vim",
   "elixirLS.fetchDeps": false,
   "cSpell.language": "en",

@@ -23,8 +23,8 @@ alias such git
 alias very git
 alias wow "git status"
 
-set -x PATH /usr/local/bin $PATH
-set -x NODE_PATH /usr/local/lib/node_modules
+set -x PATH $HOMEBREW_PREFIX/bin $PATH
+set -x NODE_PATH $HOMEBREW_PREFIX/lib/node_modules
 
 if test -f $HOME/.config/fish/profile.fish
   source $HOME/.config/fish/profile.fish

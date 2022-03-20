@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Git branch bash completion
-if [ -f "/usr/local/etc/bash_completion.d/git-completion.bash" ]; then
+if [ -f "$HOMEBREW_PREFIX/etc/bash_completion.d/git-completion.bash" ]; then
   function _git_aa() {
     _git_add
   }
