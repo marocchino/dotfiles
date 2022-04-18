@@ -5,11 +5,20 @@
   interactive = auto
   ui = true
   pager = true
+[delta]
+  navigate = true
+  line-numbers = true
 [core]
   editor = nvim
   whitespace = trailing-space,space-before-tab
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[merge]
+  conflictstyle = diff3
 [diff]
   tool = nvimdiff
+  colorMoved = default
 [difftool]
   prompt = false
 [merge]
