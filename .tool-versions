@@ -4,3 +4,4 @@ erlang 24.2
 elixir 1.13.1-otp-24
 gleam 0.19.0
 haskell 9.2.2
+rust 1.60.0
