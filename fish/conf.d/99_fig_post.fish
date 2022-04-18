@@ -1,4 +1,1 @@
-
-# Fig post block. Keep at the bottom of this file.
-eval (fig init fish post | string split0)
-
+eval (~/.local/bin/fig init fish post --rcfile 99_fig_post | string split0)
