@@ -114,7 +114,6 @@ return require("packer").startup(function()
   })
   use({
     "nvim-treesitter/nvim-treesitter-textobjects",
-    branch = "0.5-compat",
     requires = { "nvim-treesitter/nvim-treesitter", "kana/vim-textobj-user" },
   })
   use({
