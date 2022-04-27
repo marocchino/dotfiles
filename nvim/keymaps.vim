@@ -29,6 +29,7 @@ nmap <silent> t<C-n> <Plug>(ultest-run-nearest)
 nmap <silent> t<C-f> <Plug>(ultest-run-file)
 nmap <silent> t<C-j> <Plug>(ultest-summary-jump)
 nmap <silent> t<C-t> <Plug>(ultest-summary-toggle)
+nmap <silent> t<C-o> :UltestOutput<CR>
 nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
