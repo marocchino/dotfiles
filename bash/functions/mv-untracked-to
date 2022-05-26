@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e -o pipefail
+
+if [ $# -ne 1 ]; then
+  echo "Move untracked files to target path"
+  echo "Usage: $(basename "$0") <target-path>"
+  exit 1
+fi
+
+set -x
+
+git ls-files --others --exclude-standard | while IFS= read -r FILE; do
+  mkdir -p "$1/${FILE%/*}"
+  mv "$FILE" "$1/$FILE"
+done
