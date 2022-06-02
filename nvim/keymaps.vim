@@ -56,8 +56,8 @@ nnoremap <silent><leader>h2 :HopChar2<CR>
 nnoremap <silent><leader>ca :Lspsaga code_action<CR>
 vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
 nmap <leader><leader> <c-^>
-nmap <silent> [w <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nmap <silent> ]w <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nmap <silent> [w <cmd>lua vim.diagnostic.goto_prev()<CR>
+nmap <silent> ]w <cmd>lua vim.diagnostic.goto_next()<CR>
 
 nnoremap <silent><leader>f <cmd>Telescope builtin<cr>
 nnoremap <silent><leader>f" <cmd>Telescope registers<cr>
