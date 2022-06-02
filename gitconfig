@@ -12,6 +12,7 @@
   editor = nvim
   whitespace = trailing-space,space-before-tab
   pager = delta
+  excludesFile = ~/.gitignore_global
 [interactive]
   diffFilter = delta --color-only
 [merge]
