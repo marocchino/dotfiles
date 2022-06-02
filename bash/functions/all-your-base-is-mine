@@ -2,6 +2,6 @@
 set -ex -o pipefail
 
 function main() {
-  ssh "$@" 'cat >> ~/.ssh/authorized_keys' <~/.ssh/id_rsa.pub
+  ssh "$@" 'cat >> ~/.ssh/authorized_keys' <~/.ssh/id_ed25519.pub
 }
 main "$@"
