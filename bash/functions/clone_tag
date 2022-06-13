@@ -1,0 +1,24 @@
+#!/bin/bash
+set -ex -o pipefail
+
+function main() {
+  if [[ $# -eq 3 ]]; then
+    GROUP=$1
+    NAME=$2
+    TAG=$3
+  elif [[ $# -eq 2 ]]; then
+    GROUP=$1
+    NAME=$2
+    TAG=$(curl -v "https://api.github.com/repos/$GROUP/$NAME/tags" | jq -r '.[] | .name' | fzf)
+  else
+    echo "Usage: $0 <group> <name> <tag>"
+    exit 1
+  fi
+
+  DIR="../${NAME}_$TAG"
+  REPO="https://github.com/$GROUP/$NAME"
+
+  mkdir -p "$DIR"
+  git clone -b "$TAG" --single-branch "$REPO" "$DIR"
+}
+main "$@"
