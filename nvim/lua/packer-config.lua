@@ -84,6 +84,7 @@ return require("packer").startup(function()
   --   config = function() require('ruby-heredoc-syntax-config') end
   -- }
   use("tpope/vim-rails")
+  use("tpope/vim-bundler")
 
   -- nvim
   -- use({
