@@ -66,6 +66,7 @@ nnoremap <silent><leader>fb <cmd>Telescope buffers<cr>
 nnoremap <silent><leader>fc <cmd>Telescope neoclip<cr>
 nnoremap <silent><leader>fd <cmd>Telescope lsp_definitions<cr>
 nnoremap <silent><leader>ff <cmd>Telescope frecency<cr>
+nnoremap <silent><leader>fr <cmd>Telescope registers<cr>
 nnoremap <silent><leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <silent><leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <silent><leader>fi <cmd>Telescope lsp_implementations<cr>
