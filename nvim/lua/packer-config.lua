@@ -201,17 +201,17 @@ return require("packer").startup(function()
     requires = { "tami5/sql.nvim" },
   })
   use({
-    "rcarriga/vim-ultest",
-    requires = { "vim-test/vim-test" },
-    run = ":UpdateRemotePlugins",
+    "nvim-neotest/neotest",
+    requires = {
+      "antoinemadec/FixCursorHold.nvim",
+      "haydenmeade/neotest-jest",
+      "nvim-lua/plenary.nvim",
+      "nvim-neotest/neotest-vim-test",
+      "nvim-treesitter/nvim-treesitter",
+      "olimorris/neotest-rspec",
+    },
     config = function()
-      pcall(require, "ultest-config")
-    end,
-  })
-  use({
-    "vim-test/vim-test",
-    config = function()
-      pcall(require, "test-config")
+      pcall(require, "neotest-config")
     end,
   })
   use("github/copilot.vim")

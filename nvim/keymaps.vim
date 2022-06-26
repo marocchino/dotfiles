@@ -25,18 +25,14 @@ xnoremap <silent><leader>r :call VisualFindAndReplaceWithSelection()<CR>
 nnoremap <silent><leader>e :NvimTreeToggle<CR>
 
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
-nmap <silent> t<C-n> <Plug>(ultest-run-nearest)
-nmap <silent> t<C-f> <Plug>(ultest-run-file)
-nmap <silent> t<C-j> <Plug>(ultest-summary-jump)
-nmap <silent> t<C-t> <Plug>(ultest-summary-toggle)
-nmap <silent> t<C-o> :UltestOutput<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
-nmap <silent> [t <Plug>(ultest-next-fail)
-nmap <silent> ]t <Plug>(ultest-prev-fail)
-nmap <silent> T<C-n> :TestNearest<CR>
-nmap <silent> T<C-f> :TestFile<CR>
+nmap <silent> t<C-n> <cmd>lua require("neotest").run.run()<CR>
+nmap <silent> t<C-d> <cmd>lua require("neotest").run.run({strategy = "dap"})<CR>
+nmap <silent> t<C-t> <cmd>lua require("neotest").summary.toggle()<CR>
+nmap <silent> t<C-f> <cmd>lua require("neotest").run.run(vim.fn.expand("%"))<CR>
+nmap <silent> t<C-o> <cmd>lua require("neotest").output.open()<CR>
+nmap <silent> t<C-l> <cmd>lua require("neotest").run.run_last()<CR>
+nmap <silent> [t <cmd>lua require("neotest").jump.prev({ status = "failed" })<CR>
+nmap <silent> ]t <cmd>lua require("neotest").jump.next({ status = "failed" })<CR>
 
 
 " LSP config (the mappings used in the default file don't quite work right)
