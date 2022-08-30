@@ -35,7 +35,7 @@
   ap = add --patch
   authors = !git-authors
   ca = commit --amend
-  cleanup = !git branch --merged | grep -v '*' | xargs git branch -d
+  cleanup = !git branch --merged | grep -v '*' | xargs git branch -d && git gc --aggressive --prune=all
   d = diff
   ds = diff --staged
   f = fetch
