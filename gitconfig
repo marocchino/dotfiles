@@ -42,6 +42,7 @@
   fa = fetch --all
   last = log --oneline -1
   open = browse
+  p = !git pull origin $(git rev-parse --abbrev-ref HEAD)
   pullf = !git fetch --all && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)
   pushf = push --force
   r = rebase
@@ -71,3 +72,7 @@
 [init]
   defaultBranch = main
   templateDir = ~/.git_template
+[branch]
+	autosetuprebase = always
+[branch "main"]
+	rebase = true
