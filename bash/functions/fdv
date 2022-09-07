@@ -3,7 +3,7 @@ set -ex -o pipefail
 
 function main() {
   PREVIEW="bat --style=numbers,changes --color=always {} | head -n 20"
-  git ls-files --others --exclude-standard --modified | \
+  fd "$@" | \
     fzf --height 80% --preview "$PREVIEW" --layout reverse \
         --preview-window up,20,border-horizontal | \
     xargs nvim
