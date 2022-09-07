@@ -25,6 +25,7 @@ xnoremap <silent><leader>r :call VisualFindAndReplaceWithSelection()<CR>
 nnoremap <silent><leader>e :NvimTreeToggle<CR>
 
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
+nmap <silent> t<C-a> <cmd>lua require("neotest").run.attach()<CR>
 nmap <silent> t<C-n> <cmd>lua require("neotest").run.run()<CR>
 nmap <silent> t<C-d> <cmd>lua require("neotest").run.run({strategy = "dap"})<CR>
 nmap <silent> t<C-t> <cmd>lua require("neotest").summary.toggle()<CR>

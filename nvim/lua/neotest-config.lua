@@ -1,9 +1,19 @@
 require("neotest").setup({
   adapters = {
-    require("neotest-jest"),
+    require("neotest-jest")({
+      jestCommand = "yarn test --",
+      jestConfigFile = "jest.config.js",
+    }),
     require("neotest-rspec"),
     require("neotest-vim-test")({
-      ignore_file_types = { "ruby", "typescript", "javascript", "lua" },
+      ignore_file_types = {
+        "ruby",
+        "typescript",
+        "typescriptreact",
+        "javascript",
+        "javascriptreact",
+        "lua",
+      },
     }),
   },
   icons = {
