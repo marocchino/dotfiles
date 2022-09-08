@@ -1,0 +1,20 @@
+#!/bin/bash
+set -eo pipefail
+
+case $1 in
+  "list")
+    set -x
+    pkgutil --pkgs | sort
+    ;;
+  "rm")
+    NAME=$(pkgutil --pkgs | sort | fzf);
+    (set -x; sudo pkgutil --forget "$NAME")
+    echo
+    echo " (╯°□°）╯︵ $(echo "$NAME" | flip 2>/dev/null)"
+    echo
+    ;;
+  *)
+    echo "Usage: $0 [list|rm]"
+    exit 1
+    ;;
+esac
