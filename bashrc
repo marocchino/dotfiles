@@ -2,8 +2,8 @@
 [[ -f "$HOME/.fig/shell/bashrc.pre.bash" ]] && . "$HOME/.fig/shell/bashrc.pre.bash"
 set -o vi
 
+HOMEBREW_PREFIX=${HOMEBREW_PREFIX:-$(brew --prefix)}
 declare -a PATHS=(
-  "$HOME/.fig/shell/pre.sh"
   "$HOMEBREW_PREFIX/etc/profile.d/z.sh"
   "$HOMEBREW_PREFIX/etc/bash_completion.d/git-completion.bash"
   "$HOME/.asdf/asdf.sh"
@@ -41,7 +41,6 @@ export GIT_PROMPT_THEME=Single_line_Minimalist
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export BASH_COMPLETION_COMPAT_DIR="$HOMEBREW_PREFIX/etc/bash_completion.d"
-
 
 declare -a EVALS=(
   "$(hub alias -s)"
