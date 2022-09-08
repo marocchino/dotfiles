@@ -62,18 +62,20 @@ nnoremap <silent><leader>fa <cmd>Telescope lsp_code_actions<cr>
 nnoremap <silent><leader>fb <cmd>Telescope buffers<cr>
 nnoremap <silent><leader>fc <cmd>Telescope neoclip<cr>
 nnoremap <silent><leader>fd <cmd>Telescope lsp_definitions<cr>
+nnoremap <silent><leader>fe <cmd>lua require'telescope.builtin'.symbols{ sources = {'emoji'} }<CR>
 nnoremap <silent><leader>ff <cmd>Telescope frecency<cr>
-nnoremap <silent><leader>fr <cmd>Telescope registers<cr>
 nnoremap <silent><leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <silent><leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <silent><leader>fi <cmd>Telescope lsp_implementations<cr>
+nnoremap <silent><leader>fn <cmd>lua require'telescope.builtin'.symbols{ sources = {'nerd'} }<CR>
+nnoremap <silent><leader>fr <cmd>Telescope registers<cr>
 nnoremap <silent><leader>fs <cmd>Telescope ultisnips<cr>
 nnoremap <silent><leader>ft <cmd>Telescope treesitter<cr>
 nnoremap <silent><leader>b <cmd>Telescope buffers<cr>
 
 augroup commit_gitmoji
   autocmd!
-  autocmd Filetype gitcommit nnoremap <silent><leader>g <cmd>lua require'telescope.builtin'.symbols{ sources = {'gitmoji'} }<CR>
+  autocmd Filetype gitcommit,markdown,json,csv,text nnoremap <silent><leader>g <cmd>lua require'telescope.builtin'.symbols{ sources = {'gitmoji'} }<CR>
 augroup END
 
 noremap Q <Nop>
