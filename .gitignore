@@ -9,6 +9,7 @@ fish/fishd.*
 fish/generated_completions
 nvim/pack/
 nvim/sessions/
+nvim/plugin/packer_compiled.lua
 oni2/extensions
 oni2/store
 oni2/workspace
