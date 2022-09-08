@@ -28,6 +28,7 @@ for P in "${PATHS[@]}"; do
 done
 
 # for python
+export HOMEBREW_PREFIX
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=nvim
