@@ -13,7 +13,7 @@ brew 'rlwrap'
 brew 'reattach-to-user-namespace'
 brew 'tmux'
 brew 'fzf'
-brew 'neovim', args: ['--HEAD']
+brew 'neovim', args: ['HEAD']
 brew 'fpp'
 brew 'rg'
 brew 'lsd'
