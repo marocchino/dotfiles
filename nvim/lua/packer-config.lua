@@ -239,14 +239,14 @@ return require("packer").startup(function()
   -- style
   use({
     "hoob3rt/lualine.nvim",
-    requires = { "kyazdani42/nvim-web-devicons", opt = true },
+    requires = { "kyazdani42/nvim-web-devicons" },
     config = function()
       pcall(require, "lualine-config")
     end,
   })
   use({
     "kyazdani42/nvim-tree.lua",
-    requires = { "kyazdani42/nvim-web-devicons", opt = true },
+    requires = { "kyazdani42/nvim-web-devicons" },
     config = function()
       pcall(require, "tree-config")
     end,
