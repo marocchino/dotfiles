@@ -19,9 +19,6 @@ nnoremap <C-]> g<C-]>
 nnoremap <esc><esc> :nohlsearch<CR>
 nnoremap <silent><leader>[ :tabp<CR>
 nnoremap <silent><leader>] :tabn<CR>
-nnoremap <silent><leader>f :Rg<Space>
-nnoremap <silent><leader>r :call VisualFindAndReplace()<CR>
-xnoremap <silent><leader>r :call VisualFindAndReplaceWithSelection()<CR>
 nnoremap <silent><leader>e :NvimTreeToggle<CR>
 
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
@@ -34,6 +31,13 @@ nmap <silent> t<C-o> <cmd>lua require("neotest").output.open()<CR>
 nmap <silent> t<C-l> <cmd>lua require("neotest").run.run_last()<CR>
 nmap <silent> [t <cmd>lua require("neotest").jump.prev({ status = "failed" })<CR>
 nmap <silent> ]t <cmd>lua require("neotest").jump.next({ status = "failed" })<CR>
+
+
+nnoremap <silent><leader>ga <cmd>Git add %<CR>
+nnoremap <silent><leader>gvd <cmd>Gvdiffsplit<CR>
+nnoremap <silent><leader>gsd <cmd>Gdiffsplit<CR>
+nnoremap <silent><leader>grs <cmd>Git restore --staged %<CR>
+nnoremap <silent><leader>gc <cmd>Git commit<CR>
 
 
 " LSP config (the mappings used in the default file don't quite work right)
@@ -57,21 +61,21 @@ nmap <silent> [w <cmd>lua vim.diagnostic.goto_prev()<CR>
 nmap <silent> ]w <cmd>lua vim.diagnostic.goto_next()<CR>
 
 nnoremap <silent><leader>f <cmd>Telescope builtin<cr>
-nnoremap <silent><leader>f" <cmd>Telescope registers<cr>
-nnoremap <silent><leader>fa <cmd>Telescope lsp_code_actions<cr>
 nnoremap <silent><leader>fb <cmd>Telescope buffers<cr>
 nnoremap <silent><leader>fc <cmd>Telescope neoclip<cr>
 nnoremap <silent><leader>fd <cmd>Telescope lsp_definitions<cr>
 nnoremap <silent><leader>fe <cmd>lua require'telescope.builtin'.symbols{ sources = {'emoji'} }<CR>
 nnoremap <silent><leader>ff <cmd>Telescope frecency<cr>
 nnoremap <silent><leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <silent><leader>fgb <cmd>Telescope git_branches<cr>
+nnoremap <silent><leader>fgf <cmd>Telescope git_files<cr>
+nnoremap <silent><leader>fgs <cmd>Telescope git_status<cr>
 nnoremap <silent><leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <silent><leader>fi <cmd>Telescope lsp_implementations<cr>
 nnoremap <silent><leader>fn <cmd>lua require'telescope.builtin'.symbols{ sources = {'nerd'} }<CR>
 nnoremap <silent><leader>fr <cmd>Telescope registers<cr>
 nnoremap <silent><leader>fs <cmd>Telescope ultisnips<cr>
 nnoremap <silent><leader>ft <cmd>Telescope treesitter<cr>
-nnoremap <silent><leader>b <cmd>Telescope buffers<cr>
 
 augroup commit_gitmoji
   autocmd!
@@ -96,4 +100,4 @@ nmap ., gcc
 xmap ,. gc
 xmap ., gc
 omap ,. gc
-omap ., gc
+omap ., c
