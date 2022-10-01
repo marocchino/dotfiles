@@ -1,23 +1,26 @@
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 require("null-ls").setup({
+  debug = true,
   sources = {
     require("null-ls").builtins.formatting.mix,
-    require("null-ls").builtins.formatting.prettier,
-    -- require("null-ls").builtins.formatting.rubocop.with({
-    --   args = {
-    --     "--auto-correct-all",
-    --     "--force-exclusion",
-    --     "-f",
-    --     "quiet",
-    --     -- "--server",
-    --     "--stderr",
-    --     "--stdin",
-    --     "$FILENAME",
-    --   },
-    -- }),
+    require("null-ls").builtins.formatting.prettierd,
+    -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/lua/null-ls/builtins/formatting/rubocop.lua
+    require("null-ls").builtins.formatting.rubocop.with({
+      args = {
+        "--autocorrect-all",
+        "--force-exclusion",
+        "-f",
+        "quiet",
+        "--no-server", -- until bug fixed
+        "--stderr",
+        "--stdin",
+        "$FILENAME",
+      },
+    }),
     require("null-ls").builtins.formatting.shellharden,
     require("null-ls").builtins.formatting.stylua,
     require("null-ls").builtins.formatting.terraform_fmt,
+    require("null-ls").builtins.formatting.fixjson,
     require("null-ls").builtins.diagnostics.actionlint,
     require("null-ls").builtins.diagnostics.codespell,
     require("null-ls").builtins.diagnostics.credo,
@@ -25,16 +28,8 @@ require("null-ls").setup({
     require("null-ls").builtins.diagnostics.erb_lint,
     require("null-ls").builtins.diagnostics.golangci_lint,
     require("null-ls").builtins.diagnostics.hadolint,
-    require("null-ls").builtins.diagnostics.rubocop.with({
-      args = {
-        "-f",
-        "json",
-        "--server",
-        "--force-exclusion",
-        "--stdin",
-        "$FILENAME",
-      },
-    }),
+    -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/lua/null-ls/builtins/diagnostics/rubocop.lua
+    require("null-ls").builtins.diagnostics.rubocop,
     require("null-ls").builtins.diagnostics.shellcheck,
     require("null-ls").builtins.diagnostics.stylelint,
     require("null-ls").builtins.diagnostics.vint,
