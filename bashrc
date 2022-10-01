@@ -1,5 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/bashrc.pre.bash" ]] && . "$HOME/.fig/shell/bashrc.pre.bash"
+[[ -f "$HOME/.fig/shell/bashrc.pre.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.pre.bash"
 set -o vi
 
 HOMEBREW_PREFIX=${HOMEBREW_PREFIX:-$(brew --prefix)}
@@ -115,4 +115,4 @@ alias very=git
 alias wow="git status"
 
 # Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && . "$HOME/.fig/shell/bashrc.post.bash"
+[[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.post.bash"
