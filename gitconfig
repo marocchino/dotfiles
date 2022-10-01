@@ -35,11 +35,12 @@
   ap = add --patch
   authors = !git-authors
   ca = commit --amend
-  cleanup = !git branch --merged | grep -v '*' | xargs git branch -d && git gc --aggressive --prune=all
+  cleanup = !git branch --merged | grep -v '*' | xargs git branch -d
   d = diff
   ds = diff --staged
   f = fetch
   fa = fetch --all
+  gc = gc --aggressive --prune=all
   last = log --oneline -1
   open = browse
   p = !git pull origin $(git rev-parse --abbrev-ref HEAD)
