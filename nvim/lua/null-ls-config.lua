@@ -1,31 +1,19 @@
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 require("null-ls").setup({
   sources = {
     require("null-ls").builtins.formatting.mix,
     require("null-ls").builtins.formatting.prettier,
-    require("null-ls").builtins.formatting.rubocop.with({
-      args = {
-        "--auto-correct-all",
-        "-f",
-        "quiet",
-        "--stderr",
-        "--stdin",
-        "$FILENAME",
-      },
-    }),
-    -- not working for now
     -- require("null-ls").builtins.formatting.rubocop.with({
-    --   command = "rubocop-daemon",
     --   args = {
-    --     "exec",
-    --     "--",
     --     "--auto-correct-all",
+    --     "--force-exclusion",
     --     "-f",
     --     "quiet",
+    --     -- "--server",
     --     "--stderr",
     --     "--stdin",
     --     "$FILENAME",
     --   },
-    --   to_stdin = true,
     -- }),
     require("null-ls").builtins.formatting.shellharden,
     require("null-ls").builtins.formatting.stylua,
@@ -38,12 +26,10 @@ require("null-ls").setup({
     require("null-ls").builtins.diagnostics.golangci_lint,
     require("null-ls").builtins.diagnostics.hadolint,
     require("null-ls").builtins.diagnostics.rubocop.with({
-      command = "rubocop-daemon",
       args = {
-        "exec",
-        "--",
         "-f",
         "json",
+        "--server",
         "--force-exclusion",
         "--stdin",
         "$FILENAME",
@@ -62,7 +48,8 @@ require("null-ls").setup({
         buffer = bufnr,
         callback = function()
           -- increase timeout to 3 seconds
-          vim.lsp.buf.format({ bufnr = bufnr, timeout_ms = 3000 })
+          -- vim.lsp.buf.format({ bufnr = bufnr, timeout_ms = 3000 })
+          vim.lsp.buf.format({ bufnr = bufnr })
         end,
       })
     end
