@@ -5,16 +5,6 @@ require("neotest").setup({
       jestConfigFile = "jest.config.js",
     }),
     require("neotest-rspec"),
-    require("neotest-vim-test")({
-      ignore_file_types = {
-        "ruby",
-        "typescript",
-        "typescriptreact",
-        "javascript",
-        "javascriptreact",
-        "lua",
-      },
-    }),
   },
   icons = {
     child_indent = "│",

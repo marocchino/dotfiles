@@ -208,7 +208,6 @@ return require("packer").startup(function()
       "antoinemadec/FixCursorHold.nvim",
       "haydenmeade/neotest-jest",
       "nvim-lua/plenary.nvim",
-      "nvim-neotest/neotest-vim-test",
       "nvim-treesitter/nvim-treesitter",
       "olimorris/neotest-rspec",
     },
