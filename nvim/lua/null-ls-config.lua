@@ -11,7 +11,6 @@ require("null-ls").setup({
         "--force-exclusion",
         "-f",
         "quiet",
-        "--no-server", -- until bug fixed
         "--stderr",
         "--stdin",
         "$FILENAME",
