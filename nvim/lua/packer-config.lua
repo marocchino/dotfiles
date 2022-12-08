@@ -48,7 +48,6 @@ return require("packer").startup(function()
   use("MarcWeber/vim-addon-mw-utils")
 
   -- color
-  use("albertorestifo/github.vim")
   use("jacoborus/tender.vim")
 
   -- syntax

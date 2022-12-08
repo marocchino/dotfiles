@@ -1,9 +1,5 @@
 scriptencoding utf-8
-if filereadable(expand('~/.toggle_dark'))
-  colorscheme tender
-else
-  colorscheme github
-endif
+colorscheme tender
 
 highlight ColorColumn ctermbg=9
 highlight NonText guibg=#060606
