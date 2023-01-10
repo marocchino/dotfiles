@@ -1,8 +1,8 @@
 #!/bin/bash
 set -ex -o pipefail
 
-if grep '; pager = delta' < ~/.gitconfig; then
-  perl -pi -e 's/; pager = delta/pager = delta/g' gitconfig
+if grep '; pager = delta' < ~/dotfiles/gitconfig; then
+  perl -pi -e 's/; pager = delta/pager = delta/g' ~/dotfiles/gitconfig
 else
-  perl -pi -e 's/pager = delta/; pager = delta/g' gitconfig
+  perl -pi -e 's/pager = delta/; pager = delta/g' ~/dotfiles/gitconfig
 fi
