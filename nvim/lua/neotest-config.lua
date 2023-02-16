@@ -1,9 +1,5 @@
 require("neotest").setup({
   adapters = {
-    require("neotest-jest")({
-      jestCommand = "yarn test --",
-      jestConfigFile = "jest.config.js",
-    }),
     require("neotest-rspec"),
   },
   icons = {

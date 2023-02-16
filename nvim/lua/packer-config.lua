@@ -12,9 +12,10 @@ return require("packer").startup(function()
     end,
   })
   use({
-    "haya14busa/vim-open-googletranslate",
+    "kraftwerk28/gtranslate.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
     config = function()
-      pcall(require, "open-googletranslate-config")
+      pcall(require, "gtranslate-config")
     end,
   })
   use("honza/vim-snippets")
@@ -51,14 +52,6 @@ return require("packer").startup(function()
   use("jacoborus/tender.vim")
 
   -- syntax
-  -- == elixir ==
-  use({
-    "marocchino/pipe_converter",
-    run = "mix do deps.get, compile, escript.build",
-    config = function()
-      pcall(require, "pipe-converter-config")
-    end,
-  })
   -- == github-action ==
   use("yasuhiroki/github-actions-yaml.vim")
   -- == markdown ==
@@ -68,8 +61,6 @@ return require("packer").startup(function()
       pcall(require, "markdown-config")
     end,
   })
-  -- == reason ==
-  use("reasonml-editor/vim-reason-plus")
   -- == terraform ==
   use({
     "hashivim/vim-terraform",
@@ -85,21 +76,8 @@ return require("packer").startup(function()
   use("vim-ruby/vim-ruby")
   use("tpope/vim-rails")
   use("tpope/vim-bundler")
-  use("tpope/vim-haml")
 
   -- nvim
-  -- use({
-  --   "mfussenegger/nvim-lint",
-  --   config = function()
-  --     pcall(require, "lint-config")
-  --   end,
-  -- })
-  -- use({
-  --   "mhartington/formatter.nvim",
-  --   config = function()
-  --     pcall(require, "formatter-config")
-  --   end,
-  -- })
   use({
     "jose-elias-alvarez/null-ls.nvim",
     config = function()
@@ -205,7 +183,6 @@ return require("packer").startup(function()
     "nvim-neotest/neotest",
     requires = {
       "antoinemadec/FixCursorHold.nvim",
-      "haydenmeade/neotest-jest",
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
       "olimorris/neotest-rspec",
@@ -218,7 +195,8 @@ return require("packer").startup(function()
 
   -- lsp
   -- sql, xml, svg, toml, voldikss/coc-browser
-  use("williamboman/nvim-lsp-installer")
+  use("williamboman/mason.nvim")
+  use("williamboman/mason-lspconfig.nvim")
   use({
     "neovim/nvim-lspconfig",
     config = function()
@@ -226,25 +204,25 @@ return require("packer").startup(function()
     end,
   })
   use("folke/lsp-colors.nvim")
-  use({
-    "tami5/lspsaga.nvim",
-    requires = { "neovim/nvim-lspconfig" },
-    config = function()
-      pcall(require, "lspsaga-config")
-    end,
-  })
+  -- use({
+  --   "tami5/lspsaga.nvim",
+  --   requires = { "neovim/nvim-lspconfig" },
+  --   config = function()
+  --     pcall(require, "lspsaga-config")
+  --   end,
+  -- })
 
   -- style
   use({
     "hoob3rt/lualine.nvim",
-    requires = { "kyazdani42/nvim-web-devicons" },
+    requires = { "nvim-tree/nvim-web-devicons" },
     config = function()
       pcall(require, "lualine-config")
     end,
   })
   use({
     "nvim-tree/nvim-tree.lua",
-    requires = { "kyazdani42/nvim-web-devicons" },
+    requires = { "nvim-tree/nvim-web-devicons" },
     config = function()
       pcall(require, "tree-config")
     end,
