@@ -119,19 +119,26 @@ return require("packer").startup(function()
     "JoosepAlviste/nvim-ts-context-commentstring",
     requires = { "nvim-treesitter/nvim-treesitter" },
   })
+  -- Completion framework:
   use({
     "hrsh7th/nvim-cmp",
     config = function()
       pcall(require, "cmp-config")
     end,
   })
+
+  -- Useful completion sources:
+  use({ "hrsh7th/cmp-nvim-lua", requires = { "hrsh7th/nvim-cmp" } })
   use({
-    "quangnguyen30192/cmp-nvim-ultisnips",
-    requires = { "hrsh7th/nvim-cmp", "SirVer/ultisnips" },
+    "hrsh7th/cmp-nvim-lsp-signature-help",
+    requires = { "hrsh7th/nvim-cmp" },
   })
+  use("hrsh7th/cmp-vsnip")
+  use("hrsh7th/vim-vsnip")
   use({ "hrsh7th/cmp-buffer", requires = { "hrsh7th/nvim-cmp" } })
   use({ "hrsh7th/cmp-path", requires = { "hrsh7th/nvim-cmp" } })
   use({ "hrsh7th/cmp-cmdline", requires = { "hrsh7th/nvim-cmp" } })
+  -- LSP completion source:
   use({ "hrsh7th/cmp-nvim-lsp", requires = { "hrsh7th/nvim-cmp" } })
   use({
     "phaazon/hop.nvim",
@@ -165,10 +172,6 @@ return require("packer").startup(function()
     end,
   })
   use({
-    "fhill2/telescope-ultisnips.nvim",
-    requires = { "nvim-telescope/telescope.nvim", "SirVer/ultisnips" },
-  })
-  use({
     "AckslD/nvim-neoclip.lua",
     config = function()
       pcall(require, "neoclip-config")
@@ -186,6 +189,7 @@ return require("packer").startup(function()
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
       "olimorris/neotest-rspec",
+      "rouge8/neotest-rust",
     },
     config = function()
       pcall(require, "neotest-config")
@@ -211,6 +215,13 @@ return require("packer").startup(function()
   --     pcall(require, "lspsaga-config")
   --   end,
   -- })
+  -- rust
+  use({
+    "simrat39/rust-tools.nvim",
+    config = function()
+      pcall(require, "rust-tools-config")
+    end,
+  })
 
   -- style
   use({

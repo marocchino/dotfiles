@@ -74,7 +74,6 @@ nnoremap <silent><leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <silent><leader>fi <cmd>Telescope lsp_implementations<cr>
 nnoremap <silent><leader>fn <cmd>lua require'telescope.builtin'.symbols{ sources = {'nerd'} }<CR>
 nnoremap <silent><leader>fr <cmd>Telescope registers<cr>
-nnoremap <silent><leader>fs <cmd>Telescope ultisnips<cr>
 nnoremap <silent><leader>ft <cmd>Telescope treesitter<cr>
 
 augroup commit_gitmoji

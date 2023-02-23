@@ -3,9 +3,10 @@ require("mason").setup()
 require("mason-lspconfig").setup({
   automatic_installation = true,
   ensure_installed = {
-    "sumneko_lua",
+    "lua_ls",
     "solargraph",
     "rust_analyzer",
+    "codelldb",
     "tsserver",
     "vimls",
     "jsonls",
@@ -60,7 +61,7 @@ local on_attach = function(client, bufnr)
     "", -- TypeParameter
   }
 end
-require("lspconfig").sumneko_lua.setup({
+require("lspconfig").lua_ls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -90,6 +91,10 @@ require("lspconfig").solargraph.setup({
   capabilities = capabilities,
 })
 require("lspconfig").tsserver.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+require("lspconfig").rust_analyzer.setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })

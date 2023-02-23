@@ -4,6 +4,7 @@ require("null-ls").setup({
   sources = {
     require("null-ls").builtins.formatting.mix,
     require("null-ls").builtins.formatting.prettierd,
+    require("null-ls").builtins.formatting.rustfmt,
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/lua/null-ls/builtins/formatting/rubocop.lua
     require("null-ls").builtins.formatting.rubocop.with({
       args = {

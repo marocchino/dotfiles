@@ -1,6 +1,7 @@
 require("neotest").setup({
   adapters = {
     require("neotest-rspec"),
+    require("neotest-rust"),
   },
   icons = {
     child_indent = "│",
