@@ -6,7 +6,6 @@ require("mason-lspconfig").setup({
     "lua_ls",
     "solargraph",
     "rust_analyzer",
-    "codelldb",
     "tsserver",
     "vimls",
     "jsonls",
