@@ -58,3 +58,5 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 defaults write com.apple.dock autohide-time-modifier -float 0.25;killall Dock
 defaults write -g NSWindowResizeTime -float 0.003
 
+# https://github.com/wbthomason/packer.nvim/issues/1199#issuecomment-1418695865
+ulimit -n 10240
