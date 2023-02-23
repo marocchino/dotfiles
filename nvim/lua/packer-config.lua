@@ -185,7 +185,6 @@ return require("packer").startup(function()
   use({
     "nvim-neotest/neotest",
     requires = {
-      "antoinemadec/FixCursorHold.nvim",
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
       "olimorris/neotest-rspec",
