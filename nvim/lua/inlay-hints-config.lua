@@ -1,0 +1,2 @@
+require("inlay-hints").setup()
+

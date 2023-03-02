@@ -100,5 +100,18 @@ require("lspconfig").rust_analyzer.setup({
 })
 require("lspconfig").gopls.setup({
   on_attach = on_attach,
+  settings = {
+    gopls = {
+      hints = {
+        assignVariableTypes = true,
+        compositeLiteralFields = true,
+        compositeLiteralTypes = true,
+        constantValues = true,
+        functionTypeParameters = true,
+        parameterNames = true,
+        rangeVariableTypes = true,
+      },
+    },
+  },
   capabilities = capabilities,
 })

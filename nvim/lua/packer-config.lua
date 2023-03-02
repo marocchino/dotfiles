@@ -215,12 +215,33 @@ return require("packer").startup(function()
   --     pcall(require, "lspsaga-config")
   --   end,
   -- })
+  use({
+    'simrat39/inlay-hints.nvim',
+    config = function()
+      pcall(require, "inlay-hints-config")
+    end,
+  })
   -- rust
   use({
     "simrat39/rust-tools.nvim",
     config = function()
       pcall(require, "rust-tools-config")
     end,
+  })
+  -- go
+  use({
+    "ray-x/go.nvim",
+    requires = { -- optional packages
+      "ray-x/guihua.lua",
+      "neovim/nvim-lspconfig",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      pcall(require, "go-config")
+    end,
+    event = { "CmdlineEnter" },
+    ft = { "go", 'gomod' },
+    build = ':lua require("go.install").update_all_sync()'
   })
 
   -- style
