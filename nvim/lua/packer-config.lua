@@ -189,6 +189,7 @@ return require("packer").startup(function()
       "nvim-treesitter/nvim-treesitter",
       "olimorris/neotest-rspec",
       "rouge8/neotest-rust",
+      "nvim-neotest/neotest-go",
     },
     config = function()
       pcall(require, "neotest-config")

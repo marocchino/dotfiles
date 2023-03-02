@@ -4,6 +4,7 @@ require("null-ls").setup({
   sources = {
     require("null-ls").builtins.formatting.mix,
     require("null-ls").builtins.formatting.prettierd,
+    require("null-ls").builtins.formatting.gofmt,
     require("null-ls").builtins.formatting.rustfmt,
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/lua/null-ls/builtins/formatting/rubocop.lua
     require("null-ls").builtins.formatting.rubocop.with({
@@ -27,6 +28,7 @@ require("null-ls").setup({
     require("null-ls").builtins.diagnostics.eslint_d,
     require("null-ls").builtins.diagnostics.erb_lint,
     require("null-ls").builtins.diagnostics.golangci_lint,
+    require("null-ls").builtins.diagnostics.gospel,
     require("null-ls").builtins.diagnostics.hadolint,
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/lua/null-ls/builtins/diagnostics/rubocop.lua
     require("null-ls").builtins.diagnostics.rubocop,
