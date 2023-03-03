@@ -84,6 +84,11 @@ runtime functions.vim
 runtime colors.vim
 runtime keymaps.vim
 
+augroup disable_copilot_in_exercism
+  autocmd!
+  autocmd BufEnter */exercism/* Copilot disable
+augroup END
+
 augroup auto_save
   autocmd!
   autocmd BufLeave,FocusLost * silent! update
