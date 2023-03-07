@@ -61,9 +61,9 @@ getChar() {
   cursor=-1
   char=""
   while [ "$cursor" != "$index" ]; do
-    substract="${string#?}"    # All but the first character of the string
-    char="${string%"$substract"}"    # Remove $rest, and you're left with the first character
-    string="$substract"
+    subtract="${string#?}"    # All but the first character of the string
+    char="${string%"$subtract"}"    # Remove $rest, and you're left with the first character
+    string="$subtract"
     cursor=$((cursor + 1))
   done
   printf "%s$char"
@@ -139,7 +139,7 @@ normalizeZero() {
   printf %s "$next"
 }
 
-semver_compare() {
+semverCompare() {
   firstParam=$1 #1.2.4-alpha.beta+METADATA
   secondParam=$2 #1.2.4-alpha.beta.2+METADATA
   debug=${3:-1}
@@ -342,4 +342,4 @@ semver_compare() {
   done
 }
 
-printf "%s$(semver_compare "$@")\n"
+printf "%s$(semverCompare "$@")\n"
