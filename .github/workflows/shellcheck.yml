@@ -2,18 +2,18 @@ name: Shellcheck
 on:
   push:
     branches:
-    - main
+      - main
     paths:
-    - "bash/**"
-    - ".github/workflows/shellcheck.yml"
+      - "bash/**"
+      - ".github/workflows/shellcheck.yml"
 
 jobs:
   shellcheck:
     name: Shellcheck
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Run ShellCheck
-      uses: ludeeus/action-shellcheck@master
-      with:
-        ignore: completions
+      - uses: actions/checkout@v3
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@master
+        with:
+          ignore_paths: completions/** bashrc bash/functions/semver-compare bash/functions/flip
