@@ -16,4 +16,5 @@ jobs:
       - name: Run ShellCheck
         uses: ludeeus/action-shellcheck@master
         with:
-          ignore_paths: completions/** bashrc bash/functions/semver-compare bash/functions/flip
+          ignore_paths: completions
+          ignore_names: bashrc semver-compare
