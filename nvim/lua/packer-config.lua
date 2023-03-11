@@ -51,40 +51,22 @@ return require("packer").startup(function()
   -- color
   use("jacoborus/tender.vim")
 
-  -- syntax
-  -- == github-action ==
-  use("yasuhiroki/github-actions-yaml.vim")
-  -- == markdown ==
+  -- chatgpt
   use({
-    "plasticboy/vim-markdown",
+    "jackMort/ChatGPT.nvim",
     config = function()
-      pcall(require, "markdown-config")
+      require("chatgpt").setup({
+        -- optional configuration
+      })
     end,
-  })
-  -- == terraform ==
-  use({
-    "hashivim/vim-terraform",
-    config = function()
-      pcall(require, "terraform-config")
-    end,
-  })
-  -- == ruby ==
-  -- use {
-  --   'joker1007/vim-ruby-heredoc-syntax',
-  --   config = function() require('ruby-heredoc-syntax-config') end
-  -- }
-  use("vim-ruby/vim-ruby")
-  use("tpope/vim-rails")
-  use("tpope/vim-bundler")
-
-  -- nvim
-  use({
-    "jose-elias-alvarez/null-ls.nvim",
-    config = function()
-      pcall(require, "null-ls-config")
-    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
   })
 
+  -- treesitter
   use({
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
@@ -198,7 +180,6 @@ return require("packer").startup(function()
   use("github/copilot.vim")
 
   -- lsp
-  -- sql, xml, svg, toml, voldikss/coc-browser
   use("williamboman/mason.nvim")
   use("williamboman/mason-lspconfig.nvim")
   use({
@@ -208,19 +189,56 @@ return require("packer").startup(function()
     end,
   })
   use("folke/lsp-colors.nvim")
-  -- use({
-  --   "tami5/lspsaga.nvim",
-  --   requires = { "neovim/nvim-lspconfig" },
-  --   config = function()
-  --     pcall(require, "lspsaga-config")
-  --   end,
-  -- })
   use({
     'simrat39/inlay-hints.nvim',
     config = function()
       pcall(require, "inlay-hints-config")
     end,
   })
+  use({
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+      pcall(require, "null-ls-config")
+    end,
+  })
+
+  -- style
+  use({
+    "hoob3rt/lualine.nvim",
+    requires = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      pcall(require, "lualine-config")
+    end,
+  })
+  use({
+    "nvim-tree/nvim-tree.lua",
+    requires = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      pcall(require, "tree-config")
+    end,
+  })
+
+  -- language specifics
+  -- github-action
+  use("yasuhiroki/github-actions-yaml.vim")
+  -- markdown
+  use({
+    "plasticboy/vim-markdown",
+    config = function()
+      pcall(require, "markdown-config")
+    end,
+  })
+  -- terraform
+  use({
+    "hashivim/vim-terraform",
+    config = function()
+      pcall(require, "terraform-config")
+    end,
+  })
+  -- ruby
+  use("vim-ruby/vim-ruby")
+  use("tpope/vim-rails")
+  use("tpope/vim-bundler")
   -- rust
   use({
     "simrat39/rust-tools.nvim",
@@ -242,21 +260,5 @@ return require("packer").startup(function()
     event = { "CmdlineEnter" },
     ft = { "go", 'gomod' },
     build = ':lua require("go.install").update_all_sync()'
-  })
-
-  -- style
-  use({
-    "hoob3rt/lualine.nvim",
-    requires = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      pcall(require, "lualine-config")
-    end,
-  })
-  use({
-    "nvim-tree/nvim-tree.lua",
-    requires = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      pcall(require, "tree-config")
-    end,
   })
 end)
