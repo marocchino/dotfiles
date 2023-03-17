@@ -12,10 +12,9 @@ return require("packer").startup(function()
     end,
   })
   use({
-    "kraftwerk28/gtranslate.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
+    "uga-rosa/translate.nvim",
     config = function()
-      pcall(require, "gtranslate-config")
+      pcall(require, "translate-config")
     end,
   })
   use("honza/vim-snippets")
