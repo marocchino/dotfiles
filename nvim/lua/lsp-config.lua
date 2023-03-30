@@ -4,7 +4,7 @@ require("mason-lspconfig").setup({
   automatic_installation = true,
   ensure_installed = {
     "lua_ls",
-    "solargraph",
+    "ruby_ls",
     "rust_analyzer",
     "tsserver",
     "vimls",
@@ -86,7 +86,8 @@ require("lspconfig").lua_ls.setup({
     },
   },
 })
-require("lspconfig").solargraph.setup({
+-- see: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.txt#ruby_ls
+require("lspconfig").ruby_ls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
