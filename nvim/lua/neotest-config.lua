@@ -1,5 +1,9 @@
 -- get neotest namespace (api call creates or returns namespace)
 local neotest_ns = vim.api.nvim_create_namespace("neotest")
+local ok, neotest = pcall(require, "neotest")
+if not ok then
+  return
+end
 vim.diagnostic.config({
   virtual_text = {
     format = function(diagnostic)
@@ -9,7 +13,7 @@ vim.diagnostic.config({
     end,
   },
 }, neotest_ns)
-require("neotest").setup({
+neotest.setup({
   adapters = {
     require("neotest-rspec"),
     require("neotest-rust"),
@@ -30,3 +34,16 @@ require("neotest").setup({
     unknown = "",
   },
 })
+
+-- these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
+vim.keymap.set('n', 't<C-a>', neotest.run.attach, { silent = true })
+vim.keymap.set('n', 't<C-d>', function()
+  neotest.run.run({ strategy = 'dap' })
+end, { silent = true })
+vim.keymap.set('n', 't<C-n>', neotest.run.run, { silent = true })
+vim.keymap.set('n', 't<C-t>', neotest.summary.toggle, { silent = true })
+vim.keymap.set('n', 't<C-f>', function()
+  neotest.run.run(vim.fn.expand "%")
+end, { silent = true })
+vim.keymap.set('n', 't<C-o>', neotest.output.open, { silent = true })
+vim.keymap.set('n', 't<C-l>', neotest.run.run_last, { silent = true })
