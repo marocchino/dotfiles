@@ -28,13 +28,6 @@ vim.cmd([[
   omap ,. gc
   omap ., c
 
-  " hop
-  nnoremap <silent><leader>w :HopWord<CR>
-  nnoremap <silent><leader>l :HopLine<CR>
-  nnoremap <silent><leader>p :HopPattern<CR>
-  nnoremap <silent><leader>h :HopChar1<CR>
-  nnoremap <silent><leader>h2 :HopChar2<CR>
-
   " telescope
   nnoremap <silent><leader>f <cmd>Telescope builtin<cr>
   nnoremap <silent><leader>fb <cmd>Telescope buffers<cr>

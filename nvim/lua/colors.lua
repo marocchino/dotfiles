@@ -14,25 +14,19 @@ vim.cmd([[
     autocmd!
     autocmd Filetype gitcommit setlocal spell textwidth=72
   augroup END
-]])
 
-vim.cmd([[
   augroup debugger_highlight
     autocmd!
     autocmd BufEnter *.ex syn match Error "IO.puts\|IO.inspect"
     autocmd BufEnter *.rb syn match Error "binding.pry\|debugger"
     autocmd BufEnter *.{js,coffee} syn match Error "console.log"
   augroup END
-]])
 
-vim.cmd([[
   augroup misspelling_highlight
     autocmd!
     autocmd BufEnter *.{md,txt} syn match Error "루비\|루아\|네오빔\|빔"
   augroup END
-]])
 
-vim.cmd([[
   augroup highlight_yank
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}

@@ -1,7 +1,7 @@
-require("options")       -- lua/options.lua
-require("colors")        -- lua/colors.lua
-require("packer-config") -- lua/packer-config.lua
-require("keymaps")       -- lua/keymaps.lua
+require("options") -- lua/options.lua
+require("colors")  -- lua/colors.lua
+require("plugins") -- lua/plugins.lua
+require("keymaps") -- lua/keymaps.lua
 
 vim.cmd([[
   augroup commit_width

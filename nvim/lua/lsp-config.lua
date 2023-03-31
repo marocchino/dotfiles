@@ -1,23 +1,4 @@
 local protocol = require("vim.lsp.protocol")
-require("mason").setup()
-require("mason-lspconfig").setup({
-  automatic_installation = true,
-  ensure_installed = {
-    "lua_ls",
-    "ruby_ls",
-    "rust_analyzer",
-    "tsserver",
-    "vimls",
-    "jsonls",
-    "yamlls",
-    "terraformls",
-    "remark_ls",
-    "html",
-    "graphql",
-    "gopls",
-    "dockerls",
-  },
-})
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(
   vim.lsp.protocol.make_client_capabilities()
