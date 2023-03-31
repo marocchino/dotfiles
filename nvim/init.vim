@@ -81,7 +81,6 @@ lua require('init')
 
 
 runtime functions.vim
-runtime colors.vim
 runtime keymaps.vim
 
 augroup disable_copilot_in_exercism

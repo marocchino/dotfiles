@@ -1,3 +1,4 @@
+require("colors")
 require("packer-config")
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
