@@ -7,7 +7,7 @@ vim.g.vim_markdown_fenced_languages = {
   "python=py",
   "markdown=md",
   "javascript=js",
-  "elixir=elixir",
+  "elixir=ex",
 }
 vim.g.vim_markdown_folding_disabled = 1
 vim.g.vim_markdown_frontmatter = 1

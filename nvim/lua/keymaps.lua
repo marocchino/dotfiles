@@ -1,8 +1,6 @@
 vim.cmd([[
   augroup converter
     autocmd!
-    autocmd FileType elixir nnoremap ec :call PipeConvert()<CR>
-    autocmd FileType elixir nnoremap er :call PipeRevert()<CR>
     autocmd FileType elixir nnoremap td :call ToggleDo()<CR>
     autocmd FileType elixir nnoremap tw :call ToggleWith()<CR>
     autocmd FileType elixir nnoremap em :call ExpandMulti()<CR>
@@ -77,7 +75,7 @@ vim.keymap.set('n', '<leader>gD', vim.lsp.buf.declaration, { silent = true })
 vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, { silent = true })
 vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, { silent = true })
 vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition, { silent = true })
-vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, { silent = true })
+vim.keymap.set('n', '<leader>gh', vim.lsp.buf.signature_help, { silent = true })
 vim.keymap.set('n', '<C-p>', vim.lsp.buf.formatting, { silent = true })
 vim.keymap.set('n', '[w', function()
   vim.lsp.diagnostic.goto_prev()

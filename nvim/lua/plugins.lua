@@ -17,7 +17,8 @@ require("lazy").setup({
   {
     "dhruvasagar/vim-table-mode",
     config = function()
-      pcall(require, "table-mode-config")
+      vim.g.table_mode_corner_corner = "|"
+      vim.g.table_mode_header_fillchar = "-"
     end,
   },
   {
@@ -167,6 +168,7 @@ require("lazy").setup({
     dependencies = { "tami5/sql.nvim" },
   },
   {
+    -- https://github.com/nvim-neotest/neotest
     "nvim-neotest/neotest",
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -175,9 +177,36 @@ require("lazy").setup({
       "rouge8/neotest-rust",
       "nvim-neotest/neotest-go",
     },
-    config = function()
-      pcall(require, "neotest-config")
-    end,
+    opts = {
+      adapters = {
+        require("neotest-rspec"),
+        require("neotest-rust"),
+        require("neotest-go"),
+      },
+      icons = {
+        child_indent = "│",
+        child_prefix = "├",
+        collapsed = "─",
+        expanded = "╮",
+        failed = "",
+        final_child_indent = " ",
+        final_child_prefix = "╰",
+        non_collapsible = "─",
+        passed = "",
+        running = "",
+        skipped = "",
+        unknown = "",
+      },
+    },
+    keys = {
+      { "t<C-a>", "<cmd>lua require('neotest').run.attach()<CR>",                  silent = true },
+      { "t<C-d>", "<cmd>lua require('neotest').run.run({ strategy = 'dap' })<CR>", silent = true },
+      { "t<C-n>", "<cmd>lua require('neotest').run.run()<CR>",                     silent = true },
+      { "t<C-t>", "<cmd>lua require('neotest').summary.toggle()<CR>",              silent = true },
+      { "t<C-f>", "<cmd>lua require('neotest').run.run(vim.fn.expand '%')<CR>",    silent = true },
+      { "t<C-o>", "<cmd>lua require('neotest').output.open()<CR>",                 silent = true },
+      { "t<C-l>", "<cmd>lua require('neotest').run.run_last()<CR>",                silent = true },
+    }
   },
   "github/copilot.vim",
 
@@ -238,11 +267,44 @@ require("lazy").setup({
   },
   -- style
   {
+    -- https://github.com/hoob3rt/lualine.nvim
     "hoob3rt/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      pcall(require, "lualine-config")
-    end,
+    opts = {
+      options = {
+        theme = "nightfly",
+        section_separators = { "", "" },
+        component_separators = { "", "" },
+      },
+      sections = {
+        lualine_a = { "mode" },
+        lualine_b = { "branch" },
+        lualine_c = {
+          {
+            "filename",
+            file_status = true, -- displays file status (readonly status, modified status)
+            path = 0,           -- 0 = just filename, 1 = relative path, 2 = absolute path
+          },
+        },
+        lualine_x = {
+          {
+            "diagnostics",
+            sources = { "vim_lsp" },
+            symbols = {
+              error = " ",
+              warn = " ",
+              info = " ",
+              hint = " ",
+            },
+          },
+          "encoding",
+          "filetype",
+        },
+        lualine_y = { "progress" },
+        lualine_z = { "location" },
+      },
+      extensions = { "fugitive" },
+    },
   },
   {
     "nvim-tree/nvim-tree.lua",
@@ -263,7 +325,8 @@ require("lazy").setup({
   {
     "hashivim/vim-terraform",
     config = function()
-      pcall(require, "terraform-config")
+      vim.g.terraform_align = 1
+      vim.g.terraform_format_on_save = 1
     end,
   },
   -- vader
