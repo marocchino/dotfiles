@@ -1,43 +1,16 @@
-require("options") -- lua/options.lua
-require("colors")  -- lua/colors.lua
-require("plugins") -- lua/plugins.lua
-require("keymaps") -- lua/keymaps.lua
+require("options")  -- lua/options.lua
+require("plugins")  -- lua/plugins.lua
+require("keymaps")  -- lua/keymaps.lua
+require("augroups") -- lua/augroups.lua
 
-vim.cmd([[
-  augroup commit_width
-    autocmd!
-    autocmd Filetype gitcommit setlocal spell textwidth=72
-  augroup END
-]])
+vim.cmd("highlight ColorColumn ctermbg=9")
+vim.cmd("highlight NonText guibg=#060606")
+vim.cmd("highlight Folded guibg=#0A0A0A guifg=#9090D0")
 
-vim.cmd([[
-  augroup disable_copilot_in_exercism
-    autocmd!
-    autocmd BufEnter */exercism/* Copilot disable
-  augroup END
-]])
-
-vim.cmd([[
-  augroup auto_save
-    autocmd!
-    autocmd BufLeave,FocusLost * silent! update
-  augroup END
-]])
-
-vim.cmd([[
-  augroup reload_vim_config
-    autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
-  augroup END
-]])
-
-vim.cmd([[
-  augroup reload_vim
-    autocmd!
-    autocmd BufWritePost *.vim source %
-    autocmd BufWritePost *.lua luafile %
-  augroup END
-]])
+-- Highlight VCS conflict markers
+vim.cmd("match ErrorMsg '^(<|=|>){7}([^=].+)?$'")
+-- Highlight japanese spaces as error
+vim.cmd("match Error /　/")
 
 vim.cmd("syntax enable")
 vim.cmd("syntax sync fromstart")

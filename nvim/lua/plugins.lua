@@ -56,7 +56,12 @@ require("lazy").setup({
   "MarcWeber/vim-addon-mw-utils",
 
   -- color
-  "jacoborus/tender.vim",
+  {
+    "jacoborus/tender.vim",
+    config = function()
+      vim.cmd("colorscheme tender")
+    end,
+  },
 
   -- chatgpt
   {
