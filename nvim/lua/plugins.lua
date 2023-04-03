@@ -66,7 +66,9 @@ require("lazy").setup({
   -- chatgpt
   {
     "jackMort/ChatGPT.nvim",
-    opts = {},
+    config = function()
+      require("chatgpt").setup({})
+    end,
     dependencies = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
@@ -181,28 +183,32 @@ require("lazy").setup({
       "olimorris/neotest-rspec",
       "rouge8/neotest-rust",
       "nvim-neotest/neotest-go",
+      "nvim-neotest/neotest-plenary"
     },
-    opts = {
-      adapters = {
-        require("neotest-rspec"),
-        require("neotest-rust"),
-        require("neotest-go"),
-      },
-      icons = {
-        child_indent = "│",
-        child_prefix = "├",
-        collapsed = "─",
-        expanded = "╮",
-        failed = "",
-        final_child_indent = " ",
-        final_child_prefix = "╰",
-        non_collapsible = "─",
-        passed = "",
-        running = "",
-        skipped = "",
-        unknown = "",
-      },
-    },
+    config = function()
+      require("neotest").setup({
+        adapters = {
+          require("neotest-rspec"),
+          require("neotest-rust"),
+          require("neotest-go"),
+          require("neotest-plenary"),
+        },
+        icons = {
+          child_indent = "│",
+          child_prefix = "├",
+          collapsed = "─",
+          expanded = "╮",
+          failed = "",
+          final_child_indent = " ",
+          final_child_prefix = "╰",
+          non_collapsible = "─",
+          passed = "",
+          running = "",
+          skipped = "",
+          unknown = "",
+        },
+      })
+    end,
     keys = {
       { "t<C-a>", "<cmd>lua require('neotest').run.attach()<CR>",                  silent = true },
       { "t<C-d>", "<cmd>lua require('neotest').run.run({ strategy = 'dap' })<CR>", silent = true },
