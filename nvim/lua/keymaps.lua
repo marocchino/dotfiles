@@ -61,7 +61,6 @@ vim.keymap.set('t', '<C-J>', '<C-\\><C-n><C-W>j', { silent = true })
 vim.keymap.set('t', '<C-K>', '<C-\\><C-n><C-W>k', { silent = true })
 vim.keymap.set('t', '<C-L>', '<C-\\><C-n><C-W>l', { silent = true })
 
-
 -- git
 vim.keymap.set('n', '<Leader>ga', '<cmd>Git add %<CR>', { silent = true })
 vim.keymap.set('n', '<Leader>gvd', '<cmd>Gvdiffsplit<CR>', { silent = true })
@@ -76,7 +75,6 @@ vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, { silent = true })
 vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, { silent = true })
 vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition, { silent = true })
 vim.keymap.set('n', '<leader>gh', vim.lsp.buf.signature_help, { silent = true })
-vim.keymap.set('n', '<C-p>', vim.lsp.buf.formatting, { silent = true })
 vim.keymap.set('n', '[w', function()
   vim.lsp.diagnostic.goto_prev()
 end, { silent = true })
