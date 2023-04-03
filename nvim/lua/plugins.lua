@@ -79,7 +79,7 @@ require("lazy").setup({
   -- treesitter
   {
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
+    build = ":TSUpdate",
     config = function()
       pcall(require, "treesitter-config")
     end,
