@@ -2,7 +2,6 @@ brew 'bash'
 brew 'wget'
 brew 'ctags'
 brew 'git'
-brew 'go'
 brew 'python'
 brew 'yarn-completion'
 brew 'starship'
@@ -29,12 +28,4 @@ brew 'ugrep'
 tap 'homebrew/cask-fonts'
 cask 'font-iosevka-nerd-font'
 cask 'font-monofur-nerd-font'
-
-# linter
-brew 'golangci-lint'
-brew 'hadolint'
-brew 'shellcheck'
-brew 'vint'
-
-# formatter
-brew 'shellharden'
+cask 'fertigt-slate'
