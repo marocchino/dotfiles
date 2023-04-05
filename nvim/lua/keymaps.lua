@@ -61,13 +61,6 @@ vim.keymap.set('t', '<C-J>', '<C-\\><C-n><C-W>j', { silent = true })
 vim.keymap.set('t', '<C-K>', '<C-\\><C-n><C-W>k', { silent = true })
 vim.keymap.set('t', '<C-L>', '<C-\\><C-n><C-W>l', { silent = true })
 
--- git
-vim.keymap.set('n', '<Leader>ga', '<cmd>Git add %<CR>', { silent = true })
-vim.keymap.set('n', '<Leader>gvd', '<cmd>Gvdiffsplit<CR>', { silent = true })
-vim.keymap.set('n', '<Leader>gsd', '<cmd>Gdiffsplit<CR>', { silent = true })
-vim.keymap.set('n', '<Leader>grs', '<cmd>Git restore --staged %<CR>', { silent = true })
-vim.keymap.set('n', '<Leader>gc', '<cmd>Git commit<CR>', { silent = true })
-
 -- LSP config (the mappings used in the default file don't quite work right)
 vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { silent = true })
 vim.keymap.set('n', '<leader>gD', vim.lsp.buf.declaration, { silent = true })

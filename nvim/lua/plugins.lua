@@ -40,7 +40,17 @@ require("lazy").setup({
   "tpope/vim-commentary",
   "tpope/vim-dispatch",
   "tpope/vim-endwise",
-  "tpope/vim-fugitive",
+  {
+    "tpope/vim-fugitive",
+    keys = {
+      { "<leader>gs",  "<cmd>Git<CR>",                    silent = true },
+      { "<leader>ga",  "<cmd>Git add %<CR>",              silent = true },
+      { "<leader>gdv", "<cmd>Gvdiffsplit<CR>",            silent = true },
+      { "<leader>gds", "<cmd>Gdiffsplit<CR>",             silent = true },
+      { "<leader>grs", "<cmd>Git restore --staged %<CR>", silent = true },
+      { "<leader>gc",  "<cmd>Git commit<CR>",             silent = true },
+    },
+  },
   "tpope/vim-projectionist",
   {
     "tpope/vim-ragtag",
@@ -191,7 +201,7 @@ require("lazy").setup({
           require("neotest-rspec"),
           require("neotest-rust"),
           require("neotest-go"),
-          require("neotest-plenary"),
+          -- require("neotest-plenary"),
         },
         icons = {
           child_indent = "│",
