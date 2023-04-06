@@ -48,7 +48,6 @@ require("lazy").setup({
       { "<leader>gdv", "<cmd>Gvdiffsplit<CR>",            silent = true },
       { "<leader>gds", "<cmd>Gdiffsplit<CR>",             silent = true },
       { "<leader>grs", "<cmd>Git restore --staged %<CR>", silent = true },
-      { "<leader>gc",  "<cmd>Git commit<CR>",             silent = true },
     },
   },
   "tpope/vim-projectionist",
@@ -57,6 +56,17 @@ require("lazy").setup({
     config = function()
       vim.g.ragtag_global_maps = 1
     end,
+  },
+  {
+    "marocchino/acommit.nvim",
+    dev = true,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "tpope/vim-fugitive",
+    },
+    keys = {
+      { "<leader>gc", "<cmd>Gacommit<CR>", silent = true },
+    },
   },
   "tpope/vim-rhubarb",
   "tpope/vim-surround",
@@ -379,4 +389,9 @@ require("lazy").setup({
     ft = { "go", 'gomod' },
     build = ':lua require("go.install").update_all_sync()'
   },
+}, {
+  dev = {
+    path = "~/Documents",
+    patterns = { "*.nvim" },
+  }
 })
