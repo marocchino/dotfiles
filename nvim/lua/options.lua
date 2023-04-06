@@ -1,16 +1,18 @@
 vim.opt.completeopt:append("preview")
-vim.opt.backspace = { 'indent', 'eol', 'start' }
+vim.opt.backspace = { "indent", "eol", "start" }
 vim.opt.expandtab = true
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
-vim.opt.fileencodings = { "utf-8", "cp949", "cp932", "euc-jp", "shift-jis", "euc-kr" }
+vim.opt.fileencodings =
+  { "utf-8", "cp949", "cp932", "euc-jp", "shift-jis", "euc-kr" }
 vim.opt.hidden = true
 vim.opt.history = 50
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.laststatus = 2
 vim.opt.list = true
-vim.opt.listchars = { tab = "»·", trail = "·", extends = "»", precedes = "«", nbsp = "%" }
+vim.opt.listchars =
+  { tab = "»·", trail = "·", extends = "»", precedes = "«", nbsp = "%" }
 vim.opt.lazyredraw = true
 vim.opt.loadplugins = true
 vim.opt.magic = true
@@ -57,9 +59,27 @@ vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
 
 vim.opt.wildignore:append({
-  "*.o", "*.out", "*.obj", ".git", "*.rbc", "*.rbo", "*.class", "*.gem",
-  "*.pyc", "*.pyo", "*.exe", "*.dll", "*.so", "*.swp", "*.zip", "*.tar.gz",
-  "*.gif", "*.jpg", "*.png", "*.log", "*.DS_Store",
+  "*.o",
+  "*.out",
+  "*.obj",
+  ".git",
+  "*.rbc",
+  "*.rbo",
+  "*.class",
+  "*.gem",
+  "*.pyc",
+  "*.pyo",
+  "*.exe",
+  "*.dll",
+  "*.so",
+  "*.swp",
+  "*.zip",
+  "*.tar.gz",
+  "*.gif",
+  "*.jpg",
+  "*.png",
+  "*.log",
+  "*.DS_Store",
 })
 vim.opt.termguicolors = true
 vim.opt.colorcolumn = "80"

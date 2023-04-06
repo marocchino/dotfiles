@@ -1,6 +1,6 @@
-require("options")  -- lua/options.lua
-require("plugins")  -- lua/plugins.lua
-require("keymaps")  -- lua/keymaps.lua
+require("options") -- lua/options.lua
+require("plugins") -- lua/plugins.lua
+require("keymaps") -- lua/keymaps.lua
 require("augroups") -- lua/augroups.lua
 
 vim.cmd("highlight ColorColumn ctermbg=9")
