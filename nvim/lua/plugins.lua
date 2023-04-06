@@ -43,10 +43,10 @@ require("lazy").setup({
   {
     "tpope/vim-fugitive",
     keys = {
-      { "<leader>gs",  "<cmd>Git<CR>",                    silent = true },
-      { "<leader>ga",  "<cmd>Git add %<CR>",              silent = true },
-      { "<leader>gdv", "<cmd>Gvdiffsplit<CR>",            silent = true },
-      { "<leader>gds", "<cmd>Gdiffsplit<CR>",             silent = true },
+      { "<leader>gs", "<cmd>Git<CR>", silent = true },
+      { "<leader>ga", "<cmd>Git add %<CR>", silent = true },
+      { "<leader>gdv", "<cmd>Gvdiffsplit<CR>", silent = true },
+      { "<leader>gds", "<cmd>Gdiffsplit<CR>", silent = true },
       { "<leader>grs", "<cmd>Git restore --staged %<CR>", silent = true },
     },
   },
@@ -59,7 +59,7 @@ require("lazy").setup({
   },
   {
     "marocchino/acommit.nvim",
-    dev = true,
+    -- dev = true,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "tpope/vim-fugitive",
@@ -92,8 +92,8 @@ require("lazy").setup({
     dependencies = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
-    }
+      "nvim-telescope/telescope.nvim",
+    },
   },
 
   -- treesitter
@@ -106,7 +106,10 @@ require("lazy").setup({
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
-    dependencies = { "nvim-treesitter/nvim-treesitter", "kana/vim-textobj-user" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "kana/vim-textobj-user",
+    },
   },
   {
     "nvim-treesitter/playground",
@@ -144,9 +147,9 @@ require("lazy").setup({
   },
   "hrsh7th/cmp-vsnip",
   "hrsh7th/vim-vsnip",
-  { "hrsh7th/cmp-buffer",   dependencies = { "hrsh7th/nvim-cmp" } },
-  { "hrsh7th/cmp-path",     dependencies = { "hrsh7th/nvim-cmp" } },
-  { "hrsh7th/cmp-cmdline",  dependencies = { "hrsh7th/nvim-cmp" } },
+  { "hrsh7th/cmp-buffer", dependencies = { "hrsh7th/nvim-cmp" } },
+  { "hrsh7th/cmp-path", dependencies = { "hrsh7th/nvim-cmp" } },
+  { "hrsh7th/cmp-cmdline", dependencies = { "hrsh7th/nvim-cmp" } },
 
   -- LSP completion source:
   { "hrsh7th/cmp-nvim-lsp", dependencies = { "hrsh7th/nvim-cmp" } },
@@ -154,12 +157,12 @@ require("lazy").setup({
     "phaazon/hop.nvim",
     opts = { keys = "asdfgqwertzxcvb12345" },
     keys = {
-      { "<leader>w",  "<cmd>HopWord<CR>",    silent = true },
-      { "<leader>l",  "<cmd>HopLine<CR>",    silent = true },
-      { "<leader>p",  "<cmd>HopPattern<CR>", silent = true },
-      { "<leader>h",  "<cmd>HopChar1<CR>",   silent = true },
-      { "<leader>h2", "<cmd>HopChar2<CR>",   silent = true },
-    }
+      { "<leader>w", "<cmd>HopWord<CR>", silent = true },
+      { "<leader>l", "<cmd>HopLine<CR>", silent = true },
+      { "<leader>p", "<cmd>HopPattern<CR>", silent = true },
+      { "<leader>h", "<cmd>HopChar1<CR>", silent = true },
+      { "<leader>h2", "<cmd>HopChar2<CR>", silent = true },
+    },
   },
   {
     "lewis6991/gitsigns.nvim",
@@ -203,7 +206,7 @@ require("lazy").setup({
       "olimorris/neotest-rspec",
       "rouge8/neotest-rust",
       "nvim-neotest/neotest-go",
-      "nvim-neotest/neotest-plenary"
+      "nvim-neotest/neotest-plenary",
     },
     config = function()
       require("neotest").setup({
@@ -230,14 +233,42 @@ require("lazy").setup({
       })
     end,
     keys = {
-      { "t<C-a>", "<cmd>lua require('neotest').run.attach()<CR>",                  silent = true },
-      { "t<C-d>", "<cmd>lua require('neotest').run.run({ strategy = 'dap' })<CR>", silent = true },
-      { "t<C-n>", "<cmd>lua require('neotest').run.run()<CR>",                     silent = true },
-      { "t<C-t>", "<cmd>lua require('neotest').summary.toggle()<CR>",              silent = true },
-      { "t<C-f>", "<cmd>lua require('neotest').run.run(vim.fn.expand '%')<CR>",    silent = true },
-      { "t<C-o>", "<cmd>lua require('neotest').output.open()<CR>",                 silent = true },
-      { "t<C-l>", "<cmd>lua require('neotest').run.run_last()<CR>",                silent = true },
-    }
+      {
+        "t<C-a>",
+        "<cmd>lua require('neotest').run.attach()<CR>",
+        silent = true,
+      },
+      {
+        "t<C-d>",
+        "<cmd>lua require('neotest').run.run({ strategy = 'dap' })<CR>",
+        silent = true,
+      },
+      {
+        "t<C-n>",
+        "<cmd>lua require('neotest').run.run()<CR>",
+        silent = true,
+      },
+      {
+        "t<C-t>",
+        "<cmd>lua require('neotest').summary.toggle()<CR>",
+        silent = true,
+      },
+      {
+        "t<C-f>",
+        "<cmd>lua require('neotest').run.run(vim.fn.expand '%')<CR>",
+        silent = true,
+      },
+      {
+        "t<C-o>",
+        "<cmd>lua require('neotest').output.open()<CR>",
+        silent = true,
+      },
+      {
+        "t<C-l>",
+        "<cmd>lua require('neotest').run.run_last()<CR>",
+        silent = true,
+      },
+    },
   },
   "github/copilot.vim",
 
@@ -285,7 +316,7 @@ require("lazy").setup({
     },
   },
   {
-    'simrat39/inlay-hints.nvim',
+    "simrat39/inlay-hints.nvim",
     config = function()
       require("inlay-hints").setup()
     end,
@@ -314,7 +345,7 @@ require("lazy").setup({
           {
             "filename",
             file_status = true, -- displays file status (readonly status, modified status)
-            path = 0,           -- 0 = just filename, 1 = relative path, 2 = absolute path
+            path = 0, -- 0 = just filename, 1 = relative path, 2 = absolute path
           },
         },
         lualine_x = {
@@ -363,9 +394,9 @@ require("lazy").setup({
   -- vader
   { "junegunn/vader.vim", ft = "vader" },
   -- ruby
-  { "vim-ruby/vim-ruby",  ft = "ruby" },
-  { "tpope/vim-rails",    ft = "ruby" },
-  { "tpope/vim-bundler",  ft = "ruby" },
+  { "vim-ruby/vim-ruby", ft = "ruby" },
+  { "tpope/vim-rails", ft = "ruby" },
+  { "tpope/vim-bundler", ft = "ruby" },
   -- rust
   {
     "simrat39/rust-tools.nvim",
@@ -386,12 +417,12 @@ require("lazy").setup({
       require("go").setup()
     end,
     event = { "CmdlineEnter" },
-    ft = { "go", 'gomod' },
-    build = ':lua require("go.install").update_all_sync()'
+    ft = { "go", "gomod" },
+    build = ':lua require("go.install").update_all_sync()',
   },
 }, {
   dev = {
     path = "~/Documents",
     patterns = { "*.nvim" },
-  }
+  },
 })
