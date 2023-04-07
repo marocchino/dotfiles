@@ -13,7 +13,12 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   -- optional configuration
-  "AndrewRadev/switch.vim",
+  {
+    "AndrewRadev/switch.vim",
+    keys = {
+      { "-", "<Cmd>Switch<CR>", silent = true },
+    },
+  },
   {
     "dhruvasagar/vim-table-mode",
     config = function()
