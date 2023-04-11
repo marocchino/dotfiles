@@ -7,11 +7,6 @@ vim.cmd([[
     autocmd FileType ruby nnoremap td :call ToggleEndless()<CR>
   augroup END
 
-  augroup commit_gitmoji
-    autocmd!
-    autocmd Filetype gitcommit,markdown,json,csv,text nnoremap <silent><leader>g <cmd>lua require'telescope.builtin'.symbols{ sources = {'gitmoji'} }<CR>
-  augroup END
-
   noremap Q <Nop>
   noremap q: :q
   vmap <Enter> <Plug>(EasyAlign)

@@ -188,6 +188,14 @@ require("lazy").setup({
   {
     "nvim-telescope/telescope-symbols.nvim",
     dependencies = { "nvim-telescope/telescope.nvim" },
+    ft = { "gitcommit" },
+    keys = {
+      {
+        "<leader>g",
+        "<cmd>lua require'telescope.builtin'.symbols{ sources = {'gitmoji'} }<CR>",
+        silent = true,
+      },
+    },
   },
   {
     "windwp/nvim-autopairs",
