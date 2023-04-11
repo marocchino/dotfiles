@@ -18,6 +18,7 @@ require("lazy").setup({
     keys = {
       { "-", "<Cmd>Switch<CR>", silent = true },
     },
+    submodules = false,
   },
   {
     "dhruvasagar/vim-table-mode",
@@ -47,6 +48,7 @@ require("lazy").setup({
   "tpope/vim-endwise",
   {
     "tpope/vim-fugitive",
+    lazy = false,
     keys = {
       { "<leader>gs", "<cmd>Git<CR>", silent = true },
       { "<leader>ga", "<cmd>Git add %<CR>", silent = true },
@@ -64,7 +66,7 @@ require("lazy").setup({
   },
   {
     "marocchino/acommit.nvim",
-    -- dev = true,
+    dev = true,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "tpope/vim-fugitive",
@@ -376,9 +378,19 @@ require("lazy").setup({
   {
     "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      pcall(require, "tree-config")
-    end,
+    opts = {
+      update_focused_file = {
+        enable = true,
+        update_root = true,
+        ignore_list = {},
+      },
+      git = {
+        enable = true,
+        ignore = false,
+        show_on_dirs = true,
+        timeout = 400,
+      },
+    },
   },
   -- language specifics
   -- markdown
