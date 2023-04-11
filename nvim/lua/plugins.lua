@@ -184,15 +184,86 @@ require("lazy").setup({
     config = function()
       pcall(require, "telescope-config")
     end,
+    keys = {
+      {
+        "<leader>f",
+        "<cmd>Telescope builtin<cr>",
+        silent = true,
+      },
+      {
+        "<leader>fb",
+        "<cmd>Telescope buffers<cr>",
+        silent = true,
+      },
+      {
+        "<leader>fd",
+        "<cmd>Telescope lsp_definitions<cr>",
+        silent = true,
+      },
+      {
+        "<leader>ff",
+        "<cmd>Telescope frecency<cr>",
+        silent = true,
+      },
+      {
+        "<leader>fg",
+        "<cmd>Telescope live_grep<cr>",
+        silent = true,
+      },
+      {
+        "<leader>fgb",
+        "<cmd>Telescope git_branches<cr>",
+        silent = true,
+      },
+      {
+        "<leader>fgf",
+        "<cmd>Telescope git_files<cr>",
+        silent = true,
+      },
+      {
+        "<leader>fgs",
+        "<cmd>Telescope git_status<cr>",
+        silent = true,
+      },
+      {
+        "<leader>fh",
+        "<cmd>Telescope help_tags<cr>",
+        silent = true,
+      },
+      {
+        "<leader>fi",
+        "<cmd>Telescope lsp_implementations<cr>",
+        silent = true,
+      },
+      {
+        "<leader>fn",
+        "<cmd>lua require'telescope.builtin'.symbols{ sources = {'nerd'} }<CR>",
+        silent = true,
+      },
+      {
+        "<leader>fr",
+        "<cmd>Telescope registers<cr>",
+        silent = true,
+      },
+      {
+        "<leader>ft",
+        "<cmd>Telescope treesitter<cr>",
+        silent = true,
+      },
+    },
   },
   {
     "nvim-telescope/telescope-symbols.nvim",
     dependencies = { "nvim-telescope/telescope.nvim" },
-    ft = { "gitcommit" },
     keys = {
       {
-        "<leader>g",
+        "<leader>fgm",
         "<cmd>lua require'telescope.builtin'.symbols{ sources = {'gitmoji'} }<CR>",
+        silent = true,
+      },
+      {
+        "<leader>fem",
+        "<cmd>lua require'telescope.builtin'.symbols{ sources = {'emoji'} }<CR>",
         silent = true,
       },
     },
@@ -203,9 +274,13 @@ require("lazy").setup({
   },
   {
     "AckslD/nvim-neoclip.lua",
+    dependencies = { "nvim-telescope/telescope.nvim" },
     config = function()
       require("neoclip").setup()
     end,
+    keys = {
+      { "<leader>fc", "<cmd>Telescope neoclip<cr>", silent = true },
+    },
   },
   "nvim-telescope/telescope-hop.nvim",
   {
@@ -398,6 +473,9 @@ require("lazy").setup({
         show_on_dirs = true,
         timeout = 400,
       },
+    },
+    keys = {
+      { "<leader>e", "<cmd>NvimTreeToggle<CR>", silent = true },
     },
   },
   -- language specifics

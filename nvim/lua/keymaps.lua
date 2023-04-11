@@ -20,30 +20,12 @@ vim.cmd([[
   xmap ., gc
   omap ,. gc
   omap ., c
-
-  " telescope
-  nnoremap <silent><leader>f <cmd>Telescope builtin<cr>
-  nnoremap <silent><leader>fb <cmd>Telescope buffers<cr>
-  nnoremap <silent><leader>fc <cmd>Telescope neoclip<cr>
-  nnoremap <silent><leader>fd <cmd>Telescope lsp_definitions<cr>
-  nnoremap <silent><leader>fe <cmd>lua require'telescope.builtin'.symbols{ sources = {'emoji'} }<CR>
-  nnoremap <silent><leader>ff <cmd>Telescope frecency<cr>
-  nnoremap <silent><leader>fg <cmd>Telescope live_grep<cr>
-  nnoremap <silent><leader>fgb <cmd>Telescope git_branches<cr>
-  nnoremap <silent><leader>fgf <cmd>Telescope git_files<cr>
-  nnoremap <silent><leader>fgs <cmd>Telescope git_status<cr>
-  nnoremap <silent><leader>fh <cmd>Telescope help_tags<cr>
-  nnoremap <silent><leader>fi <cmd>Telescope lsp_implementations<cr>
-  nnoremap <silent><leader>fn <cmd>lua require'telescope.builtin'.symbols{ sources = {'nerd'} }<CR>
-  nnoremap <silent><leader>fr <cmd>Telescope registers<cr>
-  nnoremap <silent><leader>ft <cmd>Telescope treesitter<cr>
 ]])
 
 vim.keymap.set("n", "<C-]>", "g<C-]>", { silent = false })
-vim.keymap.set("n", "<esc><esc>", ":nohlsearch<CR>", { silent = false })
+vim.keymap.set("n", "<esc><esc>", "<cmd>nohlsearch<CR>", { silent = false })
 vim.keymap.set("n", "<Leader>[", "<cmd>tabp<CR>", { silent = true })
 vim.keymap.set("n", "<Leader>]", "<cmd>tabn<CR>", { silent = true })
-vim.keymap.set("n", "<Leader>e", "<cmd>NvimTreeToggle<CR>", { silent = true })
 
 -- move windows with hjkl
 vim.keymap.set("n", "<C-H>", "<C-W>h", { silent = true })
