@@ -172,6 +172,38 @@ require("lazy").setup({
     },
   },
   {
+    "lewis6991/hover.nvim",
+    config = function()
+      require("hover").setup({
+        init = function()
+          -- Require providers
+          require("hover.providers.lsp")
+          -- require("hover.providers.gh")
+          -- require('hover.providers.gh_user')
+          -- require('hover.providers.jira')
+          -- require("hover.providers.man")
+          -- require("hover.providers.dictionary")
+        end,
+        preview_opts = {
+          border = nil,
+        },
+        -- Whether the contents of a currently open hover window should be moved
+        -- to a :h preview-window when pressing the hover keymap.
+        preview_window = false,
+        title = true,
+      })
+
+      -- Setup keymaps
+      vim.keymap.set("n", "K", require("hover").hover, { desc = "hover.nvim" })
+      vim.keymap.set(
+        "n",
+        "gK",
+        require("hover").hover_select,
+        { desc = "hover.nvim (select)" }
+      )
+    end,
+  },
+  {
     "lewis6991/gitsigns.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
@@ -292,11 +324,12 @@ require("lazy").setup({
     "nvim-neotest/neotest",
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "haydenmeade/neotest-jest",
+      "nvim-neotest/neotest-go",
+      "nvim-neotest/neotest-plenary",
       "nvim-treesitter/nvim-treesitter",
       "olimorris/neotest-rspec",
       "rouge8/neotest-rust",
-      "nvim-neotest/neotest-go",
-      "nvim-neotest/neotest-plenary",
     },
     config = function()
       require("neotest").setup({
@@ -304,6 +337,12 @@ require("lazy").setup({
           require("neotest-rspec"),
           require("neotest-rust"),
           require("neotest-go"),
+          require("neotest-jest")({
+            jestCommand = "yarn test --",
+            cwd = function(path)
+              return vim.fn.getcwd()
+            end,
+          }),
           -- require("neotest-plenary"),
         },
         icons = {
