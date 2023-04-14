@@ -18,7 +18,7 @@ fi
 git fetch upstream
 
 # get current branch name
-current_branch=$(git branch --show-current)
+CURRENT_BRANCH=$(git branch --show-current)
 
 # Pull the changes from the upstream repository
-git pull upstream $current_branch
+git pull upstream "$CURRENT_BRANCH"
