@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -exo pipefail
+
+# Check if the remote upstream already exists
+REMOTE_EXISTS=$(git remote | grep upstream)
+
+if [ -z "$REMOTE_EXISTS" ]; then
+  REPO_URL=$(git remote -v | grep "^origin.*(fetch)" | awk '{print $2}')
+  UPSTREAM_URL=$(echo "$REPO_URL" | sed 's/github.com:.*\//github.com:UPSTREAM\//')
+  git remote -v | grep origin
+  echo "Remote upstream does not exist. Please add it first."
+  echo "git remote add upstream $UPSTREAM_URL"
+  exit 1
+fi
+
+# Fetch the upstream repository
+git fetch upstream
+
+# get current branch name
+current_branch=$(git branch --show-current)
+
+# Pull the changes from the upstream repository
+git pull upstream $current_branch
