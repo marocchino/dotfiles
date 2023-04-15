@@ -55,6 +55,7 @@ require("lazy").setup({
   {
     "tpope/vim-fugitive",
     lazy = false,
+    enabled = not vim.g.vscode,
     keys = {
       { "<leader>gs", "<cmd>Git<CR>", silent = true },
       { "<leader>ga", "<cmd>Git add %<CR>", silent = true },
@@ -73,6 +74,7 @@ require("lazy").setup({
   {
     "marocchino/acommit.nvim",
     dev = true,
+    enabled = not vim.g.vscode,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "tpope/vim-fugitive",
@@ -91,6 +93,7 @@ require("lazy").setup({
   -- color
   {
     "jacoborus/tender.vim",
+    enabled = not vim.g.vscode,
     config = function()
       vim.cmd("colorscheme tender")
     end,
@@ -99,6 +102,7 @@ require("lazy").setup({
   -- chatgpt
   {
     "jackMort/ChatGPT.nvim",
+    enabled = not vim.g.vscode,
     config = function()
       require("chatgpt").setup({})
     end,
@@ -112,6 +116,7 @@ require("lazy").setup({
   -- treesitter
   {
     "nvim-treesitter/nvim-treesitter",
+    enabled = not vim.g.vscode,
     build = ":TSUpdate",
     config = function()
       pcall(require, "treesitter-config")
@@ -119,6 +124,7 @@ require("lazy").setup({
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
+    enabled = not vim.g.vscode,
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "kana/vim-textobj-user",
@@ -126,39 +132,70 @@ require("lazy").setup({
   },
   {
     "nvim-treesitter/playground",
+    enabled = not vim.g.vscode,
     dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
   {
     "romgrk/nvim-treesitter-context",
+    enabled = not vim.g.vscode,
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     opts = { enable = true },
   },
   {
     "JoosepAlviste/nvim-ts-context-commentstring",
+    enabled = not vim.g.vscode,
     dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
 
   -- Completion framework:
   {
     "hrsh7th/nvim-cmp",
+    enabled = not vim.g.vscode,
     config = function()
       pcall(require, "cmp-config")
     end,
   },
   -- Useful completion sources:
-  { "hrsh7th/cmp-nvim-lua", dependencies = { "hrsh7th/nvim-cmp" } },
   {
-    "hrsh7th/cmp-nvim-lsp-signature-help",
+    "hrsh7th/cmp-nvim-lua",
+    enabled = not vim.g.vscode,
     dependencies = { "hrsh7th/nvim-cmp" },
   },
-  "hrsh7th/cmp-vsnip",
-  "hrsh7th/vim-vsnip",
-  { "hrsh7th/cmp-buffer", dependencies = { "hrsh7th/nvim-cmp" } },
-  { "hrsh7th/cmp-path", dependencies = { "hrsh7th/nvim-cmp" } },
-  { "hrsh7th/cmp-cmdline", dependencies = { "hrsh7th/nvim-cmp" } },
+  {
+    "hrsh7th/cmp-nvim-lsp-signature-help",
+    enabled = not vim.g.vscode,
+    dependencies = { "hrsh7th/nvim-cmp" },
+  },
+  {
+    "hrsh7th/cmp-vsnip",
+    enabled = not vim.g.vscode,
+  },
+  {
+    "hrsh7th/vim-vsnip",
+    enabled = not vim.g.vscode,
+  },
+  {
+    "hrsh7th/cmp-buffer",
+    enabled = not vim.g.vscode,
+    dependencies = { "hrsh7th/nvim-cmp" },
+  },
+  {
+    "hrsh7th/cmp-path",
+    enabled = not vim.g.vscode,
+    dependencies = { "hrsh7th/nvim-cmp" },
+  },
+  {
+    "hrsh7th/cmp-cmdline",
+    enabled = not vim.g.vscode,
+    dependencies = { "hrsh7th/nvim-cmp" },
+  },
 
   -- LSP completion source:
-  { "hrsh7th/cmp-nvim-lsp", dependencies = { "hrsh7th/nvim-cmp" } },
+  {
+    "hrsh7th/cmp-nvim-lsp",
+    enabled = not vim.g.vscode,
+    dependencies = { "hrsh7th/nvim-cmp" },
+  },
   {
     "phaazon/hop.nvim",
     opts = { keys = "asdfgqwertzxcvb12345" },
@@ -172,6 +209,7 @@ require("lazy").setup({
   },
   {
     "lewis6991/hover.nvim",
+    enabled = not vim.g.vscode,
     config = function()
       require("hover").setup({
         init = function()
@@ -211,6 +249,7 @@ require("lazy").setup({
   },
   {
     "nvim-telescope/telescope.nvim",
+    enabled = not vim.g.vscode,
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       pcall(require, "telescope-config")
@@ -285,6 +324,7 @@ require("lazy").setup({
   },
   {
     "nvim-telescope/telescope-symbols.nvim",
+    enabled = not vim.g.vscode,
     dependencies = { "nvim-telescope/telescope.nvim" },
     keys = {
       {
@@ -305,6 +345,7 @@ require("lazy").setup({
   },
   {
     "AckslD/nvim-neoclip.lua",
+    enabled = not vim.g.vscode,
     dependencies = { "nvim-telescope/telescope.nvim" },
     config = function()
       require("neoclip").setup()
@@ -316,11 +357,13 @@ require("lazy").setup({
   "nvim-telescope/telescope-hop.nvim",
   {
     "nvim-telescope/telescope-frecency.nvim",
+    enabled = not vim.g.vscode,
     dependencies = { "tami5/sql.nvim" },
   },
   {
     -- https://github.com/nvim-neotest/neotest
     "nvim-neotest/neotest",
+    enabled = not vim.g.vscode,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "haydenmeade/neotest-jest",
@@ -398,17 +441,19 @@ require("lazy").setup({
       },
     },
   },
-  "github/copilot.vim",
+  { "github/copilot.vim", enabled = not vim.g.vscode },
 
   -- lsp
   {
     "williamboman/mason.nvim",
+    enabled = not vim.g.vscode,
     config = function()
       require("mason").setup()
     end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
+    enabled = not vim.g.vscode,
     opts = {
       automatic_installation = true,
       ensure_installed = {
@@ -430,12 +475,14 @@ require("lazy").setup({
   },
   {
     "neovim/nvim-lspconfig",
+    enabled = not vim.g.vscode,
     config = function()
       pcall(require, "lsp-config")
     end,
   },
   {
     "folke/lsp-colors.nvim",
+    enabled = not vim.g.vscode,
     opts = {
       Error = "#db4b4b",
       Warning = "#e0af68",
@@ -445,12 +492,14 @@ require("lazy").setup({
   },
   {
     "simrat39/inlay-hints.nvim",
+    enabled = not vim.g.vscode,
     config = function()
       require("inlay-hints").setup()
     end,
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
+    enabled = not vim.g.vscode,
     config = function()
       local null_ls = require("null-ls")
       null_ls.setup({
@@ -476,6 +525,7 @@ require("lazy").setup({
           null_ls.builtins.formatting.stylua,
           null_ls.builtins.formatting.terraform_fmt,
           null_ls.builtins.formatting.fixjson,
+
           null_ls.builtins.diagnostics.actionlint,
           null_ls.builtins.diagnostics.codespell,
           null_ls.builtins.diagnostics.credo,
@@ -497,6 +547,7 @@ require("lazy").setup({
   {
     -- https://github.com/hoob3rt/lualine.nvim
     "hoob3rt/lualine.nvim",
+    enabled = not vim.g.vscode,
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
       options = {
@@ -536,6 +587,7 @@ require("lazy").setup({
   },
   {
     "nvim-tree/nvim-tree.lua",
+    enabled = not vim.g.vscode,
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
       update_focused_file = {

@@ -13,9 +13,6 @@ nvim/plugin/packer_compiled.lua
 oni2/extensions
 oni2/store
 oni2/workspace
-vscode/workspaceStorage
-vscode/globalStorage
-vscode/syncLocalSettings.json
 gitconfig.local
 node_modules/*
 package-lock.json

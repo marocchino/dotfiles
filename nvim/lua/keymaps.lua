@@ -38,21 +38,58 @@ vim.keymap.set("t", "<C-J>", "<C-\\><C-n><C-W>j", { silent = true })
 vim.keymap.set("t", "<C-K>", "<C-\\><C-n><C-W>k", { silent = true })
 vim.keymap.set("t", "<C-L>", "<C-\\><C-n><C-W>l", { silent = true })
 
--- LSP config (the mappings used in the default file don't quite work right)
-vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { silent = true })
-vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, { silent = true })
-vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { silent = true })
-vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, { silent = true })
-vim.keymap.set(
-  "n",
-  "<leader>gt",
-  vim.lsp.buf.type_definition,
-  { silent = true }
-)
-vim.keymap.set("n", "<leader>gh", vim.lsp.buf.signature_help, { silent = true })
-vim.keymap.set("n", "[w", function()
-  vim.lsp.diagnostic.goto_prev()
-end, { silent = true })
-vim.keymap.set("n", "]w", function()
-  vim.lsp.diagnostic.goto_next()
-end, { silent = true })
+-- vscode
+if vim.g.vscode then
+  vim.cmd([[
+    command Snippet call VSCodeNotify('workbench.action.openSnippets')<CR>
+    noremap ; :
+
+    nnoremap S i<cr><esc><right>
+    nnoremap ,. :<C-u>call VSCodeNotify('editor.action.commentLine')<CR>
+    nnoremap ., :<C-u>call VSCodeNotify('editor.action.commentLine')<CR>
+    nnoremap <Leader>s :<C-u>call VSCodeNotify('extension.dash.specific')<CR>
+    nnoremap <Leader>d :<C-u>call VSCodeNotify('extension.macDictionary.lookup')<CR>
+    nnoremap <Leader>f :<C-u>call VSCodeNotify('workbench.action.findInFiles')<CR>
+    nnoremap <Leader>r :<C-u>call VSCodeNotify('workbench.action.replaceInFiles')<CR>
+    nnoremap <Leader>e :<C-u>call VSCodeNotify('workbench.view.extensions')<CR>
+    nnoremap <Leader>b :<C-u>call VSCodeNotify('workbench.view.explorer')<CR>
+    nnoremap <Leader>g :<C-u>call VSCodeNotify('workbench.view.scm')<CR>
+    nnoremap <Leader>t :<C-u>call VSCodeNotify('workbench.action.terminal.focus')<CR>
+    nnoremap <Leader>g :<C-u>call VSCodeNotify('workbench.view.scm')<CR>
+    nnoremap <Leader>[ :<C-u>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>
+    nnoremap <Leader>] :<C-u>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
+    nnoremap [q :<C-u>call VSCodeNotify('editor.action.marker.prev')<CR>
+    nnoremap ]q :<C-u>call VSCodeNotify('editor.action.marker.next')<CR>
+    nnoremap [b :<C-u>call VSCodeNotify('workbench.action.navigateBack')<CR>
+    nnoremap ]b :<C-u>call VSCodeNotify('workbench.action.navigateForward')<CR>
+  ]])
+else
+  -- LSP config (the mappings used in the default file don't quite work right)
+  vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { silent = true })
+  vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, { silent = true })
+  vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { silent = true })
+  vim.keymap.set(
+    "n",
+    "<leader>gi",
+    vim.lsp.buf.implementation,
+    { silent = true }
+  )
+  vim.keymap.set(
+    "n",
+    "<leader>gt",
+    vim.lsp.buf.type_definition,
+    { silent = true }
+  )
+  vim.keymap.set(
+    "n",
+    "<leader>gh",
+    vim.lsp.buf.signature_help,
+    { silent = true }
+  )
+  vim.keymap.set("n", "[w", function()
+    vim.lsp.diagnostic.goto_prev()
+  end, { silent = true })
+  vim.keymap.set("n", "]w", function()
+    vim.lsp.diagnostic.goto_next()
+  end, { silent = true })
+end
