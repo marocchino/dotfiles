@@ -30,7 +30,13 @@ require("lazy").setup({
   {
     "uga-rosa/translate.nvim",
     config = function()
-      pcall(require, "translate-config")
+      vim.g.deepl_api_auth_key = os.getenv("DEEPL_API_AUTH_KEY")
+      require("translate").setup({
+        default = {
+          command = "deepl_free",
+          output = "insert",
+        },
+      })
     end,
   },
   "honza/vim-snippets",
@@ -126,13 +132,6 @@ require("lazy").setup({
     "romgrk/nvim-treesitter-context",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     opts = { enable = true },
-  },
-  {
-    "folke/twilight.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    config = function()
-      pcall(require, "twilight-config")
-    end,
   },
   {
     "JoosepAlviste/nvim-ts-context-commentstring",
@@ -453,7 +452,45 @@ require("lazy").setup({
   {
     "jose-elias-alvarez/null-ls.nvim",
     config = function()
-      pcall(require, "null-ls-config")
+      local null_ls = require("null-ls")
+      null_ls.setup({
+        debug = false,
+        sources = {
+          null_ls.builtins.formatting.mix,
+          null_ls.builtins.formatting.prettierd,
+          null_ls.builtins.formatting.gofmt,
+          null_ls.builtins.formatting.rustfmt,
+          -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/lua/null-ls/builtins/formatting/rubocop.lua
+          null_ls.builtins.formatting.rubocop.with({
+            args = {
+              "--autocorrect-all",
+              "--force-exclusion",
+              "-f",
+              "quiet",
+              "--stderr",
+              "--stdin",
+              "$FILENAME",
+            },
+          }),
+          null_ls.builtins.formatting.shellharden,
+          null_ls.builtins.formatting.stylua,
+          null_ls.builtins.formatting.terraform_fmt,
+          null_ls.builtins.formatting.fixjson,
+          null_ls.builtins.diagnostics.actionlint,
+          null_ls.builtins.diagnostics.codespell,
+          null_ls.builtins.diagnostics.credo,
+          null_ls.builtins.diagnostics.eslint_d,
+          null_ls.builtins.diagnostics.erb_lint,
+          null_ls.builtins.diagnostics.golangci_lint,
+          null_ls.builtins.diagnostics.hadolint,
+          -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/lua/null-ls/builtins/diagnostics/rubocop.lua
+          null_ls.builtins.diagnostics.rubocop,
+          null_ls.builtins.diagnostics.shellcheck,
+          null_ls.builtins.diagnostics.stylelint,
+          null_ls.builtins.diagnostics.vint,
+          null_ls.builtins.diagnostics.yamllint,
+        },
+      })
     end,
   },
   -- style
@@ -522,7 +559,20 @@ require("lazy").setup({
   {
     "plasticboy/vim-markdown",
     config = function()
-      pcall(require, "markdown-config")
+      vim.g.vim_markdown_fenced_languages = {
+        "c++=cpp",
+        "viml=vim",
+        "bash=sh",
+        "ini=dosini",
+        "ruby=rb",
+        "python=py",
+        "markdown=md",
+        "javascript=js",
+        "elixir=ex",
+      }
+      vim.g.vim_markdown_folding_disabled = 1
+      vim.g.vim_markdown_frontmatter = 1
+      vim.g.vim_markdown_new_list_item_indent = 2
     end,
   },
   -- terraform
@@ -544,7 +594,28 @@ require("lazy").setup({
     "simrat39/rust-tools.nvim",
     ft = "rust",
     config = function()
-      pcall(require, "rust-tools-config")
+      local rt = require("rust-tools")
+
+      rt.setup({
+        server = {
+          on_attach = function(_, bufnr)
+            -- Hover actions
+            vim.keymap.set(
+              "n",
+              "<C-space>",
+              rt.hover_actions.hover_actions,
+              { buffer = bufnr }
+            )
+            -- Code action groups
+            vim.keymap.set(
+              "n",
+              "<Leader>a",
+              rt.code_action_group.code_action_group,
+              { buffer = bufnr }
+            )
+          end,
+        },
+      })
     end,
   },
   -- go

@@ -67,5 +67,5 @@ vim.api.nvim_create_augroup("highlight_misspell", { clear = true })
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = { "*.md", "*.txt" },
   group = "highlight_misspell",
-  command = 'syn match Error "루비\\|루아\\|네오빔\\|빔\\|메소드"',
+  command = 'syn match Error "루비\\|루아\\|네오빔\\|빔\\|메소드\\|반복자"',
 })
