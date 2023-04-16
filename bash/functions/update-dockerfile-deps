@@ -1,0 +1,36 @@
+#!/bin/bash
+
+set -xo pipefail
+
+# File name of the Dockerfile
+DOCKERFILE=${1:-Dockerfile}
+
+# Build the Docker image and capture the error messages
+error_messages=$(docker build . -f "$DOCKERFILE" --no-cache 2> >(tee /dev/stderr))
+
+# Extract the lines containing the package version errors
+error_lines=$(echo "$error_messages" | grep -E "breaks: world|-r[0-9]+:")
+
+if [ -z "$error_lines" ]; then
+  echo "No dependency version errors found."
+  exit 0
+fi
+
+echo "Updating dependencies:"
+
+# Process the error lines to update the fixed version dependencies in the Dockerfile
+while read -r line; do
+  # if line end with version:
+  if [[ $line =~ -r[0-9]+:$ ]]; then
+    correct_version=$(echo "$line" | awk '{print $3}' | perl -pe 's/-(\d+)/=\1/' | awk -F':' '{print $1}')
+  elif [[ $line =~ breaks: ]]; then
+    wrong_version=$(echo "$line" | awk -F'[' '{print $2}' | awk -F']' '{print $1}')
+
+    echo "  $wrong_version -> $correct_version"
+
+    # Replace the old version with the correct version in the Dockerfile
+    sed -i "" "s/$wrong_version/$correct_version/" "$DOCKERFILE"
+  fi
+done <<< "$error_lines"
+
+echo "Dockerfile updated with the correct dependency versions."
