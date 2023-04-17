@@ -101,18 +101,16 @@ require("lazy").setup({
 
   -- chatgpt
   {
-    "jackMort/ChatGPT.nvim",
+    "Bryley/neoai.nvim",
     enabled = not vim.g.vscode,
-    config = function()
-      require("chatgpt").setup({})
-    end,
     dependencies = {
       "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
+    },
+    opts = {
+      -- ignore default shortcuts
+      shortcuts = {},
     },
   },
-
   -- treesitter
   {
     "nvim-treesitter/nvim-treesitter",
@@ -377,7 +375,7 @@ require("lazy").setup({
       require("neotest").setup({
         adapters = {
           require("neotest-rspec"),
-          require("neotest-rust"),
+          -- require("neotest-rust"),
           require("neotest-go"),
           require("neotest-jest")({
             jestCommand = "yarn test --",
@@ -385,7 +383,7 @@ require("lazy").setup({
               return vim.fn.getcwd()
             end,
           }),
-          -- require("neotest-plenary"),
+          require("neotest-plenary"),
         },
         icons = {
           child_indent = "│",
