@@ -92,11 +92,12 @@ require("lazy").setup({
 
   -- color
   {
-    "jacoborus/tender.vim",
+    "rebelot/kanagawa.nvim",
     enabled = not vim.g.vscode,
     config = function()
-      vim.cmd("colorscheme tender")
+      vim.cmd("colorscheme kanagawa")
     end,
+    opts = {},
   },
 
   -- chatgpt
