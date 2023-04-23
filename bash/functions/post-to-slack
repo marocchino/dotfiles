@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -eo pipefail
+
+# Usage: post_to_slack.sh <username> <icon> <channel> <title> <text>
+function usage() {
+  echo "Usage: script/post_to_slack <username> <icon> <channel> <title> <text>"
+  echo "Example: script/post_to_slack 'release' ':shipit:' 'prod-dev-github-notifications' 'releaseが完了しました' 'text'"
+  exit 1
+}
+
+if [ $# -ne 5 ]; then
+  usage
+fi
+
+USERNAME=$1
+ICON=$2
+CHANNEL=$3
+TITLE=$4
+TEXT=$5
+JSON="{\"username\":\"$USERNAME\", \"icon_emoji\":\"$ICON\", \"channel\": \"#$CHANNEL\", \"attachments\": [{\"color\": \"good\", \"title\": \"$TITLE\", \"text\": \"$TEXT\"}]}"
+
+curl -s -d "payload=$JSON" "$SLACK_WEBHOOK_URL"

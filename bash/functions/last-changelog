@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -eo pipefail
+
+CURRENT_HEAD=$(grep -n '^## ' CHANGELOG.md | head -n1 | cut -d ':' -f1)
+LAST_HEAD=$(grep -n '^## ' CHANGELOG.md | head -n2 | tail -n1 | cut -d ':' -f1)
+head -n$(($LAST_HEAD - 1)) CHANGELOG.md | tail -n$(($LAST_HEAD - $CURRENT_HEAD))

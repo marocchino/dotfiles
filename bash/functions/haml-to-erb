@@ -1,0 +1,75 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'bundler/inline'
+
+gemfile do
+  source 'https://rubygems.org'
+  gem 'faraday', '~> 2.2'
+end
+
+class Converter
+  def initialize(filename)
+    @content = File.read(filename)
+  end
+
+  attr_reader :content
+
+  def to_erb
+    conn = Faraday.new(url: 'https://haml2erb.org', headers: { 'Content-Type' => 'application/json' })
+    response = JSON.parse(conn.post('/api/convert', body.to_json).body)
+    raise response['error'] unless response['success']
+
+    decode(response['erb'])
+  end
+
+  private
+
+  def body
+    { haml: encode(content) }
+  end
+
+  ### convert UTF-8 to ASCII
+  def to_ascii(str)
+    str.encode('ASCII', invalid: :replace, undef: :replace, replace: '???')
+  end
+
+  def encode(str)
+    result = ''
+    str.each_char do |c|
+      result = c.ord > 127 ? "#{result}&##{c.ord};" : result + c
+    end
+    result
+  end
+
+  def decode(str)
+    str = str.gsub(/&#(\d+);/) { |_m| ::Regexp.last_match(1).to_i.chr(Encoding::UTF_8) }
+    replace_inline_ruby(str)
+  end
+
+  def replace_inline_ruby(str)
+    str.gsub(/#\{(.*?)}/, '<%= \1 %>')
+  end
+end
+
+if ARGV.empty?
+  puts "Usage: #{$PROGRAM_NAME} <hamlfile>"
+  puts "or: #{$PROGRAM_NAME} <view-directory>"
+  exit(1)
+end
+puts "#{ARGV} given..."
+
+if File.directory?(ARGV[0])
+  Dir.glob("#{ARGV[0]}/*.haml").each do |haml_file|
+    puts "Converting #{haml_file}..."
+    converter = Converter.new(haml_file)
+    File.write(haml_file.sub(/\.haml$/, '.erb'), converter.to_erb)
+  end
+else
+  haml_file = ARGV[0]
+  raise 'File is not a haml file' if !haml_file.end_with?('.haml') || !File.exist?(haml_file)
+
+  erb_file = haml_file.sub('.haml', '.erb')
+  converter = Converter.new(haml_file)
+  File.write(erb_file, converter.to_erb)
+end
