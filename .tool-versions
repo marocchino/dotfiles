@@ -1,4 +1,4 @@
 ruby 3.2.2
-nodejs 19.7.0
-rust 1.67.1
-golang 1.20.1
+nodejs 20.0.0
+rust 1.69.0
+golang 1.20.3
