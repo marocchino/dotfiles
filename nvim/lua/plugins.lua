@@ -58,9 +58,7 @@ require("lazy").setup({
     enabled = not vim.g.vscode,
     keys = {
       { "<leader>gs", "<cmd>Git<CR>", silent = true },
-      { "<leader>ga", "<cmd>Git add %<CR>", silent = true },
-      { "<leader>gdv", "<cmd>Gvdiffsplit<CR>", silent = true },
-      { "<leader>gds", "<cmd>Gdiffsplit<CR>", silent = true },
+      { "<leader>gaf", "<cmd>Git add %<CR>", silent = true },
       { "<leader>grs", "<cmd>Git restore --staged %<CR>", silent = true },
     },
   },
@@ -243,7 +241,41 @@ require("lazy").setup({
     "lewis6991/gitsigns.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-      require("gitsigns").setup()
+      require("gitsigns").setup({
+        on_attach = function(bufnr)
+          local gs = package.loaded.gitsigns
+          local function map(mode, l, r, opts)
+            opts = opts or {}
+            opts.buffer = bufnr
+            vim.keymap.set(mode, l, r, opts)
+          end
+          -- Navigation
+          map("n", "]c", function()
+            if vim.wo.diff then
+              return "]c"
+            end
+            vim.schedule(function()
+              gs.next_hunk()
+            end)
+            return "<Ignore>"
+          end, { expr = true })
+          map("n", "[c", function()
+            if vim.wo.diff then
+              return "[c"
+            end
+            vim.schedule(function()
+              gs.prev_hunk()
+            end)
+            return "<Ignore>"
+          end, { expr = true })
+          -- Actions
+          map("n", "<leader>ga", gs.stage_hunk)
+          map("n", "<leader>gb", function()
+            gs.blame_line({ full = true })
+          end)
+          map("n", "<leader>gd", gs.diffthis)
+        end,
+      })
     end,
   },
   {
@@ -504,6 +536,7 @@ require("lazy").setup({
       null_ls.setup({
         debug = false,
         sources = {
+          -- formatting
           null_ls.builtins.formatting.mix,
           null_ls.builtins.formatting.prettierd,
           null_ls.builtins.formatting.gofmt,
@@ -525,6 +558,7 @@ require("lazy").setup({
           null_ls.builtins.formatting.terraform_fmt,
           null_ls.builtins.formatting.fixjson,
 
+          -- diagnostics
           null_ls.builtins.diagnostics.actionlint,
           null_ls.builtins.diagnostics.codespell,
           null_ls.builtins.diagnostics.credo,
