@@ -47,6 +47,7 @@ declare -a EVALS=(
   "$(hub alias -s)"
   "$(direnv hook bash)"
   "$(starship init bash)"
+  "$(github-copilot-cli alias -- "$0")"
 )
 
 for E in "${EVALS[@]}"; do
