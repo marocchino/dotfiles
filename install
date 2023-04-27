@@ -9,7 +9,6 @@ fi
 
 ln -sf "$PWD/.tool-versions" "$HOME/.tool-versions"
 ln -sfn "$PWD/ctags" "$HOME/.ctags"
-ln -sf "$PWD/tmux.conf" "$HOME/.tmux.conf"
 
 ln -sf "$PWD/bashrc" "$HOME/.bashrc"
 ln -sf "$PWD/inputrc" "$HOME/.inputrc"
@@ -32,6 +31,7 @@ ln -sfn "$PWD/fish" "$HOME/.config/fish"
 ln -sfn "$PWD/oni2" "$HOME/.config/oni2"
 ln -sfn "$PWD/starship.toml" "$HOME/.config/starship.toml"
 ln -sfn "$PWD/nvim" "$HOME/.config/nvim"
+ln -sfn "$PWD/tmux" "$HOME/.config/tmux"
 ln -sfn "$PWD/Sketch" "$HOME/Library/Application Support/com.bohemiancoding.sketch3/Plugins"
 ln -sfn "$PWD/vscode" "$HOME/Library/Application Support/Code/User"
 
