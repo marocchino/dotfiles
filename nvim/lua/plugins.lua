@@ -21,6 +21,17 @@ require("lazy").setup({
     submodules = false,
   },
   {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+    enabled = not vim.g.vscode,
+    keys = {
+      { "<C-h>", "<Cmd><C-U>TmuxNavigateLeft<CR>", silent = true },
+      { "<C-j>", "<Cmd><C-U>TmuxNavigateDown<CR>", silent = true },
+      { "<C-k>", "<Cmd><C-U>TmuxNavigateUp<CR>", silent = true },
+      { "<C-l>", "<Cmd><C-U>TmuxNavigateRight<CR>", silent = true },
+    },
+  },
+  {
     "dhruvasagar/vim-table-mode",
     config = function()
       vim.g.table_mode_corner_corner = "|"

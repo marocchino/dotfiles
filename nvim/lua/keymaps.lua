@@ -27,11 +27,7 @@ vim.keymap.set("n", "<esc><esc>", "<cmd>nohlsearch<CR>", { silent = false })
 vim.keymap.set("n", "<Leader>[", "<cmd>tabp<CR>", { silent = true })
 vim.keymap.set("n", "<Leader>]", "<cmd>tabn<CR>", { silent = true })
 
--- move windows with hjkl
-vim.keymap.set("n", "<C-H>", "<C-W>h", { silent = true })
-vim.keymap.set("n", "<C-J>", "<C-W>j", { silent = true })
-vim.keymap.set("n", "<C-K>", "<C-W>k", { silent = true })
-vim.keymap.set("n", "<C-L>", "<C-W>l", { silent = true })
+-- move windows with hjkl in terminal
 vim.keymap.set("t", "<C-W>", "<C-\\><C-n>", { silent = true })
 vim.keymap.set("t", "<C-H>", "<C-\\><C-n><C-W>h", { silent = true })
 vim.keymap.set("t", "<C-J>", "<C-\\><C-n><C-W>j", { silent = true })
