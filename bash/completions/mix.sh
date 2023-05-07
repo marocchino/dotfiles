@@ -24,7 +24,7 @@ _mix() {
 
 _mix_caculate() {
   if ! [ -e mix.exs ]; then
-    asdf current elixir
+    rtx current elixir
   elif type "md5" &>/dev/null; then
     md5 -q mix.exs
   elif type "md5sum" &>/dev/null; then

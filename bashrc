@@ -6,8 +6,6 @@ HOMEBREW_PREFIX=${HOMEBREW_PREFIX:-$(brew --prefix)}
 declare -a PATHS=(
   "$HOMEBREW_PREFIX/etc/profile.d/z.sh"
   "$HOMEBREW_PREFIX/etc/bash_completion.d/git-completion.bash"
-  "$HOME/.asdf/asdf.sh"
-  "$HOME/.asdf/completions/asdf.bash"
   "$HOME/.bashrc.local"
   "$HOME/.fzf.bash"
   "$HOME/.opam/opam-init/init.sh"
@@ -44,6 +42,7 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export BASH_COMPLETION_COMPAT_DIR="$HOMEBREW_PREFIX/etc/bash_completion.d"
 
 declare -a EVALS=(
+  "$(rtx activate bash)"
   "$(hub alias -s)"
   "$(direnv hook bash)"
   "$(starship init bash)"
@@ -84,8 +83,7 @@ if command -v fd > /dev/null; then
 fi
 command -v bat > /dev/null && export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}'"
 
-alias aset=asdf
-complete -F _asdf aset
+alias asdf=rtx
 
 alias bat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
 alias c="open -a 'Google Chrome'"
@@ -99,7 +97,6 @@ alias ff="open -a Firefox"
 alias firefox="open -a Firefox"
 alias gg=exit
 alias groot="cd (git rev-parse --show-toplevel)"
-alias iex="rlwrap -a foo iex"
 alias ls=lsd
 alias m=mix
 alias sayj="say -v Kyoko"

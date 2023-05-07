@@ -1,12 +1,6 @@
 #!/bin/bash
 set -ex -o pipefail
 
-function update-asdf() {
-  echo updating asdf
-  asdf update
-  asdf plugin-update --all
-}
-
 function update-apt-get() {
   echo updating apt-get
   sudo apt-get update -y
@@ -31,7 +25,7 @@ function update-yarn() {
     echo updating yarn to latest
     npm install -g "https://yarnpkg.com/latest.tar.gz"
   fi
-  asdf reshim nodejs
+  rtx reshim nodejs
 }
 
 function update-npm() {
@@ -69,7 +63,6 @@ function update-kuromoji() {
 function list-all() {
 echo '
 apt-get
-asdf
 brew
 dotfiles
 kuromoji
@@ -87,12 +80,6 @@ function main() {
   fi
 
   case $TARGET in
-  aset)
-    update-asdf
-    ;;
-  asdf)
-    update-asdf
-    ;;
   apt-get)
     update-apt-get
     ;;
@@ -118,7 +105,6 @@ function main() {
     update-yarn
     ;;
   all)
-    update-asdf
     update-brew
     update-dotfiles
     update-npm
@@ -137,7 +123,7 @@ Usage:
 
 Description:
   Update target.
-  target could be one of apt-get, asdf, brew, dotfiles, kuromoji, npm, vim,
+  target could be one of apt-get, brew, dotfiles, kuromoji, npm, vim,
   yarn or all
 _EOT_
 exit 2
