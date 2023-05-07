@@ -2,3 +2,4 @@ ruby 3.2.2
 nodejs 20.0.0
 rust 1.69.0
 golang 1.20.3
+gleam 0.28.3
