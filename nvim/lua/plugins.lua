@@ -12,6 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  -- discord status
+  "andweeb/presence.nvim",
   -- optional configuration
   {
     "AndrewRadev/switch.vim",
@@ -407,19 +409,19 @@ require("lazy").setup({
     "nvim-neotest/neotest",
     enabled = not vim.g.vscode,
     dependencies = {
-      "nvim-lua/plenary.nvim",
       "haydenmeade/neotest-jest",
+      "jfpedroza/neotest-elixir",
+      "nvim-lua/plenary.nvim",
       "nvim-neotest/neotest-go",
       "nvim-neotest/neotest-plenary",
       "nvim-treesitter/nvim-treesitter",
       "olimorris/neotest-rspec",
-      "rouge8/neotest-rust",
+      -- "rouge8/neotest-rust",
     },
     config = function()
       require("neotest").setup({
         adapters = {
-          require("neotest-rspec"),
-          -- require("neotest-rust"),
+          require("neotest-elixir"),
           require("neotest-go"),
           require("neotest-jest")({
             jestCommand = "yarn test --",
@@ -428,6 +430,8 @@ require("lazy").setup({
             end,
           }),
           require("neotest-plenary"),
+          require("neotest-rspec"),
+          -- require("neotest-rust"),
         },
         icons = {
           child_indent = "│",
@@ -572,7 +576,7 @@ require("lazy").setup({
           -- diagnostics
           null_ls.builtins.diagnostics.actionlint,
           null_ls.builtins.diagnostics.codespell,
-          null_ls.builtins.diagnostics.credo,
+          -- null_ls.builtins.diagnostics.credo,
           null_ls.builtins.diagnostics.eslint_d,
           null_ls.builtins.diagnostics.erb_lint,
           null_ls.builtins.diagnostics.golangci_lint,
