@@ -1,0 +1,20 @@
+#!/bin/bash
+set -ex -o pipefail
+
+FILE="mix.exs"
+
+# Check if the file exists
+if [ ! -f "$FILE" ]; then
+  echo "The file '$FILE' does not exist."
+  exit 1
+fi
+# Check if the file contains "credo"
+if grep -q "credo" "$FILE"; then
+  echo "'credo' is already in the file."
+  exit 1
+fi
+
+awk '/defp deps do/ {n=3} n && !--n {print "      {:credo, \"~> 1.7\", only: [:dev, :test], runtime: false},"} 1' "$FILE" > tmp && mv tmp $FILE
+
+echo "'credo' added to the file."
+mix deps.get
