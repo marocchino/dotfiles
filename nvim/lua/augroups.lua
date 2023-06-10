@@ -18,7 +18,7 @@ vim.api.nvim_create_autocmd("Filetype", {
 })
 
 vim.api.nvim_create_augroup("disable_copilot_in_exercism", { clear = true })
-vim.api.nvim_create_autocmd("Filetype", {
+vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "*/Exercism/*",
   group = "disable_copilot_in_exercism",
   command = "Copilot disable",
