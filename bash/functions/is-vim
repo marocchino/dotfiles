@@ -2,7 +2,7 @@
 # see: https://github.com/christoomey/vim-tmux-navigator/issues/295
 # Usage: is_vim.sh <tty>
 #   tty: Specify tty to check for vim process.
-tty=$1
+tty="$1"
 
 # Construct process tree.
 children=();
@@ -12,9 +12,9 @@ done <<< "$(ps -e -o pid= -o ppid=)"
 
 # Get all descendant pids of processes in $tty with BFS
 idx=0
-IFS=$'\n' read -r -d '' -a pids < <(ps -o pid= -t $tty && printf '\0')
+IFS=$'\n' read -r -d '' -a pids < <(ps -o pid= -t "$tty" && printf '\0')
 while (( ${#pids[@]} > idx )); do
-  pid=${pids[idx++]}; pids+=( ${children[pid]-} )
+  pid=${pids[idx++]}; pids+=( "${children[pid]-}" )
 done
 
 # Check whether any child pids are vim
