@@ -55,6 +55,16 @@ require("lazy").setup({
   "honza/vim-snippets",
   "jgdavey/vim-blockle",
   "mattn/emmet-vim",
+  {
+    "m4xshen/hardtime.nvim",
+    event = "VeryLazy",
+    opts = {
+      max_time = 2000,
+      max_count = 10,
+      allow_different_key = true,
+      disable_mouse = false,
+    },
+  },
   "ntpeters/vim-better-whitespace",
   "osyo-manga/vim-over",
   "rizzatti/dash.vim",
