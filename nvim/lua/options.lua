@@ -12,6 +12,7 @@ vim.opt.colorcolumn = "80"
 vim.opt.expandtab = true
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
+vim.opt.relativenumber = true
 vim.opt.fileencodings =
   { "utf-8", "cp949", "cp932", "euc-jp", "shift-jis", "euc-kr" }
 vim.opt.hidden = true
