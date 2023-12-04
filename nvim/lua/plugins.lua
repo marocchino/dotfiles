@@ -104,7 +104,12 @@ require("lazy").setup({
       { "<leader>gc", "<cmd>Gacommit<CR>", silent = true },
     },
   },
-  "tpope/vim-rhubarb",
+  {
+    "tpope/vim-rhubarb",
+    config = function()
+      vim.g.github_enterprise_urls = { os.getenv("GITHUB_ENTERPRISE_URL") }
+    end,
+  },
   "tpope/vim-surround",
   "tpope/vim-unimpaired",
   "wakatime/vim-wakatime",
