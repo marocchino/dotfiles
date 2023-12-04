@@ -1,0 +1,21 @@
+#!/bin/bash
+set -ex -o pipefail
+
+if $# -lt 1; then
+  echo "Usage: $0 <comma separated list of files to check> [prefix]"
+  exit 1
+fi
+
+IFS=',' read -ra NUMBERS <<< "$1"
+PREFIX=${2:-"ssh"}
+
+tmux new-session -Ad -s "$PREFIX" "ssh $PREFIX${NUMBERS[0]}"
+unset NUMBERS[0]
+
+for NUMBER in "${NUMBERS[@]}"; do
+  tmux split-window "ssh $PREFIX$NUMBER"
+  tmux select-layout tiled
+done
+
+tmux -2 attach-session -t "$PREFIX"
+tmux select-pane -t 0
