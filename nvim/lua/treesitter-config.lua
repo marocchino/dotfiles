@@ -1,3 +1,6 @@
+require("ts_context_commentstring").setup({
+  enable_autocmd = false,
+})
 require("nvim-treesitter.configs").setup({
   highlight = { enable = true, additional_vim_regex_highlighting = false },
   indent = { enable = true },
@@ -7,7 +10,6 @@ require("nvim-treesitter.configs").setup({
     max_file_lines = nil,
   },
   auto_install = true,
-  context_commentstring = { enable = true, enable_autocmd = false },
   -- ensure_installed = {
   --   "awk",
   --   "bash",
