@@ -19,8 +19,6 @@ ln -sf "$PWD/slate" "$HOME/.slate"
 
 ln -sf "$PWD/gemrc" "$HOME/.gemrc"
 
-ln -sf "$PWD/irbrc" "$HOME/.irbrc"
-ln -sf "$PWD/pryrc" "$HOME/.pryrc"
 ln -sf "$PWD/powconfig" "$HOME/.powconfig"
 ln -sf "$PWD/hyper.js"  "$HOME/.hyper.js"
 
