@@ -570,7 +570,6 @@ require("lazy").setup({
           null_ls.builtins.formatting.mix,
           null_ls.builtins.formatting.prettierd,
           null_ls.builtins.formatting.gofmt,
-          null_ls.builtins.formatting.rustfmt,
           -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/lua/null-ls/builtins/formatting/rubocop.lua
           null_ls.builtins.formatting.rubocop.with({
             args = {
@@ -586,19 +585,16 @@ require("lazy").setup({
           null_ls.builtins.formatting.shellharden,
           null_ls.builtins.formatting.stylua,
           null_ls.builtins.formatting.terraform_fmt,
-          null_ls.builtins.formatting.fixjson,
 
           -- diagnostics
           null_ls.builtins.diagnostics.actionlint,
           null_ls.builtins.diagnostics.codespell,
           -- null_ls.builtins.diagnostics.credo,
-          null_ls.builtins.diagnostics.eslint_d,
           null_ls.builtins.diagnostics.erb_lint,
           null_ls.builtins.diagnostics.golangci_lint,
           null_ls.builtins.diagnostics.hadolint,
-          -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/lua/null-ls/builtins/diagnostics/rubocop.lua
+          -- https://github.com/nvimtools/none-ls.nvim/blob/main/lua/null-ls/builtins/diagnostics/rubocop.lua
           null_ls.builtins.diagnostics.rubocop,
-          null_ls.builtins.diagnostics.shellcheck,
           null_ls.builtins.diagnostics.stylelint,
           null_ls.builtins.diagnostics.vint,
           null_ls.builtins.diagnostics.yamllint,
