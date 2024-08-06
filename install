@@ -36,8 +36,8 @@ ln -sfn "$PWD/vscode" "$HOME/Library/Application Support/Code/User"
 
 mkdir -p "$HOME/.go"
 
-rtx plugin add ruby
-rtx plugin add nodejs
+mise plugin add ruby
+mise plugin add nodejs
 
 pip3 install wakatime neovim vim-vint codespell --upgrade
 

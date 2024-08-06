@@ -25,7 +25,7 @@ function update-yarn() {
     echo updating yarn to latest
     npm install -g "https://yarnpkg.com/latest.tar.gz"
   fi
-  rtx reshim nodejs
+  mise reshim nodejs
 }
 
 function update-npm() {

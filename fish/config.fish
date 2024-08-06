@@ -15,7 +15,7 @@ alias r rails
 alias s spring
 alias t tmux
 alias v fmvim
-alias asdf rtx
+alias asdf mise
 
 # wow! much doge!
 alias much git
@@ -33,4 +33,4 @@ end
 
 fish_user_key_bindings
 
-rtx activate fish | source
+mise activate fish | source

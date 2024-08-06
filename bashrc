@@ -42,7 +42,7 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export BASH_COMPLETION_COMPAT_DIR="$HOMEBREW_PREFIX/etc/bash_completion.d"
 
 declare -a EVALS=(
-  "$(rtx activate bash)"
+  "$(mise activate bash)"
   "$(hub alias -s)"
   "$(direnv hook bash)"
   "$(starship init bash)"
@@ -83,7 +83,7 @@ if command -v fd > /dev/null; then
 fi
 command -v bat > /dev/null && export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}'"
 
-alias asdf=rtx
+alias asdf=mise
 
 alias bat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
 alias c="open -a 'Google Chrome'"
