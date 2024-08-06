@@ -16,7 +16,7 @@
 [interactive]
   diffFilter = delta --color-only
 [merge]
-  conflictstyle = diff3
+  conflictstyle = zdiff3
 [diff]
   tool = nvimdiff
   colorMoved = default
