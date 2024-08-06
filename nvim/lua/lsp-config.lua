@@ -88,8 +88,8 @@ require("lspconfig").lua_ls.setup({
     },
   },
 })
--- see: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.txt#ruby_ls
-require("lspconfig").ruby_ls.setup({
+-- see: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.txt#ruby_lsp
+require("lspconfig").ruby_lsp.setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })

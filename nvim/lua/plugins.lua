@@ -519,7 +519,7 @@ require("lazy").setup({
       automatic_installation = true,
       ensure_installed = {
         "lua_ls",
-        "ruby_ls",
+        "ruby_lsp",
         "rust_analyzer",
         "tsserver",
         "vimls",
