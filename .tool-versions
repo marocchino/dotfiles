@@ -1,5 +1,5 @@
-ruby 3.2.2
+ruby  3.3.4
 nodejs 20.0.0
-rust 1.69.0
+rust  1.80.0
 golang 1.20.3
 gleam 0.28.3
