@@ -1,4 +1,4 @@
-ruby  3.3.4
-nodejs 20.0.0
-golang 1.20.3
-gleam 0.28.3
+ruby  3.3.6
+nodejs 22.11.0
+golang 1.23.2
+gleam 1.4.0
