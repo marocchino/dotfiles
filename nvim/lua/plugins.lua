@@ -521,7 +521,7 @@ require("lazy").setup({
         "lua_ls",
         "ruby_lsp",
         "rust_analyzer",
-        "tsserver",
+        "ts_ls",
         "vimls",
         "jsonls",
         "yamlls",
