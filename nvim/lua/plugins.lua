@@ -93,18 +93,6 @@ require("lazy").setup({
     end,
   },
   {
-    "marocchino/acommit.nvim",
-    dev = true,
-    enabled = not vim.g.vscode,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "tpope/vim-fugitive",
-    },
-    keys = {
-      { "<leader>gc", "<cmd>Gacommit<CR>", silent = true },
-    },
-  },
-  {
     "tpope/vim-rhubarb",
     config = function()
       vim.g.github_enterprise_urls = { os.getenv("GITHUB_ENTERPRISE_URL") }
