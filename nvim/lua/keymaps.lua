@@ -77,9 +77,9 @@ else
     { silent = true }
   )
   vim.keymap.set("n", "[w", function()
-    vim.lsp.diagnostic.goto_prev()
+    vim.diagnostic.goto_prev()
   end, { silent = true })
   vim.keymap.set("n", "]w", function()
-    vim.lsp.diagnostic.goto_next()
+    vim.diagnostic.goto_next()
   end, { silent = true })
 end
