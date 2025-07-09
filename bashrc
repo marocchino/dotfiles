@@ -30,8 +30,9 @@ export HOMEBREW_PREFIX
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=nvim
+export BUN_INSTALL="$HOME/.bun"
 export GOPATH="$HOME/.go"
-export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$HOMEBREW_PREFIX/sbin:/Library/Apple/usr/bin:$HOME/bin:$GOPATH/bin:$HOME/.luarocks/bin:$HOME/dotfiles/bash/functions:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/opt/openjdk/bin:$PATH"
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$HOMEBREW_PREFIX/sbin:/Library/Apple/usr/bin:$HOME/bin:$BUN_INSTALL/bin:$GOPATH/bin:$HOME/.luarocks/bin:$HOME/dotfiles/bash/functions:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/opt/openjdk/bin:$PATH"
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export GIT_PROMPT_THEME=Single_line_Minimalist
