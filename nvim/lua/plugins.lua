@@ -554,9 +554,10 @@ require("lazy").setup({
       null_ls.setup({
         debug = false,
         sources = {
+          -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins
           -- formatting
+          null_ls.builtins.formatting.biome,
           null_ls.builtins.formatting.mix,
-          null_ls.builtins.formatting.prettierd,
           null_ls.builtins.formatting.gofmt,
           -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/lua/null-ls/builtins/formatting/rubocop.lua
           null_ls.builtins.formatting.rubocop.with({
@@ -577,11 +578,11 @@ require("lazy").setup({
           -- diagnostics
           null_ls.builtins.diagnostics.actionlint,
           null_ls.builtins.diagnostics.codespell,
+          null_ls.builtins.diagnostics.commitlint,
           -- null_ls.builtins.diagnostics.credo,
           null_ls.builtins.diagnostics.erb_lint,
           null_ls.builtins.diagnostics.golangci_lint,
           null_ls.builtins.diagnostics.hadolint,
-          -- https://github.com/nvimtools/none-ls.nvim/blob/main/lua/null-ls/builtins/diagnostics/rubocop.lua
           null_ls.builtins.diagnostics.rubocop,
           null_ls.builtins.diagnostics.stylelint,
           null_ls.builtins.diagnostics.vint,

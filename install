@@ -22,7 +22,6 @@ ln -sf "$PWD/gemrc" "$HOME/.gemrc"
 ln -sf "$PWD/powconfig" "$HOME/.powconfig"
 ln -sf "$PWD/hyper.js"  "$HOME/.hyper.js"
 
-ln -sf "$PWD/eslintrc.json" "$HOME/.eslintrc.json"
 mkdir -p "$HOME/.config/"
 ln -sfn "$PWD/alacritty" "$HOME/.config/alacritty"
 ln -sfn "$PWD/fish" "$HOME/.config/fish"
