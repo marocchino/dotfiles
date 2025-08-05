@@ -102,6 +102,7 @@ alias sayk="say -v Yuna"
 alias t='tmux attach || tmux -u'
 alias v='nvim'
 alias y=yarn
+alias power_on_pc='wakeonlan ${PC_MAC}'
 
 # wow! much doge!
 alias much=git
